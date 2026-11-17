@@ -1,9 +1,31 @@
-data
-card_scanning_env
-results/ocr_cache
-src/__pycache__
-out
-third_party/
+# environments
+card_scanning_env/
+.venv/
+
+# data (large; contains real ID cards): never commit
+data/*
+!data/rectified/
+data/rectified/*
+!data/rectified/alignment_log.csv
+
+# generated outputs (only the pairs table is shared)
+out/*
+!out/pairs.csv
+results/ocr_cache/
 checkpoints/
 logs/
+*.pt
+*.pth
+*.ckpt
+
+# third-party code + pretrained weights (see README for download)
+third_party/
+
+# python / OS / editors
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
 .DS_Store
+.vscode/
+.idea/
+.claude/settings.local.json
