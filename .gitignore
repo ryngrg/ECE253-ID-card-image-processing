@@ -3,3 +3,7 @@ card_scanning_env
 results/ocr_cache
 src/__pycache__
 out
+third_party/
+checkpoints/
+logs/
+.DS_Store

@@ -5,3 +5,6 @@ opencv-python
 scikit-image
 matplotlib
 pytesseract
+pandas
+torch
+torchvision

@@ -1,0 +1,16 @@
+{
+  "veil_mode": "decay",
+  "clip_thresh": 248,
+  "min_blob": 100,
+  "max_core_frac": 0.25,
+  "border": 8,
+  "core_dilate": 15,
+  "inpaint_r": 5,
+  "core_fill": "telea",
+  "alpha0": 0.65,
+  "tau": 90,
+  "white_cap": false,
+  "use_inpaint": true,
+  "use_veil": true,
+  "bg_floor": false
+}
