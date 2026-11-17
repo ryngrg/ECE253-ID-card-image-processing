@@ -1,0 +1,12 @@
+{
+  "clip_thresh": 248,
+  "min_blob": 100,
+  "max_core_frac": 0.25,
+  "border": 8,
+  "core_dilate": 15,
+  "inpaint_r": 5,
+  "alpha0": 0.65,
+  "tau": 90,
+  "use_inpaint": true,
+  "use_veil": true
+}

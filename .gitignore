@@ -1,0 +1,5 @@
+data
+card_scanning_env
+results/ocr_cache
+src/__pycache__
+out
