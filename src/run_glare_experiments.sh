@@ -95,7 +95,7 @@ if has midv; then
 fi
 
 if has clips; then
-  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (NEXT_STEPS step 5; clips.tar, see NEXT_STEPS).
+  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (clips.tar; download in README "Multi-frame fusion").
   # Two key-frame rules = two "splits": keymid (middle frame) and keymax (most clipped core in the fields).
   if [ -d data/external/midv2020/clips/images ]; then
     $PY src/prepare_midv_clips.py --jobs 4
@@ -118,6 +118,6 @@ if has clips; then
       done
     done
   else
-    echo "[clips] data/external/midv2020/clips/images missing: see NEXT_STEPS step 5"
+    echo "[clips] data/external/midv2020/clips/images missing: see README \"Multi-frame fusion\""
   fi
 fi

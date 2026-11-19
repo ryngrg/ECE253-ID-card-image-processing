@@ -82,4 +82,4 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
 - zsh does not word-split `$VAR` in commands: write arguments out (or use arrays) in one-off shell runs.
 - Agreed plan rules (NEXT_STEPS "Decisions"; NEXT_STEPS is in priority order): no artificial/synthetic glare;
   the proposal's approach section is a guide, not a contract; new thresholds are chosen on our train+val only;
-  MIDV training (optional step 8) uses one fixed type-level split (`midv_split.csv`), never an image-level split.
+  MIDV training (optional step 7) uses one fixed type-level split (`midv_split.csv`), never an image-level split.

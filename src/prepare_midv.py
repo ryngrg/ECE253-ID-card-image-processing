@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-External test set: the MIDV-2020 photos labelled "highlight present" (NEXT_STEPS step 3).
+External test set: the MIDV-2020 photos labelled "highlight present" (README "External test set").
 
 MIDV-2020 (Bulatov et al., 2021; CC BY-SA 2.5) has 1000 mock identity documents, 10 types x 100.
 Each document has a digital template (with field rectangles + field text), a flatbed scan and a

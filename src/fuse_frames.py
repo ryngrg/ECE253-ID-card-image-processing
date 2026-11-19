@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Multi-frame glare fusion on the MIDV-2020 highlight clips (NEXT_STEPS step 5), and its baselines.
+Multi-frame glare fusion on the MIDV-2020 highlight clips (README "Multi-frame fusion"), and its baselines.
 
 Glare moves with the camera, the document does not: after alignment (prepare_midv_clips.py), a pixel
 that is washed out in the key frame is often clean in other frames.  Nothing here is learned or tuned

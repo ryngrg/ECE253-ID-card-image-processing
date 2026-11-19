@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 MIDV-2020 "highlight present" video clips (90-99 of every type): aligned frame stacks for
-multi-frame fusion (NEXT_STEPS step 5; fusion itself is in fuse_frames.py).
+multi-frame fusion (README "Multi-frame fusion"; fusion itself is in fuse_frames.py).
 
-Data (see NEXT_STEPS step 5 for the download): data/external/midv2020/clips/images/<type>/<nn>/*.jpg
+Data (see README "Multi-frame fusion" for the download): data/external/midv2020/clips/images/<type>/<nn>/*.jpg
 (every 6th frame of a 4K clip, annotated with the document quad in clips/annotations/<type>/<nn>.json),
 plus the scan and the template of the same document (as for the photos, prepare_midv.py).
 100 clips of 100 documents, none of which is a photo document; nothing is tuned on them.
