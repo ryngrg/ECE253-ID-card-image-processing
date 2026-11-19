@@ -1,0 +1,9 @@
+{
+  "source_repository": "https://github.com/Mlazazarus/ECE253",
+  "source_commit": "4b4536820bd5ad760641bbc34e76b0cbef46d404",
+  "files": {
+    "wiener/weiner_filter.py": "c376083be1bd25ce734a0a6d92f69b687534b53232f756978f41caa5578a0866",
+    "restormer/restormer_filter.py": "389c4da4aaa2a5ea3ecd1f4f8cd90fcc490280aea2b40ea368bbc131bc6afd47"
+  },
+  "note": "Portable inference snapshot; Wiener functions extracted unchanged. Restormer import and asset paths adapted; inference and checkpoint validation retained. Original experimental sources remain unchanged."
+}

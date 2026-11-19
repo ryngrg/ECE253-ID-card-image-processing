@@ -1,0 +1,5 @@
+{
+  "radius": 3,
+  "k": 0.3,
+  "description": "Existing real-data pilot fixed Wiener setting; no extra denoising or sharpening. Radius is in input pixels; not calibrated on resized/rectified cards."
+}

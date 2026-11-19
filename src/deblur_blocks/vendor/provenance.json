@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/swz30/Restormer",
+  "commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f",
+  "files": {
+    "restormer_arch.py": {
+      "source": "basicsr/models/archs/restormer_arch.py",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/basicsr/models/archs/restormer_arch.py",
+      "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+    },
+    "LICENSE.md": {
+      "source": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/LICENSE.md",
+      "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+    },
+    "defocus_single.yml": {
+      "source": "Defocus_Deblurring/Options/DefocusDeblur_Single_8bit_Restormer.yml",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/Defocus_Deblurring/Options/DefocusDeblur_Single_8bit_Restormer.yml",
+      "sha256": "73b29581ca925158b6f5dad75ac43d4190ecb8a30a6811826c3a00ad47f64542"
+    },
+    "upstream_demo.py": {
+      "source": "demo.py",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/demo.py",
+      "sha256": "14164c47978fe1f692e0bb1b097f5fa8861e70f3d43a48bd13adeec23ed6442a"
+    },
+    "reference_inference.py": {
+      "source": "Defocus_Deblurring/test_single_image_defocus_deblur.py",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/Defocus_Deblurring/test_single_image_defocus_deblur.py",
+      "sha256": "62009bce26e53a5281e36deda3f56ab2089939f7a4a3bdc4ea5d70e782a4d08f"
+    }
+  }
+}

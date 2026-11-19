@@ -1,0 +1,3 @@
+-r requirements-deblur.txt
+torch>=2.6,<3
+einops>=0.8,<0.9
