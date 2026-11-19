@@ -1,0 +1,1469 @@
+image,box,target,digits,hyp,zone,tlen,ed
+B01_B_G_0_rectified.png,0,0122500000000112,True,1229 40000000112,outside,16,3
+B01_B_G_0_rectified.png,2,idusaasd4567898,True,IDUSAASD456789B<<<<,outside,15,1
+B01_B_G_0_rectified.png,3,9010314x29103126,True,9010314X2910312<<<<<<<<<<<<<<6,outside,16,0
+B01_B_G_0_rectified.png,4,motoristmichellemarie,False,MOTORIST<<MICHELLE<MARIE<<<<<<,outside,21,0
+B01_B_G_1_rectified.png,0,0122500000000112,True,,outside,16,16
+B01_B_G_1_rectified.png,2,idusaasd4567898,True,IDUSAASD456789846<444,halo,15,5
+B01_B_G_1_rectified.png,3,9010314x29103126,True,9010314X29103126<4646<64444446,halo,16,12
+B01_B_G_1_rectified.png,4,motoristmichellemarie,False,MOTORIST<<MICHELEE<MARIE<<4<<<,halo,21,2
+B01_S_G_0_rectified.png,0,0122500000000112,True,0122500000000112,outside,16,0
+B01_S_G_0_rectified.png,2,idusaasd4567898,True,IDUSAASD4567898<<<<<<<<<<<<<<<,halo,15,0
+B01_S_G_0_rectified.png,3,9010314x29103126,True,9010314×2910312<<<<<<<<<<<<<<6,outside,16,1
+B01_S_G_0_rectified.png,4,motoristmichellemarie,False,MOTORIST<<MICHELLE<MARIE<<<<<<,outside,21,0
+B01_S_G_1_rectified.png,0,0122500000000112,True,0122500000000112,outside,16,0
+B01_S_G_1_rectified.png,2,idusaasd4567898,True,IDUSAASD4567898<<<<<<<<<<<<<<<,outside,15,0
+B01_S_G_1_rectified.png,3,9010314x29103126,True,9010314×2910312<<<<<<<<<<<<<<6,outside,16,1
+B01_S_G_1_rectified.png,4,motoristmichellemarie,False,MOTORIST<<MICHELLE<MARIE<<<<<<,outside,21,0
+B02_B_G_0_rectified.png,0,a12345678001,True,61224567890,outside,12,4
+B02_B_G_0_rectified.png,1,ilw6xm01,False,260X1,outside,8,6
+B02_B_G_0_rectified.png,2,rev01052016,True,Rev 01/05/2016,outside,11,0
+B02_B_G_0_rectified.png,3,05091978,True,05/09/19/8,outside,8,1
+B02_B_G_0_rectified.png,4,medicalinformationlivingwill,False,t satoungei,outside,28,22
+B02_B_G_0_rectified.png,5,bloodtype,False,,outside,9,9
+B02_B_G_0_rectified.png,6,ilsosgov,False,ilsos.gov,outside,8,0
+B02_B_G_0_rectified.png,7,sealarea,False,Soal Aras,outside,8,3
+B02_B_G_0_rectified.png,8,rhfactor,False,BET,halo,8,7
+B02_B_G_0_rectified.png,9,classdsinglevehgvwr16000orlessexceptcycles,True,Class D-Singie V nL,halo,42,29
+B02_B_G_0_rectified.png,10,endorsomentsnone,False,Endorsements:NONE,outside,16,1
+B02_B_G_0_rectified.png,11,restrictionsj88,False,Restnctions: JBE,outside,15,4
+B02_B_G_0_rectified.png,12,1818,True,1818,outside,4,0
+B02_B_G_1_rectified.png,0,a12345678001,True,A12345678901,outside,12,1
+B02_B_G_1_rectified.png,1,ilw6xm01,False,1L WEXIM01,outside,8,3
+B02_B_G_1_rectified.png,2,rev01052016,True,Rev. 01/05/2016,outside,11,0
+B02_B_G_1_rectified.png,3,05091978,True,05/09/1978,outside,8,0
+B02_B_G_1_rectified.png,4,medicalinformationlivingwill,False,rnW,halo,28,25
+B02_B_G_1_rectified.png,5,bloodtype,False,Bland Type,halo,9,2
+B02_B_G_1_rectified.png,6,ilsosgov,False,ilsos.gov,outside,8,0
+B02_B_G_1_rectified.png,7,sealarea,False,Sual Area,halo,8,1
+B02_B_G_1_rectified.png,8,rhfactor,False,Ro1 Fanter,halo,8,4
+B02_B_G_1_rectified.png,9,classdsinglevehgvwr16000orlessexceptcycles,True,Class D-Single Veh GVR teaae ar Less Eal Ci,halo,42,17
+B02_B_G_1_rectified.png,10,endorsomentsnone,False,Endorsements:NONE,outside,16,1
+B02_B_G_1_rectified.png,11,restrictionsj88,False,Restrictions: J88,outside,15,0
+B02_B_G_1_rectified.png,12,1818,True,1818,outside,4,0
+B02_S_G_0_rectified.png,0,a12345678001,True,A12345678001,outside,12,0
+B02_S_G_0_rectified.png,1,ilw6xm01,False,ILW6XM01,outside,8,0
+B02_S_G_0_rectified.png,2,rev01052016,True,Rev. 01/05/2016,outside,11,0
+B02_S_G_0_rectified.png,3,05091978,True,05/09/1978,outside,8,0
+B02_S_G_0_rectified.png,4,medicalinformationlivingwill,False,Medical Information/Living Will,outside,28,0
+B02_S_G_0_rectified.png,5,bloodtype,False,Blre/ Type,halo,9,3
+B02_S_G_0_rectified.png,6,ilsosgov,False,ilsos.gov,outside,8,0
+B02_S_G_0_rectified.png,7,sealarea,False,Seal Area,outside,8,0
+B02_S_G_0_rectified.png,8,rhfactor,False,Hee,core,8,7
+B02_S_G_0_rectified.png,9,classdsinglevehgvwr16000orlessexceptcycles,True,Class:D-Single Veh GVWR 160G0 or Cept Cycles,halo,42,7
+B02_S_G_0_rectified.png,10,endorsomentsnone,False,Endorsoments:NONE,outside,16,0
+B02_S_G_0_rectified.png,11,restrictionsj88,False,Restrictions: J88,outside,15,0
+B02_S_G_0_rectified.png,12,1818,True,1818,outside,4,0
+B02_S_G_1_rectified.png,0,a12345678001,True,A12345678001,outside,12,0
+B02_S_G_1_rectified.png,1,ilw6xm01,False,ILW6XM01,outside,8,0
+B02_S_G_1_rectified.png,2,rev01052016,True,Rev. 01/05/2016,outside,11,0
+B02_S_G_1_rectified.png,3,05091978,True,05/09/1978,outside,8,0
+B02_S_G_1_rectified.png,4,medicalinformationlivingwill,False,pWill,halo,28,24
+B02_S_G_1_rectified.png,5,bloodtype,False,Blood Type,outside,9,0
+B02_S_G_1_rectified.png,6,ilsosgov,False,ilsos.gov,outside,8,0
+B02_S_G_1_rectified.png,7,sealarea,False,,halo,8,8
+B02_S_G_1_rectified.png,8,rhfactor,False,RH Factor,outside,8,0
+B02_S_G_1_rectified.png,9,classdsinglevehgvwr16000orlessexceptcycles,True,Class:D-Single Veh GVWR 16000 or Less Except Cyetes,outside,42,2
+B02_S_G_1_rectified.png,10,endorsomentsnone,False,Endorsements:NONE,outside,16,1
+B02_S_G_1_rectified.png,11,restrictionsj88,False,Restrictions: J88,outside,15,0
+B02_S_G_1_rectified.png,12,1818,True,1818,outside,4,0
+B03_B_G_0_rectified.png,0,01500000261,True,01500000281,outside,11,1
+B03_B_G_0_rectified.png,1,09295,True,09295,outside,5,0
+B03_B_G_0_rectified.png,3,dob01011990,True,DOB: 01/01/1990,outside,11,0
+B03_B_G_0_rectified.png,4,010190,True,010190,outside,6,0
+B03_B_G_0_rectified.png,5,1845,True,1845,outside,4,0
+B03_B_G_0_rectified.png,6,texasroadsideassistance18005255555,True,YEXAS ROADSIDE ASSISTANCE: 1-800-525-5555,outside,34,1
+B03_B_G_0_rectified.png,7,directivetophysicianhasbeenfiledattel,False,Divective to physiclan has been fled at lel a,outside,37,5
+B03_B_G_0_rectified.png,8,emergencycontact,False,Emengency Cuntact s,outside,16,3
+B03_B_G_0_rectified.png,9,allergicreactiontodrugs,False,Allesgo reaction to drugi,outside,23,4
+B03_B_G_1_rectified.png,0,01500000261,True,0150000C2X1,outside,11,2
+B03_B_G_1_rectified.png,1,09295,True,05296,outside,5,2
+B03_B_G_1_rectified.png,3,dob01011990,True,DOB: 01/01/1940,outside,11,1
+B03_B_G_1_rectified.png,4,010190,True,010190,outside,6,0
+B03_B_G_1_rectified.png,5,1845,True,1845,outside,4,0
+B03_B_G_1_rectified.png,6,texasroadsideassistance18005255555,True,12,halo,34,32
+B03_B_G_1_rectified.png,7,directivetophysicianhasbeenfiledattel,False,e  pp las ass fod a ls,outside,37,29
+B03_B_G_1_rectified.png,8,emergencycontact,False,,outside,16,16
+B03_B_G_1_rectified.png,9,allergicreactiontodrugs,False,,outside,23,23
+B03_S_G_0_rectified.png,0,01500000261,True,01500000261,outside,11,0
+B03_S_G_0_rectified.png,1,09295,True,09295,outside,5,0
+B03_S_G_0_rectified.png,3,dob01011990,True,DOB: 01/01/1990,outside,11,0
+B03_S_G_0_rectified.png,4,010190,True,010190,outside,6,0
+B03_S_G_0_rectified.png,5,1845,True,1845,outside,4,0
+B03_S_G_0_rectified.png,6,texasroadsideassistance18005255555,True,TEXAS ROADSIDE ASSISTANCE: 1-800-525-5555,outside,34,0
+B03_S_G_0_rectified.png,7,directivetophysicianhasbeenfiledattel,False,Directive to physician has been filed at Tel ,outside,37,0
+B03_S_G_0_rectified.png,8,emergencycontact,False,Emergency Contact,outside,16,0
+B03_S_G_0_rectified.png,9,allergicreactiontodrugs,False,Allergic reaction to drugs:,outside,23,0
+B03_S_G_1_rectified.png,0,01500000261,True,01500000261,outside,11,0
+B03_S_G_1_rectified.png,1,09295,True,09295,outside,5,0
+B03_S_G_1_rectified.png,3,dob01011990,True,DOB: 01/01/1990,outside,11,0
+B03_S_G_1_rectified.png,4,010190,True,010190,outside,6,0
+B03_S_G_1_rectified.png,5,1845,True,1845,outside,4,0
+B03_S_G_1_rectified.png,6,texasroadsideassistance18005255555,True,ROADSIDEASSISTANCE:1-800-525-5555,halo,34,5
+B03_S_G_1_rectified.png,7,directivetophysicianhasbeenfiledattel,False,Dimetve to physician has been filed at Tel ,outside,37,3
+B03_S_G_1_rectified.png,8,emergencycontact,False,Emergency Contact ,outside,16,0
+B03_S_G_1_rectified.png,9,allergicreactiontodrugs,False,Allergik reaction to drugs:,outside,23,1
+B04_B_G_0_rectified.png,0,,True,,outside,23,2
+B04_B_G_0_rectified.png,1,,False,,outside,16,0
+B04_B_G_0_rectified.png,2,,False,,outside,49,10
+B04_B_G_0_rectified.png,3,,False,,outside,31,19
+B04_B_G_0_rectified.png,4,,False,,outside,27,14
+B04_B_G_0_rectified.png,5,,False,,outside,33,17
+B04_B_G_0_rectified.png,6,,False,,outside,33,15
+B04_B_G_0_rectified.png,7,,True,,outside,5,1
+B04_B_G_0_rectified.png,8,,True,,outside,11,1
+B04_B_G_0_rectified.png,9,,True,,outside,17,0
+B04_B_G_1_rectified.png,0,,True,,outside,23,15
+B04_B_G_1_rectified.png,1,,False,,outside,16,2
+B04_B_G_1_rectified.png,2,,False,,halo,49,39
+B04_B_G_1_rectified.png,3,,False,,halo,31,31
+B04_B_G_1_rectified.png,4,,False,,halo,27,27
+B04_B_G_1_rectified.png,5,,False,,halo,33,33
+B04_B_G_1_rectified.png,6,,False,,halo,33,33
+B04_B_G_1_rectified.png,7,,True,,halo,5,5
+B04_B_G_1_rectified.png,8,,True,,halo,11,10
+B04_B_G_1_rectified.png,9,,True,,halo,17,17
+B04_S_G_0_rectified.png,0,,True,,outside,23,0
+B04_S_G_0_rectified.png,1,,False,,outside,16,0
+B04_S_G_0_rectified.png,2,,False,,halo,49,0
+B04_S_G_0_rectified.png,3,,False,,outside,31,0
+B04_S_G_0_rectified.png,4,,False,,outside,27,0
+B04_S_G_0_rectified.png,5,,False,,outside,33,0
+B04_S_G_0_rectified.png,6,,False,,outside,33,0
+B04_S_G_0_rectified.png,7,,True,,outside,5,2
+B04_S_G_0_rectified.png,8,,True,,outside,11,0
+B04_S_G_0_rectified.png,9,,True,,outside,17,0
+B04_S_G_1_rectified.png,0,,True,,halo,23,0
+B04_S_G_1_rectified.png,1,,False,,halo,16,0
+B04_S_G_1_rectified.png,2,,False,,halo,49,1
+B04_S_G_1_rectified.png,3,,False,,outside,31,0
+B04_S_G_1_rectified.png,4,,False,,outside,27,0
+B04_S_G_1_rectified.png,5,,False,,halo,33,0
+B04_S_G_1_rectified.png,6,,False,,outside,33,0
+B04_S_G_1_rectified.png,7,,True,,outside,5,2
+B04_S_G_1_rectified.png,8,,True,,outside,11,0
+B04_S_G_1_rectified.png,9,,True,,outside,17,0
+B05_B_G_0_rectified.png,0,,False,,outside,88,24
+B05_B_G_0_rectified.png,1,,False,,outside,92,36
+B05_B_G_0_rectified.png,2,,False,,outside,91,27
+B05_B_G_0_rectified.png,3,,False,,halo,88,29
+B05_B_G_0_rectified.png,4,,False,,halo,87,24
+B05_B_G_0_rectified.png,5,,True,,outside,77,25
+B05_B_G_0_rectified.png,6,,False,,outside,27,0
+B05_B_G_0_rectified.png,7,,True,,outside,34,0
+B05_B_G_0_rectified.png,8,,True,,outside,33,0
+B05_B_G_0_rectified.png,9,,True,,outside,30,0
+B05_B_G_0_rectified.png,10,,False,,outside,34,0
+B05_B_G_0_rectified.png,11,,True,,outside,14,0
+B05_B_G_1_rectified.png,0,,False,,halo,88,38
+B05_B_G_1_rectified.png,1,,False,,halo,92,35
+B05_B_G_1_rectified.png,2,,False,,halo,91,40
+B05_B_G_1_rectified.png,3,,False,,halo,88,38
+B05_B_G_1_rectified.png,4,,False,,halo,87,38
+B05_B_G_1_rectified.png,5,,True,,halo,77,40
+B05_B_G_1_rectified.png,6,,False,,outside,27,1
+B05_B_G_1_rectified.png,7,,True,,outside,34,4
+B05_B_G_1_rectified.png,8,,True,,outside,33,3
+B05_B_G_1_rectified.png,9,,True,,outside,30,0
+B05_B_G_1_rectified.png,10,,False,,outside,34,0
+B05_B_G_1_rectified.png,11,,True,,outside,14,0
+B05_S_G_0_rectified.png,0,,False,,outside,88,3
+B05_S_G_0_rectified.png,1,,False,,outside,92,2
+B05_S_G_0_rectified.png,2,,False,,outside,91,0
+B05_S_G_0_rectified.png,3,,False,,outside,88,0
+B05_S_G_0_rectified.png,4,,False,,halo,87,2
+B05_S_G_0_rectified.png,5,,True,,halo,77,5
+B05_S_G_0_rectified.png,6,,False,,halo,27,4
+B05_S_G_0_rectified.png,7,,True,,halo,34,1
+B05_S_G_0_rectified.png,8,,True,,halo,33,0
+B05_S_G_0_rectified.png,9,,True,,outside,30,0
+B05_S_G_0_rectified.png,10,,False,,outside,34,0
+B05_S_G_0_rectified.png,11,,True,,outside,14,0
+B05_S_G_1_rectified.png,0,,False,,halo,88,19
+B05_S_G_1_rectified.png,1,,False,,halo,92,18
+B05_S_G_1_rectified.png,2,,False,,halo,91,18
+B05_S_G_1_rectified.png,3,,False,,halo,88,15
+B05_S_G_1_rectified.png,4,,False,,halo,87,15
+B05_S_G_1_rectified.png,5,,True,,halo,77,16
+B05_S_G_1_rectified.png,6,,False,,halo,27,1
+B05_S_G_1_rectified.png,7,,True,,halo,34,1
+B05_S_G_1_rectified.png,8,,True,,halo,33,0
+B05_S_G_1_rectified.png,9,,True,,outside,30,0
+B05_S_G_1_rectified.png,10,,False,,outside,34,0
+B05_S_G_1_rectified.png,11,,True,,outside,14,0
+B06_B_G_0_rectified.png,0,,True,,outside,17,4
+B06_B_G_0_rectified.png,2,,False,,outside,9,0
+B06_B_G_0_rectified.png,4,,False,,outside,5,5
+B06_B_G_0_rectified.png,5,,False,,outside,5,0
+B06_B_G_0_rectified.png,6,,False,,outside,4,4
+B06_B_G_0_rectified.png,7,,False,,outside,3,3
+B06_B_G_0_rectified.png,8,,False,,outside,12,0
+B06_B_G_0_rectified.png,9,,False,,halo,12,4
+B06_B_G_0_rectified.png,10,,True,,outside,4,3
+B06_B_G_0_rectified.png,11,,True,,outside,4,3
+B06_B_G_0_rectified.png,12,,False,,outside,4,0
+B06_B_G_0_rectified.png,13,,False,,outside,21,19
+B06_B_G_0_rectified.png,14,,False,,outside,6,0
+B06_B_G_0_rectified.png,15,,True,,outside,8,0
+B06_B_G_0_rectified.png,16,,False,,outside,66,61
+B06_B_G_1_rectified.png,0,,True,,outside,17,2
+B06_B_G_1_rectified.png,2,,False,,outside,9,0
+B06_B_G_1_rectified.png,4,,False,,outside,5,5
+B06_B_G_1_rectified.png,5,,False,,outside,5,0
+B06_B_G_1_rectified.png,6,,False,,outside,4,4
+B06_B_G_1_rectified.png,7,,False,,outside,3,3
+B06_B_G_1_rectified.png,8,,False,,halo,12,1
+B06_B_G_1_rectified.png,9,,False,,core,12,12
+B06_B_G_1_rectified.png,10,,True,,outside,4,3
+B06_B_G_1_rectified.png,11,,True,,outside,4,4
+B06_B_G_1_rectified.png,12,,False,,outside,4,0
+B06_B_G_1_rectified.png,13,,False,,core,21,21
+B06_B_G_1_rectified.png,14,,False,,halo,6,5
+B06_B_G_1_rectified.png,15,,True,,outside,8,0
+B06_B_G_1_rectified.png,16,,False,,halo,66,65
+B06_S_G_0_rectified.png,0,,True,,outside,17,0
+B06_S_G_0_rectified.png,2,,False,,outside,9,0
+B06_S_G_0_rectified.png,4,,False,,outside,5,3
+B06_S_G_0_rectified.png,5,,False,,outside,5,0
+B06_S_G_0_rectified.png,6,,False,,outside,4,3
+B06_S_G_0_rectified.png,7,,False,,outside,3,0
+B06_S_G_0_rectified.png,8,,False,,outside,12,0
+B06_S_G_0_rectified.png,9,,False,,core,12,6
+B06_S_G_0_rectified.png,10,,True,,outside,4,0
+B06_S_G_0_rectified.png,11,,True,,outside,4,0
+B06_S_G_0_rectified.png,12,,False,,outside,4,0
+B06_S_G_0_rectified.png,13,,False,,halo,21,6
+B06_S_G_0_rectified.png,14,,False,,halo,6,0
+B06_S_G_0_rectified.png,15,,True,,outside,8,0
+B06_S_G_0_rectified.png,16,,False,,outside,66,0
+B06_S_G_1_rectified.png,0,,True,,outside,17,0
+B06_S_G_1_rectified.png,2,,False,,outside,9,0
+B06_S_G_1_rectified.png,4,,False,,outside,5,3
+B06_S_G_1_rectified.png,5,,False,,outside,5,0
+B06_S_G_1_rectified.png,6,,False,,outside,4,4
+B06_S_G_1_rectified.png,7,,False,,outside,3,0
+B06_S_G_1_rectified.png,8,,False,,halo,12,0
+B06_S_G_1_rectified.png,9,,False,,halo,12,5
+B06_S_G_1_rectified.png,10,,True,,outside,4,0
+B06_S_G_1_rectified.png,11,,True,,outside,4,0
+B06_S_G_1_rectified.png,12,,False,,outside,4,0
+B06_S_G_1_rectified.png,13,,False,,halo,21,21
+B06_S_G_1_rectified.png,14,,False,,halo,6,6
+B06_S_G_1_rectified.png,15,,True,,outside,8,0
+B06_S_G_1_rectified.png,16,,False,,halo,66,30
+B07_B_G_0_rectified.png,0,,False,,outside,29,2
+B07_B_G_0_rectified.png,1,,False,,outside,12,0
+B07_B_G_0_rectified.png,2,,True,,outside,10,0
+B07_B_G_0_rectified.png,3,,False,,outside,16,0
+B07_B_G_0_rectified.png,4,,False,,outside,24,1
+B07_B_G_0_rectified.png,5,,True,,outside,10,0
+B07_B_G_0_rectified.png,6,,True,,outside,10,1
+B07_B_G_0_rectified.png,7,,False,,outside,21,0
+B07_B_G_0_rectified.png,8,,True,,outside,27,0
+B07_B_G_0_rectified.png,9,,True,,outside,10,0
+B07_B_G_0_rectified.png,10,,False,,outside,32,2
+B07_B_G_0_rectified.png,11,,False,,outside,21,0
+B07_B_G_0_rectified.png,12,,True,,outside,32,3
+B07_B_G_0_rectified.png,13,,True,,outside,10,0
+B07_B_G_0_rectified.png,14,,False,,outside,13,0
+B07_B_G_0_rectified.png,15,,True,,outside,9,0
+B07_B_G_0_rectified.png,16,,False,,outside,20,0
+B07_B_G_0_rectified.png,17,,True,,outside,14,1
+B07_B_G_0_rectified.png,18,,False,,outside,14,0
+B07_B_G_0_rectified.png,19,,False,,outside,10,0
+B07_B_G_0_rectified.png,20,,False,,outside,64,5
+B07_B_G_0_rectified.png,21,,True,,outside,6,0
+B07_B_G_0_rectified.png,22,,False,,outside,61,5
+B07_B_G_1_rectified.png,0,,False,,outside,29,4
+B07_B_G_1_rectified.png,1,,False,,outside,12,0
+B07_B_G_1_rectified.png,2,,True,,outside,10,2
+B07_B_G_1_rectified.png,3,,False,,outside,16,0
+B07_B_G_1_rectified.png,4,,False,,halo,24,7
+B07_B_G_1_rectified.png,5,,True,,outside,10,0
+B07_B_G_1_rectified.png,6,,True,,halo,10,4
+B07_B_G_1_rectified.png,7,,False,,outside,21,0
+B07_B_G_1_rectified.png,8,,True,,halo,27,19
+B07_B_G_1_rectified.png,9,,True,,outside,10,0
+B07_B_G_1_rectified.png,10,,False,,halo,32,26
+B07_B_G_1_rectified.png,11,,False,,outside,21,3
+B07_B_G_1_rectified.png,12,,True,,halo,32,32
+B07_B_G_1_rectified.png,13,,True,,outside,10,0
+B07_B_G_1_rectified.png,14,,False,,outside,13,0
+B07_B_G_1_rectified.png,15,,True,,outside,9,0
+B07_B_G_1_rectified.png,16,,False,,outside,20,0
+B07_B_G_1_rectified.png,17,,True,,core,14,13
+B07_B_G_1_rectified.png,18,,False,,outside,14,0
+B07_B_G_1_rectified.png,19,,False,,halo,10,4
+B07_B_G_1_rectified.png,20,,False,,halo,64,33
+B07_B_G_1_rectified.png,21,,True,,outside,6,0
+B07_B_G_1_rectified.png,22,,False,,halo,61,22
+B07_S_G_0_rectified.png,0,,False,,outside,29,0
+B07_S_G_0_rectified.png,1,,False,,outside,12,0
+B07_S_G_0_rectified.png,2,,True,,outside,10,0
+B07_S_G_0_rectified.png,3,,False,,outside,16,0
+B07_S_G_0_rectified.png,4,,False,,outside,24,0
+B07_S_G_0_rectified.png,5,,True,,outside,10,0
+B07_S_G_0_rectified.png,6,,True,,outside,10,0
+B07_S_G_0_rectified.png,7,,False,,outside,21,0
+B07_S_G_0_rectified.png,8,,True,,outside,27,0
+B07_S_G_0_rectified.png,9,,True,,outside,10,0
+B07_S_G_0_rectified.png,10,,False,,outside,32,0
+B07_S_G_0_rectified.png,11,,False,,outside,21,0
+B07_S_G_0_rectified.png,12,,True,,outside,32,0
+B07_S_G_0_rectified.png,13,,True,,outside,10,0
+B07_S_G_0_rectified.png,14,,False,,outside,13,0
+B07_S_G_0_rectified.png,15,,True,,outside,9,0
+B07_S_G_0_rectified.png,16,,False,,halo,20,0
+B07_S_G_0_rectified.png,17,,True,,outside,14,0
+B07_S_G_0_rectified.png,18,,False,,outside,14,0
+B07_S_G_0_rectified.png,19,,False,,outside,10,0
+B07_S_G_0_rectified.png,20,,False,,outside,64,0
+B07_S_G_0_rectified.png,21,,True,,outside,6,0
+B07_S_G_0_rectified.png,22,,False,,outside,61,0
+B07_S_G_1_rectified.png,0,,False,,outside,29,0
+B07_S_G_1_rectified.png,1,,False,,outside,12,0
+B07_S_G_1_rectified.png,2,,True,,outside,10,0
+B07_S_G_1_rectified.png,3,,False,,outside,16,0
+B07_S_G_1_rectified.png,4,,False,,outside,24,0
+B07_S_G_1_rectified.png,5,,True,,outside,10,0
+B07_S_G_1_rectified.png,6,,True,,outside,10,0
+B07_S_G_1_rectified.png,7,,False,,outside,21,0
+B07_S_G_1_rectified.png,8,,True,,outside,27,0
+B07_S_G_1_rectified.png,9,,True,,outside,10,0
+B07_S_G_1_rectified.png,10,,False,,halo,32,1
+B07_S_G_1_rectified.png,11,,False,,outside,21,0
+B07_S_G_1_rectified.png,12,,True,,halo,32,7
+B07_S_G_1_rectified.png,13,,True,,outside,10,0
+B07_S_G_1_rectified.png,14,,False,,outside,13,0
+B07_S_G_1_rectified.png,15,,True,,outside,9,0
+B07_S_G_1_rectified.png,16,,False,,outside,20,0
+B07_S_G_1_rectified.png,17,,True,,halo,14,6
+B07_S_G_1_rectified.png,18,,False,,outside,14,0
+B07_S_G_1_rectified.png,19,,False,,outside,10,0
+B07_S_G_1_rectified.png,20,,False,,outside,64,0
+B07_S_G_1_rectified.png,21,,True,,outside,6,0
+B07_S_G_1_rectified.png,22,,False,,outside,61,0
+B08_B_G_0_rectified.png,0,,False,,outside,16,0
+B08_B_G_0_rectified.png,1,,False,,outside,21,5
+B08_B_G_0_rectified.png,2,,False,,outside,12,5
+B08_B_G_0_rectified.png,3,,True,,outside,10,0
+B08_B_G_0_rectified.png,4,,True,,outside,10,3
+B08_B_G_0_rectified.png,5,,False,,outside,13,5
+B08_B_G_0_rectified.png,6,,False,,outside,13,1
+B08_B_G_0_rectified.png,7,,False,,outside,16,0
+B08_B_G_0_rectified.png,8,,False,,outside,11,6
+B08_B_G_0_rectified.png,9,,False,,outside,21,11
+B08_B_G_0_rectified.png,10,,True,,outside,10,1
+B08_B_G_0_rectified.png,11,,True,,outside,10,5
+B08_B_G_0_rectified.png,12,,True,,outside,10,7
+B08_B_G_0_rectified.png,13,,True,,outside,39,32
+B08_B_G_0_rectified.png,15,,True,,outside,9,0
+B08_B_G_0_rectified.png,16,,True,,outside,14,14
+B08_B_G_0_rectified.png,17,,False,,outside,10,2
+B08_B_G_0_rectified.png,18,,False,,outside,34,7
+B08_B_G_0_rectified.png,19,,False,,outside,64,25
+B08_B_G_0_rectified.png,20,,True,,outside,6,0
+B08_B_G_0_rectified.png,21,,False,,outside,61,25
+B08_B_G_1_rectified.png,0,,False,,outside,16,0
+B08_B_G_1_rectified.png,1,,False,,outside,21,6
+B08_B_G_1_rectified.png,2,,False,,outside,12,8
+B08_B_G_1_rectified.png,3,,True,,outside,10,0
+B08_B_G_1_rectified.png,4,,True,,outside,10,5
+B08_B_G_1_rectified.png,5,,False,,outside,13,4
+B08_B_G_1_rectified.png,6,,False,,outside,13,0
+B08_B_G_1_rectified.png,7,,False,,outside,16,0
+B08_B_G_1_rectified.png,8,,False,,outside,11,5
+B08_B_G_1_rectified.png,9,,False,,outside,21,11
+B08_B_G_1_rectified.png,10,,True,,outside,10,0
+B08_B_G_1_rectified.png,11,,True,,outside,10,5
+B08_B_G_1_rectified.png,12,,True,,outside,10,7
+B08_B_G_1_rectified.png,13,,True,,outside,39,23
+B08_B_G_1_rectified.png,15,,True,,halo,9,2
+B08_B_G_1_rectified.png,16,,True,,outside,14,14
+B08_B_G_1_rectified.png,17,,False,,outside,10,3
+B08_B_G_1_rectified.png,18,,False,,halo,34,5
+B08_B_G_1_rectified.png,19,,False,,outside,64,15
+B08_B_G_1_rectified.png,20,,True,,outside,6,0
+B08_B_G_1_rectified.png,21,,False,,outside,61,17
+B08_S_G_0_rectified.png,0,,False,,outside,16,0
+B08_S_G_0_rectified.png,1,,False,,outside,21,1
+B08_S_G_0_rectified.png,2,,False,,outside,12,0
+B08_S_G_0_rectified.png,3,,True,,outside,10,0
+B08_S_G_0_rectified.png,4,,True,,outside,10,0
+B08_S_G_0_rectified.png,5,,False,,outside,13,0
+B08_S_G_0_rectified.png,6,,False,,outside,13,0
+B08_S_G_0_rectified.png,7,,False,,outside,16,0
+B08_S_G_0_rectified.png,8,,False,,outside,11,0
+B08_S_G_0_rectified.png,9,,False,,outside,21,0
+B08_S_G_0_rectified.png,10,,True,,outside,10,0
+B08_S_G_0_rectified.png,11,,True,,outside,10,0
+B08_S_G_0_rectified.png,12,,True,,outside,10,0
+B08_S_G_0_rectified.png,13,,True,,outside,39,1
+B08_S_G_0_rectified.png,15,,True,,outside,9,0
+B08_S_G_0_rectified.png,16,,True,,halo,14,0
+B08_S_G_0_rectified.png,17,,False,,outside,10,0
+B08_S_G_0_rectified.png,18,,False,,halo,34,0
+B08_S_G_0_rectified.png,19,,False,,halo,64,0
+B08_S_G_0_rectified.png,20,,True,,outside,6,0
+B08_S_G_0_rectified.png,21,,False,,halo,61,1
+B08_S_G_1_rectified.png,0,,False,,outside,16,0
+B08_S_G_1_rectified.png,1,,False,,outside,21,0
+B08_S_G_1_rectified.png,2,,False,,outside,12,0
+B08_S_G_1_rectified.png,3,,True,,outside,10,0
+B08_S_G_1_rectified.png,4,,True,,outside,10,0
+B08_S_G_1_rectified.png,5,,False,,outside,13,0
+B08_S_G_1_rectified.png,6,,False,,outside,13,0
+B08_S_G_1_rectified.png,7,,False,,outside,16,0
+B08_S_G_1_rectified.png,8,,False,,outside,11,0
+B08_S_G_1_rectified.png,9,,False,,outside,21,0
+B08_S_G_1_rectified.png,10,,True,,outside,10,0
+B08_S_G_1_rectified.png,11,,True,,outside,10,0
+B08_S_G_1_rectified.png,12,,True,,outside,10,0
+B08_S_G_1_rectified.png,13,,True,,outside,39,1
+B08_S_G_1_rectified.png,15,,True,,halo,9,0
+B08_S_G_1_rectified.png,16,,True,,outside,14,0
+B08_S_G_1_rectified.png,17,,False,,outside,10,0
+B08_S_G_1_rectified.png,18,,False,,outside,34,0
+B08_S_G_1_rectified.png,19,,False,,outside,64,0
+B08_S_G_1_rectified.png,20,,True,,outside,6,0
+B08_S_G_1_rectified.png,21,,False,,outside,61,1
+B08_S_G_2_rectified.png,0,,False,,outside,16,0
+B08_S_G_2_rectified.png,1,,False,,halo,21,1
+B08_S_G_2_rectified.png,2,,False,,outside,12,0
+B08_S_G_2_rectified.png,3,,True,,outside,10,0
+B08_S_G_2_rectified.png,4,,True,,core,10,1
+B08_S_G_2_rectified.png,5,,False,,halo,13,0
+B08_S_G_2_rectified.png,6,,False,,outside,13,0
+B08_S_G_2_rectified.png,7,,False,,outside,16,0
+B08_S_G_2_rectified.png,8,,False,,outside,11,0
+B08_S_G_2_rectified.png,9,,False,,outside,21,0
+B08_S_G_2_rectified.png,10,,True,,outside,10,0
+B08_S_G_2_rectified.png,11,,True,,outside,10,0
+B08_S_G_2_rectified.png,12,,True,,outside,10,0
+B08_S_G_2_rectified.png,13,,True,,outside,39,1
+B08_S_G_2_rectified.png,15,,True,,outside,9,0
+B08_S_G_2_rectified.png,16,,True,,outside,14,0
+B08_S_G_2_rectified.png,17,,False,,outside,10,0
+B08_S_G_2_rectified.png,18,,False,,outside,34,0
+B08_S_G_2_rectified.png,19,,False,,outside,64,0
+B08_S_G_2_rectified.png,20,,True,,outside,6,0
+B08_S_G_2_rectified.png,21,,False,,outside,61,1
+F01_B_G_0_rectified.png,0,pennsylvania,False,Pennsylvania,outside,12,0
+F01_B_G_0_rectified.png,1,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F01_B_G_0_rectified.png,2,visitpacomusa,False,vmba,outside,13,10
+F01_B_G_0_rectified.png,3,4ddln99999999,True,99 999 999,outside,13,5
+F01_B_G_0_rectified.png,4,dups00,False,OUPS: 00,outside,6,1
+F01_B_G_0_rectified.png,5,000,False,000,outside,3,0
+F01_B_G_0_rectified.png,6,3dob01071973,True,01/07/1973,outside,12,4
+F01_B_G_0_rectified.png,7,sample,False,SAMPLE,outside,6,0
+F01_B_G_0_rectified.png,8,andrewjason,False,ANDREWJASON,outside,11,0
+F01_B_G_0_rectified.png,10,123mainstreet,False,123 MAIN STREET,outside,13,0
+F01_B_G_0_rectified.png,12,apt1,False,APLY,outside,4,2
+F01_B_G_0_rectified.png,13,harrisburgpa171010000,True,"H,  1 ",outside,21,19
+F01_B_G_0_rectified.png,14,4bexp01082026,True,1/08/2026,halo,13,6
+F01_B_G_0_rectified.png,16,4aiss01072022,True,07/2022,halo,13,7
+F01_B_G_0_rectified.png,17,15sexm18eyesbro,True,,halo,15,15
+F01_B_G_0_rectified.png,18,16hgt511,True,SEETI,halo,8,7
+F01_B_G_0_rectified.png,19,9classc,False,FLASS C,outside,7,2
+F01_B_G_0_rectified.png,20,9aendnone,False,END: NONE,outside,9,2
+F01_B_G_0_rectified.png,22,12restrnone,False,RESR NONE,outside,11,3
+F01_B_G_0_rectified.png,23,andrewsample,False,Andrew Samale,outside,12,1
+F01_B_G_0_rectified.png,24,5dd1234567890123,True,50D:923454/990923,outside,16,6
+F01_B_G_0_rectified.png,25,organdonor,False,ORGAN DONOR,outside,10,0
+F01_B_G_0_rectified.png,26,456789012345,True,456786012345,outside,12,1
+F01_B_G_1_rectified.png,0,pennsylvania,False,Pennsylvania,outside,12,0
+F01_B_G_1_rectified.png,1,driverslicense,False,DRIVELLICENSE,halo,14,2
+F01_B_G_1_rectified.png,2,visitpacomusa,False,vieit.com Ubé,outside,13,5
+F01_B_G_1_rectified.png,3,4ddln99999999,True,9229,halo,13,11
+F01_B_G_1_rectified.png,4,dups00,False,00,halo,6,4
+F01_B_G_1_rectified.png,5,000,False,000,outside,3,0
+F01_B_G_1_rectified.png,6,3dob01071973,True,01/07/1,halo,12,7
+F01_B_G_1_rectified.png,7,sample,False,SAMPLE,halo,6,0
+F01_B_G_1_rectified.png,8,andrewjason,False,ANDREW,halo,11,5
+F01_B_G_1_rectified.png,10,123mainstreet,False,123 MAIN ,halo,13,6
+F01_B_G_1_rectified.png,12,apt1,False,ACLI,outside,4,3
+F01_B_G_1_rectified.png,13,harrisburgpa171010000,True,HARRISBUN,core,21,13
+F01_B_G_1_rectified.png,14,4bexp01082026,True,01/0,halo,13,10
+F01_B_G_1_rectified.png,16,4aiss01072022,True,01/07,halo,13,9
+F01_B_G_1_rectified.png,17,15sexm18eyesbro,True,V,halo,15,15
+F01_B_G_1_rectified.png,18,16hgt511,True,HOT 5,outside,8,5
+F01_B_G_1_rectified.png,19,9classc,False,PCLABE C,outside,7,3
+F01_B_G_1_rectified.png,20,9aendnone,False,BEND NONE,outside,9,2
+F01_B_G_1_rectified.png,22,12restrnone,False,REER NOINE,outside,11,5
+F01_B_G_1_rectified.png,23,andrewsample,False,Andrew Sample,outside,12,0
+F01_B_G_1_rectified.png,24,5dd1234567890123,True,00103,halo,16,13
+F01_B_G_1_rectified.png,25,organdonor,False,ORGAN DONOH,halo,10,1
+F01_B_G_1_rectified.png,26,456789012345,True,256702525,halo,12,6
+F01_S_G_0_rectified.png,0,pennsylvania,False,Pennsylvania,outside,12,0
+F01_S_G_0_rectified.png,1,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F01_S_G_0_rectified.png,2,visitpacomusa,False,visitPA.com USA,outside,13,0
+F01_S_G_0_rectified.png,3,4ddln99999999,True,4d DLN: 99 999 999,outside,13,0
+F01_S_G_0_rectified.png,4,dups00,False,DUPS:00,outside,6,0
+F01_S_G_0_rectified.png,5,000,False,000,outside,3,0
+F01_S_G_0_rectified.png,6,3dob01071973,True,3 DOB: 01/07/1973,outside,12,0
+F01_S_G_0_rectified.png,7,sample,False,SAMPLE,halo,6,0
+F01_S_G_0_rectified.png,8,andrewjason,False,ANDREW JASON,halo,11,0
+F01_S_G_0_rectified.png,10,123mainstreet,False,123 MAIN STREET,halo,13,0
+F01_S_G_0_rectified.png,12,apt1,False,APT.1,halo,4,0
+F01_S_G_0_rectified.png,13,harrisburgpa171010000,True,"HARRISBURG, PA 17101-0000",halo,21,0
+F01_S_G_0_rectified.png,14,4bexp01082026,True,4b EX/08/2026,halo,13,3
+F01_S_G_0_rectified.png,16,4aiss01072022,True,4a ISs:07/2022,core,13,2
+F01_S_G_0_rectified.png,17,15sexm18eyesbro,True,15 SX:M 18EYES: BRO,halo,15,1
+F01_S_G_0_rectified.png,18,16hgt511,True,"16 HGT: 5'-11""",halo,8,0
+F01_S_G_0_rectified.png,19,9classc,False,9 CLASS: C,halo,7,0
+F01_S_G_0_rectified.png,20,9aendnone,False,9a END: NONE,halo,9,0
+F01_S_G_0_rectified.png,22,12restrnone,False,12RESTR:NONE,halo,11,0
+F01_S_G_0_rectified.png,23,andrewsample,False,Andrew Sample,outside,12,0
+F01_S_G_0_rectified.png,24,5dd1234567890123,True,5DD:1234567890123,halo,16,0
+F01_S_G_0_rectified.png,25,organdonor,False,ORGAN DONOR,halo,10,0
+F01_S_G_0_rectified.png,26,456789012345,True,456789012345,halo,12,0
+F01_S_G_1_rectified.png,0,pennsylvania,False,Pennsylvania,outside,12,0
+F01_S_G_1_rectified.png,1,driverslicense,False,DRIVER'S LICENSE,halo,14,0
+F01_S_G_1_rectified.png,2,visitpacomusa,False,visitPA.com USA,outside,13,0
+F01_S_G_1_rectified.png,3,4ddln99999999,True,4d DLN: 99,core,13,6
+F01_S_G_1_rectified.png,4,dups00,False,DUPS: 00,outside,6,0
+F01_S_G_1_rectified.png,5,000,False,000,outside,3,0
+F01_S_G_1_rectified.png,6,3dob01071973,True,3 DOB: 01/0,halo,12,5
+F01_S_G_1_rectified.png,7,sample,False,SAMPLE,halo,6,0
+F01_S_G_1_rectified.png,8,andrewjason,False,ANDREW,halo,11,5
+F01_S_G_1_rectified.png,10,123mainstreet,False,123 MAIN,halo,13,6
+F01_S_G_1_rectified.png,12,apt1,False,APT.1,outside,4,0
+F01_S_G_1_rectified.png,13,harrisburgpa171010000,True,HARRISBU7101-0000,halo,21,5
+F01_S_G_1_rectified.png,14,4bexp01082026,True,4b EXP: 01/026,halo,13,3
+F01_S_G_1_rectified.png,16,4aiss01072022,True,4alSs: 01/07/2022,halo,13,1
+F01_S_G_1_rectified.png,17,15sexm18eyesbro,True,15 SEX: M 18 EYES:BRO,halo,15,0
+F01_S_G_1_rectified.png,18,16hgt511,True,"16HGT:5'-11""",outside,8,0
+F01_S_G_1_rectified.png,19,9classc,False,9 CLASS: C,outside,7,0
+F01_S_G_1_rectified.png,20,9aendnone,False,9a END: NONE,outside,9,0
+F01_S_G_1_rectified.png,22,12restrnone,False,12RESTR:NONE,outside,11,0
+F01_S_G_1_rectified.png,23,andrewsample,False,Andrew Sample,outside,12,0
+F01_S_G_1_rectified.png,24,5dd1234567890123,True,5DD:1234567890123,outside,16,0
+F01_S_G_1_rectified.png,25,organdonor,False,ORGAN DONOR,halo,10,0
+F01_S_G_1_rectified.png,26,456789012345,True,456789012345,halo,12,0
+F02_B_G_0_rectified.png,0,massachusetts,False,MASSACHUSETTS,outside,13,0
+F02_B_G_0_rectified.png,1,drivers,False,DRIVER'S,outside,7,0
+F02_B_G_0_rectified.png,2,license,False,LICENSE,outside,7,0
+F02_B_G_0_rectified.png,4,usa,False,VE,outside,3,3
+F02_B_G_0_rectified.png,5,4aiss,False,aa,outside,5,4
+F02_B_G_0_rectified.png,6,4dnumber,False,,outside,8,8
+F02_B_G_0_rectified.png,7,01122016,True,01/12/2016,outside,8,0
+F02_B_G_0_rectified.png,8,s99988801,True,S99988801,outside,9,0
+F02_B_G_0_rectified.png,10,4bexp,False,ap,outside,5,4
+F02_B_G_0_rectified.png,11,dob,False,o0R,outside,3,3
+F02_B_G_0_rectified.png,13,01122021,True,01/12/2021,outside,8,0
+F02_B_G_0_rectified.png,14,01121959,True,01/12/1959,outside,8,0
+F02_B_G_0_rectified.png,15,cs59,False,2,outside,4,4
+F02_B_G_0_rectified.png,16,class,False,SAN,outside,5,4
+F02_B_G_0_rectified.png,17,12rest,False,NS,outside,6,5
+F02_B_G_0_rectified.png,18,9aend,False,N,outside,5,4
+F02_B_G_0_rectified.png,19,none,False,NONE,outside,4,0
+F02_B_G_0_rectified.png,21,none,False,NONE,outside,4,0
+F02_B_G_0_rectified.png,22,sample,False,AMPLE,core,6,1
+F02_B_G_0_rectified.png,23,sample,False,,halo,6,6
+F02_B_G_0_rectified.png,24,connor,False,WO,halo,6,5
+F02_B_G_0_rectified.png,26,123northmainstreet,False, HIN MAN STREET,halo,18,8
+F02_B_G_0_rectified.png,28,apt1,False,APL.1,outside,4,1
+F02_B_G_0_rectified.png,29,northquincyma021711748,True,NORTH QUINCY MA 12171-4748,outside,22,2
+F02_B_G_0_rectified.png,30,veteran,False,IVETERAN,outside,7,1
+F02_B_G_0_rectified.png,31,connorsample,False,ConmaSample,outside,12,3
+F02_B_G_0_rectified.png,32,15sexm,False,M,outside,6,5
+F02_B_G_0_rectified.png,33,16hgt604,True,"N -04""",outside,8,6
+F02_B_G_0_rectified.png,34,donor,False,0,outside,5,5
+F02_B_G_0_rectified.png,35,011259,True,01/12/59,outside,6,0
+F02_B_G_0_rectified.png,36,5dd01122016rev02222016,True,1 20 09Y22/6 kx (022 2016,outside,22,11
+F02_B_G_1_rectified.png,0,massachusetts,False,MANSACHUSETTS,outside,13,1
+F02_B_G_1_rectified.png,1,drivers,False,P597,halo,7,7
+F02_B_G_1_rectified.png,2,license,False,N,halo,7,6
+F02_B_G_1_rectified.png,4,usa,False,S,outside,3,2
+F02_B_G_1_rectified.png,5,4aiss,False,2,halo,5,5
+F02_B_G_1_rectified.png,6,4dnumber,False,,core,8,8
+F02_B_G_1_rectified.png,7,01122016,True,,halo,8,8
+F02_B_G_1_rectified.png,8,s99988801,True,中,core,9,9
+F02_B_G_1_rectified.png,10,4bexp,False,2,halo,5,5
+F02_B_G_1_rectified.png,11,dob,False,X,core,3,3
+F02_B_G_1_rectified.png,13,01122021,True,Btve,halo,8,8
+F02_B_G_1_rectified.png,14,01121959,True,Pu,halo,8,8
+F02_B_G_1_rectified.png,15,cs59,False,1,halo,4,4
+F02_B_G_1_rectified.png,16,class,False,1,halo,5,5
+F02_B_G_1_rectified.png,17,12rest,False,2,halo,6,5
+F02_B_G_1_rectified.png,18,9aend,False,A,halo,5,4
+F02_B_G_1_rectified.png,19,none,False,X,halo,4,4
+F02_B_G_1_rectified.png,21,none,False,P,halo,4,4
+F02_B_G_1_rectified.png,22,sample,False,,halo,6,6
+F02_B_G_1_rectified.png,23,sample,False,N,outside,6,6
+F02_B_G_1_rectified.png,24,connor,False,1,halo,6,6
+F02_B_G_1_rectified.png,26,123northmainstreet,False,1,core,18,17
+F02_B_G_1_rectified.png,28,apt1,False,1,halo,4,3
+F02_B_G_1_rectified.png,29,northquincyma021711748,True,,halo,22,22
+F02_B_G_1_rectified.png,30,veteran,False,1,halo,7,7
+F02_B_G_1_rectified.png,31,connorsample,False,Coum Samphs,outside,12,6
+F02_B_G_1_rectified.png,32,15sexm,False,14,halo,6,5
+F02_B_G_1_rectified.png,33,16hgt604,True,014,halo,8,7
+F02_B_G_1_rectified.png,34,donor,False,0,halo,5,5
+F02_B_G_1_rectified.png,35,011259,True,MON,halo,6,6
+F02_B_G_1_rectified.png,36,5dd01122016rev02222016,True,_,halo,22,22
+F02_S_G_0_rectified.png,0,massachusetts,False,MASSACHUSETTS,outside,13,0
+F02_S_G_0_rectified.png,1,drivers,False,DRIVER'S,outside,7,0
+F02_S_G_0_rectified.png,2,license,False,LICENSE,outside,7,0
+F02_S_G_0_rectified.png,4,usa,False,USA,outside,3,0
+F02_S_G_0_rectified.png,5,4aiss,False,43 ISS,outside,5,1
+F02_S_G_0_rectified.png,6,4dnumber,False,4d NUMBER,outside,8,0
+F02_S_G_0_rectified.png,7,01122016,True,01/12/2016,outside,8,0
+F02_S_G_0_rectified.png,8,s99988801,True,S99988801,outside,9,0
+F02_S_G_0_rectified.png,10,4bexp,False,4b EXP,outside,5,0
+F02_S_G_0_rectified.png,11,dob,False,DOB,outside,3,0
+F02_S_G_0_rectified.png,13,01122021,True,01/12/2021,outside,8,0
+F02_S_G_0_rectified.png,14,01121959,True,01/12/1959,outside,8,0
+F02_S_G_0_rectified.png,15,cs59,False,CS59,halo,4,0
+F02_S_G_0_rectified.png,16,class,False,CLASS,outside,5,0
+F02_S_G_0_rectified.png,17,12rest,False,12 REST,outside,6,0
+F02_S_G_0_rectified.png,18,9aend,False,9a END,outside,5,0
+F02_S_G_0_rectified.png,19,none,False,NONE,outside,4,0
+F02_S_G_0_rectified.png,21,none,False,NONE,outside,4,0
+F02_S_G_0_rectified.png,22,sample,False,SAMPLE,halo,6,0
+F02_S_G_0_rectified.png,23,sample,False,SAMPLE,halo,6,0
+F02_S_G_0_rectified.png,24,connor,False,CONNOR,halo,6,0
+F02_S_G_0_rectified.png,26,123northmainstreet,False,123 NORTH MAIN STREET,halo,18,0
+F02_S_G_0_rectified.png,28,apt1,False,APT.1,halo,4,0
+F02_S_G_0_rectified.png,29,northquincyma021711748,True,"NORTH QUINCY, MA 02171-1748",outside,22,0
+F02_S_G_0_rectified.png,30,veteran,False,★VETERAN,outside,7,0
+F02_S_G_0_rectified.png,31,connorsample,False,ConnorSample,outside,12,0
+F02_S_G_0_rectified.png,32,15sexm,False,15 SEX M,outside,6,0
+F02_S_G_0_rectified.png,33,16hgt604,True,"16 HGT 6'-04""",outside,8,0
+F02_S_G_0_rectified.png,34,donor,False,DONOR,outside,5,0
+F02_S_G_0_rectified.png,35,011259,True,01/12/59,outside,6,0
+F02_S_G_0_rectified.png,36,5dd01122016rev02222016,True,5 DD 01/12/2016 Rev 02/22/2016,outside,22,0
+F02_S_G_1_rectified.png,0,massachusetts,False,MASSACHUSETTS,outside,13,0
+F02_S_G_1_rectified.png,1,drivers,False,DRIVER'S,halo,7,0
+F02_S_G_1_rectified.png,2,license,False,LICENSE,outside,7,0
+F02_S_G_1_rectified.png,4,usa,False,USA,outside,3,0
+F02_S_G_1_rectified.png,5,4aiss,False,,halo,5,5
+F02_S_G_1_rectified.png,6,4dnumber,False,SER,halo,8,6
+F02_S_G_1_rectified.png,7,01122016,True,,core,8,8
+F02_S_G_1_rectified.png,8,s99988801,True,99988801,halo,9,1
+F02_S_G_1_rectified.png,10,4bexp,False,2,halo,5,5
+F02_S_G_1_rectified.png,11,dob,False,X,halo,3,3
+F02_S_G_1_rectified.png,13,01122021,True,5,halo,8,8
+F02_S_G_1_rectified.png,14,01121959,True,12/1959,halo,8,2
+F02_S_G_1_rectified.png,15,cs59,False,PO,halo,4,4
+F02_S_G_1_rectified.png,16,class,False,,halo,5,5
+F02_S_G_1_rectified.png,17,12rest,False,1,halo,6,5
+F02_S_G_1_rectified.png,18,9aend,False,ND,halo,5,3
+F02_S_G_1_rectified.png,19,none,False,NN,halo,4,2
+F02_S_G_1_rectified.png,21,none,False,NONE,halo,4,0
+F02_S_G_1_rectified.png,22,sample,False,SAMPLE,halo,6,0
+F02_S_G_1_rectified.png,23,sample,False,SAMPL,outside,6,1
+F02_S_G_1_rectified.png,24,connor,False,CONNON,halo,6,1
+F02_S_G_1_rectified.png,26,123northmainstreet,False,122,halo,18,16
+F02_S_G_1_rectified.png,28,apt1,False,AFLT,halo,4,3
+F02_S_G_1_rectified.png,29,northquincyma021711748,True,NORTH 14748,halo,22,13
+F02_S_G_1_rectified.png,30,veteran,False,XVETERAN,halo,7,1
+F02_S_G_1_rectified.png,31,connorsample,False,ConnaSample,outside,12,2
+F02_S_G_1_rectified.png,32,15sexm,False,15 SEX M,outside,6,0
+F02_S_G_1_rectified.png,33,16hgt604,True,"16 HGT 6'-04""",halo,8,0
+F02_S_G_1_rectified.png,34,donor,False,0,halo,5,5
+F02_S_G_1_rectified.png,35,011259,True,01/12/59,outside,6,0
+F02_S_G_1_rectified.png,36,5dd01122016rev02222016,True,5 DD 01/12/2016 Rev 02/22/2016,outside,22,0
+F03_B_G_0_rectified.png,0,texas,False,TEXAS,outside,5,0
+F03_B_G_0_rectified.png,2,identificationcard,False,IDENTIFICATION CARD,outside,18,0
+F03_B_G_0_rectified.png,3,colonelz7mat,False,Caloned 7 Mat,outside,12,3
+F03_B_G_0_rectified.png,4,ple,False,AL,outside,3,2
+F03_B_G_0_rectified.png,5,4ddl12345678,True,12345678,outside,12,4
+F03_B_G_0_rectified.png,6,3d0b01011990,True,01/01/1990,outside,12,4
+F03_B_G_0_rectified.png,7,sample,False,SAMPLE,outside,6,0
+F03_B_G_0_rectified.png,8,jane,False,JANE,outside,4,0
+F03_B_G_0_rectified.png,10,123samplestreet,False,123 SAMPUT STRICT,outside,15,4
+F03_B_G_0_rectified.png,12,samplecitytx12345,True,SAMPII CIT 99 240,outside,17,8
+F03_B_G_0_rectified.png,13,01042025,True,01/04,halo,8,4
+F03_B_G_0_rectified.png,14,4aiss,False,hs,outside,5,4
+F03_B_G_0_rectified.png,15,communication,False,CWWUNICyN,outside,13,7
+F03_B_G_0_rectified.png,16,4bexp01012028,True,01,halo,13,11
+F03_B_G_0_rectified.png,17,impediment,False,MPRTACAE,outside,10,8
+F03_B_G_0_rectified.png,18,011010,True,oeroro,outside,6,6
+F03_B_G_0_rectified.png,19,15sexf,False,15,outside,6,4
+F03_B_G_0_rectified.png,20,16hgt510,True,,halo,8,8
+F03_B_G_0_rectified.png,21,18eyesbro,False,15 1 BRD,outside,9,6
+F03_B_G_0_rectified.png,22,5dd12345678901234567890,True,510 1234547M012345470H0,outside,23,8
+F03_B_G_0_rectified.png,23,janesample,False,JaneSample,outside,10,0
+F03_B_G_0_rectified.png,24,donor,False,2ON0S,outside,5,3
+F03_B_G_0_rectified.png,25,disabledveteran,False,ANSABLED METERAN,outside,15,3
+F03_B_G_1_rectified.png,0,texas,False,TEXAS,outside,5,0
+F03_B_G_1_rectified.png,2,identificationcard,False,IDENTFICATION CARD,outside,18,1
+F03_B_G_1_rectified.png,3,colonelz7mat,False,27M,outside,12,10
+F03_B_G_1_rectified.png,4,ple,False,ALE,outside,3,1
+F03_B_G_1_rectified.png,5,4ddl12345678,True,12341470,outside,12,7
+F03_B_G_1_rectified.png,6,3d0b01011990,True,,halo,12,12
+F03_B_G_1_rectified.png,7,sample,False,SAMPU,outside,6,2
+F03_B_G_1_rectified.png,8,jane,False,JANT,outside,4,1
+F03_B_G_1_rectified.png,10,123samplestreet,False,,halo,15,15
+F03_B_G_1_rectified.png,12,samplecitytx12345,True,AL,halo,17,15
+F03_B_G_1_rectified.png,13,01042025,True,O,halo,8,8
+F03_B_G_1_rectified.png,14,4aiss,False,AL,outside,5,4
+F03_B_G_1_rectified.png,15,communication,False,10,halo,13,13
+F03_B_G_1_rectified.png,16,4bexp01012028,True,,halo,13,13
+F03_B_G_1_rectified.png,17,impediment,False,,halo,10,10
+F03_B_G_1_rectified.png,18,011010,True,LAOTO,outside,6,6
+F03_B_G_1_rectified.png,19,15sexf,False,o-1,outside,6,6
+F03_B_G_1_rectified.png,20,16hgt510,True,片,halo,8,8
+F03_B_G_1_rectified.png,21,18eyesbro,False,2,halo,9,9
+F03_B_G_1_rectified.png,22,5dd12345678901234567890,True,,core,23,23
+F03_B_G_1_rectified.png,23,janesample,False,JaneSample,outside,10,0
+F03_B_G_1_rectified.png,24,donor,False,4,halo,5,5
+F03_B_G_1_rectified.png,25,disabledveteran,False,一,halo,15,15
+F03_S_G_0_rectified.png,0,texas,False,TEXAS,outside,5,0
+F03_S_G_0_rectified.png,2,identificationcard,False,IDENTIFICATION CARD,outside,18,0
+F03_S_G_0_rectified.png,3,colonelz7mat,False,Colonel Zr7. Mat,outside,12,1
+F03_S_G_0_rectified.png,4,ple,False,ALE,outside,3,1
+F03_S_G_0_rectified.png,5,4ddl12345678,True,4d DL12345678,outside,12,0
+F03_S_G_0_rectified.png,6,3d0b01011990,True,300801/01/1990,outside,12,2
+F03_S_G_0_rectified.png,7,sample,False,SAMPLE,outside,6,0
+F03_S_G_0_rectified.png,8,jane,False,JANE,outside,4,0
+F03_S_G_0_rectified.png,10,123samplestreet,False,123 SAMPLE STRE,halo,15,2
+F03_S_G_0_rectified.png,12,samplecitytx12345,True,SAMPLE CITY TY 12345,halo,17,1
+F03_S_G_0_rectified.png,13,01042025,True,01,core,8,6
+F03_S_G_0_rectified.png,14,4aiss,False,4a ls;,outside,5,2
+F03_S_G_0_rectified.png,15,communication,False,COMMUNICATION,outside,13,0
+F03_S_G_0_rectified.png,16,4bexp01012028,True,4b Exp 01,core,13,6
+F03_S_G_0_rectified.png,17,impediment,False,IMPEDIMENT,outside,10,0
+F03_S_G_0_rectified.png,18,011010,True,011010,outside,6,0
+F03_S_G_0_rectified.png,19,15sexf,False,15 Sex f,halo,6,0
+F03_S_G_0_rectified.png,20,16hgt510,True,16 Hgt 5'-10,halo,8,0
+F03_S_G_0_rectified.png,21,18eyesbro,False,18 [yes BRO,halo,9,1
+F03_S_G_0_rectified.png,22,5dd12345678901234567890,True,5 DD 12345678901234567890,halo,23,0
+F03_S_G_0_rectified.png,23,janesample,False,JaneSample,outside,10,0
+F03_S_G_0_rectified.png,24,donor,False,DONOR,outside,5,0
+F03_S_G_0_rectified.png,25,disabledveteran,False,DISABLED VETERAN,outside,15,0
+F03_S_G_1_rectified.png,0,texas,False,TEXAS,outside,5,0
+F03_S_G_1_rectified.png,2,identificationcard,False,IDENTIFICATION CARD,outside,18,0
+F03_S_G_1_rectified.png,3,colonelz7mat,False,Colonel Zo 7. Mat,outside,12,1
+F03_S_G_1_rectified.png,4,ple,False,ALE,outside,3,1
+F03_S_G_1_rectified.png,5,4ddl12345678,True,4d D 12345678,outside,12,1
+F03_S_G_1_rectified.png,6,3d0b01011990,True,01/01/1990,outside,12,4
+F03_S_G_1_rectified.png,7,sample,False,SAMPLE,outside,6,0
+F03_S_G_1_rectified.png,8,jane,False,JANE,outside,4,0
+F03_S_G_1_rectified.png,10,123samplestreet,False,123 SAMPLE STREET,outside,15,0
+F03_S_G_1_rectified.png,12,samplecitytx12345,True,"SAMPLE CITY, TX 12345",halo,17,0
+F03_S_G_1_rectified.png,13,01042025,True,01/04/2075,halo,8,1
+F03_S_G_1_rectified.png,14,4aiss,False,4a Iss,outside,5,0
+F03_S_G_1_rectified.png,15,communication,False,,halo,13,13
+F03_S_G_1_rectified.png,16,4bexp01012028,True,4b Exp 01/01/202,halo,13,1
+F03_S_G_1_rectified.png,17,impediment,False,,halo,10,10
+F03_S_G_1_rectified.png,18,011010,True,oeroto,outside,6,6
+F03_S_G_1_rectified.png,19,15sexf,False,15 Sex F,outside,6,0
+F03_S_G_1_rectified.png,20,16hgt510,True,16 Hgt.10,outside,8,1
+F03_S_G_1_rectified.png,21,18eyesbro,False,18 (y BRO,halo,9,3
+F03_S_G_1_rectified.png,22,5dd12345678901234567890,True,5DD12,halo,23,18
+F03_S_G_1_rectified.png,23,janesample,False,JaneSample,outside,10,0
+F03_S_G_1_rectified.png,24,donor,False,,core,5,5
+F03_S_G_1_rectified.png,25,disabledveteran,False,ILED,halo,15,11
+F04_B_G_0_rectified.png,0,newyorkstate,False,NEW YORK STATE,outside,12,0
+F04_B_G_0_rectified.png,2,driver,False,DRIVER,outside,6,0
+F04_B_G_0_rectified.png,3,license,False,LICENSE,outside,7,0
+F04_B_G_0_rectified.png,4,clas,False,taD,outside,4,3
+F04_B_G_0_rectified.png,5,0123456789,True,123456789,outside,10,1
+F04_B_G_0_rectified.png,6,motorist,False,MOTORST,outside,8,1
+F04_B_G_0_rectified.png,7,michellemarie,False,"MICHELLE, MARIE",outside,13,0
+F04_B_G_0_rectified.png,8,2345anywherestreet,True,DHS ANYM ORE STICET,outside,18,9
+F04_B_G_0_rectified.png,10,albanyny12222,True,"ALBANY, NY 3",outside,13,5
+F04_B_G_0_rectified.png,11,dob10311990,True,00 16.21.1990,halo,11,5
+F04_B_G_0_rectified.png,12,03072022,True,0187/2022,outside,8,2
+F04_B_G_0_rectified.png,13,organ,False,1,outside,5,5
+F04_B_G_0_rectified.png,14,donor,False,CC,outside,5,5
+F04_B_G_0_rectified.png,15,expires10312029,True,L10/31/2029,outside,15,7
+F04_B_G_0_rectified.png,16,michellemmotorist,False,Michatte M Materar,outside,17,8
+F04_B_G_0_rectified.png,17,lnone,False,NONE,outside,5,1
+F04_B_G_0_rectified.png,18,rnone,False,NOE,outside,5,2
+F04_B_G_0_rectified.png,19,oct90,False,OCT90,outside,5,0
+F04_B_G_0_rectified.png,20,sexfheight508eyesbro,False,S F Ng 5'-00° Fw NO,outside,20,14
+F04_B_G_1_rectified.png,0,newyorkstate,False,NEW YORK STATE,outside,12,0
+F04_B_G_1_rectified.png,2,driver,False,DRIVER,halo,6,0
+F04_B_G_1_rectified.png,3,license,False,LICENSE,outside,7,0
+F04_B_G_1_rectified.png,4,clas,False,D,outside,4,4
+F04_B_G_1_rectified.png,5,0123456789,True,1235783,halo,10,4
+F04_B_G_1_rectified.png,6,motorist,False,7,core,8,8
+F04_B_G_1_rectified.png,7,michellemarie,False,OMARIE,halo,13,8
+F04_B_G_1_rectified.png,8,2345anywherestreet,True,EDIS AMCAE STREET,halo,18,10
+F04_B_G_1_rectified.png,10,albanyny12222,True,ALSAN Y 2222,halo,13,4
+F04_B_G_1_rectified.png,11,dob10311990,True,190,halo,11,8
+F04_B_G_1_rectified.png,12,03072022,True,8802/01/202a,core,8,5
+F04_B_G_1_rectified.png,13,organ,False,3,halo,5,5
+F04_B_G_1_rectified.png,14,donor,False,n,halo,5,4
+F04_B_G_1_rectified.png,15,expires10312029,True,1011/269,halo,15,10
+F04_B_G_1_rectified.png,16,michellemmotorist,False,Michette M Moar't,outside,17,6
+F04_B_G_1_rectified.png,17,lnone,False,NONE,outside,5,1
+F04_B_G_1_rectified.png,18,rnone,False,NONE,outside,5,1
+F04_B_G_1_rectified.png,19,oct90,False,OCT90,outside,5,0
+F04_B_G_1_rectified.png,20,sexfheight508eyesbro,False,,outside,20,20
+F04_S_G_0_rectified.png,0,newyorkstate,False,NEW YORK STATE,outside,12,0
+F04_S_G_0_rectified.png,2,driver,False,DRIVER,outside,6,0
+F04_S_G_0_rectified.png,3,license,False,LICENSE,outside,7,0
+F04_S_G_0_rectified.png,4,clas,False,Class D,outside,4,2
+F04_S_G_0_rectified.png,5,0123456789,True,123456789,outside,10,1
+F04_S_G_0_rectified.png,6,motorist,False,MOTORIST,outside,8,0
+F04_S_G_0_rectified.png,7,michellemarie,False,"MICHELLE,MARIE",outside,13,0
+F04_S_G_0_rectified.png,8,2345anywherestreet,True,2345 ANYWHERE STREET,outside,18,0
+F04_S_G_0_rectified.png,10,albanyny12222,True,"ALBANY, NY 12222",halo,13,0
+F04_S_G_0_rectified.png,11,dob10311990,True,0/31/1990,core,11,4
+F04_S_G_0_rectified.png,12,03072022,True,03/07/2022,halo,8,0
+F04_S_G_0_rectified.png,13,organ,False,Organ,outside,5,0
+F04_S_G_0_rectified.png,14,donor,False,Donor,outside,5,0
+F04_S_G_0_rectified.png,15,expires10312029,True,Ex10/31/2029,outside,15,5
+F04_S_G_0_rectified.png,16,michellemmotorist,False,Michette M Motorist,outside,17,2
+F04_S_G_0_rectified.png,17,lnone,False,E NONE,outside,5,1
+F04_S_G_0_rectified.png,18,rnone,False,NONE,outside,5,1
+F04_S_G_0_rectified.png,19,oct90,False,OCT90,outside,5,0
+F04_S_G_0_rectified.png,20,sexfheight508eyesbro,False,Sex F Heigh: 5'-08° Eyes BRO,outside,20,1
+F04_S_G_1_rectified.png,0,newyorkstate,False,NEW YORK STATE,outside,12,0
+F04_S_G_1_rectified.png,2,driver,False,DAIVER,halo,6,1
+F04_S_G_1_rectified.png,3,license,False,LICENSE,outside,7,0
+F04_S_G_1_rectified.png,4,clas,False,Clas D,outside,4,1
+F04_S_G_1_rectified.png,5,0123456789,True,456789,halo,10,4
+F04_S_G_1_rectified.png,6,motorist,False,ST,core,8,6
+F04_S_G_1_rectified.png,7,michellemarie,False,"LLE,MARIE",halo,13,5
+F04_S_G_1_rectified.png,8,2345anywherestreet,True,WHERESTREET,halo,18,7
+F04_S_G_1_rectified.png,10,albanyny12222,True,NY 12222,halo,13,6
+F04_S_G_1_rectified.png,11,dob10311990,True,131/1990,halo,11,4
+F04_S_G_1_rectified.png,12,03072022,True,03/07/2022,halo,8,0
+F04_S_G_1_rectified.png,13,organ,False,Organ,outside,5,0
+F04_S_G_1_rectified.png,14,donor,False,Donor,outside,5,0
+F04_S_G_1_rectified.png,15,expires10312029,True,10/31/2029,outside,15,7
+F04_S_G_1_rectified.png,16,michellemmotorist,False,Michette M Motor,outside,17,5
+F04_S_G_1_rectified.png,17,lnone,False,ENONE,outside,5,1
+F04_S_G_1_rectified.png,18,rnone,False,NONE,outside,5,1
+F04_S_G_1_rectified.png,19,oct90,False,OCT90,outside,5,0
+F04_S_G_1_rectified.png,20,sexfheight508eyesbro,False,Sex F Height 5'-08° Eyes BRO,outside,20,0
+F05_B_G_0_rectified.png,0,illinois,False,ILLINOIS,outside,8,0
+F05_B_G_0_rectified.png,1,alexigiannouliassecretaryofstate,False,Ael Gmms- Secty of State,outside,32,16
+F05_B_G_0_rectified.png,2,usa,False,UBA,outside,3,1
+F05_B_G_0_rectified.png,3,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F05_B_G_0_rectified.png,4,4dlicnop14247778133,True,P142-4777-8133,outside,19,7
+F05_B_G_0_rectified.png,5,3dob05091978,True,05/09/1978,outside,12,4
+F05_B_G_0_rectified.png,6,4bexp05312025,True,05/31/2025,outside,13,5
+F05_B_G_0_rectified.png,7,4alss01092023,True,01/09/2023,outside,13,5
+F05_B_G_0_rectified.png,8,public,False,PUBLIC,outside,6,0
+F05_B_G_0_rectified.png,9,johnq,False,JOHNG,halo,5,1
+F05_B_G_0_rectified.png,11,124anystreet,False,TREET,halo,12,7
+F05_B_G_0_rectified.png,13,anytownil62702,True,A,core,14,13
+F05_B_G_0_rectified.png,14,9classd,False,00,halo,7,7
+F05_B_G_0_rectified.png,15,9aendnone,False,NONE,outside,9,5
+F05_B_G_0_rectified.png,16,donor,False,HONT,outside,5,3
+F05_B_G_0_rectified.png,17,12restj88,True,2,outside,9,8
+F05_B_G_0_rectified.png,18,16hgt509,True,"8'-00""",outside,8,7
+F05_B_G_0_rectified.png,19,15sexm,False,IS SEK: M,outside,6,3
+F05_B_G_0_rectified.png,20,johnqpublec,False,JohmQRblc,outside,11,4
+F05_B_G_0_rectified.png,21,17wgt180ibs18eyesbrn,True,180 ,outside,20,17
+F05_B_G_0_rectified.png,22,typeorg,False,TIPE ORG,outside,7,1
+F05_B_G_0_rectified.png,23,5dd20160210993dt0328,True,600201213026,outside,20,12
+F05_B_G_1_rectified.png,0,illinois,False,ILLINOIS,outside,8,0
+F05_B_G_1_rectified.png,1,alexigiannouliassecretaryofstate,False,Alesi Giannoulias· Secretary of State,outside,32,1
+F05_B_G_1_rectified.png,2,usa,False,USA,outside,3,0
+F05_B_G_1_rectified.png,3,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F05_B_G_1_rectified.png,4,4dlicnop14247778133,True,P142-4777-8133,outside,19,7
+F05_B_G_1_rectified.png,5,3dob05091978,True,0501078,halo,12,6
+F05_B_G_1_rectified.png,6,4bexp05312025,True,05/51/2025,halo,13,6
+F05_B_G_1_rectified.png,7,4alss01092023,True,/2023,halo,13,9
+F05_B_G_1_rectified.png,8,public,False,PUBLIC,halo,6,0
+F05_B_G_1_rectified.png,9,johnq,False,JOHNQ,halo,5,0
+F05_B_G_1_rectified.png,11,124anystreet,False,124ANYT,halo,12,5
+F05_B_G_1_rectified.png,13,anytownil62702,True,ANYTC,halo,14,10
+F05_B_G_1_rectified.png,14,9classd,False,1,halo,7,7
+F05_B_G_1_rectified.png,15,9aendnone,False,1,halo,9,9
+F05_B_G_1_rectified.png,16,donor,False,NoT,halo,5,3
+F05_B_G_1_rectified.png,17,12restj88,True,,halo,9,9
+F05_B_G_1_rectified.png,18,16hgt509,True,.00,halo,8,7
+F05_B_G_1_rectified.png,19,15sexm,False,,halo,6,6
+F05_B_G_1_rectified.png,20,johnqpublec,False,JotmQPbe,outside,11,5
+F05_B_G_1_rectified.png,21,17wgt180ibs18eyesbrn,True,,halo,20,20
+F05_B_G_1_rectified.png,22,typeorg,False,TIe ORO,outside,7,3
+F05_B_G_1_rectified.png,23,5dd20160210993dt0328,True,,halo,20,20
+F05_S_G_0_rectified.png,0,illinois,False,ILLINOIS,outside,8,0
+F05_S_G_0_rectified.png,1,alexigiannouliassecretaryofstate,False,Alexi Giannoulias · Secretary of State,outside,32,0
+F05_S_G_0_rectified.png,2,usa,False,USA,outside,3,0
+F05_S_G_0_rectified.png,3,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F05_S_G_0_rectified.png,4,4dlicnop14247778133,True,4d LIc No:P142-4777-8133,outside,19,0
+F05_S_G_0_rectified.png,5,3dob05091978,True,3 DOB:05/09/1978,outside,12,0
+F05_S_G_0_rectified.png,6,4bexp05312025,True,4bEXP:05/31/2025,outside,13,0
+F05_S_G_0_rectified.png,7,4alss01092023,True,4alss:01/09/2023,outside,13,0
+F05_S_G_0_rectified.png,8,public,False,PUBLIC,halo,6,0
+F05_S_G_0_rectified.png,9,johnq,False,JOHN Q,halo,5,0
+F05_S_G_0_rectified.png,11,124anystreet,False,124 ANY STREET,halo,12,0
+F05_S_G_0_rectified.png,13,anytownil62702,True,"ANYTOWN, IL 62702",halo,14,0
+F05_S_G_0_rectified.png,14,9classd,False,CLASS: D,halo,7,1
+F05_S_G_0_rectified.png,15,9aendnone,False,94 END:NONE,outside,9,1
+F05_S_G_0_rectified.png,16,donor,False,DONOR,outside,5,0
+F05_S_G_0_rectified.png,17,12restj88,True,2RESTJ88,halo,9,1
+F05_S_G_0_rectified.png,18,16hgt509,True,"16HGT: 5'-09""",outside,8,0
+F05_S_G_0_rectified.png,19,15sexm,False,15 SEX: M,outside,6,0
+F05_S_G_0_rectified.png,20,johnqpublec,False,Johm QPublc,outside,11,2
+F05_S_G_0_rectified.png,21,17wgt180ibs18eyesbrn,True,17 WGT: 180 IbS 18EYES: BRN,outside,20,0
+F05_S_G_0_rectified.png,22,typeorg,False,TYPE:ORG,outside,7,0
+F05_S_G_0_rectified.png,23,5dd20160210993dt0328,True,5 DD 20160210993DT0328,outside,20,0
+F05_S_G_1_rectified.png,0,illinois,False,ILLINOIS,outside,8,0
+F05_S_G_1_rectified.png,1,alexigiannouliassecretaryofstate,False,Alexi Giannoulias· Secretary of State,outside,32,0
+F05_S_G_1_rectified.png,2,usa,False,USA,outside,3,0
+F05_S_G_1_rectified.png,3,driverslicense,False,DRIVER'S LICENSE,outside,14,0
+F05_S_G_1_rectified.png,4,4dlicnop14247778133,True,4d LIc No:P142-4777-8133,outside,19,0
+F05_S_G_1_rectified.png,5,3dob05091978,True,1978,halo,12,8
+F05_S_G_1_rectified.png,6,4bexp05312025,True,425,halo,13,10
+F05_S_G_1_rectified.png,7,4alss01092023,True,4aiss:01/09/2023,outside,13,1
+F05_S_G_1_rectified.png,8,public,False,PUBLE,halo,6,2
+F05_S_G_1_rectified.png,9,johnq,False,JOHN,halo,5,1
+F05_S_G_1_rectified.png,11,124anystreet,False,124 ANYRER,halo,12,4
+F05_S_G_1_rectified.png,13,anytownil62702,True,AALRS,halo,14,12
+F05_S_G_1_rectified.png,14,9classd,False,,halo,7,7
+F05_S_G_1_rectified.png,15,9aendnone,False,ONONE,halo,9,5
+F05_S_G_1_rectified.png,16,donor,False,BONOD,outside,5,2
+F05_S_G_1_rectified.png,17,12restj88,True,,core,9,9
+F05_S_G_1_rectified.png,18,16hgt509,True,-09,halo,8,6
+F05_S_G_1_rectified.png,19,15sexm,False,欢,halo,6,6
+F05_S_G_1_rectified.png,20,johnqpublec,False,Johm QPublic,outside,11,2
+F05_S_G_1_rectified.png,21,17wgt180ibs18eyesbrn,True,EYE:BRN,halo,20,14
+F05_S_G_1_rectified.png,22,typeorg,False,TYPE:ORG,outside,7,0
+F05_S_G_1_rectified.png,23,5dd20160210993dt0328,True,5DD20160210883DT0328,halo,20,2
+F06_B_G_0_rectified.png,1,,False,,outside,10,0
+F06_B_G_0_rectified.png,3,,False,,outside,13,0
+F06_B_G_0_rectified.png,4,,False,,outside,3,0
+F06_B_G_0_rectified.png,5,,False,,outside,18,0
+F06_B_G_0_rectified.png,6,,True,,outside,17,5
+F06_B_G_0_rectified.png,7,,False,,outside,6,1
+F06_B_G_0_rectified.png,8,,False,,outside,5,1
+F06_B_G_0_rectified.png,9,,True,,outside,4,6
+F06_B_G_0_rectified.png,10,,False,,outside,7,1
+F06_B_G_0_rectified.png,11,,True,,outside,13,2
+F06_B_G_0_rectified.png,12,,True,,halo,12,4
+F06_B_G_0_rectified.png,13,,True,,halo,16,16
+F06_B_G_0_rectified.png,14,,True,,halo,18,14
+F06_B_G_0_rectified.png,16,,False,,halo,6,6
+F06_B_G_0_rectified.png,17,,False,,outside,9,2
+F06_B_G_0_rectified.png,18,,True,,halo,8,7
+F06_B_G_0_rectified.png,19,,True,,outside,10,3
+F06_B_G_0_rectified.png,20,,False,,outside,23,5
+F06_B_G_0_rectified.png,22,,True,,outside,8,0
+F06_B_G_0_rectified.png,23,,False,,outside,5,2
+F06_B_G_0_rectified.png,24,,False,,outside,5,1
+F06_B_G_0_rectified.png,25,,True,,outside,28,12
+F06_B_G_0_rectified.png,26,,True,,outside,11,1
+F06_B_G_1_rectified.png,1,,False,,outside,10,0
+F06_B_G_1_rectified.png,3,,False,,outside,13,0
+F06_B_G_1_rectified.png,4,,False,,outside,3,0
+F06_B_G_1_rectified.png,5,,False,,halo,18,0
+F06_B_G_1_rectified.png,6,,True,,halo,17,5
+F06_B_G_1_rectified.png,7,,False,,outside,6,2
+F06_B_G_1_rectified.png,8,,False,,halo,5,1
+F06_B_G_1_rectified.png,9,,True,,outside,4,4
+F06_B_G_1_rectified.png,10,,False,,halo,7,2
+F06_B_G_1_rectified.png,11,,True,,halo,13,5
+F06_B_G_1_rectified.png,12,,True,,halo,12,10
+F06_B_G_1_rectified.png,13,,True,,halo,16,16
+F06_B_G_1_rectified.png,14,,True,,halo,18,13
+F06_B_G_1_rectified.png,16,,False,,halo,6,6
+F06_B_G_1_rectified.png,17,,False,,halo,9,9
+F06_B_G_1_rectified.png,18,,True,,halo,8,7
+F06_B_G_1_rectified.png,19,,True,,halo,10,10
+F06_B_G_1_rectified.png,20,,False,,halo,23,23
+F06_B_G_1_rectified.png,22,,True,,halo,8,1
+F06_B_G_1_rectified.png,23,,False,,halo,5,5
+F06_B_G_1_rectified.png,24,,False,,outside,5,2
+F06_B_G_1_rectified.png,25,,True,,halo,28,28
+F06_B_G_1_rectified.png,26,,True,,halo,11,7
+F06_S_G_0_rectified.png,1,,False,,outside,10,0
+F06_S_G_0_rectified.png,3,,False,,outside,13,0
+F06_S_G_0_rectified.png,4,,False,,outside,3,0
+F06_S_G_0_rectified.png,5,,False,,outside,18,0
+F06_S_G_0_rectified.png,6,,True,,outside,17,0
+F06_S_G_0_rectified.png,7,,False,,outside,6,0
+F06_S_G_0_rectified.png,8,,False,,outside,5,0
+F06_S_G_0_rectified.png,9,,True,,outside,4,1
+F06_S_G_0_rectified.png,10,,False,,outside,7,0
+F06_S_G_0_rectified.png,11,,True,,outside,13,0
+F06_S_G_0_rectified.png,12,,True,,halo,12,0
+F06_S_G_0_rectified.png,13,,True,,halo,16,0
+F06_S_G_0_rectified.png,14,,True,,halo,18,5
+F06_S_G_0_rectified.png,16,,False,,core,6,4
+F06_S_G_0_rectified.png,17,,False,,outside,9,0
+F06_S_G_0_rectified.png,18,,True,,halo,8,2
+F06_S_G_0_rectified.png,19,,True,,outside,10,0
+F06_S_G_0_rectified.png,20,,False,,halo,23,2
+F06_S_G_0_rectified.png,22,,True,,outside,8,0
+F06_S_G_0_rectified.png,23,,False,,outside,5,0
+F06_S_G_0_rectified.png,24,,False,,outside,5,1
+F06_S_G_0_rectified.png,25,,True,,halo,28,0
+F06_S_G_0_rectified.png,26,,True,,outside,11,0
+F06_S_G_1_rectified.png,1,,False,,outside,10,0
+F06_S_G_1_rectified.png,3,,False,,outside,13,0
+F06_S_G_1_rectified.png,4,,False,,outside,3,0
+F06_S_G_1_rectified.png,5,,False,,outside,18,0
+F06_S_G_1_rectified.png,6,,True,,halo,17,0
+F06_S_G_1_rectified.png,7,,False,,outside,6,0
+F06_S_G_1_rectified.png,8,,False,,outside,5,0
+F06_S_G_1_rectified.png,9,,True,,outside,4,1
+F06_S_G_1_rectified.png,10,,False,,halo,7,0
+F06_S_G_1_rectified.png,11,,True,,halo,13,4
+F06_S_G_1_rectified.png,12,,True,,halo,12,1
+F06_S_G_1_rectified.png,13,,True,,halo,16,5
+F06_S_G_1_rectified.png,14,,True,,halo,18,9
+F06_S_G_1_rectified.png,16,,False,,halo,6,0
+F06_S_G_1_rectified.png,17,,False,,halo,9,7
+F06_S_G_1_rectified.png,18,,True,,halo,8,0
+F06_S_G_1_rectified.png,19,,True,,halo,10,5
+F06_S_G_1_rectified.png,20,,False,,halo,23,12
+F06_S_G_1_rectified.png,22,,True,,halo,8,0
+F06_S_G_1_rectified.png,23,,False,,halo,5,2
+F06_S_G_1_rectified.png,24,,False,,outside,5,0
+F06_S_G_1_rectified.png,25,,True,,core,28,16
+F06_S_G_1_rectified.png,26,,True,,halo,11,0
+F07_B_G_0_rectified.png,0,,False,,outside,10,0
+F07_B_G_0_rectified.png,1,,False,,outside,13,0
+F07_B_G_0_rectified.png,2,,False,,outside,3,3
+F07_B_G_0_rectified.png,3,,True,,outside,10,2
+F07_B_G_0_rectified.png,4,,False,,outside,6,2
+F07_B_G_0_rectified.png,5,,False,,outside,11,1
+F07_B_G_0_rectified.png,6,,True,,outside,11,3
+F07_B_G_0_rectified.png,7,,False,,outside,7,1
+F07_B_G_0_rectified.png,8,,False,,halo,6,2
+F07_B_G_0_rectified.png,9,,False,,halo,8,3
+F07_B_G_0_rectified.png,10,,True,,halo,22,22
+F07_B_G_0_rectified.png,11,,True,,halo,16,16
+F07_B_G_0_rectified.png,12,,True,,halo,11,4
+F07_B_G_0_rectified.png,13,,True,,outside,8,0
+F07_B_G_0_rectified.png,14,,False,,halo,12,11
+F07_B_G_0_rectified.png,15,,False,,outside,7,1
+F07_B_G_0_rectified.png,16,,False,,outside,4,2
+F07_B_G_0_rectified.png,17,,False,,outside,7,4
+F07_B_G_0_rectified.png,18,,True,,outside,14,11
+F07_B_G_0_rectified.png,19,,False,,outside,3,4
+F07_B_G_0_rectified.png,20,,False,,outside,4,4
+F07_B_G_0_rectified.png,21,,True,,outside,8,2
+F07_B_G_0_rectified.png,22,,True,,outside,21,8
+F07_B_G_1_rectified.png,0,,False,,outside,10,0
+F07_B_G_1_rectified.png,1,,False,,outside,13,0
+F07_B_G_1_rectified.png,2,,False,,outside,3,3
+F07_B_G_1_rectified.png,3,,True,,halo,10,2
+F07_B_G_1_rectified.png,4,,False,,halo,6,4
+F07_B_G_1_rectified.png,5,,False,,halo,11,7
+F07_B_G_1_rectified.png,6,,True,,halo,11,5
+F07_B_G_1_rectified.png,7,,False,,halo,7,6
+F07_B_G_1_rectified.png,8,,False,,halo,6,3
+F07_B_G_1_rectified.png,9,,False,,halo,8,2
+F07_B_G_1_rectified.png,10,,True,,halo,22,22
+F07_B_G_1_rectified.png,11,,True,,halo,16,13
+F07_B_G_1_rectified.png,12,,True,,halo,11,4
+F07_B_G_1_rectified.png,13,,True,,halo,8,3
+F07_B_G_1_rectified.png,14,,False,,halo,12,10
+F07_B_G_1_rectified.png,15,,False,,halo,7,4
+F07_B_G_1_rectified.png,16,,False,,halo,4,4
+F07_B_G_1_rectified.png,17,,False,,halo,7,7
+F07_B_G_1_rectified.png,18,,True,,halo,14,14
+F07_B_G_1_rectified.png,19,,False,,halo,3,2
+F07_B_G_1_rectified.png,20,,False,,outside,4,4
+F07_B_G_1_rectified.png,21,,True,,halo,8,1
+F07_B_G_1_rectified.png,22,,True,,halo,21,21
+F07_S_G_0_rectified.png,0,,False,,outside,10,0
+F07_S_G_0_rectified.png,1,,False,,outside,13,0
+F07_S_G_0_rectified.png,2,,False,,outside,3,0
+F07_S_G_0_rectified.png,3,,True,,outside,10,2
+F07_S_G_0_rectified.png,4,,False,,outside,6,0
+F07_S_G_0_rectified.png,5,,False,,outside,11,0
+F07_S_G_0_rectified.png,6,,True,,halo,11,0
+F07_S_G_0_rectified.png,7,,False,,outside,7,0
+F07_S_G_0_rectified.png,8,,False,,halo,6,1
+F07_S_G_0_rectified.png,9,,False,,halo,8,1
+F07_S_G_0_rectified.png,10,,True,,halo,22,3
+F07_S_G_0_rectified.png,11,,True,,core,16,3
+F07_S_G_0_rectified.png,12,,True,,core,11,3
+F07_S_G_0_rectified.png,13,,True,,outside,8,0
+F07_S_G_0_rectified.png,14,,False,,halo,12,2
+F07_S_G_0_rectified.png,15,,False,,outside,7,0
+F07_S_G_0_rectified.png,16,,False,,outside,4,0
+F07_S_G_0_rectified.png,17,,False,,outside,7,0
+F07_S_G_0_rectified.png,18,,True,,outside,14,0
+F07_S_G_0_rectified.png,19,,False,,outside,3,0
+F07_S_G_0_rectified.png,20,,False,,outside,4,1
+F07_S_G_0_rectified.png,21,,True,,outside,8,0
+F07_S_G_0_rectified.png,22,,True,,outside,21,0
+F07_S_G_1_rectified.png,0,,False,,outside,10,0
+F07_S_G_1_rectified.png,1,,False,,outside,13,0
+F07_S_G_1_rectified.png,2,,False,,outside,3,0
+F07_S_G_1_rectified.png,3,,True,,halo,10,2
+F07_S_G_1_rectified.png,4,,False,,outside,6,0
+F07_S_G_1_rectified.png,5,,False,,outside,11,0
+F07_S_G_1_rectified.png,6,,True,,halo,11,3
+F07_S_G_1_rectified.png,7,,False,,outside,7,0
+F07_S_G_1_rectified.png,8,,False,,halo,6,1
+F07_S_G_1_rectified.png,9,,False,,halo,8,1
+F07_S_G_1_rectified.png,10,,True,,halo,22,6
+F07_S_G_1_rectified.png,11,,True,,halo,16,3
+F07_S_G_1_rectified.png,12,,True,,halo,11,3
+F07_S_G_1_rectified.png,13,,True,,outside,8,0
+F07_S_G_1_rectified.png,14,,False,,halo,12,12
+F07_S_G_1_rectified.png,15,,False,,outside,7,0
+F07_S_G_1_rectified.png,16,,False,,halo,4,1
+F07_S_G_1_rectified.png,17,,False,,outside,7,0
+F07_S_G_1_rectified.png,18,,True,,outside,14,0
+F07_S_G_1_rectified.png,19,,False,,outside,3,0
+F07_S_G_1_rectified.png,20,,False,,outside,4,1
+F07_S_G_1_rectified.png,21,,True,,outside,8,0
+F07_S_G_1_rectified.png,22,,True,,outside,21,0
+F08_B_G_0_rectified.png,0,,False,,outside,6,0
+F08_B_G_0_rectified.png,1,,False,,outside,10,2
+F08_B_G_0_rectified.png,2,,False,,outside,7,0
+F08_B_G_0_rectified.png,3,,False,,halo,6,0
+F08_B_G_0_rectified.png,4,,False,,halo,4,0
+F08_B_G_0_rectified.png,5,,True,,outside,9,0
+F08_B_G_0_rectified.png,6,,True,,outside,15,0
+F08_B_G_1_rectified.png,0,,False,,halo,6,0
+F08_B_G_1_rectified.png,1,,False,,halo,10,9
+F08_B_G_1_rectified.png,2,,False,,halo,7,0
+F08_B_G_1_rectified.png,3,,False,,halo,6,2
+F08_B_G_1_rectified.png,4,,False,,halo,4,0
+F08_B_G_1_rectified.png,5,,True,,halo,9,0
+F08_B_G_1_rectified.png,6,,True,,halo,15,0
+F08_S_G_0_rectified.png,0,,False,,outside,6,0
+F08_S_G_0_rectified.png,1,,False,,outside,10,0
+F08_S_G_0_rectified.png,2,,False,,outside,7,0
+F08_S_G_0_rectified.png,3,,False,,halo,6,0
+F08_S_G_0_rectified.png,4,,False,,halo,4,0
+F08_S_G_0_rectified.png,5,,True,,outside,9,0
+F08_S_G_0_rectified.png,6,,True,,outside,15,0
+F08_S_G_1_rectified.png,0,,False,,halo,6,0
+F08_S_G_1_rectified.png,1,,False,,halo,10,0
+F08_S_G_1_rectified.png,2,,False,,outside,7,0
+F08_S_G_1_rectified.png,3,,False,,halo,6,0
+F08_S_G_1_rectified.png,4,,False,,halo,4,0
+F08_S_G_1_rectified.png,5,,True,,halo,9,0
+F08_S_G_1_rectified.png,6,,True,,outside,15,0
+F09_B_G_0_rectified.png,0,,False,,outside,6,0
+F09_B_G_0_rectified.png,1,,False,,outside,4,0
+F09_B_G_0_rectified.png,2,,False,,outside,15,1
+F09_B_G_0_rectified.png,3,,False,,outside,10,0
+F09_B_G_1_rectified.png,0,,False,,halo,6,0
+F09_B_G_1_rectified.png,1,,False,,halo,4,0
+F09_B_G_1_rectified.png,2,,False,,core,15,14
+F09_B_G_1_rectified.png,3,,False,,halo,10,0
+F09_S_G_0_rectified.png,0,,False,,outside,6,0
+F09_S_G_0_rectified.png,1,,False,,outside,4,0
+F09_S_G_0_rectified.png,2,,False,,outside,15,0
+F09_S_G_0_rectified.png,3,,False,,outside,10,0
+F09_S_G_1_rectified.png,0,,False,,halo,6,0
+F09_S_G_1_rectified.png,1,,False,,halo,4,1
+F09_S_G_1_rectified.png,2,,False,,halo,15,7
+F09_S_G_1_rectified.png,3,,False,,halo,10,1
+F10_B_G_0_rectified.png,0,,False,,outside,10,0
+F10_B_G_0_rectified.png,1,,False,,outside,3,0
+F10_B_G_0_rectified.png,2,,False,,outside,13,0
+F10_B_G_0_rectified.png,3,,True,,outside,10,0
+F10_B_G_0_rectified.png,4,,True,,outside,11,0
+F10_B_G_0_rectified.png,5,,True,,outside,11,1
+F10_B_G_0_rectified.png,6,,True,,outside,11,2
+F10_B_G_0_rectified.png,7,,False,,outside,6,0
+F10_B_G_0_rectified.png,8,,False,,outside,7,2
+F10_B_G_0_rectified.png,9,,False,,outside,8,1
+F10_B_G_0_rectified.png,10,,False,,outside,7,1
+F10_B_G_0_rectified.png,11,,False,,outside,6,0
+F10_B_G_0_rectified.png,12,,True,,outside,8,8
+F10_B_G_0_rectified.png,13,,False,,outside,5,0
+F10_B_G_0_rectified.png,14,,False,,halo,5,5
+F10_B_G_0_rectified.png,15,,False,,halo,9,3
+F10_B_G_0_rectified.png,16,,False,,halo,13,2
+F10_B_G_0_rectified.png,17,,True,,halo,18,0
+F10_B_G_0_rectified.png,18,,True,,halo,13,4
+F10_B_G_0_rectified.png,19,,False,,halo,4,2
+F10_B_G_0_rectified.png,20,,False,,halo,14,2
+F10_B_G_0_rectified.png,21,,True,,halo,14,7
+F10_B_G_0_rectified.png,22,,False,,outside,3,3
+F10_B_G_0_rectified.png,23,,True,,outside,8,2
+F10_B_G_0_rectified.png,24,,True,,outside,21,5
+F10_B_G_1_rectified.png,0,,False,,halo,10,0
+F10_B_G_1_rectified.png,1,,False,,outside,3,0
+F10_B_G_1_rectified.png,2,,False,,halo,13,0
+F10_B_G_1_rectified.png,3,,True,,outside,10,2
+F10_B_G_1_rectified.png,4,,True,,halo,11,0
+F10_B_G_1_rectified.png,5,,True,,halo,11,2
+F10_B_G_1_rectified.png,6,,True,,halo,11,7
+F10_B_G_1_rectified.png,7,,False,,outside,6,0
+F10_B_G_1_rectified.png,8,,False,,outside,7,2
+F10_B_G_1_rectified.png,9,,False,,outside,8,0
+F10_B_G_1_rectified.png,10,,False,,outside,7,2
+F10_B_G_1_rectified.png,11,,False,,outside,6,1
+F10_B_G_1_rectified.png,12,,True,,outside,8,8
+F10_B_G_1_rectified.png,13,,False,,outside,5,0
+F10_B_G_1_rectified.png,14,,False,,outside,5,5
+F10_B_G_1_rectified.png,15,,False,,outside,9,0
+F10_B_G_1_rectified.png,16,,False,,outside,13,0
+F10_B_G_1_rectified.png,17,,True,,outside,18,0
+F10_B_G_1_rectified.png,18,,True,,outside,13,1
+F10_B_G_1_rectified.png,19,,False,,outside,4,2
+F10_B_G_1_rectified.png,20,,False,,outside,14,0
+F10_B_G_1_rectified.png,21,,True,,outside,14,7
+F10_B_G_1_rectified.png,22,,False,,outside,3,3
+F10_B_G_1_rectified.png,23,,True,,outside,8,1
+F10_B_G_1_rectified.png,24,,True,,outside,21,3
+F10_S_G_0_rectified.png,0,,False,,outside,10,0
+F10_S_G_0_rectified.png,1,,False,,outside,3,0
+F10_S_G_0_rectified.png,2,,False,,outside,13,0
+F10_S_G_0_rectified.png,3,,True,,outside,10,0
+F10_S_G_0_rectified.png,4,,True,,outside,11,0
+F10_S_G_0_rectified.png,5,,True,,outside,11,0
+F10_S_G_0_rectified.png,6,,True,,outside,11,0
+F10_S_G_0_rectified.png,7,,False,,outside,6,0
+F10_S_G_0_rectified.png,8,,False,,outside,7,0
+F10_S_G_0_rectified.png,9,,False,,outside,8,0
+F10_S_G_0_rectified.png,10,,False,,outside,7,0
+F10_S_G_0_rectified.png,11,,False,,outside,6,0
+F10_S_G_0_rectified.png,12,,True,,outside,8,0
+F10_S_G_0_rectified.png,13,,False,,outside,5,0
+F10_S_G_0_rectified.png,14,,False,,halo,5,0
+F10_S_G_0_rectified.png,15,,False,,halo,9,0
+F10_S_G_0_rectified.png,16,,False,,halo,13,0
+F10_S_G_0_rectified.png,17,,True,,outside,18,0
+F10_S_G_0_rectified.png,18,,True,,outside,13,0
+F10_S_G_0_rectified.png,19,,False,,outside,4,0
+F10_S_G_0_rectified.png,20,,False,,outside,14,0
+F10_S_G_0_rectified.png,21,,True,,outside,14,0
+F10_S_G_0_rectified.png,22,,False,,outside,3,0
+F10_S_G_0_rectified.png,23,,True,,outside,8,0
+F10_S_G_0_rectified.png,24,,True,,outside,21,0
+F10_S_G_1_rectified.png,0,,False,,outside,10,0
+F10_S_G_1_rectified.png,1,,False,,outside,3,0
+F10_S_G_1_rectified.png,2,,False,,halo,13,0
+F10_S_G_1_rectified.png,3,,True,,outside,10,0
+F10_S_G_1_rectified.png,4,,True,,outside,11,0
+F10_S_G_1_rectified.png,5,,True,,outside,11,0
+F10_S_G_1_rectified.png,6,,True,,halo,11,1
+F10_S_G_1_rectified.png,7,,False,,outside,6,0
+F10_S_G_1_rectified.png,8,,False,,outside,7,0
+F10_S_G_1_rectified.png,9,,False,,outside,8,0
+F10_S_G_1_rectified.png,10,,False,,outside,7,0
+F10_S_G_1_rectified.png,11,,False,,outside,6,0
+F10_S_G_1_rectified.png,12,,True,,outside,8,0
+F10_S_G_1_rectified.png,13,,False,,outside,5,0
+F10_S_G_1_rectified.png,14,,False,,outside,5,0
+F10_S_G_1_rectified.png,15,,False,,outside,9,0
+F10_S_G_1_rectified.png,16,,False,,outside,13,0
+F10_S_G_1_rectified.png,17,,True,,outside,18,0
+F10_S_G_1_rectified.png,18,,True,,outside,13,0
+F10_S_G_1_rectified.png,19,,False,,outside,4,0
+F10_S_G_1_rectified.png,20,,False,,outside,14,0
+F10_S_G_1_rectified.png,21,,True,,outside,14,0
+F10_S_G_1_rectified.png,22,,False,,outside,3,0
+F10_S_G_1_rectified.png,23,,True,,outside,8,0
+F10_S_G_1_rectified.png,24,,True,,outside,21,0
+F10_S_G_2_rectified.png,0,,False,,outside,10,0
+F10_S_G_2_rectified.png,1,,False,,outside,3,0
+F10_S_G_2_rectified.png,2,,False,,outside,13,0
+F10_S_G_2_rectified.png,3,,True,,outside,10,0
+F10_S_G_2_rectified.png,4,,True,,outside,11,0
+F10_S_G_2_rectified.png,5,,True,,outside,11,0
+F10_S_G_2_rectified.png,6,,True,,outside,11,0
+F10_S_G_2_rectified.png,7,,False,,outside,6,0
+F10_S_G_2_rectified.png,8,,False,,outside,7,0
+F10_S_G_2_rectified.png,9,,False,,outside,8,0
+F10_S_G_2_rectified.png,10,,False,,outside,7,0
+F10_S_G_2_rectified.png,11,,False,,outside,6,0
+F10_S_G_2_rectified.png,12,,True,,outside,8,0
+F10_S_G_2_rectified.png,13,,False,,outside,5,0
+F10_S_G_2_rectified.png,14,,False,,outside,5,0
+F10_S_G_2_rectified.png,15,,False,,core,9,1
+F10_S_G_2_rectified.png,16,,False,,halo,13,0
+F10_S_G_2_rectified.png,17,,True,,halo,18,0
+F10_S_G_2_rectified.png,18,,True,,halo,13,0
+F10_S_G_2_rectified.png,19,,False,,halo,4,0
+F10_S_G_2_rectified.png,20,,False,,outside,14,0
+F10_S_G_2_rectified.png,21,,True,,outside,14,0
+F10_S_G_2_rectified.png,22,,False,,outside,3,0
+F10_S_G_2_rectified.png,23,,True,,outside,8,0
+F10_S_G_2_rectified.png,24,,True,,outside,21,0
+F11_B_G_0_rectified.png,0,,False,,outside,15,0
+F11_B_G_0_rectified.png,1,,False,,outside,23,0
+F11_B_G_0_rectified.png,2,,True,,outside,16,0
+F11_B_G_1_rectified.png,0,,False,,halo,15,0
+F11_B_G_1_rectified.png,1,,False,,outside,23,1
+F11_B_G_1_rectified.png,2,,True,,outside,16,0
+F11_B_G_2_rectified.png,0,,False,,halo,15,11
+F11_B_G_2_rectified.png,1,,False,,halo,23,23
+F11_B_G_2_rectified.png,2,,True,,outside,16,16
+F11_S_G_0_rectified.png,0,,False,,halo,15,3
+F11_S_G_0_rectified.png,1,,False,,outside,23,0
+F11_S_G_0_rectified.png,2,,True,,outside,16,0
+F11_S_G_1_rectified.png,0,,False,,halo,15,4
+F11_S_G_1_rectified.png,1,,False,,outside,23,0
+F11_S_G_1_rectified.png,2,,True,,outside,16,0
+F12_B_G_0_rectified.png,0,,False,,outside,13,3
+F12_B_G_0_rectified.png,1,,False,,outside,13,0
+F12_B_G_0_rectified.png,2,,False,,outside,6,1
+F12_B_G_0_rectified.png,3,,True,,outside,10,2
+F12_B_G_0_rectified.png,4,,True,,outside,11,3
+F12_B_G_0_rectified.png,5,,False,,outside,7,0
+F12_B_G_0_rectified.png,6,,False,,outside,9,2
+F12_B_G_0_rectified.png,7,,False,,halo,13,2
+F12_B_G_0_rectified.png,8,,False,,outside,3,3
+F12_B_G_0_rectified.png,9,,True,,halo,14,3
+F12_B_G_0_rectified.png,10,,True,,halo,15,6
+F12_B_G_0_rectified.png,11,,True,,halo,11,2
+F12_B_G_0_rectified.png,12,,False,,halo,8,1
+F12_B_G_0_rectified.png,13,,True,,outside,8,0
+F12_B_G_0_rectified.png,14,,False,,halo,5,4
+F12_B_G_0_rectified.png,15,,False,,halo,4,4
+F12_B_G_0_rectified.png,16,,False,,halo,7,6
+F12_B_G_0_rectified.png,17,,False,,outside,7,0
+F12_B_G_0_rectified.png,18,,True,,halo,14,14
+F12_B_G_0_rectified.png,19,,False,,outside,3,3
+F12_B_G_0_rectified.png,20,,False,,outside,4,4
+F12_B_G_0_rectified.png,21,,True,,halo,21,18
+F12_B_G_0_rectified.png,22,,True,,outside,8,0
+F12_B_G_1_rectified.png,0,,False,,outside,13,1
+F12_B_G_1_rectified.png,1,,False,,outside,13,0
+F12_B_G_1_rectified.png,2,,False,,outside,6,0
+F12_B_G_1_rectified.png,3,,True,,outside,10,2
+F12_B_G_1_rectified.png,4,,True,,halo,11,0
+F12_B_G_1_rectified.png,5,,False,,outside,7,1
+F12_B_G_1_rectified.png,6,,False,,halo,9,0
+F12_B_G_1_rectified.png,7,,False,,halo,13,1
+F12_B_G_1_rectified.png,8,,False,,halo,3,3
+F12_B_G_1_rectified.png,9,,True,,halo,14,1
+F12_B_G_1_rectified.png,10,,True,,halo,15,5
+F12_B_G_1_rectified.png,11,,True,,halo,11,1
+F12_B_G_1_rectified.png,12,,False,,halo,8,0
+F12_B_G_1_rectified.png,13,,True,,outside,8,0
+F12_B_G_1_rectified.png,14,,False,,halo,5,0
+F12_B_G_1_rectified.png,15,,False,,halo,4,2
+F12_B_G_1_rectified.png,16,,False,,outside,7,0
+F12_B_G_1_rectified.png,17,,False,,outside,7,0
+F12_B_G_1_rectified.png,18,,True,,outside,14,3
+F12_B_G_1_rectified.png,19,,False,,outside,3,2
+F12_B_G_1_rectified.png,20,,False,,outside,4,4
+F12_B_G_1_rectified.png,21,,True,,outside,21,2
+F12_B_G_1_rectified.png,22,,True,,outside,8,0
+F12_B_G_2_rectified.png,0,,False,,outside,13,0
+F12_B_G_2_rectified.png,1,,False,,outside,13,0
+F12_B_G_2_rectified.png,2,,False,,outside,6,0
+F12_B_G_2_rectified.png,3,,True,,outside,10,0
+F12_B_G_2_rectified.png,4,,True,,outside,11,0
+F12_B_G_2_rectified.png,5,,False,,outside,7,2
+F12_B_G_2_rectified.png,6,,False,,outside,9,0
+F12_B_G_2_rectified.png,7,,False,,outside,13,0
+F12_B_G_2_rectified.png,8,,False,,outside,3,0
+F12_B_G_2_rectified.png,9,,True,,outside,14,0
+F12_B_G_2_rectified.png,10,,True,,outside,15,2
+F12_B_G_2_rectified.png,11,,True,,outside,11,0
+F12_B_G_2_rectified.png,12,,False,,outside,8,0
+F12_B_G_2_rectified.png,13,,True,,halo,8,1
+F12_B_G_2_rectified.png,14,,False,,outside,5,0
+F12_B_G_2_rectified.png,15,,False,,outside,4,0
+F12_B_G_2_rectified.png,16,,False,,outside,7,0
+F12_B_G_2_rectified.png,17,,False,,halo,7,2
+F12_B_G_2_rectified.png,18,,True,,outside,14,4
+F12_B_G_2_rectified.png,19,,False,,outside,3,3
+F12_B_G_2_rectified.png,20,,False,,outside,4,4
+F12_B_G_2_rectified.png,21,,True,,outside,21,3
+F12_B_G_2_rectified.png,22,,True,,outside,8,1
+F12_S_G_0_rectified.png,0,,False,,outside,13,0
+F12_S_G_0_rectified.png,1,,False,,outside,13,0
+F12_S_G_0_rectified.png,2,,False,,outside,6,0
+F12_S_G_0_rectified.png,3,,True,,outside,10,0
+F12_S_G_0_rectified.png,4,,True,,outside,11,0
+F12_S_G_0_rectified.png,5,,False,,outside,7,0
+F12_S_G_0_rectified.png,6,,False,,outside,9,0
+F12_S_G_0_rectified.png,7,,False,,outside,13,0
+F12_S_G_0_rectified.png,8,,False,,outside,3,1
+F12_S_G_0_rectified.png,9,,True,,outside,14,0
+F12_S_G_0_rectified.png,10,,True,,halo,15,0
+F12_S_G_0_rectified.png,11,,True,,halo,11,0
+F12_S_G_0_rectified.png,12,,False,,halo,8,0
+F12_S_G_0_rectified.png,13,,True,,outside,8,0
+F12_S_G_0_rectified.png,14,,False,,halo,5,0
+F12_S_G_0_rectified.png,15,,False,,halo,4,4
+F12_S_G_0_rectified.png,16,,False,,halo,7,0
+F12_S_G_0_rectified.png,17,,False,,outside,7,0
+F12_S_G_0_rectified.png,18,,True,,halo,14,6
+F12_S_G_0_rectified.png,19,,False,,outside,3,0
+F12_S_G_0_rectified.png,20,,False,,outside,4,0
+F12_S_G_0_rectified.png,21,,True,,halo,21,2
+F12_S_G_0_rectified.png,22,,True,,outside,8,0
+F12_S_G_1_rectified.png,0,,False,,outside,13,0
+F12_S_G_1_rectified.png,1,,False,,outside,13,0
+F12_S_G_1_rectified.png,2,,False,,outside,6,0
+F12_S_G_1_rectified.png,3,,True,,outside,10,0
+F12_S_G_1_rectified.png,4,,True,,halo,11,1
+F12_S_G_1_rectified.png,5,,False,,outside,7,0
+F12_S_G_1_rectified.png,6,,False,,halo,9,0
+F12_S_G_1_rectified.png,7,,False,,halo,13,0
+F12_S_G_1_rectified.png,8,,False,,halo,3,3
+F12_S_G_1_rectified.png,9,,True,,halo,14,0
+F12_S_G_1_rectified.png,10,,True,,halo,15,0
+F12_S_G_1_rectified.png,11,,True,,halo,11,0
+F12_S_G_1_rectified.png,12,,False,,halo,8,0
+F12_S_G_1_rectified.png,13,,True,,outside,8,0
+F12_S_G_1_rectified.png,14,,False,,halo,5,0
+F12_S_G_1_rectified.png,15,,False,,outside,4,1
+F12_S_G_1_rectified.png,16,,False,,outside,7,0
+F12_S_G_1_rectified.png,17,,False,,outside,7,0
+F12_S_G_1_rectified.png,18,,True,,outside,14,0
+F12_S_G_1_rectified.png,19,,False,,outside,3,0
+F12_S_G_1_rectified.png,20,,False,,outside,4,0
+F12_S_G_1_rectified.png,21,,True,,outside,21,0
+F12_S_G_1_rectified.png,22,,True,,outside,8,0
+F12_S_G_2_rectified.png,0,,False,,outside,13,0
+F12_S_G_2_rectified.png,1,,False,,outside,13,0
+F12_S_G_2_rectified.png,2,,False,,outside,6,0
+F12_S_G_2_rectified.png,3,,True,,halo,10,0
+F12_S_G_2_rectified.png,4,,True,,halo,11,1
+F12_S_G_2_rectified.png,5,,False,,outside,7,0
+F12_S_G_2_rectified.png,6,,False,,halo,9,0
+F12_S_G_2_rectified.png,7,,False,,halo,13,0
+F12_S_G_2_rectified.png,8,,False,,halo,3,3
+F12_S_G_2_rectified.png,9,,True,,halo,14,0
+F12_S_G_2_rectified.png,10,,True,,halo,15,0
+F12_S_G_2_rectified.png,11,,True,,halo,11,0
+F12_S_G_2_rectified.png,12,,False,,halo,8,0
+F12_S_G_2_rectified.png,13,,True,,outside,8,0
+F12_S_G_2_rectified.png,14,,False,,halo,5,0
+F12_S_G_2_rectified.png,15,,False,,halo,4,1
+F12_S_G_2_rectified.png,16,,False,,outside,7,0
+F12_S_G_2_rectified.png,17,,False,,outside,7,0
+F12_S_G_2_rectified.png,18,,True,,halo,14,0
+F12_S_G_2_rectified.png,19,,False,,outside,3,0
+F12_S_G_2_rectified.png,20,,False,,outside,4,0
+F12_S_G_2_rectified.png,21,,True,,outside,21,0
+F12_S_G_2_rectified.png,22,,True,,outside,8,0
+F13_B_G_0_rectified.png,0,,False,,halo,5,0
+F13_B_G_0_rectified.png,1,,False,,halo,7,0
+F13_B_G_0_rectified.png,2,,False,,halo,15,7
+F13_B_G_0_rectified.png,3,,False,,outside,10,0
+F13_B_G_1_rectified.png,0,,False,,outside,5,0
+F13_B_G_1_rectified.png,1,,False,,outside,7,0
+F13_B_G_1_rectified.png,2,,False,,halo,15,3
+F13_B_G_1_rectified.png,3,,False,,outside,10,0
+F13_S_G_0_rectified.png,0,,False,,outside,5,0
+F13_S_G_0_rectified.png,1,,False,,outside,7,0
+F13_S_G_0_rectified.png,2,,False,,outside,15,0
+F13_S_G_0_rectified.png,3,,False,,outside,10,0
+F13_S_G_1_rectified.png,0,,False,,outside,5,0
+F13_S_G_1_rectified.png,1,,False,,outside,7,0
+F13_S_G_1_rectified.png,2,,False,,outside,15,0
+F13_S_G_1_rectified.png,3,,False,,outside,10,0
+F14_B_G_0_rectified.png,0,,False,,halo,4,0
+F14_B_G_0_rectified.png,1,,False,,halo,8,0
+F14_B_G_0_rectified.png,2,,False,,halo,4,0
+F14_B_G_0_rectified.png,3,,False,,halo,7,0
+F14_B_G_0_rectified.png,4,,True,,outside,15,1
+F14_B_G_1_rectified.png,0,,False,,halo,4,0
+F14_B_G_1_rectified.png,1,,False,,halo,8,0
+F14_B_G_1_rectified.png,2,,False,,halo,4,0
+F14_B_G_1_rectified.png,3,,False,,halo,7,0
+F14_B_G_1_rectified.png,4,,True,,outside,15,1
+F14_B_G_2_rectified.png,0,,False,,halo,4,0
+F14_B_G_2_rectified.png,1,,False,,halo,8,8
+F14_B_G_2_rectified.png,2,,False,,halo,4,4
+F14_B_G_2_rectified.png,3,,False,,core,7,7
+F14_B_G_2_rectified.png,4,,True,,halo,15,10
+F14_S_G_0_rectified.png,0,,False,,halo,4,0
+F14_S_G_0_rectified.png,1,,False,,outside,8,0
+F14_S_G_0_rectified.png,2,,False,,outside,4,0
+F14_S_G_0_rectified.png,3,,False,,outside,7,0
+F14_S_G_0_rectified.png,4,,True,,outside,15,1
+F14_S_G_1_rectified.png,0,,False,,halo,4,0
+F14_S_G_1_rectified.png,1,,False,,halo,8,0
+F14_S_G_1_rectified.png,2,,False,,outside,4,0
+F14_S_G_1_rectified.png,3,,False,,core,7,0
+F14_S_G_1_rectified.png,4,,True,,outside,15,1

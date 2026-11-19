@@ -1,0 +1,7 @@
+split,condition,metric,n,change,ci_low,ci_high,better,worse,significant
+test,B_G,char_acc_halo,7,0.003759398496240599,0.0,0.011278195488721799,1,0,no
+test,B_G,char_acc_outside,9,0.0005393743257820925,0.0,0.0016181229773462775,1,0,no
+test,B_G,char_acc_digits_glare,5,0.0,0.0,0.0,0,0,no
+test,S_G,char_acc_halo,7,0.0,0.0,0.0,0,0,no
+test,S_G,char_acc_outside,8,0.0008064516129032279,0.0,0.0024193548387096836,1,0,no
+test,S_G,char_acc_digits_glare,5,0.0,0.0,0.0,0,0,no

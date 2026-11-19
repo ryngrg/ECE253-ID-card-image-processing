@@ -54,6 +54,7 @@ Usage
   python classical_glare.py --params classical_params.json --no-veil   --out-dir out/classical_inpaint
   python classical_glare.py --params classical_params.json --no-inpaint --out-dir out/classical_veil
   python classical_glare.py --params classical_params.json --core-fill telea --out-dir out/classical_telea
+  python classical_glare.py --params classical_params.json --denoise guided --dn-h 8 --out-dir out/classical_dn
   python classical_glare.py --veil-mode decay --params classical_params_decay.json --out-dir out/classical_decay
   add --debug to save [input | core+veil map | output] panels in OUT_DIR/debug/
   then: python evaluate.py --engine paddleocr --treated-dir out/classical --name classical
@@ -102,6 +103,10 @@ DEFAULTS = dict(
     descratch=0,         # px; >1: grayscale opening inside the veil zone (removes bright scratches)
     clahe=0.0,           # >0: CLAHE clip limit applied to lightness inside the veil zone
     core_fill="flat",    # flat (median colour of a ring around the core) | telea (fast-marching inpainting)
+    # denoise before the veil inversion (it multiplies noise by 1/(1-a))
+    denoise="none",      # none | nlm (non-local means) | guided (self-guided filter) | bilateral
+    dn_h=5.0,            # strength: NLM h / bilateral sigma_color; guided eps = dn_h^2
+    dn_a_full=0.5,       # denoise weight = clip(a / dn_a_full, 0, 1): full strength from this veil on
     # halo veil, old distance-decay model (veil_mode=decay)
     alpha0=0.5,
     tau=60.0,
@@ -232,6 +237,24 @@ def estimate_veil(img: np.ndarray, core: np.ndarray, p: dict) -> np.ndarray:
 # --------------------------------------------------------------------------
 # Removal
 # --------------------------------------------------------------------------
+def denoise_image(img: np.ndarray, p: dict) -> np.ndarray:
+    """Edge-preserving denoise of the whole image (blended in by veil strength by the caller)."""
+    h = float(p["dn_h"])
+    if p["denoise"] == "nlm":
+        return cv2.fastNlMeansDenoisingColored(img, None, h, h, 7, 21)
+    if p["denoise"] == "guided":  # self-guided filter (He et al.), per channel, radius 4
+        I = img.astype(np.float32)
+        box = lambda z: cv2.boxFilter(z, -1, (9, 9), borderType=cv2.BORDER_REFLECT)
+        mean = box(I)
+        var = box(I * I) - mean * mean
+        A = var / (var + h * h)
+        B = mean - A * mean
+        return np.clip(box(A) * I + box(B) + 0.5, 0, 255).astype(np.uint8)
+    if p["denoise"] == "bilateral":
+        return cv2.bilateralFilter(img, 7, h * 4, 3)
+    raise ValueError(f"unknown denoise {p['denoise']}")
+
+
 def remove_glare(img: np.ndarray, p: dict, return_maps: bool = False):
     p = {**DEFAULTS, **p}
     core = detect_core(img, p)
@@ -249,7 +272,13 @@ def remove_glare(img: np.ndarray, p: dict, return_maps: bool = False):
             corr = cv2.cvtColor(lab.astype(np.uint8), cv2.COLOR_LAB2BGR)
         else:  # white specular veil: all channels
             a3 = a[..., None]
-            corr = np.clip((out.astype(np.float32) - 255 * a3) / (1 - a3) + 0.5, 0, 255).astype(np.uint8)
+            src = out.astype(np.float32)
+            if p["denoise"] != "none":
+                # the inversion multiplies noise by 1/(1-a) (~7x at a=0.85): denoise first, with a
+                # weight that grows with the veil, so weakly veiled pixels stay as they are
+                wgt = np.clip(a3 / p["dn_a_full"], 0, 1)
+                src = wgt * denoise_image(out, p).astype(np.float32) + (1 - wgt) * src
+            corr = np.clip((src - 255 * a3) / (1 - a3) + 0.5, 0, 255).astype(np.uint8)
         if p["descratch"] > 1:
             # specular light only ADDS brightness: a grayscale opening removes bright structures
             # thinner than the element (laminate scratches) and keeps dark strokes; weighted by
@@ -396,6 +425,9 @@ def main():
     ap.add_argument("--no-inpaint", action="store_true")
     ap.add_argument("--no-veil", action="store_true")
     ap.add_argument("--core-fill", choices=["flat", "telea"], default=None)
+    ap.add_argument("--denoise", choices=["none", "nlm", "guided", "bilateral"], default=None,
+                    help="edge-preserving denoise before the veil inversion, weighted by the veil")
+    ap.add_argument("--dn-h", type=float, default=None, help="denoise strength (see DEFAULTS)")
     ap.add_argument("--debug", action="store_true")
     a = ap.parse_args()
 
@@ -414,6 +446,10 @@ def main():
         p["use_veil"] = False
     if a.core_fill:
         p["core_fill"] = a.core_fill
+    if a.denoise:
+        p["denoise"] = a.denoise
+    if a.dn_h is not None:
+        p["dn_h"] = a.dn_h
     print("Parameters:", {k: p[k] for k in sorted(p)})
     run_batch(load_pairs(a.pairs, splits=a.splits.split(","), conditions=a.conditions.split(",")),
               p, a.out_dir, a.debug)

@@ -11,6 +11,8 @@ Usage
   python compare_runs.py --base untreated --new classical
   python compare_runs.py --base untreated --new classical --splits test
   python compare_runs.py --base untreated --new classical --worst 5
+  python compare_runs.py --results-dir results/box_paddle --base untreated --new dl_ft --splits test
+      (fixed-box recognition per zone, from box_ocr.py: char_acc_* / exact_* columns)
 
 Reads results/{name}_per_image.csv.  For cer, lower is better; the sign is flipped so that
 a positive change always means "new is better".
@@ -22,6 +24,8 @@ import numpy as np
 import pandas as pd
 
 METRICS = ["ssim", "ssim_glare", "ssim_outside", "cer", "word_f1", "f1_gt", "recall_gt"]
+BOX_ZONES = ["core", "halo", "outside", "glare", "all", "digits_glare", "digits_all"]
+METRICS += [f"{k}_{z}" for k in ("char_acc", "exact") for z in BOX_ZONES]  # box_ocr.py
 LOWER_IS_BETTER = {"cer"}
 
 
@@ -38,7 +42,9 @@ def main():
     ap.add_argument("--results-dir", default="results", type=Path)
     ap.add_argument("--splits", default="train,val,test")
     ap.add_argument("--worst", type=int, default=0, help="also list the N worst images per metric")
+    ap.add_argument("--metrics", default=None, help="comma-separated subset of metrics (default: all present)")
     a = ap.parse_args()
+    metrics = a.metrics.split(",") if a.metrics else METRICS
 
     base = pd.read_csv(a.results_dir / f"{a.base}_per_image.csv")
     new = pd.read_csv(a.results_dir / f"{a.new}_per_image.csv")
@@ -48,7 +54,7 @@ def main():
 
     rows = []
     for (split, cond), g in m.groupby(["split", "condition"]):
-        for met in METRICS:
+        for met in metrics:
             if f"{met}_b" not in g or g[f"{met}_b"].isna().all():
                 continue
             d = (g[f"{met}_n"] - g[f"{met}_b"]).dropna().to_numpy()
@@ -66,7 +72,7 @@ def main():
     res.to_csv(out, index=False)
 
     if a.worst:
-        for met in ["ssim_outside", "word_f1"]:
+        for met in ["ssim_outside", "word_f1", "char_acc_glare"]:
             if f"{met}_b" not in m:
                 continue
             d = (m[f"{met}_n"] - m[f"{met}_b"]) * (-1 if met in LOWER_IS_BETTER else 1)

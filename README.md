@@ -21,7 +21,10 @@ Runs on an M2 MacBook (PyTorch MPS). All scripts are run from the project root.
 | classical glare removal | `src/classical_glare.py` | `out/classical*/` |
 | deep-learning glare removal (fine-tune + infer) | `src/finetune_dl.py` | `checkpoints/`, `out/dl_*/` |
 | SSIM + OCR evaluation | `src/evaluate.py` | `results/{name}_per_image.csv`, `_summary.csv`, `all_methods.csv` |
+| **main OCR metric:** fixed-box recognition per glare zone (PaddleOCR / Tesseract) | `src/box_ocr.py` | `results/box_layout.csv`, `results/box_{paddle,tesseract}/` |
 | paired comparison with bootstrap CIs | `src/compare_runs.py` | `results/compare_*.csv` |
+| external test set: MIDV-2020 highlight photos (rectify, align to scan, field boxes, glare masks) | `src/prepare_midv.py` | `data/midv/`, `out/pairs_midv.csv`, `results/box_layout_midv.csv` |
+| runtime per image of each method | `src/benchmark_runtime.py` | `results/runtime_{test,midv}.csv` |
 | OCR loss by glare zone (core / halo / outside) | `src/analyze_ocr_loss.py` | `results/ocr_loss_*.csv` |
 | everything above after prepare_data | `bash src/run_glare_experiments.sh` | |
 
@@ -54,6 +57,14 @@ The proposal's two-zone design, with a new veil estimator.
   * The numbers come from `--tune`: best ssim_glare with ssim_outside harm ≤ 0.002 on train+val S_G.
   * Tried and dropped: CLAHE in the halo (hurt OCR), and grayscale opening against laminate scratches
     (raised SSIM, not OCR).
+  * Also dropped: **denoise before the veil inversion** (`--denoise`, ablation `out/classical_dn`).
+    * Why it was tried: the inversion multiplies noise by 1/(1−a).
+    * Variants: NLM, self-guided filter or bilateral, weighted by the veil; selected on train+val with the
+      fixed-box metric.
+    * NLM blurs thin strokes and hurts PaddleOCR. The guided filter (h = 8) was neutral for PaddleOCR and helped
+      Tesseract on train S_G (+0.067).
+    * On test it changed nothing for PaddleOCR, and for Tesseract halo it was −0.10 vs classical (n.s.).
+      The gain did not transfer.
 
 ### 2. Deep learning: detection + removal network (`src/finetune_dl.py`)
 The proposal's JSHDR network (Fu et al., CVPR 2021) is no longer available: its GitHub repository and weights are
@@ -70,6 +81,52 @@ detection-and-removal network:
 * **Checkpoint selection:** on val S_G with the do-no-harm rule. Best was iteration 1350.
 
 ## Results (test split; 4 unseen cards)
+
+### Main OCR metric: fixed-box recognition per glare zone (`src/box_ocr.py`)
+Whole-card OCR mixes in text-detector churn (boxes split / merge differently on near-identical images) and
+dilutes the glare (~10% of the card). So:
+* **Fixed boxes.** The line boxes PaddleOCR detects on each card's clean S_D reference are used for every image
+  of that card (all images are aligned to it). 342 of 368 boxes, ~17 per card, are labelled with their true text:
+  the closest substring of `ground_truth/{card}.txt` to the reference reading. Dropped: field numbers (< 3 chars),
+  signatures, non-Latin text.
+* **Recognition only.** Each box is cropped (no padding: lines are tightly packed; vertical boxes are rotated as
+  in the PaddleOCR pipeline) and recognised:
+  * PaddleOCR `TextRecognition` (PP-OCRv6_medium_rec, the pipeline's own recogniser);
+  * Tesseract `--psm 7` (one line, crop upscaled 2×).
+
+  A box whose pixels a method does not change gets a bit-identical reading.
+* **Zones** per image from the untreated image: core (clipped) / halo (rest of the glare region) / outside.
+* **Score:** character accuracy = 1 − edit distance / target length, on lowercase letters and digits, pooled over
+  the boxes of a zone. `digits` = boxes with ≥ 4 digits (dates, ID numbers).
+* **Noise floor** (`ref_jitter`): the reference with every box shifted by ≤ 2 px, noise σ = 2 and JPEG q = 90.
+  Its paired difference from `reference` is ≤ 0.006 per zone for PaddleOCR, and up to ~0.03-0.07 for Tesseract.
+  (A second real clean photo per card would be the proper floor; see NEXT_STEPS.)
+
+**Test S_G (n = 8 images; 5 core / 26 halo / 77 outside / 18 digit-in-glare boxes), character accuracy:**
+| method | PaddleOCR core | halo | outside | digits in glare | Tesseract core | halo | outside | digits in glare |
+|---|---|---|---|---|---|---|---|---|
+| untreated | 0.444 | 0.869 | 0.940 | 0.855 | 0.133 | 0.417 | 0.744 | 0.379 |
+| classical | 0.378 | 0.854 | 0.939 | 0.844 | 0.178 | 0.480 | 0.747 | 0.441 |
+| DL zero-shot | 0.400 | 0.714 | 0.939 | 0.754 | 0.222 | 0.574 | 0.763 | 0.539 |
+| DL fine-tuned | **0.467** | 0.817 | 0.937 | 0.812 | **0.244** | **0.620** | **0.779** | **0.586** |
+| *reference (ceiling)* | 0.978 | 0.994 | 0.987 | 0.988 | 0.867 | 0.837 | 0.848 | 0.770 |
+
+**Paired differences vs untreated, test S_G halo** (95% bootstrap CI over images, images better/worse;
+`results/box_*/compare_untreated_vs_*.csv`):
+| method | PaddleOCR halo | Tesseract halo | Tesseract digits in glare |
+|---|---|---|---|
+| classical | −0.016 [−0.035, −0.003] 0/3 | +0.100 n.s. 5/2 | +0.083 n.s. |
+| DL zero-shot | −0.140 [−0.216, −0.063] 0/5 | +0.163 [0.046, 0.310] 6/0 | +0.178 [0.019, 0.337] |
+| DL fine-tuned | −0.043 [−0.083, −0.011] 0/3 | **+0.217 [0.106, 0.363] 7/0** | **+0.223 [0.085, 0.361]** |
+
+The same signs hold on train and val, which were not used to pick anything here:
+* PaddleOCR halo: DL fine-tuned −0.016 on train S_G (significant); classical +0.006 on train.
+* Tesseract halo: DL fine-tuned +0.16 on train S_G and +0.17 on val S_G; zero-shot +0.12 / +0.07.
+
+B_G (blur + glare): the halo is unreadable for both engines (char accuracy ≤ 0.25), and no method changes that
+significantly on test.
+
+### Whole-card OCR and SSIM
 Columns: SSIM to the glare-free reference (whole image / inside the glare / far from the glare);
 CER and word F1 of the OCR text versus the OCR text of the reference; F1 versus the typed ground truth.
 
@@ -88,6 +145,12 @@ CER and word F1 of the OCR text versus the OCR text of the reference; F1 versus 
 **B_G (blur + glare, n = 9):** no method changes OCR significantly.
 f1_gt: untreated 0.390, classical 0.392, DL zero-shot 0.374, DL fine-tuned 0.364.
 Blur dominates; the DL model was trained only on sharp images.
+
+**Tesseract, whole card** (`--psm 11`; runs `*_tess`, `results/compare_untreated_tess_vs_*.csv`).
+Tesseract reads whole ID cards poorly: S_G f1_gt is 0.40 untreated vs 0.75 with PaddleOCR (layout, not glare).
+The line crops above avoid this floor.
+* S_G f1_gt: untreated 0.399, classical 0.407, DL zero-shot 0.404, DL fine-tuned 0.429.
+* The only significant paired change is DL fine-tuned recall_gt, +0.052 [0.009, 0.098] (5/1).
 
 **Paired differences on test S_G** (`results/compare_*.csv`, 95% bootstrap CI, images better/worse):
 | comparison | ssim_glare | ssim_outside | CER (+ = better) | f1_gt |
@@ -112,26 +175,200 @@ DL detection head 0.30 (0.59 on train: it overfits with 31 images); classical se
 Figures: `results/figures/test_S_G_comparison.jpg` (whole cards) and `results/figures/test_S_G_zoom.png`
 (strongest glare). Classical debug panels (input | veil map + cores | output) are in `out/classical/debug/`.
 
+### External test set: MIDV-2020 (`src/prepare_midv.py`; `results/box_{paddle,tesseract}_midv/`)
+[MIDV-2020](https://arxiv.org/abs/2107.00396) (CC BY-SA 2.5) has 1000 mock identity documents of 10 types
+(5 ID cards, 5 passports), each with a digital template (field rectangles + text), a flatbed scan and a phone
+photo. Photos 60–69 of every type are labelled "highlight present": **100 real glare photos of 100 different
+documents, from two phones (iPhone XR, Samsung S10), none used for tuning or training.** Download from the public
+mirror `ftp://smartengines.com/midv-2020/dataset/` (`photo.tar`, `templates.tar`, `scan_upright.tar`; ~6 GB;
+commands in the script's docstring).
+* **Rectification.** Photo and scan are warped from their annotated document quads to our resolution
+  (~11.8 px/mm: cards 1012 px wide, passports 1478 px). The photo is then ECC-aligned to the scan; the ECC step is
+  kept only if it raises the correlation and moves no corner > 15 px (69/100), otherwise the quad warp alone.
+* **Reference = the scan** of the same printed document (glare-free). For the glare zones it is tone-matched to the
+  photo (per-channel gain/offset + smooth illumination field, σ = 150 px, fitted outside outliers), then the usual
+  rule: > 40 grey levels brighter. Median glare area 10.5% of the document.
+* **Fixed boxes = annotated fields** of the template, mapped to the scan frame (template→scan ECC, same guard).
+  997 of 1341 fields are kept: Latin letters/digits only after folding accents (drops Greek, Cyrillic, Ə),
+  ≥ 3 characters, horizontal, not overlapping another field. Crops get a 2 px pad (the field rectangles are
+  tight and fields are well separated); `--fold-accents` strips diacritics from the readings too.
+* **Same frozen methods**: `classical_params.json`, DocSHRNet zero-shot, `checkpoints/docshr_mt_best.pt`.
+  Scored against the annotated field text only.
+
+**MIDV-2020 highlight photos (n = 100; 49 core / 434 halo / 514 outside / 232 digit-in-glare boxes), character accuracy:**
+| method | PaddleOCR core | halo | outside | digits in glare | Tesseract core | halo | outside | digits in glare |
+|---|---|---|---|---|---|---|---|---|
+| untreated | **0.636** | **0.830** | **0.962** | **0.838** | 0.218 | 0.334 | 0.747 | 0.333 |
+| classical | 0.484 | 0.829 | 0.962 | 0.821 | 0.159 | 0.333 | 0.748 | 0.333 |
+| DL zero-shot | 0.467 | 0.735 | 0.957 | 0.730 | 0.237 | 0.435 | **0.785** | 0.431 |
+| DL fine-tuned | 0.511 | 0.754 | 0.952 | 0.743 | **0.281** | **0.447** | 0.776 | **0.446** |
+| *reference = scan (ceiling)* | 1.000 | 0.995 | 0.993 | 0.994 | 0.922 | 0.900 | 0.890 | 0.944 |
+
+**Paired differences vs untreated** (95% bootstrap CI over images, images better/worse; per-image scores pool the
+boxes of the zone, so n = images with ≥ 1 box in it: 91 halo, 16 core):
+| method | PaddleOCR halo | PaddleOCR core | Tesseract halo | Tesseract digits in glare |
+|---|---|---|---|---|
+| classical | −0.001 [−0.003, −0.000] 1/8 | −0.105 [−0.174, −0.041] 2/10 | +0.002 n.s. 7/10 | +0.003 n.s. |
+| DL zero-shot | −0.105 [−0.131, −0.081] 5/68 | −0.160 [−0.248, −0.080] | +0.114 [0.081, 0.149] 61/10 | +0.107 [0.072, 0.142] |
+| DL fine-tuned | −0.086 [−0.105, −0.068] 3/68 | −0.133 [−0.219, −0.059] | **+0.125 [0.094, 0.159] 70/10** | **+0.126 [0.095, 0.160]** |
+
+* Noise floor: `ref_jitter` vs `reference` differs by ≤ 0.002 per zone for PaddleOCR and ≤ 0.03 for Tesseract.
+* DL fine-tuned vs zero-shot: not significantly different in the halo (PaddleOCR +0.020, Tesseract +0.012, both
+  n.s.); fine-tuned is better in the PaddleOCR core (+0.027 [0.002, 0.053]).
+* The signs are the same for all 10 document types and both phones (`results/midv_by_doctype.csv`): DL raises
+  Tesseract glare-zone accuracy for 9–10 of 10 types and lowers PaddleOCR's for all 10.
+* Figure: `results/figures/midv_examples.jpg` (untreated / classical / DL zero-shot / DL fine-tuned / scan).
+
+### Multi-frame fusion: MIDV-2020 clips (`src/prepare_midv_clips.py`, `src/fuse_frames.py`; `results/box_{paddle,tesseract}_midv_clips/`)
+Glare moves with the camera; the document does not. MIDV-2020 clips 90–99 of every type are "highlight present"
+videos: **100 clips of 100 documents** (not the photo documents), every 6th frame annotated with the document quad
+(4K frames, document ~1,530 px wide). Nothing is learned or tuned on them; all constants were fixed before the first
+OCR run. Download: `clips.tar` from the same mirror (10.3 GB; only the frames of clips 90–99 are extracted).
+* **Frames.** Each frame is warped from its quad. Dropped if < 80% of the document is in the image or it is
+  motion-blurred (variance of Laplacian < 0.5 × clip median; blur is bimodal, ~0.1 vs ~1 × median). Pixels outside
+  the image are tracked per frame and treated as missing (14% of frames have one edge cut off).
+* **Alignment.** Anchor = middle sharp frame showing the whole document, aligned to the scan exactly like the photos
+  (ECC kept for 65/100). Every other frame → anchor by a homography: SIFT + RANSAC initial guess, refined by ECC on
+  locally normalised images with glare masked in both frames (plain ECC failed: the glare veil dominates the
+  correlation). Kept only if the correlation rises, no corner moves > 80 px, and ≥ 5 clean tiles agree to ≤ 1 px
+  (phase correlation). **4,641 of 6,258 frames kept** (median 52 per clip; residual median 0.44 px, p90 0.80 px).
+  Drops: 1,156 residual (mostly bent passport pages, 24% of passport frames vs 12% of ID-card frames), 242 blur,
+  219 ECC. A non-rigid correction was tried and rejected: on held-out quadrants a polynomial displacement field
+  extrapolated worse than the homography alone, and fusion replaces pixels exactly where nothing can be measured.
+  Each frame is stored as one homography from the raw frame (`out/midv_clips_frames.csv`), so it is interpolated once.
+* **Key frame = the "untreated" image**, two rules (= two "splits"): **keymid** = the anchor (a typical capture);
+  **keymax** = the frame with the most clipped core inside the field boxes (where recovery matters). Same frame in 7 clips.
+  Zones (core / halo / outside) come from the key frame, as for the photos; 994 labelled field boxes.
+* **Fusion** (main): in each frame a pixel is glare if clipped or > 30 grey levels above its glare-free level
+  (25th percentile over time; the median is often glare itself, as the glare covers some spots in > half the frames).
+  **Only the key frame's glare pixels are replaced**, by the mean over the frames where that pixel is clean; all other
+  pixels are untouched. **Ablation:** plain temporal median. **Baselines:** the best single frame (least glare in the
+  field boxes) and the **best frame per field** (each field from the frame where it has the least glare: an automatic
+  per-field retake). None of them uses the reference.
+* **Recoverable fraction:** in 99/100 clips every clipped-core pixel of the key frame is unclipped in ≥ 1 other aligned
+  frame (strict per-pixel check on 12 clips: typically in almost all of them). The exception has 1 usable frame.
+
+**PaddleOCR, character accuracy per zone** (boxes: keymid 172 core / 269 halo / 553 outside; keymax 492 / 156 / 346):
+| method | keymid core | halo | outside | keymax core | halo | outside |
+|---|---|---|---|---|---|---|
+| untreated (key frame) | 0.524 | 0.822 | 0.952 | 0.479 | 0.847 | 0.950 |
+| classical | 0.461 | 0.809 | 0.949 | 0.406 | 0.829 | 0.949 |
+| DL zero-shot | 0.438 | 0.759 | 0.927 | 0.389 | 0.801 | 0.936 |
+| DL fine-tuned | 0.482 | 0.777 | 0.939 | 0.424 | 0.812 | 0.950 |
+| best single frame | 0.943 | 0.920 | 0.963 | 0.960 | 0.907 | 0.942 |
+| best frame per field | 0.981 | 0.946 | 0.977 | 0.977 | 0.942 | 0.964 |
+| temporal median (ablation) | 0.963 | 0.930 | 0.980 | 0.970 | 0.941 | 0.961 |
+| **fused** | **0.988** | **0.951** | **0.981** | **0.989** | **0.947** | **0.967** |
+| *reference = scan (ceiling)* | 0.997 | 0.992 | 0.994 | 0.996 | 0.994 | 0.991 |
+
+**Paired differences, PaddleOCR** (95% bootstrap CI over clips; clips better/worse; n = clips with ≥ 1 box in the zone):
+| comparison | keymax core (n = 97) | keymax halo (57) | keymax all fields (100) | keymid core (57) | keymid halo (73) | keymid all (100) |
+|---|---|---|---|---|---|---|
+| fused vs untreated | **+0.505 [0.460, 0.550] 95/0** | +0.081 [0.052, 0.113] 27/0 | +0.324 [0.285, 0.363] | **+0.482 [0.415, 0.548] 53/0** | +0.131 [0.097, 0.167] 49/1 | +0.150 [0.119, 0.182] |
+| fused vs best single frame | +0.030 [0.015, 0.050] 28/4 | +0.051 [0.014, 0.098] | +0.026 [0.014, 0.041] | +0.064 [0.025, 0.111] 17/3 | +0.032 [0.011, 0.065] | +0.024 [0.014, 0.035] |
+| fused vs best frame per field | +0.010 [0.005, 0.016] 21/7 | +0.001 n.s. | +0.006 [0.003, 0.010] 26/6 | +0.004 n.s. | +0.003 n.s. | +0.004 [0.002, 0.007] 23/8 |
+| DL fine-tuned vs untreated | −0.079 [−0.106, −0.053] | −0.040 [−0.065, −0.019] | −0.052 | −0.051 [−0.094, −0.008] | −0.062 [−0.092, −0.035] | −0.024 |
+| classical vs untreated | −0.111 [−0.141, −0.084] | −0.025 [−0.041, −0.012] | −0.073 | −0.075 [−0.106, −0.044] | −0.026 [−0.050, −0.009] | −0.021 |
+
+**Tesseract, character accuracy per zone** (same boxes):
+| method | keymid core | halo | outside | keymax core | halo | outside |
+|---|---|---|---|---|---|---|
+| untreated (key frame) | 0.222 | 0.455 | 0.778 | 0.183 | 0.482 | 0.789 |
+| classical | 0.244 | 0.479 | 0.781 | 0.210 | 0.471 | 0.795 |
+| DL zero-shot | 0.261 | 0.529 | 0.807 | 0.238 | 0.547 | 0.811 |
+| DL fine-tuned | 0.281 | 0.553 | 0.800 | 0.266 | 0.584 | 0.812 |
+| best single frame | 0.796 | 0.734 | 0.825 | 0.806 | 0.719 | 0.808 |
+| best frame per field | 0.851 | **0.775** | **0.838** | 0.831 | 0.771 | **0.833** |
+| temporal median (ablation) | 0.737 | 0.731 | 0.837 | 0.782 | 0.740 | **0.834** |
+| **fused** | **0.871** | 0.769 | **0.838** | **0.856** | **0.789** | 0.831 |
+| *reference = scan (ceiling)* | 0.887 | 0.880 | 0.908 | 0.902 | 0.897 | 0.887 |
+
+**Paired differences, Tesseract:**
+| comparison | keymax core (n = 97) | keymax halo (57) | keymax all fields (100) | keymid core (57) | keymid halo (73) | keymid all (100) |
+|---|---|---|---|---|---|---|
+| fused vs untreated | **+0.720 [0.670, 0.768] 95/1** | +0.303 [0.219, 0.389] 39/4 | +0.488 [0.440, 0.535] | **+0.689 [0.615, 0.761] 54/0** | +0.420 [0.347, 0.494] 61/3 | +0.269 [0.221, 0.320] |
+| fused vs best single frame | +0.058 [0.029, 0.090] 47/14 | +0.078 [0.027, 0.136] | +0.041 [0.023, 0.058] | +0.097 [0.046, 0.156] | +0.052 [0.014, 0.095] | +0.024 [0.006, 0.042] |
+| fused vs best frame per field | +0.030 [0.010, 0.050] 48/16 | +0.020 n.s. | +0.013 [0.001, 0.023] 53/19 | +0.022 n.s. | +0.012 n.s. | +0.004 n.s. |
+| DL fine-tuned vs untreated | +0.077 [0.053, 0.101] | +0.102 [0.061, 0.148] | +0.062 | +0.061 [0.024, 0.098] | +0.137 [0.092, 0.185] | +0.060 |
+| classical vs untreated | +0.018 n.s. | −0.012 n.s. | +0.007 n.s. | +0.024 n.s. | +0.042 [0.010, 0.074] | +0.017 |
+
+* **Clipped text comes back, for both engines**: PaddleOCR core 0.48–0.52 → 0.99 (ceiling 0.996), Tesseract
+  0.18–0.22 → 0.86–0.87 (ceiling 0.89–0.90); at most 1 clip worse per zone and engine. The best single-image method gains
+  ≤ +0.08 in the core for Tesseract and makes it worse for PaddleOCR (the text is physically gone in one frame).
+* **The engine dependence of the single-image methods replicates on the clips**: DL fine-tuned helps Tesseract
+  (halo +0.10 / +0.14) and hurts PaddleOCR (halo −0.04 / −0.06), as on our test split and the MIDV photos.
+  Fusion helps both engines.
+* **Fusion vs the automatic retake**: fused beats the best single frame clearly (one frame trades glare in one field
+  for glare in another) and the best frame per field only slightly: over all fields PaddleOCR +0.006 / +0.004,
+  Tesseract +0.013 (keymax) / n.s. (keymid); in the core +0.010 / +0.030 on keymax. An app that re-reads each field
+  from its cleanest frame gets almost all of the gain; fusion adds a little, mostly on fields that are partly
+  glared in every frame.
+* **Replacing only the glare pixels matters**: the temporal median is below fused in every zone (blur from
+  residual misalignment and averaging), and its outside-zone gain is not significant.
+* Fused's small "outside" gain comes only from the 188 outside boxes its own glare test flagged (weak glare
+  below the 40-level zone threshold: 0.877 → 0.982, 48 better / 3 worse); the other 711 outside boxes are untouched.
+* Noise floor: `ref_jitter` vs `reference` differs by ≤ 0.005 per zone for PaddleOCR and ≤ 0.02 for Tesseract.
+* Runtime (M2, CPU): alignment ~1 s per frame; fusion 4.3 s per clip once the ~50 aligned frames are loaded (1.8 s).
+* Figure: `results/figures/midv_clips_fusion.jpg` (key frame | fused | best single frame | best frame per field | scan).
+
+### Runtime (`src/benchmark_runtime.py`, `results/runtime_test.csv`)
+Processing call only (image already in memory), median over our 17 test images (1012×638), M2 MacBook,
+torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since single calls vary < 1%):
+| method | device | s / image |
+|---|---|---|
+| classical | CPU | **0.086** |
+| DL zero-shot | MPS (M2 GPU) | 2.01 |
+| DL fine-tuned | MPS | 2.37 |
+| DL zero-shot | CPU | 9.49 |
+| DL fine-tuned | CPU | 9.62 |
+
+* The classical method is ~25× faster than DL on the GPU and ~110× faster on the CPU.
+* It costs ~0.01 s on images with no clipped seed, because it returns the image unchanged
+  (MIDV: 15 of 20 sampled photos).
+* DL time grows with the pixel count: 4.8 s (zero-shot) and 5.9 s (fine-tuned) per MIDV passport (1478×1040) on MPS
+  (`results/runtime_midv.csv`, 20 photos, 1 repeat).
+* Fine-tuned is slightly slower than zero-shot on MPS because of the added detection head.
+
 ### Findings
-1. **Neither method significantly improves OCR on unseen cards.**
-   * Where OCR loses words, they are mostly in the glare: 44% of halo words and 82% of core words are lost,
-     versus 11% elsewhere.
-   * But the strongest glare is not a smooth veil. It is a textured reflection of the laminate (scratches,
+**With several frames, text under clipped glare comes back** (100 MIDV-2020 clips, nothing tuned on them): fusing
+aligned video frames raises core (clipped) character accuracy from ~0.5 to 0.99 for PaddleOCR and from ~0.2 to 0.86
+for Tesseract, close to the scan ceiling, where the single-image methods below gain at most +0.08 or make it worse.
+Most of the gain is already available by reading each field from its cleanest frame (fusion adds +0.004–0.013 over
+all fields, n.s. for Tesseract on keymid). For an app: capture a short burst, not one photo.
+
+0. **The main result replicates on 100 external photos** (MIDV-2020, other documents, phones and glare; nothing tuned
+   on it): DL helps Tesseract (halo +0.125, 70/10 images) and hurts PaddleOCR (halo −0.086, 3/68); classical is
+   neutral in the halo and its flat core fill removes core text PaddleOCR could still partly read (core −0.105).
+   Unlike on our test split, fine-tuning gives no significant OCR gain over zero-shot there: the MIDV glare is
+   mostly textured laminate / hologram reflection, unlike our 31 training images.
+1. **Whether glare removal helps OCR depends on the OCR engine** (fixed-box metric, consistent on
+   train, val and test).
+   * **Tesseract** (binarises the line) loses most of the halo text to the veil: halo character accuracy is 0.42,
+     vs 0.84 on the clean reference. DL fine-tuned recovers about half the gap (+0.22 on test, 7/0 images;
+     digits in glare +0.22). Zero-shot recovers less (+0.16). Classical gains +0.10, not significant.
+   * **PaddleOCR**'s neural recogniser already reads 87% of halo characters untreated (99% on the reference).
+     There every method makes the halo slightly *worse*: DL fine-tuned −0.04, zero-shot −0.14, classical −0.02.
+     The processed strokes (smoothed, or with invented texture) confuse it more than the veil does.
+   * Core text (clipped) is lost for every engine and method; the few core boxes make the core numbers noisy.
+   * The earlier whole-card result ("no significant change") was mostly detection churn plus dilution.
+     With fixed boxes the PaddleOCR noise floor is ≤ 0.006, so these effects are real.
+   * The strongest glare is not a smooth veil. It is a textured reflection of the laminate (scratches,
      hologram) in which the strokes are physically gone (see the zoom figure).
-   * Both methods recover a few halo words. DL fine-tuned cuts the halo digit loss from 0.50 to 0.44.
-   * These changes are the size of PaddleOCR's run-to-run churn: even outside the glare, a touched image gains
-     and loses a few words.
+   * Practical reading: a preprocessing step for a classical / binarising OCR engine should use DL fine-tuned.
+     A modern neural recogniser should get the untreated image, plus a "recapture" flag for clipped fields.
 2. **SSIM and OCR disagree.**
    * The DL model is far better by SSIM, inside and outside the glare. Zero-shot raises ssim_outside the most
      simply by smoothing the whole card (cf. `ssim_diagnose.py`: light blur raises SSIM from 0.76 to 0.92).
-   * It does not read better.
+   * It does not read better for PaddleOCR. Zero-shot, with the best whole-image SSIM, is the worst method
+     for PaddleOCR halo text.
    * Report both, and treat SSIM gains without OCR gains with care.
 3. **Fine-tuning matters for the network.**
    * Zero-shot DocSHRNet paints dark text-like smears into clipped cores (hallucination), and its CER is worse
      than untreated (0.135 vs 0.125).
    * After fine-tuning, cores become smooth fills and CER is significantly better than zero-shot (0.109).
    * The gate keeps text outside the glare unchanged.
-4. **The classical method is safe but weak.**
+4. **The classical method is safe but weak** (fixed-box metric, test halo: PaddleOCR −0.016,
+   Tesseract +0.10 n.s.; denoising before the inversion does not change that).
    * The veil model is physically right for the halo, and the new estimator removes the harm of the old
      distance-decay veil away from the glare (ssim_outside significantly better than decay on val and test).
    * On the other hand, the decay veil had the higher ssim_glare on val, where its parameters were tuned;
@@ -142,6 +379,9 @@ Figures: `results/figures/test_S_G_comparison.jpg` (whole cards) and `results/fi
      strokes. Large cores should rather be flagged for recapture, as in the proposal.
 
 Caveats:
+* MIDV-2020: the reference is a scan, not a photo, so its glare masks depend on the tone matching (they still
+  include a few edges of faces / holograms), and only the Latin fields are scored. SSIM is not reported there
+  (different capture device).
 * Test has 8 S_G / 9 B_G images from 4 cards. The CIs are wide, and several choices that looked better on
   train+val did not transfer.
 * The DL glare masks used for training come from reference differences (> 40 grey levels), so very weak veils

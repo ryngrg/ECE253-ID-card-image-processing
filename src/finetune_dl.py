@@ -383,6 +383,7 @@ def infer(a, device):
         raise SystemExit("--infer needs --checkpoint or --zero-shot")
     model.to(device)
     out_dir = Path(a.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)  # cv2.imwrite fails silently on a missing folder
     save_masks = not a.zero_shot and not a.no_gate  # an untrained/unused head gives meaningless masks
     if save_masks:
         (out_dir / "masks").mkdir(parents=True, exist_ok=True)
