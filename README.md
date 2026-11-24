@@ -2,6 +2,13 @@
 ECE253 ID card image processing: out-of-focus blur and **glare** (specular highlight) removal.
 This README covers the glare part.
 
+## Blur-recovery blocks
+
+See [DEBLUR.md](DEBLUR.md) for the independent Wiener and Restormer blocks:
+`python src/deblur.py --method wiener|restormer --in-dir DIR --out-dir DIR`.
+They preserve rectified PNG filenames and dimensions and accept another block's
+output directory as input. The interface does not run a combined experiment.
+
 ## Setup
 ```bash
 python3.10 -m venv card_scanning_env && source card_scanning_env/bin/activate
