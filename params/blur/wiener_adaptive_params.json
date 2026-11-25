@@ -1,0 +1,7 @@
+{
+  "max_radius": 8,
+  "noise_scale": 100.0,
+  "sharpness_weight": 0.25,
+  "ringing_weight": 0.25,
+  "description": "Chosen by src/blur/tune_deblur.py wiener_adaptive on our train + val B_D images. Radius is in rectified pixels."
+}

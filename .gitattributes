@@ -1,2 +1,2 @@
 # Preserve the hash-verified upstream architecture byte for byte.
-src/deblur_blocks/vendor/restormer_arch.py -whitespace
+src/blur/deblur_blocks/vendor/restormer_arch.py -whitespace

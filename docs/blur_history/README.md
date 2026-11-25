@@ -39,10 +39,10 @@ most of F12).
 ## What was ported, and what was not
 | Blur repo | Here |
 |---|---|
-| `restormer/scripts/train_restormer.py`, `restormer/restormer_data.py` | `src/finetune_deblur.py` (real pairs only) |
-| `scripts/run_real_mixed.py`, `scripts/real_mixed_metrics.py`, `wiener/weiner_training.py` | `src/tune_deblur.py` |
-| `wiener/weiner_filter.py` (noise estimate, radius choice) | `src/deblur_blocks/adaptive_wiener.py` |
-| `src/deblur.py`, `src/deblur_blocks/`, `src/install_deblur_weights.py` | already identical here |
+| `restormer/scripts/train_restormer.py`, `restormer/restormer_data.py` | `src/blur/finetune_deblur.py` (real pairs only) |
+| `scripts/run_real_mixed.py`, `scripts/real_mixed_metrics.py`, `wiener/weiner_training.py` | `src/blur/tune_deblur.py` |
+| `wiener/weiner_filter.py` (noise estimate, radius choice) | `src/blur/deblur_blocks/adaptive_wiener.py` |
+| `src/deblur.py`, `src/deblur_blocks/`, `src/install_deblur_weights.py` | the same files, now in `src/blur/` |
 
 Not ported: synthetic-blur training (no gain on real photos), MIDV / HDC2021 data preparation, directional and
 higher-order Wiener, the bank router, edge sharpening, `handmade_evaluation.py` and the SSIM / CER scripts (replaced by

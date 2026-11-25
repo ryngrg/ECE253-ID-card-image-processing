@@ -1,5 +1,0 @@
-{
-  "radius": 6,
-  "k": 0.03,
-  "description": "Chosen by src/tune_deblur.py wiener on our train + val B_D images. Radius is in rectified pixels."
-}
