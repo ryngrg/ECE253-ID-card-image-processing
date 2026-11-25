@@ -21,7 +21,7 @@ class DeblurBlock:
     """
 
     def __init__(self, method, *, radius=3, k=0.3, weights=None,
-                 device='auto', tile_size=512, overlap=64, color_order='rgb'):
+                 device='auto', tile_size=512, overlap=64, color_order='rgb', adaptive=None):
         if color_order not in {'rgb', 'bgr'}:
             raise ValueError('color_order must be rgb or bgr')
         self.color_order = color_order
@@ -32,6 +32,12 @@ class DeblurBlock:
             from .wiener import restore
             self.apply = lambda image: restore(image, radius, k)
             self.settings = {'radius': radius, 'k': k}
+        elif method == 'wiener_adaptive':
+            from .adaptive_wiener import DEFAULTS, restore_adaptive
+            self.settings = {**DEFAULTS, **(adaptive or {})}
+            if set(self.settings) != set(DEFAULTS):
+                raise ValueError(f'Adaptive Wiener settings are {sorted(DEFAULTS)}.')
+            self.apply = lambda image: restore_adaptive(image, **self.settings)
         elif method == 'restormer':
             if (tile_size < 8 or tile_size % 8 or overlap < 0
                     or overlap >= tile_size or overlap % 8):
@@ -50,7 +56,7 @@ class DeblurBlock:
                              'task': self.apply.provenance['task'],
                              'fine_tuned': self.apply.provenance['fine_tuning'] is not None}
         else:
-            raise ValueError('method must be wiener or restormer')
+            raise ValueError('method must be wiener, wiener_adaptive or restormer')
 
     def __call__(self, image):
         image = np.asarray(image)

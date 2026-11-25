@@ -1,0 +1,56 @@
+Expanded MIDV-2020 three-filter Wiener retraining
+240 train / 60 validation / 60 test images; 20 / 5 / 5 disjoint cards.
+Mild/medium/strong are fixed training sharpness tertiles, NOT verified optical defocus grades.
+48 plain disk Wiener candidates; no denoising or sharpening; native-resolution filtering.
+Experts/shared filter fitted on training only. Automatic thresholds selected on validation, frozen before test OCR.
+PSM 7 English Tesseract, identical annotated-field geometry for all methods. Unicode normalization and whitespace normalization; case-sensitive.
+
+Expert | radius | K | training images | training cards
+mild | 2 | 1.0 | 80 | 16
+medium | 4 | 0.3 | 80 | 19
+strong | 4 | 0.3 | 80 | 17
+
+TRAIN CER: method | pooled | mild | medium | strong | mean card CER
+original | 52.75% | 36.44% | 46.07% | 76.01% | 53.65%
+previous_shared | 49.52% | 33.77% | 39.58% | 75.59% | 50.33%
+previous_bank | 49.69% | 34.44% | 40.11% | 74.88% | 50.49%
+retrained_shared | 49.42% | 35.96% | 39.35% | 73.33% | 50.25%
+retrained_bank_fixed | 48.69% | 33.77% | 39.35% | 73.33% | 49.52%
+retrained_bank_auto | 48.59% | 33.77% | 39.03% | 73.33% | 49.39%
+
+VALIDATION CER: method | pooled | mild | medium | strong | mean card CER
+original | 57.66% | 44.92% | 64.50% | 83.08% | 57.13%
+previous_shared | 50.48% | 35.83% | 57.85% | 81.24% | 49.88%
+previous_bank | 51.82% | 38.31% | 57.69% | 83.08% | 51.16%
+retrained_shared | 51.30% | 37.48% | 57.85% | 81.57% | 50.84%
+retrained_bank_fixed | 50.52% | 35.83% | 57.85% | 81.57% | 49.93%
+retrained_bank_auto | 49.96% | 35.83% | 56.43% | 81.57% | 49.39%
+
+TEST CER: method | pooled | mild | medium | strong | mean card CER
+original | 62.89% | 33.57% | 57.32% | 83.72% | 63.92%
+previous_shared | 62.48% | 34.21% | 54.67% | 83.63% | 63.51%
+previous_bank | 61.81% | 35.28% | 53.86% | 81.94% | 62.93%
+retrained_shared | 60.73% | 33.78% | 55.89% | 79.75% | 61.68%
+retrained_bank_fixed | 60.86% | 34.21% | 55.89% | 79.75% | 61.74%
+retrained_bank_auto | 60.75% | 34.21% | 55.39% | 79.75% | 61.65%
+
+Test group counts: Counter({'strong': 30, 'mild': 18, 'medium': 12})
+Previous shared/bank filters are re-evaluated on these same images; their old training CER is not used.
+Previous bank uses its original whole-crop automatic selector. New bank requires field geometry for its sharpness score.
+The new grouping is automatic; fixed is not manual visual-label or oracle routing.
+Full split and capture-condition breakdowns, including the view excluding source highlight clips, are in summary.json.
+Five held-out cards remain a small test set. Strong blur, glare and perspective are not isolated from one another.
+Source templates are not pixel-aligned camera targets; no MSE/PSNR claim. Existing configs preserved.
+
+Interpretation and verification
+New automatic bank: 2814 / 4632 character errors (60.75%), versus original 2913 (62.89%) and previous automatic bank 2863 (61.81%).
+Gain: 99 fewer errors versus original (2.14 percentage points); 49 fewer versus previous bank (1.06 points).
+Retrained shared filter: 2813 errors (60.73%), only one error fewer than the new bank. No clear strength-selection benefit.
+Medium and strong independently selected identical settings; the bank contains two distinct filters, not three artificially forced settings.
+Mild worsens versus unfiltered input. Medium worsens versus the previous bank. Strong improves but remains at 79.75% CER.
+Old single-card ~70% strong CER is not directly comparable: new cards, field set, and provisional sharpness groups differ.
+The validation-selected configuration remains frozen; no tuning or pipeline replacement was done using test results.
+48 tests passed. All 60 geometry-only application images matched evaluated pixels at native dimensions.
+Persistent C API vs existing CLI parity: 53 original + 45 filtered training fields, plus 106 held-out fields; no normalized text differences.
+Visual review: predetermined mild/medium/strong test examples show retained blur and occasional OCR regressions. Strong field-geometry spot-check confirms correctly located but heavily smeared text.
+Detailed audit: verification.json; examples: review/test_examples.jpg and review/strong_field_geometry.jpg.

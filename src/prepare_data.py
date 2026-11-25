@@ -12,13 +12,16 @@ What it does
   3. Creates a card-level train/val/test split (stratified by the card-id letter prefix,
      e.g. B01.. vs F01..) and saves it to split.csv.  An existing split.csv is never
      overwritten unless you pass --resplit.
-  4. Saves red/cyan overlays (ref in red, image in cyan: gray = aligned, colour fringes =
+  4. Also pairs every blur-only image (B_D) with the same S_D reference, with the same checks and the
+     same split: out/pairs_blur.csv (training / tuning / testing of the deblurring methods).
+  5. Saves red/cyan overlays (ref in red, image in cyan: gray = aligned, colour fringes =
      misaligned) for every flagged image, the lowest-ECC-correlation images, and a
      random sample.
 
 Outputs
   split.csv             card_id, split                 (share with your teammate)
   out/pairs.csv         one row per glare image; use  usable == True  downstream
+  out/pairs_blur.csv    one row per B_D image (same columns)
   out/overlays/*.png
 
 Usage
@@ -58,8 +61,8 @@ def build_table(rect_dir: Path) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def attach_references(df: pd.DataFrame) -> pd.DataFrame:
-    """Return only glare images (S_G, B_G), each with the card's S_D reference."""
+def attach_references(df: pd.DataFrame, rows: pd.Series) -> pd.DataFrame:
+    """Return the images selected by `rows`, each with the card's S_D reference."""
     refs = df[(df.blur == "S") & (df.glare == "D")]
     ref_map = {}
     for card, g in refs.groupby("card_id"):
@@ -72,11 +75,11 @@ def attach_references(df: pd.DataFrame) -> pd.DataFrame:
     if missing:
         print(f"[warn] dropping cards with no S_D reference: {missing}")
 
-    glare = df[df.glare == "G"].copy()
-    glare["ref_path"] = glare.card_id.map(ref_map)
-    glare = glare.dropna(subset=["ref_path"]).reset_index(drop=True)
-    glare["condition"] = glare.blur + "_" + glare.glare  # S_G or B_G
-    return glare
+    out = df[rows].copy()
+    out["ref_path"] = out.card_id.map(ref_map)
+    out = out.dropna(subset=["ref_path"]).reset_index(drop=True)
+    out["condition"] = out.blur + "_" + out.glare  # S_G, B_G or B_D
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -191,15 +194,18 @@ def main():
 
     # --- parse, pair, validate ---
     df = build_table(a.rect_dir)
-    pairs = attach_references(df)
-    pairs = merge_alignment_log(pairs, a.rect_dir)
-    pairs = check_sizes(pairs)
-    pairs = mark_usable(pairs)
+    def checked(rows):
+        return mark_usable(check_sizes(merge_alignment_log(attach_references(df, rows), a.rect_dir)))
+
+    pairs = checked(df.glare == "G")
+    blur = checked((df.blur == "B") & (df.glare == "D"))
 
     # --- split ---
     split = load_or_make_split(a.split_file, pairs.card_id.unique(), a)
     pairs = pairs.merge(split, on="card_id", how="left").drop(columns="stem")
     pairs.to_csv(a.out_dir / "pairs.csv", index=False)
+    blur = blur.merge(split, on="card_id", how="left").drop(columns="stem")
+    blur.to_csv(a.out_dir / "pairs_blur.csv", index=False)
 
     # --- overlays ---
     flagged = pairs[~pairs.usable]
@@ -214,11 +220,16 @@ def main():
         r = ok.iloc[i]
         save_overlay(r, overlay_dir / f"sample_{Path(r.path).stem}.png")
 
+    for _, r in blur.iterrows():  # few images: save them all
+        save_overlay(r, overlay_dir / f"blur_{Path(r.path).stem}.png")
+
     # --- summary ---
     print(f"\n{len(df)} images parsed, {pairs.card_id.nunique()} cards with a reference, "
           f"{len(pairs)} glare images, {int(pairs.usable.sum())} usable")
     print("\nUsable glare images per condition and split:")
     print(pd.crosstab(ok.split, ok.condition).to_string())
+    print("\nUsable blur-only (B_D) images per split:")
+    print(blur[blur.usable].split.value_counts().to_string())
     print("\nCards per split:")
     print(split.split.value_counts().to_string())
     if len(flagged):

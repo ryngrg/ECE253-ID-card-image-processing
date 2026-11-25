@@ -1,0 +1,54 @@
+{
+  "manifest": "data/real_mixed_v1/manifest.json",
+  "manifest_sha256": "bea18abde724e0b97d3ec21379a0578b8f25848107427bd9722de3c031128b7e",
+  "objective": "Independently train Wiener and Restormer on mixed real handmade/MIDV pairs; measure real before/after CER and registered-reference SSIM.",
+  "data": "90 reviewed pairs: 58 train, 18 validation, 14 test; handmade side splits at user request; existing MIDV card splits; provisional handmade text.",
+  "restormer": {
+    "initialization": "official pretrained single-image defocus checkpoint",
+    "steps": 2000,
+    "learning_rate": 1e-05,
+    "patch_size": 128,
+    "loss": "RGB L1",
+    "balanced_sources": true,
+    "balanced_identities_within_source": true,
+    "text_patch_probability": 0.75,
+    "checkpoints": [
+      500,
+      1000,
+      1500,
+      2000
+    ],
+    "tile_size": 512,
+    "overlap": 64
+  },
+  "wiener": {
+    "radius_grid": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      16
+    ],
+    "k_grid": [
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "denoise_sigma": 0,
+    "shortlist": "Union of six lowest training CER and six highest training SSIM candidates, plus prior real-MIDV radius4/K0.3; original baseline."
+  },
+  "selection": "Equal mean of handmade and MIDV pooled CER; equal mean of their image-mean SSIM. Prefer candidates improving both over original, then minimum CER, then maximum SSIM. If none jointly improves, choose minimum sum of CER and negative-SSIM ranks among filtering candidates, tie by CER; explicitly report failure of joint criterion. No test tuning.",
+  "test": "Freeze selected Wiener parameters and Restormer checkpoint before test inference. Report pooled and separate source results, per-side/card outcomes, and reference-shift SSIM sensitivity at offsets -2,0,2 pixels.",
+  "limits": [
+    "Exploratory reused benchmark, not untouched confirmatory test.",
+    "Only two handmade test sides.",
+    "Residual alignment and reference quality constrain SSIM interpretation.",
+    "No fabricated blur added during training or evaluation."
+  ]
+}

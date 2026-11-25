@@ -16,6 +16,7 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
 - `split.csv`: card-level 14/4/4 train/val/test split. Never regenerate without `--resplit`.
   **Test is for final numbers only**: tune and select on train/val.
 - `out/pairs.csv`: one row per glare image (S_G / B_G) with ref_path and split. Always filter `usable == True` (94 of 95).
+- `out/pairs_blur.csv`: one row per B_D image (16 / 4 / 4), same columns and split; deblurring trains / tunes on its train + val.
 - External test set (never tune on it): MIDV-2020 "highlight present" photos (types x 60-69), raw in
   `data/external/midv2020/` (public FTP mirror), prepared by `prepare_midv.py` into `data/midv/{rectified,reference,glare_masks}/`,
   `out/pairs_midv.csv` (split = midv, condition = S_G) and `results/box_layout_midv.csv`. Reference = the scan.
@@ -64,6 +65,10 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   - Key frames = splits `keymid` / `keymax` of `out/pairs_midv_clips.csv` (images `{type}_{nn}_{mid|max}.png`); layout `results/box_layout_midv_clips.csv`.
 - `fuse_frames.py`: fusion (replace only the key frame's glare pixels) + `median` ablation + `best_frame` / `best_field` baselines
   -> `out/midv_clips/<method>/`, diagnostics `results/midv_clips_fusion.csv`. Box OCR with `--tag midv_clips` (see `run_glare_experiments.sh` step `clips`).
+- Deblurring (DEBLUR.md): `deblur.py --method wiener|wiener_adaptive|restormer` (directory -> new directory, ~20 s/image for Restormer on MPS),
+  `finetune_deblur.py` (Restormer on train B_D), `tune_deblur.py wiener|wiener_adaptive|restormer --write` (selection on train / val).
+  Never report the old `real-pilot` checkpoint: it saw F03 (test), F01 (val) and MIDV. Old experiments: `docs/blur_history/`.
+  Tests: `python -m pytest -q tests/deblur` (needs `pytest<9`).
 - `benchmark_runtime.py`: s/image of each method (processing call only, MPS + CPU) -> `results/runtime_{name}.csv`.
 - `run_glare_experiments.sh`: reruns all glare experiments after `prepare_data.py` (step `midv` = the external set).
 
@@ -81,5 +86,5 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   - MIDV clips (multi-frame fusion): core 0.5 -> 0.99 (PaddleOCR), 0.2 -> 0.86 (Tesseract); best frame per field gets almost all of it.
 - zsh does not word-split `$VAR` in commands: write arguments out (or use arrays) in one-off shell runs.
 - Agreed plan rules (NEXT_STEPS "Decisions"; NEXT_STEPS is in priority order): no artificial/synthetic glare;
-  the proposal's approach section is a guide, not a contract; new thresholds are chosen on our train+val only;
-  MIDV training (optional step 7) uses one fixed type-level split (`midv_split.csv`), never an image-level split.
+  the proposal's approach section is a guide, not a contract; new parameters are chosen on our train+val only;
+  nothing is trained or tuned on MIDV; blur and glare share `split.csv` (test cards never used, in any condition).

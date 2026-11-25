@@ -5,7 +5,9 @@ This README covers the glare part.
 ## Blur-recovery blocks
 
 See [DEBLUR.md](DEBLUR.md) for the independent Wiener and Restormer blocks:
-`python src/deblur.py --method wiener|restormer --in-dir DIR --out-dir DIR`.
+`python src/deblur.py --method wiener|wiener_adaptive|restormer --in-dir DIR --out-dir DIR`,
+and for tuning / training them on our splits (`src/tune_deblur.py`, `src/finetune_deblur.py`).
+Earlier blur experiments are archived in `docs/blur_history/`.
 They preserve rectified PNG filenames and dimensions and accept another block's
 output directory as input. The interface does not run a combined experiment.
 

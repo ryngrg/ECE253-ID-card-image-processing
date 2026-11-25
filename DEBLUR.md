@@ -36,7 +36,13 @@ python src/deblur.py --method wiener --radius 2 --k 0.1 \
 # Process an existing block's output, preserving its filenames:
 python src/deblur.py --method restormer \
   --in-dir out/classical --out-dir out/classical_then_restormer
+
+# Adaptive Wiener: radius and noise level estimated per image (needs Tesseract, ~3 s/image):
+python src/deblur.py --method wiener_adaptive \
+  --in-dir data/rectified --out-dir out/wiener_adaptive
 ```
+
+Restormer takes ~20 s per rectified card on an M2 (MPS).
 
 `--params deblur_wiener_params.json` is the default for Wiener. It carries the
 existing real-data pilot setting, radius 3 / K 0.3, without denoising or
@@ -51,7 +57,24 @@ CUDA, then MPS, then CPU; use `--device cpu|mps|cuda` to select explicitly.
 Only a tile is placed on the device at a time. No resizing is performed.
 
 Chaining support describes the interface, not evidence that a particular order
-improves restoration. No joint experiment or retraining is performed here.
+improves restoration.
+
+## Tune and train on our splits
+
+```bash
+python src/prepare_data.py                       # writes out/pairs_blur.csv (B_D -> S_D; 16 / 4 / 4)
+python src/tune_deblur.py wiener --write          # radius x K grid on train + val, ~1 h
+python src/tune_deblur.py wiener_adaptive --write # train + val
+python src/finetune_deblur.py                     # 2000 steps on train -> checkpoints/deblur/restormer_ours/
+python src/tune_deblur.py restormer --write       # picks a step on val -> checkpoints/deblur/restormer_ours.pt
+python src/deblur.py --method restormer --weights checkpoints/deblur/restormer_ours.pt \
+  --in-dir data/rectified --out-dir out/restormer_ours
+```
+
+Test cards are never loaded: the pairs file must agree with `split.csv`, and `tune_deblur.py restormer` refuses a
+checkpoint whose recorded training cards are not all train cards. Selection rule: among the candidates
+that improve both character accuracy (fixed boxes, mean of both engines) and SSIM over the untreated images, the
+highest accuracy. Earlier experiments and their results: `docs/blur_history/`.
 
 ## Image and directory contract
 
@@ -92,40 +115,25 @@ input. Set `color_order='bgr'` explicitly for OpenCV; channels are not guessed.
 At each block boundary, outputs are clipped/rounded to uint8 just as in a PNG
 directory chain. Instantiate each block once and reuse it across images.
 
-## Existing fine-tuned model
+## Pilot model (do not use for results)
 
-The blur workspace's selected real-data checkpoint is
-`results/real_mixed_pilot/restormer/step_002000.pt`. Weights are distributed
-separately from source; copying this file from that workspace is sufficient.
-Its SHA-256 is
-`1f9da934b848c418137c023be02ac3dd5b5815ed7716ed4b9d30dc01988eac63`.
+The earlier fine-tuned model (`real-pilot`, `step_002000.pt`, SHA-256
+`1f9da934b848c418137c023be02ac3dd5b5815ed7716ed4b9d30dc01988eac63`) was trained on F03 (our test), F01 (our val) and
+MIDV frames, one of which is from an external test clip. `docs/blur_history/README.md` has the full overlap. It can
+still be installed for inspection:
 
 ```bash
-python src/install_deblur_weights.py --model real-pilot \
-  --from /path/to/step_002000.pt
-python src/deblur.py --method restormer \
-  --weights checkpoints/deblur/restormer_real_pilot_step_002000.pt \
-  --in-dir data/rectified --out-dir out/restormer_real_pilot
+python src/install_deblur_weights.py --model real-pilot --from /path/to/step_002000.pt
 ```
 
-The installer verifies the exact file; `--weights` also accepts compatible
-checkpoints from the original blur trainer with matching architecture/task
-metadata. The pilot trained on handmade F03, which is in the glare repository's
-test split. Its output is available for integration, but it is **not** an unseen
-model on that full test split. The transferred Wiener setting was selected in
-that same blur experiment. This package does not change either dataset split.
-
-Training/evaluation code and historical results remain in the original private
-blur repository, `https://github.com/Mlazazarus/ECE253`. The portable package is
-a documented snapshot: Wiener functions are extracted unchanged; Restormer
-inference has adapted imports/asset paths. Source hashes are in
-`src/deblur_blocks/provenance.json`. Future inference changes should rerun the
-local legacy-equivalence checks before exporting again.
+Wiener and Restormer inference was extracted unchanged from the blur repo (`src/deblur_blocks/provenance.json`);
+training, tuning and the adaptive Wiener are adapted ports (`docs/blur_history/README.md`). `deblur_wiener_params.json`
+still holds the pilot's radius 3 / K 0.3 until `tune_deblur.py wiener --write` is run.
 
 ## Checks
 
 ```bash
-python -m pip install pytest
+python -m pip install "pytest<9"   # 9.2.0 crashes on startup in our Python 3.10 venv
 python -m pytest -q tests/deblur
 ```
 

@@ -1,0 +1,133 @@
+CER and SSIM investigation rerun
+
+Unavailable: no aligned sharp exposure of these video frames; synthetic SSIM is reported separately.
+Card-disjoint but previously inspected/reused benchmark; not a fresh confirmatory test.
+Real training CER grid reused after data/code/OCR checks; validation/test CER freshly recomputed.
+SSIM selection: highest mean synthetic training SSIM within 0.5 percentage points of minimum real training CER.
+SSIM: mean over text fields, then mean over images; CER: pooled character edits/reference characters.
+Synthetic: clean digital templates scaled to median text height 32; disk radii 2/4/8; no added noise.
+Matched blur model makes this an optimistic controlled experiment, not proof of real-camera deblurring.
+
+Shared selection: {'variant': 'r4_k0.3', 'settings': {'radius': 4, 'k': 0.3, 'denoise_sigma': 0}, 'best_training_cer': 0.4941721219862686, 'selected_training_cer': 0.4941721219862686, 'training_ssim': 0.41010773517321497, 'cer_tolerance': 0.005, 'eligible': ['r2_k1', 'r3_k1', 'r4_k0.3']}
+Expert selections: {'mild': {'variant': 'r2_k1', 'settings': {'radius': 2, 'k': 1.0, 'denoise_sigma': 0}, 'best_training_cer': 0.33768115942028987, 'selected_training_cer': 0.33768115942028987, 'training_ssim': 0.35011406620730323, 'cer_tolerance': 0.005, 'eligible': ['r2_k1', 'r3_k1']}, 'medium': {'variant': 'r4_k0.3', 'settings': {'radius': 4, 'k': 0.3, 'denoise_sigma': 0}, 'best_training_cer': 0.39346057571964954, 'selected_training_cer': 0.39346057571964954, 'training_ssim': 0.41010773517321497, 'cer_tolerance': 0.005, 'eligible': ['r2_k1', 'r3_k1', 'r4_k0.3']}, 'strong': {'variant': 'r4_k0.3', 'settings': {'radius': 4, 'k': 0.3, 'denoise_sigma': 0}, 'best_training_cer': 0.7333117827703248, 'selected_training_cer': 0.7333117827703248, 'training_ssim': 0.41010773517321497, 'cer_tolerance': 0.005, 'eligible': ['r4_k0.3']}}
+
+real_camera / validation: method | group | images | CER | SSIM
+original | all | 60 | 57.66% | unavailable
+original | mild | 28 | 44.92% | unavailable
+original | medium | 24 | 64.50% | unavailable
+original | strong | 8 | 83.08% | unavailable
+disk | all | 60 | 51.30% | unavailable
+disk | mild | 28 | 37.48% | unavailable
+disk | medium | 24 | 57.85% | unavailable
+disk | strong | 8 | 81.57% | unavailable
+bank | all | 60 | 49.96% | unavailable
+bank | mild | 28 | 35.83% | unavailable
+bank | medium | 24 | 56.43% | unavailable
+bank | strong | 8 | 81.57% | unavailable
+directional | all | 60 | 49.11% | unavailable
+directional | mild | 28 | 33.99% | unavailable
+directional | medium | 24 | 56.54% | unavailable
+directional | strong | 8 | 81.41% | unavailable
+joint | all | 60 | 51.30% | unavailable
+joint | mild | 28 | 37.48% | unavailable
+joint | medium | 24 | 57.85% | unavailable
+joint | strong | 8 | 81.57% | unavailable
+joint_bank | all | 60 | 50.52% | unavailable
+joint_bank | mild | 28 | 35.83% | unavailable
+joint_bank | medium | 24 | 57.85% | unavailable
+joint_bank | strong | 8 | 81.57% | unavailable
+
+real_camera / test: method | group | images | CER | SSIM
+original | all | 60 | 62.89% | unavailable
+original | mild | 18 | 33.57% | unavailable
+original | medium | 12 | 57.32% | unavailable
+original | strong | 30 | 83.72% | unavailable
+disk | all | 60 | 60.73% | unavailable
+disk | mild | 18 | 33.78% | unavailable
+disk | medium | 12 | 55.89% | unavailable
+disk | strong | 30 | 79.75% | unavailable
+bank | all | 60 | 60.75% | unavailable
+bank | mild | 18 | 34.21% | unavailable
+bank | medium | 12 | 55.39% | unavailable
+bank | strong | 30 | 79.75% | unavailable
+directional | all | 60 | 63.02% | unavailable
+directional | mild | 18 | 37.48% | unavailable
+directional | medium | 12 | 53.96% | unavailable
+directional | strong | 30 | 83.01% | unavailable
+joint | all | 60 | 60.73% | unavailable
+joint | mild | 18 | 33.78% | unavailable
+joint | medium | 12 | 55.89% | unavailable
+joint | strong | 30 | 79.75% | unavailable
+joint_bank | all | 60 | 60.86% | unavailable
+joint_bank | mild | 18 | 34.21% | unavailable
+joint_bank | medium | 12 | 55.89% | unavailable
+joint_bank | strong | 30 | 79.75% | unavailable
+
+synthetic / validation: method | group | images | CER | SSIM
+sharp | all | 15 | 21.35% | 1.0000
+sharp | mild | 5 | 21.35% | 1.0000
+sharp | medium | 5 | 21.35% | 1.0000
+sharp | strong | 5 | 21.35% | 1.0000
+original | all | 15 | 31.86% | 0.4983
+original | mild | 5 | 11.20% | 0.8456
+original | medium | 5 | 7.81% | 0.5242
+original | strong | 5 | 76.56% | 0.1252
+disk | all | 15 | 35.42% | 0.4091
+disk | mild | 5 | 14.58% | 0.6085
+disk | medium | 5 | 14.06% | 0.4927
+disk | strong | 5 | 77.60% | 0.1261
+joint | all | 15 | 35.42% | 0.4091
+joint | mild | 5 | 14.58% | 0.6085
+joint | medium | 5 | 14.06% | 0.4927
+joint | strong | 5 | 77.60% | 0.1261
+directional | all | 15 | 29.60% | 0.3471
+directional | mild | 5 | 8.07% | 0.5485
+directional | medium | 5 | 7.81% | 0.3590
+directional | strong | 5 | 72.92% | 0.1337
+
+synthetic / test: method | group | images | CER | SSIM
+sharp | all | 15 | 17.62% | 1.0000
+sharp | mild | 5 | 17.62% | 1.0000
+sharp | medium | 5 | 17.62% | 1.0000
+sharp | strong | 5 | 17.62% | 1.0000
+original | all | 15 | 30.31% | 0.4929
+original | mild | 5 | 10.36% | 0.8433
+original | medium | 5 | 9.33% | 0.5181
+original | strong | 5 | 71.24% | 0.1172
+disk | all | 15 | 35.66% | 0.4029
+disk | mild | 5 | 20.98% | 0.6043
+disk | medium | 5 | 14.25% | 0.4858
+disk | strong | 5 | 71.76% | 0.1185
+joint | all | 15 | 35.66% | 0.4029
+joint | mild | 5 | 20.98% | 0.6043
+joint | medium | 5 | 14.25% | 0.4858
+joint | strong | 5 | 71.76% | 0.1185
+directional | all | 15 | 31.26% | 0.3404
+directional | mild | 5 | 9.59% | 0.5424
+directional | medium | 5 | 12.18% | 0.3521
+directional | strong | 5 | 72.02% | 0.1266
+
+Verification and training tradeoff
+{
+  "best_synthetic_training_ssim_candidate": "r2_k0.003",
+  "best_synthetic_training_ssim_scores": {
+    "cer": 0.8356485177497472,
+    "ssim": 0.5356340390546743,
+    "ssim_change": 0.03690610473585637
+  },
+  "selected": "r4_k0.3",
+  "selected_scores": {
+    "cer": 0.4941721219862686,
+    "ssim": 0.41010773517321497,
+    "ssim_change": -0.08862019914560298
+  },
+  "unfiltered_scores": {
+    "cer": 0.5274894885305231,
+    "ssim": 0.49872793431881796,
+    "ssim_change": 0.0
+  },
+  "interpretation": "No candidate in the fixed CER tolerance improves synthetic training SSIM over unfiltered input."
+}
+360 freshly recomputed original/disk/directional image trials match previous OCR exactly.
+joint_bank uses fixed training sharpness thresholds; bank uses the earlier validation-tuned router. Their difference is routing, not new expert settings.
+Even clean-template CER is nonzero with the current English OCR protocol. Small synthetic blur can reduce OCR error while reducing SSIM.

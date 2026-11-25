@@ -1,0 +1,35 @@
+Standalone directional Wiener training
+Smoke test: False
+Chosen settings: {'length': 5, 'angle_deg': 135.0, 'k': 1.0}
+Length/angle/K fit on training only; fixed globally for inference.
+No disk filter is used inside the directional block. Optional disk results are a separate baseline.
+CER uses normalized case-sensitive field text; PSM 7 English Tesseract.
+Groups below are training-score proxies, not confirmed defocus grades.
+
+Split | method | frames | cards | pooled CER | mild | medium | strong
+train | original | 240 | 20 | 52.75% | 36.44% | 46.07% | 76.01%
+train | directional | 240 | 20 | 49.57% | 33.80% | 39.69% | 75.59%
+train | disk | 240 | 20 | 49.42% | 35.96% | 39.35% | 73.33%
+validation | original | 60 | 5 | 57.66% | 44.92% | 64.50% | 83.08%
+validation | directional | 60 | 5 | 49.11% | 33.99% | 56.54% | 81.41%
+validation | disk | 60 | 5 | 51.30% | 37.48% | 57.85% | 81.57%
+test | original | 60 | 5 | 62.89% | 33.57% | 57.32% | 83.72%
+test | directional | 60 | 5 | 63.02% | 37.48% | 53.96% | 83.01%
+test | disk | 60 | 5 | 60.73% | 33.78% | 55.89% | 79.75%
+
+Validation is diagnostic; no settings were retuned using validation or test OCR.
+The existing test cards have already been inspected in earlier experiments; any new result on them is a reused benchmark, not a fresh confirmatory holdout.
+
+Interpretation and verification
+Test directional: 2919 / 4632 character errors; original: 2913; disk: 2813.
+Directional is 0.13 percentage points worse than original and 2.29 points worse than disk on this test benchmark.
+Medium-group CER improves relative to disk, while mild and strong worsen. Directional pooled CER is worse than disk on all five test cards.
+Per-frame vs disk: 23 improve, 35 worsen, 2 tie. Per-frame vs original: 29 improve, 24 worsen, 7 tie.
+Validation favors directional (49.11% vs disk 51.30%); test favors disk (60.73% vs directional 63.02%). The validation gain did not transfer.
+K=1 is the upper search bound and suppresses frequency gain before mean restoration. OCR scores do not establish recovery of lost sharp detail.
+The existing disk pipeline remains unchanged. This fixed directional model is not an overall improvement in the tested comparison.
+65 tests passed. Independent CLI application reproduced all 60 saved test outputs at native dimensions.
+53 directional test fields matched the existing CLI OCR path, with zero normalized text differences.
+All 720 original/disk image trials matched the previous run; reporting groups and data are identical.
+Verification: verification.json. Fixed examples: review/group_examples.jpg and review/card_examples.jpg.
+Examples show residual blur and reduced contrast; they are individual images, not group means. No test-informed retuning was performed.

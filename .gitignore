@@ -8,9 +8,10 @@ data/*
 data/rectified/*
 !data/rectified/alignment_log.csv
 
-# generated outputs (only the pairs table is shared)
+# generated outputs (only the pairs tables are shared)
 out/*
 !out/pairs.csv
+!out/pairs_blur.csv
 results/ocr_cache/
 checkpoints/
 logs/

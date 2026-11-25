@@ -1,161 +1,129 @@
-# Glare removal: next steps (in priority order)
+# Next steps
+
+Three things are left, in this order: (1) put the deblur methods on our splits, (2) chain deblur and deglare and
+evaluate, (3) write the report. Report writing can start in parallel (the glare half is finished).
 
 ## Where we are
-The core deliverable is done: a classical and a learning-based method, with and without our modifications, vs
-untreated, per glare zone, two OCR engines, on our data, on 100 external MIDV-2020 photos, and with multi-frame fusion
-on 100 MIDV-2020 clips. Methods, results and findings are in the README; runtime is in README "Runtime".
-The proposal's "approach" section is a guide, not a contract. The items below are ranked by value for the report per
-day of work, not by how closely they follow the proposal.
+* **Glare: done.** Classical + DL, with and without our modifications, vs untreated, per zone, two OCR engines, on
+  our data, 100 MIDV-2020 photos and 100 MIDV-2020 clips (multi-frame fusion). See README; runtime included.
+* **Blur: all code is in this repo, not yet tuned, trained or evaluated on our split.** The training / tuning code and the
+  adaptive Wiener were ported from the teammate's repo (now only an archive; see `docs/blur_history/README.md`).
+  * The old fine-tuned Restormer is not usable: it was trained on F03 (our test), F01 (our val) and MIDV frames
+    (one document is in our external clips).
+  * `deblur_wiener_params.json` still has the old radius 3 / K 0.3, chosen at native resolution (about 1 px in ours).
+* **Joint evaluation: not started.**
 
 ## Decisions (agreed; do not revisit without a reason)
-* **No artificial glare**: no synthetic or transplanted glare on MIDV or on our cards.
-* **Test data stays untouched**: our 4 test cards are never trained or tuned on; nothing is tuned on the MIDV
-  photos (and in step 7 only on the MIDV train types).
-* **MIDV is split by document type, never by image**, with one fixed split (no cross-validation); see step 7.
-* **DL training recipe is fixed** (1500 iterations, current loss weights, last checkpoint), with no val split, if
-  we retrain at all. The val curve is flat after ~1000 iterations (best 1350 vs last 1500: ssim_glare 0.5641 vs 0.5640).
-* Any new threshold or parameter (steps 3 and 6) is fixed in advance or chosen on our train + val only, then frozen
-  for our test and MIDV.
+* `split.csv` is the only split for both artifacts (14 / 4 / 4 cards). Test cards (B03, F03, F04, F11) are never
+  trained or tuned on, in any condition (S_D, S_G, B_D, B_G).
+* Nothing is trained or tuned on MIDV; it stays an external test set.
+* No artificial glare. The glare methods stay frozen (`classical_params.json`, `docshr_mt_best.pt`).
+* Parameters are chosen on our train + val only, then frozen before anything runs on test or MIDV.
+* Main metric: fixed-box OCR (`box_ocr.py`, both engines) with paired CIs (`compare_runs.py`); SSIM is secondary.
+* The proposal's approach section is a guide, not a contract.
 
 ---
 
-## 1. Write the report (start now; the largest remaining item)
-Everything is in the README (~390 lines of results); the report is a short paper in the proposal's format, so most
-of the work is choosing what to cut.
-- [ ] Confirm the page limit and deadline; agree with the teammate on the shared sections (intro, data, combined
-      artifacts, conclusion) and who writes what.
-- [ ] Outline with a page budget before writing. Glare essentials: method summary (classical + DL), test S_G box OCR
-      per zone for both engines with paired CIs, the MIDV-2020 replication, SSIM vs OCR, fusion in one table
-      (keymax core + all fields), runtime in one line. The rest goes to an appendix or the repo link.
+## 1. Deblur on our dataset splits (teammate + us)
+Goal: one frozen Wiener setting and one fine-tuned Restormer checkpoint that have never seen a test card.
+
+**Done:** `einops` + official weights installed, tests pass, `out/pairs_blur.csv` (16 / 4 / 4), ported scripts smoke-tested.
+All 8 val / test B_D images have a reference of the same size and aligned status; F11_B_D_0's low ECC (0.58) is a lighting
+gradient on its reference, not misalignment (checked by eye).
+
+**Agree with the teammate**
+- [ ] What counts as "our modification" for each deblur method (the report needs with / without). Proposal:
+      Wiener fixed vs adaptive (the proposal's automatic radius / noise); Restormer pretrained vs fine-tuned.
+- [ ] Look through the train overlays (`out/overlays/blur_*`) before training.
+
+**Tune / train (train + val only; commands in DEBLUR.md; selection rule fixed in `tune_deblur.py`)**
+- [ ] `tune_deblur.py wiener --write` (~1 h for 49 candidates x 20 images, both engines).
+- [ ] `tune_deblur.py wiener_adaptive --write`.
+- [ ] `finetune_deblur.py` (2000 steps; the pilot took 29 min on the teammate's machine), then `tune_deblur.py restormer --write`.
+      B_G is not used for training (glare would leak into the deblurring target).
+- [ ] Record the checkpoint hash in `models.json` / DEBLUR.md and share the file with the teammate.
+
+**Evaluate deblur alone (with the parameters frozen)**
+- [ ] On B_D: untreated, Wiener (old setting / retuned / adaptive), Restormer (pretrained / fine-tuned), reference ceiling.
+      Fixed-box OCR with both engines, SSIM vs S_D, paired CIs. Test has n = 4 images, so also report train + val.
+- [ ] Run `box_ocr.py` with `--pairs out/pairs_blur.csv --layout results/box_layout.csv --tag blur`: without `--layout` / `--tag` it
+      overwrites the shared layout and the glare results.
+- [ ] Use `char_acc_all` on B_D: there is no glare, so the zones carry no meaning there (blurred strokes can still trip
+      the > 40 grey-level rule).
+- [ ] Runtime: add Wiener and Restormer to `benchmark_runtime.py`.
+
+## 2. Chain deblur and deglare, evaluate jointly
+**Interface (small code change)**
+- [ ] Deglare → deblur already works: `deblur.py --in-dir out/classical --out-dir ...`.
+- [ ] Deblur → deglare does not: `classical_glare.py` and `finetune_dl.py --infer` read the `path` column of the pairs
+      file. Add `--in-dir DIR` to both (read `DIR/<filename>` instead), so the pairs file, references and zones
+      stay those of the untreated image.
+- [ ] `deblur.py` processes a whole directory and refuses an existing output directory: the run script has to handle reruns.
+- [ ] Add a `chain` step to `run_glare_experiments.sh`.
+
+**Runs** (the same list on every dataset; outputs in `out/chain/<run>/`, `out/midv/chain/...`, `out/midv_clips/chain/...`)
+| | classical | learning-based |
+|---|---|---|
+| deblur only | Wiener | Restormer ft |
+| deglare only (exists) | classical | DL ft |
+| deblur → deglare | Wiener → classical | Restormer ft → DL ft |
+| deglare → deblur | classical → Wiener | DL ft → Restormer ft |
+
+Plus untreated and reference. Optional, only if it is cheap: pretrained Restormer + zero-shot DocSHRNet as the
+"without modifications" chain, and one mixed pair. Both orders are always reported; no order is picked on test.
+
+**Our B_G (30 / 8 / 9): the main joint result**
+- [ ] Box OCR per zone and over all fields (both engines), SSIM vs S_D, `compare_runs.py` on test (n = 9), with
+      train + val as a consistency check (DL train-card numbers are optimistic).
+- [ ] Paired comparisons: each chain vs untreated, vs deblur only, vs deglare only, and order vs order.
+- [ ] S_G as a do-no-harm check: the same chains on sharp images (does the deblur step damage them?).
+- [ ] Things to look at: Wiener ringing around clipped cores, whether deblurring changes the clipped seeds the classical
+      method starts from, and that DL glare was trained on sharp images only. Until now no glare method helped B_G
+      (halo char accuracy ≤ 0.25), so blur is the bottleneck.
+
+**MIDV-2020 photos (100): external**
+- [ ] Same runs with the existing MIDV flags (`--pairs out/pairs_midv.csv --splits midv --conditions S_G`; box OCR with
+      `--layout results/box_layout_midv.csv --tag midv --fold-accents --pad 2`; see CLAUDE.md).
+- [ ] These photos are labelled for glare, not blur. They are softer than the scans (median variance of Laplacian
+      114 vs 558), but that may be resampling rather than defocus. So the question here is whether adding a deblur
+      step helps or harms, not how well defocus is removed.
+- [ ] Wiener's radius was set in our rectified pixels; the resolution matches (~11.8 px/mm), the blur size may not.
+
+**MIDV-2020 clips (if possible)**
+- [ ] Feasible: the same chains on the key frames (`data/midv_clips/rectified`, keymid + keymax), and
+      **fused → deblur** (`out/midv_clips/fused`) and best frame per field → deblur. Compare with fused alone.
+- [ ] Plan the time: Restormer takes ~20 s per card on MPS (more for passports), i.e. at least ~35 min per run on the 100 photos and
+      ~70 min on the 200 key frames, with two Restormer runs per dataset.
+- [ ] Skip deblur → fuse for Restormer (4,641 frames); Wiener only if there is time.
+- [ ] Expect little: blurred frames are already dropped before fusion, and fused is close to the ceiling
+      for PaddleOCR (core 0.99); Tesseract has a bit more room.
+
+**Write-up of this step**
+- [ ] README: one section for the deblur results and one for the joint results; update CLAUDE.md status.
+
+## 3. Write the report
+- [ ] Confirm the page limit and deadline; agree with the teammate who writes what (blur / glare / shared: intro, data,
+      joint results, conclusion).
+- [ ] Outline with a page budget before writing.
+      - Blur: methods, B_D results.
+      - Glare: methods (classical + DL), test S_G box OCR per zone for both engines with paired CIs, MIDV replication,
+        SSIM vs OCR, fusion in one table (keymax core + all fields).
+      - Joint: B_G, MIDV photos, clips; effect of the order.
+      - Runtime in one line. The rest goes to an appendix or the repo link.
 - [ ] State the deviations from the proposal and why:
       - JSHDR (Fu et al.) is gone, so DocSHRNet with a new detection head;
       - HSV hysteresis + low-pass veil replaced by the statistics-inpainting veil; Telea core fill is an ablation;
-      - the degradation-assessment routing stage (step 3 or dropped);
-      - PSNR / LPIPS dropped for the fixed-box OCR metric;
-      - the MIDV-2020 photos stand in for the planned hand-held, uncontrolled set (hand-held phone photos with
-        ground-truth text).
-- [ ] Figures: pipeline, qualitative crops (step 4), `results/figures/midv_clips_fusion.jpg`.
-
-## 2. Blur + glare together: order of the two steps (~1 day; needs the teammate: start the interface now)
-Our 47 B_G images (30 / 8 / 9) have both artifacts; this is where the two halves of the project meet, and the
-last proposal item not yet done. Expect a null result (B_G halo char accuracy ≤ 0.25 for every method): which order
-is less harmful is still a finding.
-- [ ] Agree an interface with the teammate: `deblur.py --in-dir DIR --out-dir DIR` on our rectified images,
-      keeping the filenames (classical Wiener and the learning-based deblurring).
-- [ ] Pipelines on B_G: untreated, deblur only, glare only, deblur → glare, glare → deblur. Pair classical with
-      classical and DL with DL. Optionally test the best mixed pair too.
-- [ ] Same metrics: fixed-box OCR per zone (both engines), SSIM vs S_D, and `compare_runs.py` on
-      test B_G (n = 9; also report train + val as a consistency check).
-- [ ] Note in the report: the DL glare model was trained on sharp images only.
-- [ ] Start early: it depends on the teammate's code running on our images.
-
-## 3. Recapture flag: "this field is under glare, retake the photo" (~1 day)
-From a single image, text in clipped or textured glare is gone and no single-image method brings it back; only
-other frames do (README "Multi-frame fusion"), and reading each field from its cleanest frame gets almost all of that
-gain. The useful single-image output is then a per-field warning ("retake this field"), which is exactly what triggers
-that re-read. This also completes the classical method's "flag large cores as unrecoverable" idea.
-- [ ] New script `src/recapture_flag.py`. Unit = one fixed box (field) of one image, from the
-      `results/box_{engine}*/untreated_boxes.csv` files (ours + MIDV).
-- [ ] Ground truth "needs a retake": the untreated reading of the box is wrong (char accuracy < 0.8, choice fixed
-      now) while the reference reading is right. Per engine: PaddleOCR and Tesseract need different retakes.
-- [ ] Flag rules to compare (all reference-free, i.e. usable in an app):
-      a. box overlaps the clipped core (classical seeds) by ≥ t;
-      b. mean classical veil map `a` in the box ≥ t;
-      c. mean DL detection-head mask in the box ≥ t (`out/dl_ft/masks/`, `out/midv/dl_ft/masks/`);
-      d. a box-level brightness / contrast statistic (e.g. 5th-percentile darkness of the box) ≥ t.
-- [ ] Choose each t on our train + val; report precision / recall / F1 of the flag on our test and on all
-      100 MIDV photos (external).
-- [ ] Also report OCR accuracy on the fields NOT flagged vs the fraction flagged ("retake 12% of the fields →
-      accuracy of the rest goes from x to y"). This is the practical result for a scanning app.
-- [ ] Optional, same script: the proposal's degradation-assessment stage at image level (variance of the Laplacian
-      for blur, fraction of clipped pixels for glare), with its thresholds chosen on train + val. Otherwise the
-      report says it was dropped.
-
-## 4. Report figures (~0.5 day)
-- [ ] Qualitative figure: zoomed crops of text, hologram and portrait for each method, to look for invented
-      characters (zero-shot fills clipped cores with text-like smears) and damage to security features.
-      Use our test cards and MIDV examples (`results/figures/midv_examples.jpg`).
-- [ ] Optional figure: the halo boxes DL breaks for PaddleOCR (`results/box_paddle*/*_boxes.csv` has every
-      reading), to show why (smoothing vs invented texture).
-
-## 5. Noise-floor photos (~30 min, only if the cards are at hand)
-- [ ] Photograph a second clean S_D image of 3–4 cards with the same setup, rectify with `rectify_ids.py`, and
-      run `box_ocr.py` on them. The difference from the first S_D is the real noise floor, which replaces the
-      `ref_jitter` proxy in the README.
-
-## 6. Hybrid: CNN glare detection + classical removal (~1 day; optional, proposal stretch goal 3)
-The classical method acts only around clipped seeds: it leaves 69 of 100 MIDV photos and 18 of our 94 images
-untouched. The DL detection head finds glare without clipping. Expected gain is small: the head's mask has IoU
-0.30 with the glare region on test, and the classical veil inversion is already neutral to harmful for PaddleOCR.
-- [ ] `classical_glare.py --mask-dir DIR --mask-thresh t`: use the DL mask (thresholded, dilated) as the region
-      where the veil is estimated and inverted. In `estimate_veil`, the mask replaces the seed-based `near`
-      zone and the "connected to a seed" hysteresis. `remove_glare` must no longer return early when there are
-      no clipped cores. The core fill stays limited to clipped cores.
-- [ ] Choose t (and nothing else) on our train + val with the fixed-box metric of both engines, keeping the
-      do-no-harm rule for ssim_outside.
-- [ ] Evaluate on our test and on all 100 MIDV photos (the DL masks come from the model trained on our data
-      only, so MIDV stays external). Compare with classical, DL fine-tuned and untreated.
-- [ ] Runtime: `benchmark_runtime.py --methods ...` for the hybrid (it includes the DL forward pass for the mask).
-
-## 7. Optional, only if time remains: train on ours + MIDV (~3–5 days)
-Question: does more real ID-card glare close the "fine-tuned ≈ zero-shot on MIDV" gap? It will not change the
-headline (engine-dependent) result.
-
-Training target on MIDV = the scan colour-matched to the photo (`prepare_midv.match_tone`). This is a sound
-target:
-* it is the same printed document, glare-free, aligned to the photo (guarded ECC);
-* the colour match removes the device and illumination difference that a raw scan would teach the network to undo;
-* restricting the loss to the glare mask leaves the remaining differences outside the glare (sharpness, noise)
-  out of training. The network's gate keeps the input there anyway.
-
-Weak points to keep an eye on (they do not argue against it):
-* the colour match is smooth (σ = 150 px), so local tone differences remain;
-* hologram regions look different in a scanner;
-* 31% of MIDV photos had their ECC rejected and are dropped from training.
-
-MIDV split (fixed now, before any results; 2 ID cards + 2 passports in test; write it to `midv_split.csv` and never regenerate it):
-| split | types | photos 60–69 | clips 90–99 |
-|---|---|---|---|
-| **test** | alb_id, esp_id, aze_passport, grc_passport | 40 photos (202 glare-zone boxes) | not used |
-| train | est_id, fin_id, svk_id, lva_passport, srb_passport, rus_internalpassport | 60 photos | 60 clips |
-
-rus_internalpassport is in train on purpose: it has ~1 Latin field per document. Expected CI half-width on the 40
-test photos is ~0.05 (vs ~0.03 with 100), so a small effect may stay n.s.
-- [ ] **Clips:** already aligned for fusion: `out/midv_clips_frames.csv` (one raw -> scan-frame homography per frame;
-      `prepare_midv_clips.load_stack` re-warps them). For training, use clips of the 6 train types only, with a frame
-      subsample fixed in advance (e.g. every 5th aligned frame), and only clips whose anchor -> scan ECC was used.
-- [ ] **`prepare_midv.py --source photo|clips`:** add a `midv_split` column, save the tone-matched scan
-      (`data/midv/reference_matched/`) as the DL training target, write `out/pairs_midv_train_clips.csv`
-      (not `out/pairs_midv_clips.csv`: that is the fusion key-frame file).
-- [ ] **A′ (baseline):** current recipe trained on our train + val S_G (39 images), no val
-      (`finetune_dl.py --train-splits train,val --no-val`).
-- [ ] **B:** our train + val + MIDV train types (photos + clip frames). On MIDV rows:
-      - target = tone-matched scan, with L1 / SSIM only inside the (dilated) glare mask;
-      - detection target = the precomputed mask;
-      - drop rows with `ecc_used == False`;
-      - 50 / 50 crop sampling between ours and MIDV, fixed in advance.
-- [ ] **Evaluate:**
-      - B vs A′ vs zero-shot vs untreated on the 40 MIDV test photos (box OCR, both engines; `compare_runs.py`
-        needs a filter for the test types) and on our test;
-      - A′ also on all 100 MIDV photos;
-      - on the clips, report the DL baselines on the 4 test types separately (the 6 train types' clips were trained
-        on); fusion has nothing learned and stays on all 100.
-
-## Not doing (mention as future work in the report)
-* **SHDocs pre-training** (NeurIPS 2024, github.com/JovinLeong/SHDocs; real polarisation-separated pairs on paper
-  forms): worth trying only if step 7 runs and fails.
-* **Face-recognition evaluation** (stretch goal 2), retuning the classical method with MIDV, cross-validation.
-* **Ruled out:** synthetic / transplanted glare. **Dropped:** DocHighlight (the backbone is already pretrained on
-  it), DocHR14K (no download link). PSNR and LPIPS (SSIM + the OCR metrics are enough).
-
-## Lessons for the report (if redoing from scratch)
-* Fix the metric first: fixed-box OCR per field and zone with a measured noise floor; SSIM only as a secondary check.
-* Capture protocol:
-  - lock exposure and white balance;
-  - use RAW or exposure brackets against clipping;
-  - more cards, and two clean references per card;
-  - a cross-polarised clean shot (as SHDocs does) gives near-perfect pairs.
-* Split by card (and by document type for public sets), make the test set large enough (one 4-card split gave
-  CIs of ±0.1), and fix the training recipe instead of selecting on a tiny val split.
-* Flag fields under clipped glare for a retake rather than inventing strokes.
-* Capture a short burst, not one photo: glare moves with the phone, and a per-field re-read recovers clipped text.
+      - which Wiener is the main method (fixed or the proposal's automatic radius / noise estimation), after step 1;
+      - the degradation-assessment routing stage was dropped;
+      - PSNR / LPIPS replaced by the fixed-box OCR metric; face recognition not evaluated;
+      - MIDV-2020 photos stand in for the planned hand-held, uncontrolled set.
+- [ ] Figures: pipeline; qualitative zoomed crops per method (text, hologram, portrait; look for invented characters);
+      core / halo example; one B_G chain example; fusion example. Start from `results/figures/`
+      (`core_halo_example.png`, `demo_*.jpg`, `midv_examples.jpg`, `midv_clips_fusion.jpg`) and `src/make_demo_figures.py`.
+- [ ] Limitations: small test split (4 cards; 8 S_G / 9 B_G / 4 B_D), only a proxy for the noise floor, DL glare
+      trained on 31 sharp images.
+- [ ] Lessons: fix the metric first; lock exposure / white balance and take two clean references per card; more cards and
+      a larger test set; capture a short burst instead of one photo; flag clipped fields for a retake instead of
+      inventing strokes.
+- [ ] Future work (not doing): per-field recapture flag; CNN detection + classical removal hybrid; training on MIDV;
+      a second S_D photo per card for a real noise floor; SHDocs pre-training; face-recognition evaluation.

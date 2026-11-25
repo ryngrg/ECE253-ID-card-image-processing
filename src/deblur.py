@@ -71,10 +71,10 @@ def process(in_dir, out_dir, block):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--method', required=True, choices=['wiener', 'restormer'])
+    parser.add_argument('--method', required=True, choices=['wiener', 'wiener_adaptive', 'restormer'])
     parser.add_argument('--in-dir', required=True, type=Path)
     parser.add_argument('--out-dir', required=True, type=Path)
-    parser.add_argument('--params', type=Path, help='Wiener JSON with radius and k')
+    parser.add_argument('--params', type=Path, help='Wiener JSON (radius and k; or the adaptive settings)')
     parser.add_argument('--radius', type=int, help='Override Wiener radius in input pixels; 0 bypasses')
     parser.add_argument('--k', type=float, help='Override fixed Wiener regularization')
     parser.add_argument('--weights', type=Path, help='Restormer checkpoint; default: official pretrained')
@@ -84,9 +84,16 @@ def main():
     args = parser.parse_args()
     try:
         settings = {}
-        if args.method == 'wiener':
+        if args.method != 'restormer':
             if args.weights is not None or args.device != 'auto' or args.tile_size != 512 or args.overlap != 64:
                 raise ValueError('Weights, device and tiling options apply only to Restormer.')
+        if args.method == 'wiener_adaptive':
+            if args.radius is not None or args.k is not None:
+                raise ValueError('Adaptive Wiener chooses radius and K itself.')
+            params = args.params or ROOT / 'deblur_wiener_adaptive_params.json'
+            config = json.loads(params.read_text()) if params.is_file() else {}
+            settings = {'adaptive': {k: v for k, v in config.items() if k != 'description'}}
+        elif args.method == 'wiener':
             params = args.params or ROOT / 'deblur_wiener_params.json'
             config = json.loads(params.read_text())
             settings = {key: config[key] for key in ('radius', 'k')}
