@@ -1,0 +1,19 @@
+\begin{tabular}{lllll}
+\toprule
+ & \multicolumn{2}{c}{blur + glare, our test ($n=9$)} & \multicolumn{2}{c}{glare, MIDV photos ($n=100$)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+method & PaddleOCR & Tesseract & PaddleOCR & Tesseract \\
+\midrule
+untreated (accuracy) & .550 & .189 & .887 & .534 \\
+\midrule
+classical deglare & $-$.003 [$-$.011, .004] & \textbf{+.033 [.004, .067]} & \textbf{$-$.008 [$-$.016, $-$.002]} & +.000 [$-$.007, .007] \\
+DL deglare & +.003 [$-$.010, .018] & \textbf{+.051 [.001, .130]} & \textbf{$-$.052 [$-$.067, $-$.040]} & \textbf{+.074 [.055, .094]} \\
+Wiener, fixed & $-$.121 [$-$.305, .007] & $-$.061 [$-$.201, .064] & \textbf{$-$.465 [$-$.496, $-$.432]} & \textbf{$-$.476 [$-$.523, $-$.429]} \\
+Wiener, adaptive & $-$.078 [$-$.259, .018] & $-$.013 [$-$.068, .043] & \textbf{$-$.046 [$-$.068, $-$.027]} & \textbf{$-$.058 [$-$.092, $-$.030]} \\
+Restormer (ft) & \textbf{+.087 [.006, .175]} & \textbf{+.294 [.169, .426]} & \textbf{$-$.005 [$-$.008, $-$.001]} & \textbf{+.011 [.001, .023]} \\
+Restormer $\rightarrow$ DL & \textbf{+.090 [.006, .179]} & \textbf{+.339 [.223, .454]} & \textbf{$-$.059 [$-$.077, $-$.043]} & \textbf{+.086 [.066, .107]} \\
+DL $\rightarrow$ Restormer & \textbf{+.094 [.009, .186]} & \textbf{+.332 [.228, .433]} & \textbf{$-$.056 [$-$.071, $-$.042]} & \textbf{+.067 [.047, .087]} \\
+\midrule
+reference (accuracy) & .989 & .852 & .994 & .896 \\
+\bottomrule
+\end{tabular}

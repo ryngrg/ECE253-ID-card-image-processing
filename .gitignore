@@ -1,20 +1,26 @@
-# environments
+# environments, secrets
 card_scanning_env/
 .venv/
+.env
 
-# data (large; contains real ID cards): never commit
+# images (large; contain real ID cards): never commit
 data/*
 !data/rectified/
 data/rectified/*
 !data/rectified/alignment_log.csv
 
-# generated outputs (only the pairs tables are shared)
+# method outputs: only the small tables are shared (image pairs and splits, frame homographies)
 out/*
-!out/pairs.csv
-!out/pairs_blur.csv
+!out/*.csv
 results/ocr_cache/
-checkpoints/
 logs/
+*.log
+
+# weights; the small training logs next to them are shared
+checkpoints/**
+!checkpoints/**/
+!checkpoints/**/*.csv
+!checkpoints/**/run.json
 *.pt
 *.pth
 *.ckpt
@@ -22,21 +28,27 @@ logs/
 # third-party code + pretrained weights (see README for download)
 third_party/
 
-# python / OS / editors
+# archives (the submission zip, downloaded datasets)
+*.zip
+*.tar
+*.tar.gz
+
+# LaTeX build files (the .tex, .bib and final PDFs are kept)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+
+# python / OS / editors / office lock files
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
 .idea/
 .claude/settings.local.json
-
-# LaTeX build files
-*.aux
-*.fdb_latexmk
-*.fls
-*.synctex.gz
-report/**/*.log
-report/**/*.bbl
-report/**/*.blg
-report/**/*.out
+~$*

@@ -28,7 +28,7 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
 - Groups `common` / `glare` / `blur` / `joint` are used in `src/`, `results/`; `glare` / `blur` also in `params/`, `checkpoints/`, `tests/`.
   Do not move `out/`, `data/` or `results/ocr_cache/`: the OCR cache is keyed by absolute image path + mtime.
 - `third_party/DocSHRNet` (code) and `third_party/weights/docshrnet.pth` are git-ignored; README has the download steps.
-  Also git-ignored: `out/`, `checkpoints/`, `logs/`, `data/`, `results/ocr_cache/`.
+  Also git-ignored: `data/`, `out/` (except `out/*.csv`), weights in `checkpoints/`, `logs/`, `results/ocr_cache/`.
 - PaddleOCR (the engine we report) takes ~6.5 s/image on CPU, so a full evaluation of 94 images takes ~10 min.
   Results are cached in `results/ocr_cache/<engine>_<lang>/`, keyed by path + mtime: rewriting an output re-OCRs it.
   Run long jobs in the background.
@@ -79,6 +79,7 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
 - `run_chain_experiments.sh` (steps `blur ours midv clips` + `_eval`) and `summarise_chain.py`: deblur-only (-> `results/blur/`) and deblur + deglare (-> `results/joint/`) experiments.
 - `src/report/`: `make_tables.py` (every table + `paired_changes.csv` -> `report/tables/`, never type numbers by hand), then `make_figures.py`
   (-> `report/figures/` pdf + png; `--only NAME`); `make_demo_figures.py` (whole-card panels -> `results/figures/`).
+  Paper: `report/paper.tex` (ICASSP template, 5 pages incl. references; `cd report && latexmk -pdf paper.tex`).
   Figures show specimen cards only (F01-F05, B01-B03): `make_figures.ours()` asserts it.
 - `run_glare_experiments.sh`: reruns all glare experiments after `prepare_data.py` (step `midv` = the external set).
 

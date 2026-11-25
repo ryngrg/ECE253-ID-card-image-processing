@@ -4,8 +4,8 @@ Figures of the report and slides -> report/figures/{name}.pdf and .png (300 dpi)
 (column 3.39 in, full width 7 in).  Only specimen cards (F01-F05, B01-B03) and MIDV-2020 documents are shown.
 
   dataset          raw photos of one card: sharp / blurred x diffuse / glare (two of the light setups)
-  blur_crops       text lines of test B_D images per deblur method, with the readings of both OCR engines
-  glare_crops      glare regions per deglare method (zones marked on the untreated image), with readings
+  blur_crops       (and blur_crops_small: three rows, for the paper) text lines of test B_D images per deblur method, with the readings of both OCR engines
+  glare_crops      (and glare_crops_small: two rows, for the paper) glare regions per deglare method (zones marked on the untreated image), with readings
   chain_crops      B_G regions: single steps and both orders, with readings
   fusion           MIDV-2020 clip: key frame, another frame, best frame per field, fused, scan
   halo_changes     paired change of halo accuracy per method, engine and data set (dots, 95% CI)
@@ -77,19 +77,19 @@ def reading(folder, run, image, box):
         t = pd.read_csv(f"results/{folder.format(e)}/{run}_boxes.csv", keep_default_na=False)
         r = t[(t.image == image) & (t.box == box)].iloc[0]
         hyp = str(r.hyp).strip() or "(nothing)"
-        hyp = hyp if len(hyp) <= 28 else hyp[:27] + "…"
+        hyp = hyp if len(hyp) <= 27 else hyp[:26] + "…"
         out.append((f"{tag}: ", hyp, int(r.ed) == 0))
     return out
 
 
-def put_reading(ax, rd, size=5.8):
+def put_reading(ax, rd, size=6.8):
     for k, (tag, hyp, ok) in enumerate(rd):
         s = f"{tag}{hyp}".replace("$", r"\$")
         ax.text(0.0, -0.03 - 0.0, "\n" * k + s + (" ✓" if ok else ""), transform=ax.transAxes, va="top", ha="left", fontsize=size,
                 color=INK if ok else MUTED, fontfamily=["Arial", "DejaVu Sans"], linespacing=1.15, clip_on=False)
 
 
-def panel_grid(name, rows, cols, width, text_lines=2, head=0.17, gap=0.05, text_pt=5.8):
+def panel_grid(name, rows, cols, width, text_lines=2, head=0.19, gap=0.05, text_pt=6.8):
     """rows: list of (list of RGB crops, list of readings or None); all crops of a row share one aspect ratio."""
     n = len(cols)
     w = (width - gap * (n - 1)) / n
@@ -104,7 +104,7 @@ def panel_grid(name, rows, cols, width, text_lines=2, head=0.17, gap=0.05, text_
             ax.imshow(img, interpolation="lanczos", aspect="auto")
             ax.set_axis_off()
             if y == H - head:
-                ax.set_title(cols[j], fontsize=7, pad=2.5, color=INK)
+                ax.set_title(cols[j], fontsize=8, pad=2.5, color=INK)
             if texts:
                 put_reading(ax, texts[j], text_pt)
         y -= h + th
@@ -146,7 +146,7 @@ def dataset():
             for s in ax.spines.values():
                 s.set_visible(False)
             if i == 0 and j == 0:
-                ax.set_title("diffuse", fontsize=7, pad=2.5)
+                ax.set_title("diffuse", fontsize=8, pad=2.5)
             if i == 0 and j == 1:  # one title over both glare columns
                 ax.text(1 + gap / w / 2, 1.03, "glare, different light setups", transform=ax.transAxes, ha="center", va="bottom", fontsize=7)
             if j == 0:
@@ -173,6 +173,7 @@ def blur_crops():
             txt.append(reading("blur/box_{}_blur", run, f"{name}_rectified.png", box))
         rows.append((imgs, txt))
     panel_grid("blur_crops", rows, [r[2] for r in runs], FULL)
+    panel_grid("blur_crops_small", [rows[0], rows[2], rows[3]], [r[2] for r in runs], FULL)
 
 
 def region_rows(spec, runs, folder):
@@ -205,7 +206,10 @@ def glare_crops():
               else load(f"out/midv/{run}/{f}"))
         imgs.append(crop(im, b))
         txt.append(reading("glare/box_{}_midv", run, f, MIDV_BOX))
-    panel_grid("glare_crops", rows + [(imgs, txt)], [r[2] for r in runs], FULL)
+    rows.append((imgs, txt))
+    panel_grid("glare_crops", rows, [r[2] for r in runs], FULL)
+    small = region_rows([("F03_S_G_1", 16, (300, 320, 780, 570)), ("F04_S_G_1", 10, (180, 130, 660, 380))], runs, "glare/box_{}")
+    panel_grid("glare_crops_small", small, [r[2] for r in runs], FULL)
 
 
 MIDV_BOX = 6  # date of issue

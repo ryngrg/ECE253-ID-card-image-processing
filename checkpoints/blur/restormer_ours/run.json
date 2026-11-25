@@ -1,0 +1,111 @@
+{
+  "settings": {
+    "task": "single_image_defocus_deblurring",
+    "architecture": {
+      "inp_channels": 3,
+      "out_channels": 3,
+      "dim": 48,
+      "num_blocks": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "num_refinement_blocks": 4,
+      "heads": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "ffn_expansion_factor": 2.66,
+      "bias": false,
+      "LayerNorm_type": "WithBias",
+      "dual_pixel_task": false
+    },
+    "architecture_sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a",
+    "pretrained_sha256": "7dce451f33f8f5e0faf7c4e3996e5dcc1bd425ecd1ada99b0f9750e490fd4c9e",
+    "script": "src/finetune_deblur.py",
+    "script_sha256": "710174b8560c37d287a18ab5ed489523ec1d286d4b0dbd3cbba229dc77778d33",
+    "split_sha256": "6ca5af8e3f6e715935713d39c4efec419db9e7a7c7adb0d1dc08aa7a59693481",
+    "pairs_sha256": "a713ae934cc12a3870efd3a7782efa8546fb2409f986b56f9ded80c4eafce1b2",
+    "train_images": [
+      "data/rectified/B01_B_D_0_rectified.png",
+      "data/rectified/B02_B_D_0_rectified.png",
+      "data/rectified/B04_B_D_0_rectified.png",
+      "data/rectified/B06_B_D_0_rectified.png",
+      "data/rectified/B07_B_D_0_rectified.png",
+      "data/rectified/B08_B_D_0_rectified.png",
+      "data/rectified/F02_B_D_0_rectified.png",
+      "data/rectified/F05_B_D_0_rectified.png",
+      "data/rectified/F06_B_D_0_rectified.png",
+      "data/rectified/F08_B_D_0_rectified.png",
+      "data/rectified/F09_B_D_0_rectified.png",
+      "data/rectified/F10_B_D_0_rectified.png",
+      "data/rectified/F10_B_D_1_rectified.png",
+      "data/rectified/F12_B_D_0_rectified.png",
+      "data/rectified/F12_B_D_1_rectified.png",
+      "data/rectified/F14_B_D_0_rectified.png"
+    ],
+    "val_images": [
+      "data/rectified/B05_B_D_0_rectified.png",
+      "data/rectified/F01_B_D_0_rectified.png",
+      "data/rectified/F07_B_D_0_rectified.png",
+      "data/rectified/F13_B_D_0_rectified.png"
+    ],
+    "train_cards": [
+      "B01",
+      "B02",
+      "B04",
+      "B06",
+      "B07",
+      "B08",
+      "F02",
+      "F05",
+      "F06",
+      "F08",
+      "F09",
+      "F10",
+      "F12",
+      "F14"
+    ],
+    "lr": 1e-05,
+    "seed": 253,
+    "steps": 2000,
+    "patch_size": 128,
+    "p_text": 0.75,
+    "match_tone": true,
+    "torch_version": "2.14.1",
+    "device": "mps"
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_l1": 0.11529241874814034
+    },
+    {
+      "step": 500,
+      "train_l1": 0.0624921558033675,
+      "val_l1": 0.07098532828968018,
+      "seconds": 555.5537492500152
+    },
+    {
+      "step": 1000,
+      "train_l1": 0.05311523902788758,
+      "val_l1": 0.06745137693360448,
+      "seconds": 1165.1330532919965
+    },
+    {
+      "step": 1500,
+      "train_l1": 0.05029952620342374,
+      "val_l1": 0.06808429292868823,
+      "seconds": 1772.9077900830307
+    },
+    {
+      "step": 2000,
+      "train_l1": 0.05116172209009528,
+      "val_l1": 0.06664066994562745,
+      "seconds": 2381.348650458036
+    }
+  ]
+}

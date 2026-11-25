@@ -160,6 +160,19 @@ def t_joint():
     n = acc("joint/box_paddle_midv_chain", "untreated", "midv", "S_G", "all")[1]
     t_levels_and_changes("joint_midv", "MIDV-2020 photos", "joint/box_{}_midv_chain", None, "midv", "S_G",
                          [r for r in runs if r[0] not in ("restormer_pre", "restormer_classical")], f"n = 100 images, {n} boxes, external.")
+    # paper version: paired changes only, both data sets in one table
+    short = [r for r in runs if r[0] not in ("restormer_pre", "restormer_classical", "wiener_ad_classical", "classical_wiener_ad")]
+    sets = [("joint/box_{}_chain", "test", "B_G"), ("joint/box_{}_midv_chain", "midv", "S_G")]
+    rows = []
+    for m, lab in short:
+        if m in ("untreated", "reference"):
+            rows.append([lab + " (accuracy)"] + [f3(acc(p.format(e), m, s, c, "all")[0]) for p, s, c in sets for e, _ in ENGINES])
+        else:
+            rows.append([lab] + [ci(change(p.format(e), m, s, c, "char_acc_all")) for p, s, c in sets for e, _ in ENGINES])
+    rows.insert(len(rows) - 1, None)
+    rows.insert(1, None)
+    write("joint", "joint, paired changes (paper version)", ["method"] + [lab for _, lab in ENGINES] * 2, rows, "lllll",
+          [("", 1), ("blur + glare, our test ($n=9$)", 2), ("glare, MIDV photos ($n=100$)", 2)])
     # the two questions about the chain, answered directly
     rows = []
     for part, split, cond, lab in (("joint/box_{}_chain", "test", "B_G", "B\\_G test"), ("joint/box_{}_midv_chain", "midv", "S_G", "MIDV photos")):
@@ -188,6 +201,14 @@ def t_glare():
     rows = [[lab] + [c[i] for c in cols] for i, (_, lab) in enumerate(GLARE)]
     rows.insert(4, None)
     write("glare_zones", "glare, character accuracy per zone", ["method"] + head, rows, "l" + "r" * 12, groups, "; ".join(note) + ".")
+
+    # one-column paper version: core and halo only
+    cols = [best([acc(part.format(e), m, split, "S_G", z)[0] for m, _ in GLARE], skip=(4,))
+            for e, _ in ENGINES for _, part, split in SETS for z in ("core", "halo")]
+    rows = [[lab] + [c[i] for c in cols] for i, (_, lab) in enumerate(GLARE)]
+    rows.insert(4, None)
+    write("glare_small", "glare, core and halo (paper version)", ["method"] + ["core", "halo"] * 4, rows, "l" + "r" * 8,
+          [("", 1)] + [(f"{e}, {s}", 2) for e in ("P", "T") for s in ("ours", "MIDV")])
 
     rows = []
     for m, mlab in GLARE[1:4]:
@@ -220,17 +241,17 @@ def t_modifications():
     """Each modification against the version without it: the course's 'with and without' question."""
     S = "char_acc_{}".format
     spec = [  # label, folder, base, new, split, cond, zone, SSIM folder, (SSIM base, new), SSIM metric
-        ("Wiener: fixed" + A + "adaptive", "B\\_D", "blur/box_{}_blur", "wiener", "wiener_ad", "test", "B_D", "all", "blur/ssim_blur", "ssim"),
-        ("Restormer: pretrained" + A + "fine-tuned", "B\\_D", "blur/box_{}_blur", "restormer_pre", "restormer", "test", "B_D", "all", "blur/ssim_blur", "ssim"),
-        ("classical: decay" + A + "statistics veil", "S\\_G, halo", "glare/box_{}", "classical_decay", "classical", "test", "S_G", "halo", "glare/whole_card", "ssim_glare"),
-        ("classical: Telea" + A + "flat core fill", "S\\_G, core", "glare/box_{}", "classical_telea", "classical", "test", "S_G", "core", "glare/whole_card", "ssim_glare"),
-        ("DocSHRNet: zero-shot" + A + "fine-tuned", "S\\_G, halo", "glare/box_{}", "dl_zeroshot", "dl_ft", "test", "S_G", "halo", "glare/whole_card", "ssim_glare"),
+        ("Wiener: fixed" + A + "adaptive", "B", "blur/box_{}_blur", "wiener", "wiener_ad", "test", "B_D", "all", "blur/ssim_blur", "ssim"),
+        ("Restormer: pretrained" + A + "fine-tuned", "B", "blur/box_{}_blur", "restormer_pre", "restormer", "test", "B_D", "all", "blur/ssim_blur", "ssim"),
+        ("classical: decay" + A + "statistics veil", "G, halo", "glare/box_{}", "classical_decay", "classical", "test", "S_G", "halo", "glare/whole_card", "ssim_glare"),
+        ("classical: Telea" + A + "flat core fill", "G, core", "glare/box_{}", "classical_telea", "classical", "test", "S_G", "core", "glare/whole_card", "ssim_glare"),
+        ("DocSHRNet: zero-shot" + A + "fine-tuned", "G, halo", "glare/box_{}", "dl_zeroshot", "dl_ft", "test", "S_G", "halo", "glare/whole_card", "ssim_glare"),
         ("DocSHRNet: zero-shot" + A + "fine-tuned", "MIDV, halo", "glare/box_{}_midv", "dl_zeroshot", "dl_ft", "midv", "S_G", "halo", None, None)]
     rows = []
     for lab, data, part, base, new, split, cond, zone, sdir, smet in spec:
         rs = [change(part.format(e), new, split, cond, S(zone), base) for e, _ in ENGINES]
         rows.append([lab, f"{data} ({rs[0]['n']})"] + [ci(r) for r in rs] + [ci(change(sdir, new, split, cond, smet, base)) if sdir else "--"])
-    write("modifications", "effect of each modification (new minus old version)", ["modification", "test data (n)", "PaddleOCR", "Tesseract", "SSIM"], rows, "lllll",
+    write("modifications", "effect of each modification (new minus old version)", ["modification", "test data ($n$)", "PaddleOCR", "Tesseract", "SSIM"], rows, "lllll",
           note="Character accuracy in the named zone (B_D: all boxes); SSIM: whole card for blur, inside the glare for glare. n = images with a box in the zone.")
 
 
@@ -250,6 +271,15 @@ def t_fusion():
     nb = [acc("glare/box_paddle_midv_clips", "untreated", s, "S_G", z)[1] for s in ("keymid", "keymax") for z in ("core", "halo", "all")]
     write("fusion", "multi-frame fusion, 100 MIDV-2020 clips", ["method"] + head, rows, "l" + "r" * 12, groups,
           f"boxes core / halo / all: keymid {nb[0]} / {nb[1]} / {nb[2]}, keymax {nb[3]} / {nb[4]} / {nb[5]}.")
+    # one-column paper version
+    short = [("untreated", "untreated"), ("classical", "classical"), ("dl_ft", "DL, fine-tuned"), ("best_frame", "best frame"), ("best_field", "best per field"),
+             ("median", "median"), ("fused", "fused"), ("reference", "scan")]
+    cols = [best([acc(f"glare/box_{e}_midv_clips", m, s, "S_G", z)[0] for m, _ in short], skip=(7,))
+            for e, _ in ENGINES for s, z in (("keymax", "core"), ("keymax", "all"), ("keymid", "all"))]
+    rows = [[lab] + [c[i] for c in cols] for i, (_, lab) in enumerate(short)]
+    rows.insert(7, None)
+    write("fusion_small", "multi-frame fusion (paper version)", ["method"] + ["core", "all", "all"] * 2, rows, "l" + "r" * 6,
+          [("", 1), ("PaddleOCR", 3), ("Tesseract", 3)], "columns per engine: keymax core, keymax all, keymid all.")
     rows = []
     for base, lab in (("untreated", "fused vs untreated"), ("best_frame", "fused vs best single frame"), ("best_field", "fused vs best frame per field")):
         rows.append([lab] + [ci(change(f"glare/box_{e}_midv_clips", "fused", s, "S_G", f"char_acc_{z}", base))

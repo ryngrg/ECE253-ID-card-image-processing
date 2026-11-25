@@ -1,0 +1,17 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{PaddleOCR} & \multicolumn{3}{c}{Tesseract} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+method & core & all & all & core & all & all \\
+\midrule
+untreated & .479 & .677 & .840 & .183 & .410 & .589 \\
+classical & .406 & .635 & .824 & .210 & .425 & .601 \\
+DL, fine-tuned & .424 & .642 & .813 & .266 & .478 & .638 \\
+best frame & .960 & .946 & .947 & .806 & .793 & .794 \\
+best per field & .977 & .968 & .969 & .831 & .822 & .822 \\
+median & .970 & .963 & .962 & .782 & .790 & .789 \\
+fused & \textbf{.989} & \textbf{.976} & \textbf{.974} & \textbf{.856} & \textbf{.838} & \textbf{.824} \\
+\midrule
+scan & .996 & .994 & .994 & .902 & .897 & .897 \\
+\bottomrule
+\end{tabular}

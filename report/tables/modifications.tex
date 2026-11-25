@@ -1,12 +1,12 @@
 \begin{tabular}{lllll}
 \toprule
-modification & test data (n) & PaddleOCR & Tesseract & SSIM \\
+modification & test data ($n$) & PaddleOCR & Tesseract & SSIM \\
 \midrule
-Wiener: fixed $\rightarrow$ adaptive & B\_D (4) & $-$.026 [$-$.073, .000] & +.014 [$-$.084, .175] & \textbf{+.030 [.003, .057]} \\
-Restormer: pretrained $\rightarrow$ fine-tuned & B\_D (4) & +.015 [$-$.073, .081] & \textbf{+.305 [.165, .412]} & \textbf{+.049 [.021, .071]} \\
-classical: decay $\rightarrow$ statistics veil & S\_G, halo (7) & $-$.007 [$-$.018, .000] & \textbf{+.089 [.002, .252]} & +.009 [$-$.008, .033] \\
-classical: Telea $\rightarrow$ flat core fill & S\_G, core (4) & $-$.094 [$-$.457, .150] & +.000 [.000, .000] & \textbf{+.003 [.000, .008]} \\
-DocSHRNet: zero-shot $\rightarrow$ fine-tuned & S\_G, halo (7) & \textbf{+.096 [.046, .143]} & \textbf{+.053 [.004, .096]} & \textbf{+.080 [.007, .157]} \\
+Wiener: fixed $\rightarrow$ adaptive & B (4) & $-$.026 [$-$.073, .000] & +.014 [$-$.084, .175] & \textbf{+.030 [.003, .057]} \\
+Restormer: pretrained $\rightarrow$ fine-tuned & B (4) & +.015 [$-$.073, .081] & \textbf{+.305 [.165, .412]} & \textbf{+.049 [.021, .071]} \\
+classical: decay $\rightarrow$ statistics veil & G, halo (7) & $-$.007 [$-$.018, .000] & \textbf{+.089 [.002, .252]} & +.009 [$-$.008, .033] \\
+classical: Telea $\rightarrow$ flat core fill & G, core (4) & $-$.094 [$-$.457, .150] & +.000 [.000, .000] & \textbf{+.003 [.000, .008]} \\
+DocSHRNet: zero-shot $\rightarrow$ fine-tuned & G, halo (7) & \textbf{+.096 [.046, .143]} & \textbf{+.053 [.004, .096]} & \textbf{+.080 [.007, .157]} \\
 DocSHRNet: zero-shot $\rightarrow$ fine-tuned & MIDV, halo (91) & +.020 [.000, .041] & +.012 [$-$.011, .034] & -- \\
 \bottomrule
 \end{tabular}

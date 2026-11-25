@@ -35,6 +35,16 @@ our test: 5 core / 26 halo / 77 outside boxes; MIDV photos: 49 core / 434 halo /
 | DL, fine-tuned | **.467** | .817 | .937 | .511 | .754 | .952 | **.244** | **.620** | **.779** | **.281** | **.447** | .776 |
 | reference | .978 | .994 | .987 | 1.000 | .995 | .993 | .867 | .837 | .848 | .922 | .900 | .890 |
 
+## glare_small: glare, core and halo (paper version)
+
+| method | P, ours core | P, ours halo | P, MIDV core | P, MIDV halo | T, ours core | T, ours halo | T, MIDV core | T, MIDV halo |
+|---|---|---|---|---|---|---|---|---|
+| untreated | .444 | **.869** | **.636** | **.830** | .133 | .417 | .218 | .334 |
+| classical | .378 | .854 | .484 | .829 | .178 | .480 | .159 | .333 |
+| DL, zero-shot | .400 | .714 | .467 | .735 | .222 | .574 | .237 | .435 |
+| DL, fine-tuned | **.467** | .817 | .511 | .754 | **.244** | **.620** | **.281** | **.447** |
+| reference | .978 | .994 | 1.000 | .995 | .867 | .837 | .922 | .900 |
+
 ## glare_halo_changes: glare, paired change of halo accuracy vs untreated
 n (images with a halo box) = 7 / 91 / 73; clips: keymid frames, single-image methods.
 
@@ -63,11 +73,11 @@ Character accuracy in the named zone (B_D: all boxes); SSIM: whole card for blur
 
 | modification | test data (n) | PaddleOCR | Tesseract | SSIM |
 |---|---|---|---|---|
-| Wiener: fixed → adaptive | B_D (4) | −.026 [−.073, .000] | +.014 [−.084, .175] | **+.030 [.003, .057]** |
-| Restormer: pretrained → fine-tuned | B_D (4) | +.015 [−.073, .081] | **+.305 [.165, .412]** | **+.049 [.021, .071]** |
-| classical: decay → statistics veil | S_G, halo (7) | −.007 [−.018, .000] | **+.089 [.002, .252]** | +.009 [−.008, .033] |
-| classical: Telea → flat core fill | S_G, core (4) | −.094 [−.457, .150] | +.000 [.000, .000] | **+.003 [.000, .008]** |
-| DocSHRNet: zero-shot → fine-tuned | S_G, halo (7) | **+.096 [.046, .143]** | **+.053 [.004, .096]** | **+.080 [.007, .157]** |
+| Wiener: fixed → adaptive | B (4) | −.026 [−.073, .000] | +.014 [−.084, .175] | **+.030 [.003, .057]** |
+| Restormer: pretrained → fine-tuned | B (4) | +.015 [−.073, .081] | **+.305 [.165, .412]** | **+.049 [.021, .071]** |
+| classical: decay → statistics veil | G, halo (7) | −.007 [−.018, .000] | **+.089 [.002, .252]** | +.009 [−.008, .033] |
+| classical: Telea → flat core fill | G, core (4) | −.094 [−.457, .150] | +.000 [.000, .000] | **+.003 [.000, .008]** |
+| DocSHRNet: zero-shot → fine-tuned | G, halo (7) | **+.096 [.046, .143]** | **+.053 [.004, .096]** | **+.080 [.007, .157]** |
 | DocSHRNet: zero-shot → fine-tuned | MIDV, halo (91) | +.020 [.000, .041] | +.012 [−.011, .034] | – |
 
 ## fusion: multi-frame fusion, 100 MIDV-2020 clips
@@ -83,6 +93,20 @@ boxes core / halo / all: keymid 172 / 269 / 994, keymax 492 / 156 / 994.
 | temporal median | .963 | .930 | .962 | .737 | .731 | .789 | .970 | .941 | .963 | .782 | .740 | .790 |
 | fused | **.988** | **.951** | **.974** | **.871** | .769 | **.824** | **.989** | **.947** | **.976** | **.856** | **.789** | **.838** |
 | reference (scan) | .997 | .992 | .994 | .887 | .880 | .897 | .996 | .994 | .994 | .902 | .897 | .897 |
+
+## fusion_small: multi-frame fusion (paper version)
+columns per engine: keymax core, keymax all, keymid all.
+
+| method | PaddleOCR core | PaddleOCR all | PaddleOCR all | Tesseract core | Tesseract all | Tesseract all |
+|---|---|---|---|---|---|---|
+| untreated | .479 | .677 | .840 | .183 | .410 | .589 |
+| classical | .406 | .635 | .824 | .210 | .425 | .601 |
+| DL, fine-tuned | .424 | .642 | .813 | .266 | .478 | .638 |
+| best frame | .960 | .946 | .947 | .806 | .793 | .794 |
+| best per field | .977 | .968 | .969 | .831 | .822 | .822 |
+| median | .970 | .963 | .962 | .782 | .790 | .789 |
+| fused | **.989** | **.976** | **.974** | **.856** | **.838** | **.824** |
+| scan | .996 | .994 | .994 | .902 | .897 | .897 |
 
 ## fusion_changes: multi-frame fusion, paired changes
 
@@ -140,6 +164,20 @@ n = 100 images, 997 boxes, external.
 | Restormer → DL | .838 | **−.059 [−.077, −.043]** | **.614** | **+.086 [.066, .107]** |
 | DL → Restormer | .842 | **−.056 [−.071, −.042]** | .595 | **+.067 [.047, .087]** |
 | reference | .994 | – | .896 | – |
+
+## joint: joint, paired changes (paper version)
+
+| method | blur + glare, our test (n=9) PaddleOCR | blur + glare, our test (n=9) Tesseract | glare, MIDV photos (n=100) PaddleOCR | glare, MIDV photos (n=100) Tesseract |
+|---|---|---|---|---|
+| untreated (accuracy) | .550 | .189 | .887 | .534 |
+| classical deglare | −.003 [−.011, .004] | **+.033 [.004, .067]** | **−.008 [−.016, −.002]** | +.000 [−.007, .007] |
+| DL deglare | +.003 [−.010, .018] | **+.051 [.001, .130]** | **−.052 [−.067, −.040]** | **+.074 [.055, .094]** |
+| Wiener, fixed | −.121 [−.305, .007] | −.061 [−.201, .064] | **−.465 [−.496, −.432]** | **−.476 [−.523, −.429]** |
+| Wiener, adaptive | −.078 [−.259, .018] | −.013 [−.068, .043] | **−.046 [−.068, −.027]** | **−.058 [−.092, −.030]** |
+| Restormer (ft) | **+.087 [.006, .175]** | **+.294 [.169, .426]** | **−.005 [−.008, −.001]** | **+.011 [.001, .023]** |
+| Restormer → DL | **+.090 [.006, .179]** | **+.339 [.223, .454]** | **−.059 [−.077, −.043]** | **+.086 [.066, .107]** |
+| DL → Restormer | **+.094 [.009, .186]** | **+.332 [.228, .433]** | **−.056 [−.071, −.042]** | **+.067 [.047, .087]** |
+| reference (accuracy) | .989 | .852 | .994 | .896 |
 
 ## joint_steps: what each step of the chain adds (character accuracy, all boxes)
 

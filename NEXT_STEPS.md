@@ -13,7 +13,7 @@ We write everything here; the teammate only presents the blur part, so they need
 | by | done |
 |---|---|
 | 11/27 | shared figures and tables (done 11/25) |
-| 12/1 | full report draft |
+| 12/1 | full report draft (first draft 11/25) |
 | 12/2 | slides and blur speaker notes to the teammate |
 | 12/3 | report revised; first rehearsal |
 | 12/4 | cleanup; second rehearsal |
@@ -39,7 +39,7 @@ Specimen cards only (F01-F05, B01-B03), plus MIDV-2020 documents.
 * Figures, `report/figures/*.pdf` (paper) and `.png` (slides): `pipeline`, `glare_methods` (block diagrams, TikZ), `dataset` (one column);
   `blur_crops`, `glare_crops` (blue = core, orange = halo), `chain_crops`, `fusion`, `halo_changes`, `joint_changes` (full width).
   For slides also `results/figures/` (`core_halo_example.png`, `demo_*.jpg`). Do not use `test_S_G_comparison.jpg` (a real person's card).
-* Tables, `report/tables/*.tex` (all fit the page width at footnotesize; `tables.md` to read them): `dataset`, `blur`, `glare_zones`,
+* Paper versions: `blur_crops_small`, `glare_crops_small`, `glare_small`, `fusion_small`, `joint`. Tables, `report/tables/*.tex` (all fit the page width at footnotesize; `tables.md` to read them): `dataset`, `blur`, `glare_zones`,
   `glare_halo_changes` (same numbers as the `halo_changes` figure), `ablation`, `modifications`, `fusion`, `fusion_changes`, `joint_bg`,
   `joint_sg`, `joint_midv`, `joint_steps`. Not all fit in 5 pages: pick while writing.
 * Crops were picked to show both gains and failures; say so in the captions (P = PaddleOCR, T = Tesseract, check mark = all characters right).
@@ -50,27 +50,15 @@ Specimen cards only (F01-F05, B01-B03), plus MIDV-2020 documents.
 5 pages in total, references included (the template's own rule: 4 pages + a 5th with references only).
 Abstract 100-150 words, font ≥ 9 pt, no page numbers, not blind, a "relation to prior work" discussion is required.
 
-- [ ] Set up `report/`: `paper.tex` from `Template.tex`, with `spconf.sty`, `IEEEbib.bst`, figures. Compiles with local `latexmk`.
-- [ ] `refs.bib`: start from `docs/course/proposal/refs.bib` (36 cited entries; it already has Restormer, NAFNet, MIDV-2020, Tesseract,
-      SSIM, Telea, the dichromatic model). Drop what the paper does not cite. Add: DocSHRNet, PaddleOCR, ECC, SIFT, RANSAC, dark channel
-      prior (He et al.; `pan2016` is a deblurring paper), Canny / Otsu / GrabCut if rectification is described. Check every new entry at its source.
-- [ ] Cover the course requirements (top of `docs/course/proposal/proposal.tex`): own + public data; per artifact ≥ 2 methods, one conventional;
-      modified for our data; compared with and without the modification; say whether it helps or not.
-- [ ] Draft to this budget:
+**First draft done (11/25): `report/paper.tex` -> `paper.pdf`, 5 pages including 26 references, 9 pt, abstract 139 words.**
+Build: `cd report && latexmk -pdf paper.tex`. There is no slack: new text needs a cut.
+- [ ] Both authors read it; check tone and the deviations paragraph. (Capture: hand-held, mostly iPhone 17, some 12 Pro, focus locked on another object.)
+- [ ] Left out for space; decide if anything must come back: `glare_methods` and `chain_crops` figures, `ablation`, `joint_sg`, `dataset` tables.
+- [ ] In-figure text is about 7 pt (the template asks for 9 pt everywhere); tables and captions are 9 pt.
+- [ ] `refs.bib`: page numbers of `aliev2021` missing; `cho2012`, `lee2021`, ... have no pages (as in the proposal).
+- Course requirements covered: own + public data; two methods per artifact, one classical; modified and compared with / without (Table 3).
 
-| section | pages | content |
-|---|---|---|
-| Abstract, introduction | 0.55 | problem, artifacts, main findings |
-| Related work | 0.35 | relation to prior work |
-| Data and metric | 0.65 | our 141 photos / 22 cards, MIDV photos and clips, rectification + ECC, split, fixed-box OCR, zones, CIs |
-| Methods: blur | 0.45 | Wiener fixed / adaptive, Restormer pretrained / fine-tuned |
-| Methods: glare | 0.7 | classical two-zone with statistics-inpainting veil; DocSHRNet + detection head; fusion |
-| Results: blur | 0.4 | B_D test (n = 4) |
-| Results: glare | 0.65 | S_G test per zone and engine with CIs, MIDV replication, SSIM vs OCR, fusion in one table |
-| Results: joint | 0.4 | B_G, MIDV photos, order; deblurring of fused clips and runtime in one sentence each |
-| Discussion, conclusion | 0.35 | limitations, lessons, future work |
-| References | 0.5 | |
-
+The items below are the checklist the draft was written to.
 - [ ] Main messages:
       - blur: fine-tuned Restormer helps, Wiener does not transfer; Restormer can change digits (03/07/2022 -> 2922), a risk for IDs;
       - glare: the effect of single-image removal depends on the engine (helps Tesseract, slightly hurts PaddleOCR), replicated on MIDV;

@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{P, ours} & \multicolumn{2}{c}{P, MIDV} & \multicolumn{2}{c}{T, ours} & \multicolumn{2}{c}{T, MIDV} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+method & core & halo & core & halo & core & halo & core & halo \\
+\midrule
+untreated & .444 & \textbf{.869} & \textbf{.636} & \textbf{.830} & .133 & .417 & .218 & .334 \\
+classical & .378 & .854 & .484 & .829 & .178 & .480 & .159 & .333 \\
+DL, zero-shot & .400 & .714 & .467 & .735 & .222 & .574 & .237 & .435 \\
+DL, fine-tuned & \textbf{.467} & .817 & .511 & .754 & \textbf{.244} & \textbf{.620} & \textbf{.281} & \textbf{.447} \\
+\midrule
+reference & .978 & .994 & 1.000 & .995 & .867 & .837 & .922 & .900 \\
+\bottomrule
+\end{tabular}
