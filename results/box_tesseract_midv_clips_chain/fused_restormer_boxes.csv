@@ -1,0 +1,1989 @@
+image,box,target,digits,hyp,zone,tlen,ed
+alb_id_90_mid.png,0,mpb,False,MPB,halo,3,0
+alb_id_90_mid.png,1,26011961,True,26-01-1961,outside,8,0
+alb_id_90_mid.png,2,tirane,False,Tirane,outside,6,0
+alb_id_90_mid.png,3,11072016,True,11-07-2016,outside,8,0
+alb_id_90_mid.png,4,11072026,True,11-07-2026,outside,8,0
+alb_id_90_mid.png,6,g10126974l,True,G10126974L,outside,10,0
+alb_id_90_mid.png,7,brahim,False,Brahim,outside,6,0
+alb_id_90_mid.png,8,shqiptarealbanian,False,Shgiptare/Albanian,outside,17,1
+alb_id_90_mid.png,9,542790209,True,542790209,outside,9,0
+alb_id_90_mid.png,10,cana,False,Cana,outside,4,0
+alb_id_90_max.png,0,mpb,False,MPB,halo,3,0
+alb_id_90_max.png,1,26011961,True,26-01-1961,core,8,0
+alb_id_90_max.png,2,tirane,False,‘Tirane,core,6,0
+alb_id_90_max.png,3,11072016,True,11-07-2016,core,8,0
+alb_id_90_max.png,4,11072026,True,12-07-2026,outside,8,1
+alb_id_90_max.png,6,g10126974l,True,G10126974L,outside,10,0
+alb_id_90_max.png,7,brahim,False,Brahim,core,6,0
+alb_id_90_max.png,8,shqiptarealbanian,False,Shgiptare/Albanian,core,17,1
+alb_id_90_max.png,9,542790209,True,£+.2790209,halo,9,2
+alb_id_90_max.png,10,cana,False,Cana,halo,4,0
+alb_id_91_mid.png,1,11051964,True,11-05-1964,halo,8,0
+alb_id_91_mid.png,2,tirane,False,Tirane,halo,6,0
+alb_id_91_mid.png,3,26072018,True,26-07-2018,halo,8,0
+alb_id_91_mid.png,4,26072028,True,26-07-2028,outside,8,0
+alb_id_91_mid.png,6,g40511279f,True,G40511279F,outside,10,0
+alb_id_91_mid.png,7,bujar,False,Bujar,halo,5,0
+alb_id_91_mid.png,8,shqiptarealbanian,False,Shgiptare/Albanian.,halo,17,1
+alb_id_91_mid.png,9,074746770,True,074746770,outside,9,0
+alb_id_91_mid.png,10,cano,False,Cana,halo,4,1
+alb_id_91_max.png,1,11051964,True,11-05-1964,core,8,0
+alb_id_91_max.png,2,tirane,False,Tirane,core,6,0
+alb_id_91_max.png,3,26072018,True,26-07-2018,core,8,0
+alb_id_91_max.png,4,26072028,True,26-07-2028,outside,8,0
+alb_id_91_max.png,6,g40511279f,True,G40511279F,outside,10,0
+alb_id_91_max.png,7,bujar,False,Bujar,core,5,0
+alb_id_91_max.png,8,shqiptarealbanian,False,Shgiptare/Albanian,core,17,1
+alb_id_91_max.png,9,074746770,True,174746770,outside,9,1
+alb_id_91_max.png,10,cano,False,Cana,core,4,1
+alb_id_92_mid.png,1,16031958,True,16-03-1958,halo,8,0
+alb_id_92_mid.png,2,tirane,False,Tirane,outside,6,0
+alb_id_92_mid.png,3,13082017,True,13-08-2017,halo,8,0
+alb_id_92_mid.png,4,13082027,True,13-08-2027,halo,8,0
+alb_id_92_mid.png,6,f80316981j,True,F80316981),halo,10,1
+alb_id_92_mid.png,7,burim,False,Burim:,outside,5,0
+alb_id_92_mid.png,8,shqiptarealbanian,False,Shoéiptarc,halo,17,11
+alb_id_92_mid.png,9,436843944,True,136843944,halo,9,1
+alb_id_92_mid.png,10,carcani,False,Carcani,outside,7,0
+alb_id_92_max.png,1,16031958,True,16-03-19. °,halo,8,2
+alb_id_92_max.png,2,tirane,False,Tirane,outside,6,0
+alb_id_92_max.png,3,13082017,True,13-08-2017,outside,8,0
+alb_id_92_max.png,4,13082027,True,13-08-2027,core,8,0
+alb_id_92_max.png,6,f80316981j,True,F80316981),core,10,1
+alb_id_92_max.png,7,burim,False,Burin,outside,5,1
+alb_id_92_max.png,8,shqiptarealbanian,False,Shoipta:,core,17,11
+alb_id_92_max.png,9,436843944,True,436843944,core,9,0
+alb_id_92_max.png,10,carcani,False,Carcani,halo,7,0
+alb_id_93_mid.png,0,mpb,False,a=,halo,3,3
+alb_id_93_mid.png,1,05021963,True,"0.0""",halo,8,6
+alb_id_93_mid.png,2,tirane,False,ee,halo,6,5
+alb_id_93_mid.png,3,08112017,True,,core,8,8
+alb_id_93_mid.png,4,08112027,True,I6-11-2027,halo,8,2
+alb_id_93_mid.png,6,g30205443h,True,s30205443H,halo,10,1
+alb_id_93_mid.png,7,clirim,False,-,halo,6,6
+alb_id_93_mid.png,8,shqiptarealbanian,False,,halo,17,17
+alb_id_93_mid.png,9,288680443,True,238680543,halo,9,2
+alb_id_93_mid.png,10,ceka,False,Ceol>,outside,4,2
+alb_id_93_max.png,0,mpb,False,Mrt:,outside,3,2
+alb_id_93_max.png,1,05021963,True,05-02-19,halo,8,2
+alb_id_93_max.png,2,tirane,False,Ticane,outside,6,1
+alb_id_93_max.png,3,08112017,True,08-11-20.,halo,8,2
+alb_id_93_max.png,4,08112027,True,IG-A1L~2027,core,8,4
+alb_id_93_max.png,6,g30205443h,True,JOZ05 445H,core,10,5
+alb_id_93_max.png,7,clirim,False,Wem,outside,6,5
+alb_id_93_max.png,8,shqiptarealbanian,False,Sbeiptare — =,core,17,10
+alb_id_93_max.png,9,288680443,True,298680443,core,9,1
+alb_id_93_max.png,10,ceka,False,Ceka,outside,4,0
+alb_id_94_mid.png,1,22081961,True,22-08-1961,halo,8,0
+alb_id_94_mid.png,2,tiranetirane,False,"Tirane,tirane",halo,12,0
+alb_id_94_mid.png,3,23032018,True,23-03-2018,outside,8,0
+alb_id_94_mid.png,4,23032028,True,2> 03-2028,core,8,1
+alb_id_94_mid.png,6,g10822636g,True,"< ,0822636G6",core,10,3
+alb_id_94_mid.png,7,dalmat,False,Dalmat,outside,6,0
+alb_id_94_mid.png,8,shqiptarealbanian,False,Shdiptare/Albanian,halo,17,1
+alb_id_94_mid.png,9,432889729,True,4323829729,core,9,2
+alb_id_94_mid.png,10,cela,False,Cela,outside,4,0
+alb_id_94_max.png,1,22081961,True,22-08-1961,halo,8,0
+alb_id_94_max.png,2,tiranetirane,False,"‘Tirane,Tirane",core,12,0
+alb_id_94_max.png,3,23032018,True,23-03-2018,outside,8,0
+alb_id_94_max.png,4,23032028,True,2-93-2028,core,8,2
+alb_id_94_max.png,6,g10822636g,True,G 1086226366,core,10,2
+alb_id_94_max.png,7,dalmat,False,Dalmat,outside,6,0
+alb_id_94_max.png,8,shqiptarealbanian,False,Shqiptare/Albanian,halo,17,0
+alb_id_94_max.png,9,432889729,True,432829729,core,9,1
+alb_id_94_max.png,10,cela,False,Cela,outside,4,0
+alb_id_95_mid.png,0,mpb,False,MPB,outside,3,0
+alb_id_95_mid.png,1,15041957,True,15-04-1957,halo,8,0
+alb_id_95_mid.png,2,tiranetirane,False,"Tirane, Tirane",core,12,0
+alb_id_95_mid.png,3,20072019,True,20-07-2019,halo,8,0
+alb_id_95_mid.png,4,20072029,True,2° 57-2029,core,8,2
+alb_id_95_mid.png,6,f75415678d,True,"F, 415678D",core,10,2
+alb_id_95_mid.png,7,egzona,False,Eezona,outside,6,1
+alb_id_95_mid.png,8,shqiptarealbanian,False,Shaiptare/Albanian,core,17,1
+alb_id_95_mid.png,9,936315279,True,936315272,core,9,1
+alb_id_95_mid.png,10,celaj,False,Celaj,outside,5,0
+alb_id_95_max.png,0,mpb,False,MPB,outside,3,0
+alb_id_95_max.png,1,15041957,True,15-04-1957,core,8,0
+alb_id_95_max.png,2,tiranetirane,False,"Tirane,t irane",core,12,0
+alb_id_95_max.png,3,20072019,True,20-07-2019,halo,8,0
+alb_id_95_max.png,4,20072029,True,20-07-2029,core,8,0
+alb_id_95_max.png,6,f75415678d,True,&75415678bD,core,10,2
+alb_id_95_max.png,7,egzona,False,Eezona,outside,6,1
+alb_id_95_max.png,8,shqiptarealbanian,False,Shdiptare/Albanian,core,17,1
+alb_id_95_max.png,9,936315279,True,936315273,core,9,1
+alb_id_95_max.png,10,celaj,False,Celaj,outside,5,0
+alb_id_96_mid.png,1,02101959,True,oy we =,halo,8,8
+alb_id_96_mid.png,2,tiranetirane,False,Tro = ‘ 2,halo,12,10
+alb_id_96_mid.png,3,27082018,True,,halo,8,8
+alb_id_96_mid.png,4,27082028,True,a,halo,8,8
+alb_id_96_mid.png,6,f96002429i,True,+e,halo,10,10
+alb_id_96_mid.png,7,egzonjeta,False,-,halo,9,9
+alb_id_96_mid.png,8,shqiptarealbanian,False,= 7 ria,halo,17,14
+alb_id_96_mid.png,9,927343699,True,nie Se,halo,9,9
+alb_id_96_mid.png,10,chani,False,Ep,core,5,5
+alb_id_96_max.png,1,02101959,True,oy we =,halo,8,8
+alb_id_96_max.png,2,tiranetirane,False,Tro = ‘ 2,halo,12,10
+alb_id_96_max.png,3,27082018,True,,halo,8,8
+alb_id_96_max.png,4,27082028,True,a,halo,8,8
+alb_id_96_max.png,6,f96002429i,True,+e,halo,10,10
+alb_id_96_max.png,7,egzonjeta,False,-,halo,9,9
+alb_id_96_max.png,8,shqiptarealbanian,False,= 7 ria,halo,17,14
+alb_id_96_max.png,9,927343699,True,nie Se,halo,9,9
+alb_id_96_max.png,10,chani,False,Ep,core,5,5
+alb_id_97_mid.png,1,03101953,True,03-10-195=,outside,8,1
+alb_id_97_mid.png,2,tiranetirane,False,Tirane.titane,outside,12,1
+alb_id_97_mid.png,3,18112018,True,18-11-201&,outside,8,1
+alb_id_97_mid.png,4,18112028,True,18-11-2028,core,8,0
+alb_id_97_mid.png,6,f36003929q,True,F36003929Q,core,10,0
+alb_id_97_mid.png,7,elira,False,Flir=,outside,5,2
+alb_id_97_mid.png,8,shqiptarealbanian,False,Shoiotare/Albanian,outside,17,2
+alb_id_97_mid.png,9,370520886,True,370520886:,halo,9,0
+alb_id_97_mid.png,10,chocholi,False,Chocholi,outside,8,0
+alb_id_97_max.png,1,03101953,True,03-10-195=,outside,8,1
+alb_id_97_max.png,2,tiranetirane,False,Tirane.titane,outside,12,1
+alb_id_97_max.png,3,18112018,True,18-11-201&,outside,8,1
+alb_id_97_max.png,4,18112028,True,18-11-2028,core,8,0
+alb_id_97_max.png,6,f36003929q,True,F36003929Q,core,10,0
+alb_id_97_max.png,7,elira,False,Flir=,outside,5,2
+alb_id_97_max.png,8,shqiptarealbanian,False,Shoiotare/Albanian,outside,17,2
+alb_id_97_max.png,9,370520886,True,370520886:,halo,9,0
+alb_id_97_max.png,10,chocholi,False,Chocholi,outside,8,0
+alb_id_98_mid.png,1,28081965,True,26-US-1965,halo,8,3
+alb_id_98_mid.png,2,mgullalb,False,"Mguil, ALB",halo,8,1
+alb_id_98_mid.png,3,23022019,True,25-02-2019,halo,8,1
+alb_id_98_mid.png,4,23022029,True,23-U2-2029,outside,8,1
+alb_id_98_mid.png,6,g55828202m,True,M33 3625 202M,outside,10,6
+alb_id_98_mid.png,7,elmedina,False,Elmedina,halo,8,0
+alb_id_98_mid.png,8,shqiptarealbanian,False,Shgiptare/Aibanian,halo,17,2
+alb_id_98_mid.png,9,969453345,True,309453345,outside,9,2
+alb_id_98_mid.png,10,ciftja,False,Ciftia,halo,6,1
+alb_id_98_max.png,1,28081965,True,26-US-1965,core,8,3
+alb_id_98_max.png,2,mgullalb,False,"Mgull, ALB",core,8,0
+alb_id_98_max.png,3,23022019,True,25-02-2019,core,8,1
+alb_id_98_max.png,4,23022029,True,23-U2-20U29,core,8,2
+alb_id_98_max.png,6,g55828202m,True,439 9545 202M,core,10,7
+alb_id_98_max.png,7,elmedina,False,Eimedina,outside,8,1
+alb_id_98_max.png,8,shqiptarealbanian,False,Shgiptare/Albanian,core,17,1
+alb_id_98_max.png,9,969453345,True,909453345,core,9,1
+alb_id_98_max.png,10,ciftja,False,Ciftia,outside,6,1
+alb_id_99_mid.png,1,26091957,True,26-09-195 /,core,8,1
+alb_id_99_mid.png,2,mgullalb,False,"Mens, “LB",core,8,5
+alb_id_99_mid.png,3,19022018,True,19-02-2018,core,8,0
+alb_id_99_mid.png,4,19022028,True,1-32-2028,core,8,2
+alb_id_99_mid.png,6,f75926997v,True,rs#S¥2o99/V,halo,10,6
+alb_id_99_mid.png,7,elona,False,Elona,core,5,0
+alb_id_99_mid.png,8,shqiptarealbanian,False,SiGintsre/Alba .,core,17,8
+alb_id_99_mid.png,9,499949517,True,49517,core,9,4
+alb_id_99_mid.png,10,cobaj,False,Cobaj,core,5,0
+alb_id_99_max.png,1,26091957,True,26-09-195 /,core,8,1
+alb_id_99_max.png,2,mgullalb,False,"Migull, ALB",core,8,1
+alb_id_99_max.png,3,19022018,True,19-02-2018,core,8,0
+alb_id_99_max.png,4,19022028,True,»- 32-2028,core,8,3
+alb_id_99_max.png,6,f75926997v,True,F75926997V,core,10,0
+alb_id_99_max.png,7,elona,False,Elona,halo,5,0
+alb_id_99_max.png,8,shqiptarealbanian,False,ShGiptare/Alb. .,core,17,6
+alb_id_99_max.png,9,499949517,True,‘49517,core,9,4
+alb_id_99_max.png,10,cobaj,False,Cobaj,outside,5,0
+aze_passport_90_mid.png,1,aze,False,ALS,outside,3,2
+aze_passport_90_mid.png,2,c06768385,True,C06768385,outside,9,0
+aze_passport_90_mid.png,3,qauk,False,Mari,outside,4,3
+aze_passport_90_mid.png,4,qauk,False,DAR,outside,4,3
+aze_passport_90_mid.png,5,elnurafiqoglu,False,BLMUF OP) OGL,outside,13,7
+aze_passport_90_mid.png,6,elnur,False,,outside,5,5
+aze_passport_90_mid.png,8,29052003,True,,outside,8,8
+aze_passport_90_mid.png,9,8b9044w,True,aB9044W,outside,7,1
+aze_passport_90_mid.png,12,22032018,True,22.03 2018,outside,8,0
+aze_passport_90_mid.png,13,21032023,True,21.03.2023,outside,8,0
+aze_passport_90_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF I.) MAL AFFAIRS,halo,25,5
+aze_passport_90_mid.png,16,pcazeqaukelnur,False,PCAZEQAUK<<ELNUR<<<<<<<<<KeeeKeeee6e0e0<eee0e<ee<KeC,outside,14,24
+aze_passport_90_mid.png,17,c067683855aze0305299m23032118b9044w80,True,-067683855AZE0305299M27032118B9044W<<<<<<<80,outside,37,2
+aze_passport_90_mid.png,18,21032023,True,21 OF023,outside,8,3
+aze_passport_90_max.png,1,aze,False,ASE,halo,3,1
+aze_passport_90_max.png,2,c06768385,True,C06768385,halo,9,0
+aze_passport_90_max.png,3,qauk,False,"tS,",outside,4,4
+aze_passport_90_max.png,4,qauk,False,,halo,4,4
+aze_passport_90_max.png,5,elnurafiqoglu,False,Bila AFIO OGL,halo,13,7
+aze_passport_90_max.png,6,elnur,False,BUNA,outside,5,4
+aze_passport_90_max.png,8,29052003,True,,outside,8,8
+aze_passport_90_max.png,9,8b9044w,True,8B9044W,outside,7,0
+aze_passport_90_max.png,12,22032018,True,22.03.2018,halo,8,0
+aze_passport_90_max.png,13,21032023,True,21.93.2023,halo,8,1
+aze_passport_90_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTCRNAL AFFAIRS,core,25,1
+aze_passport_90_max.png,16,pcazeqaukelnur,False,PCAZEQAUK<<ELNUR<<<<<<<<<<<<<<cccdccdddcccccc,halo,14,15
+aze_passport_90_max.png,17,c067683855aze0305299m23032118b9044w80,True,7067683855AZE0305299M23032118B9044W<<<<<<<80,halo,37,1
+aze_passport_90_max.png,18,21032023,True,,outside,8,8
+aze_passport_91_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_91_mid.png,2,c37204321,True,C37204321,outside,9,0
+aze_passport_91_mid.png,4,guluzade,False,GULUZADE,outside,8,0
+aze_passport_91_mid.png,5,eltonelnuroglu,False,ELTON ELNUR OGLU,outside,14,0
+aze_passport_91_mid.png,6,elton,False,ELTON,outside,5,0
+aze_passport_91_mid.png,8,28032004,True,28 03.004,outside,8,1
+aze_passport_91_mid.png,9,w7r3dj8,False,W/A3008,core,7,4
+aze_passport_91_mid.png,12,01092017,True,01.09.2017,outside,8,0
+aze_passport_91_mid.png,13,31082022,True,31.05.2022,core,8,1
+aze_passport_91_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_91_mid.png,16,pcazeguluzadeelton,False,PCAZEGULUZADE<<ELT ON<<<<<<<<<<<dcceeeceeceey,outside,18,13
+aze_passport_91_mid.png,17,c372043216aze0403287m2208316w7r3dj878,True,C372043216AZE040328/M2208516W/RSDIB<<<<<<<78,outside,37,6
+aze_passport_91_mid.png,18,31082022,True,00. (aaro22,outside,8,6
+aze_passport_91_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_91_max.png,2,c37204321,True,€37204321,outside,9,1
+aze_passport_91_max.png,4,guluzade,False,GULUZADE,outside,8,0
+aze_passport_91_max.png,5,eltonelnuroglu,False,ELTON ELNUR OGLU,outside,14,0
+aze_passport_91_max.png,6,elton,False,ELTON,core,5,0
+aze_passport_91_max.png,8,28032004,True,28.03.2004,outside,8,0
+aze_passport_91_max.png,9,w7r3dj8,False,W/R3058,core,7,3
+aze_passport_91_max.png,12,01092017,True,01.09.201 /,outside,8,1
+aze_passport_91_max.png,13,31082022,True,31.05.2022,core,8,1
+aze_passport_91_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,core,25,0
+aze_passport_91_max.png,16,pcazeguluzadeelton,False,PCAZEGULUZADE<<ELIT ON<<<<<<<<<<<<<<eeecdesecc,core,18,11
+aze_passport_91_max.png,17,c372043216aze0403287m2208316w7r3dj878,True,C372043216AZE040328/M2208516W/RSDIB<<<<<<<78,core,37,6
+aze_passport_91_max.png,18,31082022,True,00. (aroe>,outside,8,7
+aze_passport_92_mid.png,1,aze,False,AZE,halo,3,0
+aze_passport_92_mid.png,2,c52232868,True,C52232868,core,9,0
+aze_passport_92_mid.png,3,yakobsen,False,YAKOBSEN,outside,8,0
+aze_passport_92_mid.png,4,yakobsen,False,YAKOBSEN,outside,8,0
+aze_passport_92_mid.png,6,elturan,False,ELTURAN:,outside,7,0
+aze_passport_92_mid.png,8,05102006,True,05.10.2006,outside,8,0
+aze_passport_92_mid.png,9,r20985e,True,R20985E,outside,7,0
+aze_passport_92_mid.png,12,09092019,True,09.09.2012,outside,8,1
+aze_passport_92_mid.png,13,08092024,True,08.09.2024,outside,8,0
+aze_passport_92_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_92_mid.png,16,pcazeyakobsenelturan,False,PCAZEYAKOBSEN<<ELTURAN<<<<<<<<<<<<<cccccececce,outside,20,11
+aze_passport_92_mid.png,17,c522328688aze0610054m2409087r20985e54,True,C522328688AZE0610054M240908/R20985E<<<<<<<54,outside,37,1
+aze_passport_92_mid.png,18,08092024,True,03 Ge 2024,outside,8,3
+aze_passport_92_max.png,1,aze,False,AZE,core,3,0
+aze_passport_92_max.png,2,c52232868,True,C52232868,core,9,0
+aze_passport_92_max.png,3,yakobsen,False,YAKOBSEN:,core,8,0
+aze_passport_92_max.png,4,yakobsen,False,YAKOBSEN,core,8,0
+aze_passport_92_max.png,6,elturan,False,ELTURAN,core,7,0
+aze_passport_92_max.png,8,05102006,True,05.10.2006,outside,8,0
+aze_passport_92_max.png,9,r20985e,True,R20985E,halo,7,0
+aze_passport_92_max.png,12,09092019,True,09.09.2019,halo,8,0
+aze_passport_92_max.png,13,08092024,True,08.09.2024,halo,8,0
+aze_passport_92_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS.,outside,25,0
+aze_passport_92_max.png,16,pcazeyakobsenelturan,False,PCAZEYAKOBSEN<<ELTURAN<<<<<<<<<<<<<cecccecccee,outside,20,11
+aze_passport_92_max.png,17,c522328688aze0610054m2409087r20985e54,True,C522328688AZE0610054M240908/7R20985E<<<<<<<54,outside,37,0
+aze_passport_92_max.png,18,08092024,True,08 Ok su,outside,8,6
+aze_passport_93_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_93_mid.png,2,c56627924,True,C56627924,outside,9,0
+aze_passport_93_mid.png,3,yaqublu,False,YAQUBLU,outside,7,0
+aze_passport_93_mid.png,4,yaqublu,False,YAQUBLU,outside,7,0
+aze_passport_93_mid.png,6,elsevar,False,ELSEVAR,outside,7,0
+aze_passport_93_mid.png,8,03022002,True,03.02.2002,outside,8,0
+aze_passport_93_mid.png,9,3a4d8hq,False,3A4D8HQ,halo,7,0
+aze_passport_93_mid.png,12,15092017,True,15.09.2017,halo,8,0
+aze_passport_93_mid.png,13,14092022,True,14.09.2022,halo,8,0
+aze_passport_93_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,halo,25,0
+aze_passport_93_mid.png,16,pcazeyaqubluelsevar,False,PCAZEYAQUBLU<<ELSEVAR<<<<<<<<<<<<<<ccceecceee,halo,19,10
+aze_passport_93_mid.png,17,c566279243aze0202033m22091403a4d8hq94,True,C5662/79243AZEDZ0Z03S35M22091403A4D8HR <<< <<< <Q,halo,37,8
+aze_passport_93_mid.png,18,14092022,True,"14 Gene?""",outside,8,6
+aze_passport_93_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_93_max.png,2,c56627924,True,C56627924,outside,9,0
+aze_passport_93_max.png,3,yaqublu,False,YAQUBLU,outside,7,0
+aze_passport_93_max.png,4,yaqublu,False,YAQUBLU,outside,7,0
+aze_passport_93_max.png,6,elsevar,False,ELSEVAR,core,7,0
+aze_passport_93_max.png,8,03022002,True,03.02.2002,outside,8,0
+aze_passport_93_max.png,9,3a4d8hq,False,3A4D8HQ,outside,7,0
+aze_passport_93_max.png,12,15092017,True,15.09.2017,core,8,0
+aze_passport_93_max.png,13,14092022,True,14.09.2022,outside,8,0
+aze_passport_93_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,halo,25,0
+aze_passport_93_max.png,16,pcazeyaqubluelsevar,False,PCAZEYAQUBLU<<ELSEVAR<<<<<<<<<<<<<<<<c<cce<e<<cc,core,19,7
+aze_passport_93_max.png,17,c566279243aze0202033m22091403a4d8hq94,True,C566279245AZEQ2Z02Z0335M22091403 A4D8HQ<<<<<<<94,core,37,5
+aze_passport_93_max.png,18,14092022,True,14 O2022,core,8,2
+aze_passport_94_mid.png,1,aze,False,AZE,halo,3,0
+aze_passport_94_mid.png,2,c36082037,True,C36082037,outside,9,0
+aze_passport_94_mid.png,3,yappa,False,YAPPA,halo,5,0
+aze_passport_94_mid.png,4,yappa,False,YAPPA,halo,5,0
+aze_passport_94_mid.png,5,elxancahangiroglu,False,ELXAN CAHANGIR OGLU,halo,17,0
+aze_passport_94_mid.png,6,elxan,False,ELXAN,halo,5,0
+aze_passport_94_mid.png,8,01052003,True,01.05.2003,halo,8,0
+aze_passport_94_mid.png,9,079ts0t,True,0O79TSOT,outside,7,2
+aze_passport_94_mid.png,12,24122015,True,24.12.2015,halo,8,0
+aze_passport_94_mid.png,13,23122020,True,23.12.2020,halo,8,0
+aze_passport_94_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_94_mid.png,16,pcazeyappaelxan,False,PCAZEYAPPA<<ELXAN<<<<<<<<<<<<<<ceccdcccccccc,outside,15,13
+aze_passport_94_mid.png,17,c360820371aze0305015m2012238079ts0t06,True,C360820371AZE0305015M20122380/79TSOT<<<<<<<06,outside,37,1
+aze_passport_94_mid.png,18,23122020,True,ZB ARLCZ&,outside,8,8
+aze_passport_94_max.png,1,aze,False,AZE,halo,3,0
+aze_passport_94_max.png,2,c36082037,True,C36082037,outside,9,0
+aze_passport_94_max.png,3,yappa,False,YAPPA,halo,5,0
+aze_passport_94_max.png,4,yappa,False,YAPPA,halo,5,0
+aze_passport_94_max.png,5,elxancahangiroglu,False,ELXAN CAHANGIR OGLU,core,17,0
+aze_passport_94_max.png,6,elxan,False,ELXAN,core,5,0
+aze_passport_94_max.png,8,01052003,True,01.05.2003,halo,8,0
+aze_passport_94_max.png,9,079ts0t,True,O79TSOT,outside,7,2
+aze_passport_94_max.png,12,24122015,True,24.12.2015,halo,8,0
+aze_passport_94_max.png,13,23122020,True,23.12.2020,outside,8,0
+aze_passport_94_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_94_max.png,16,pcazeyappaelxan,False,PCAZEYAPPA<<ELXAN<<<<<<<<<<<<<<ccccedccccccd,outside,15,13
+aze_passport_94_max.png,17,c360820371aze0305015m2012238079ts0t06,True,C360820371AZE0305015M20122380/79TSOT<<<<<<<06,outside,37,1
+aze_passport_94_max.png,18,23122020,True,"23. 1222020""",halo,8,1
+aze_passport_95_mid.png,1,aze,False,AZE,halo,3,0
+aze_passport_95_mid.png,2,c63899630,True,C63899630,outside,9,0
+aze_passport_95_mid.png,3,kamara,False,KAMARA,halo,6,0
+aze_passport_95_mid.png,4,kamara,False,KAMARA,halo,6,0
+aze_passport_95_mid.png,6,firangiz,False,FIRANGIZ,halo,8,0
+aze_passport_95_mid.png,8,29032005,True,29 03.2005,halo,8,0
+aze_passport_95_mid.png,9,1x61ybx,False,1X61YBX,halo,7,0
+aze_passport_95_mid.png,12,18082019,True,16.08.2019,halo,8,1
+aze_passport_95_mid.png,13,17082024,True,17.08.2024,halo,8,0
+aze_passport_95_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS.,outside,25,0
+aze_passport_95_mid.png,16,pcazekamarafirangiz,False,PCAZEKAMARA<<FIRANGIZ<<<<<<<<cee ee eeeceeceeee,outside,19,16
+aze_passport_95_mid.png,17,c638996308aze0503291f24081721x61ybx30,True,C638996308AZE0503291F24081721X61YBX<<<<<<<30,outside,37,0
+aze_passport_95_mid.png,18,17082024,True,17.Q5.2024,outside,8,2
+aze_passport_95_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_95_max.png,2,c63899630,True,C63899630,outside,9,0
+aze_passport_95_max.png,3,kamara,False,KAMARA,halo,6,0
+aze_passport_95_max.png,4,kamara,False,KAMARA,halo,6,0
+aze_passport_95_max.png,6,firangiz,False,FIRANGIZ,halo,8,0
+aze_passport_95_max.png,8,29032005,True,29.03.2005,halo,8,0
+aze_passport_95_max.png,9,1x61ybx,False,1X61 YBX,outside,7,0
+aze_passport_95_max.png,12,18082019,True,18.08 2019,halo,8,0
+aze_passport_95_max.png,13,17082024,True,17.08.2024,outside,8,0
+aze_passport_95_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,halo,25,0
+aze_passport_95_max.png,16,pcazekamarafirangiz,False,PCAZEKAMARA<<FIRANGIZ<<<<<<<<<<ccccee cece cd,halo,19,12
+aze_passport_95_max.png,17,c638996308aze0503291f24081721x61ybx30,True,C638996308AZE0505291F 24081721 X61YBX<<<<<<<30,halo,37,1
+aze_passport_95_max.png,18,17082024,True,17 M2024,core,8,2
+aze_passport_96_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_96_mid.png,2,c42212194,True,C42212194,outside,9,0
+aze_passport_96_mid.png,3,karen,False,KAREN,outside,5,0
+aze_passport_96_mid.png,4,karen,False,KAREN,outside,5,0
+aze_passport_96_mid.png,6,firuza,False,FIRUZA,outside,6,0
+aze_passport_96_mid.png,8,24032003,True,24 03.2003,halo,8,0
+aze_passport_96_mid.png,9,kzj3b51,False,KZJ3B51,halo,7,0
+aze_passport_96_mid.png,12,05102016,True,05.10.2016,halo,8,0
+aze_passport_96_mid.png,13,04102021,True,04.10.2021,halo,8,0
+aze_passport_96_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,core,25,0
+aze_passport_96_mid.png,16,pcazekarenfiruza,False,PCAZEKAREN<<FIRUZA<<<<<<<<<<<<<<eeecce ee ccK<e,core,16,12
+aze_passport_96_mid.png,17,c422121945aze0303240f2110042kzj3b5108,True,C422121945AZE0303240F2110042KZJ3B51<<<<<<<Q8,core,37,1
+aze_passport_96_mid.png,18,04102021,True,ok a,halo,8,8
+aze_passport_96_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_96_max.png,2,c42212194,True,C42212194,outside,9,0
+aze_passport_96_max.png,3,karen,False,KAREN,outside,5,0
+aze_passport_96_max.png,4,karen,False,KAREN,outside,5,0
+aze_passport_96_max.png,6,firuza,False,FIRUZA,outside,6,0
+aze_passport_96_max.png,8,24032003,True,24.03.2003,halo,8,0
+aze_passport_96_max.png,9,kzj3b51,False,KZJ3B51,core,7,0
+aze_passport_96_max.png,12,05102016,True,05.10.2016,halo,8,0
+aze_passport_96_max.png,13,04102021,True,04.10.2021,core,8,0
+aze_passport_96_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,core,25,0
+aze_passport_96_max.png,16,pcazekarenfiruza,False,PCAZEKAREN<<FIRUZA<<<<<<<<<<<<<<<<ceccccecccK<<,core,16,11
+aze_passport_96_max.png,17,c422121945aze0303240f2110042kzj3b5108,True,C422121945AZE0303240F2110042KZJ3B51<<<<<<<Q8&,core,37,1
+aze_passport_96_max.png,18,04102021,True,<A Megp20,core,8,7
+aze_passport_97_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_97_mid.png,2,c68425015,True,C68425 =,core,9,3
+aze_passport_97_mid.png,3,karlos,False,KARLOS,halo,6,0
+aze_passport_97_mid.png,4,carlos,False,CARLOS,halo,6,0
+aze_passport_97_mid.png,6,fizza,False,FIZZA,outside,5,0
+aze_passport_97_mid.png,8,05102003,True,05.10.2003,halo,8,0
+aze_passport_97_mid.png,9,06p1g3k,True,O6FiG3K,core,7,3
+aze_passport_97_mid.png,12,11042018,True,11.04.2018,halo,8,0
+aze_passport_97_mid.png,13,10042023,True,10.04.2023,halo,8,0
+aze_passport_97_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_97_mid.png,16,pcazecarlosfizza,False,PCAZECARLOS<<FIZZA<<<<<<<<<<<<<K<Ke<ixdceeeece,halo,16,13
+aze_passport_97_mid.png,17,c684250157aze0310055f230410406p1g3k16,True,C684250157AZE0310055F230410406P1G63K<<<<<<<16,outside,37,1
+aze_passport_97_mid.png,18,10042023,True,,outside,8,8
+aze_passport_97_max.png,1,aze,False,AZE,core,3,0
+aze_passport_97_max.png,2,c68425015,True,C68425015,core,9,0
+aze_passport_97_max.png,3,karlos,False,KARLOS,core,6,0
+aze_passport_97_max.png,4,carlos,False,CARLOS,core,6,0
+aze_passport_97_max.png,6,fizza,False,FIZZA,core,5,0
+aze_passport_97_max.png,8,05102003,True,05.10.2003,core,8,0
+aze_passport_97_max.png,9,06p1g3k,True,06P1G3K,core,7,0
+aze_passport_97_max.png,12,11042018,True,11 04.2018,outside,8,0
+aze_passport_97_max.png,13,10042023,True,10.04.2023,halo,8,0
+aze_passport_97_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,core,25,0
+aze_passport_97_max.png,16,pcazecarlosfizza,False,PCAZECARLOS<<FIZLZA<<<<<<<<<<<<<c<cKcceeeeeeece,core,16,15
+aze_passport_97_max.png,17,c684250157aze0310055f230410406p1g3k16,True,C684250157AZE0310055F230410406P1G3K<<<<<<<16,halo,37,0
+aze_passport_97_max.png,18,10042023,True,ib 2,outside,8,7
+aze_passport_98_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_98_mid.png,2,c21150866,True,C21150866,outside,9,0
+aze_passport_98_mid.png,3,karyagin,False,KARYAGIN,halo,8,0
+aze_passport_98_mid.png,4,karyagin,False,KARYAGIN,outside,8,0
+aze_passport_98_mid.png,6,firangiz,False,FIRANGIZ,halo,8,0
+aze_passport_98_mid.png,8,05022006,True,05.02.2006,outside,8,0
+aze_passport_98_mid.png,9,7dr0hx6,False,7DROHX6,outside,7,1
+aze_passport_98_mid.png,12,08052017,True,08.05.2017,outside,8,0
+aze_passport_98_mid.png,13,07052022,True,07.05.2022,outside,8,0
+aze_passport_98_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_98_mid.png,16,pcazekaryaginfirangiz,False,PCAZEKARYAGIN<<FIRANGIZ<<<<<<<<<<<<edecedecccee,outside,21,12
+aze_passport_98_mid.png,17,c211508663aze0602057f22050727dr0hx618,True,C€211508663AZE0602057F2205072/7DROHX6<<<<<<<18,outside,37,1
+aze_passport_98_mid.png,18,07052022,True,07 éne022,outside,8,3
+aze_passport_98_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_98_max.png,2,c21150866,True,C21150866,halo,9,0
+aze_passport_98_max.png,3,karyagin,False,KARYAGIN,outside,8,0
+aze_passport_98_max.png,4,karyagin,False,KARYAGIN,outside,8,0
+aze_passport_98_max.png,6,firangiz,False,FIRANGIZ,outside,8,0
+aze_passport_98_max.png,8,05022006,True,05.02.2006,outside,8,0
+aze_passport_98_max.png,9,7dr0hx6,False,7DROHX6,outside,7,1
+aze_passport_98_max.png,12,08052017,True,08.05.2017,outside,8,0
+aze_passport_98_max.png,13,07052022,True,07.05.2022,halo,8,0
+aze_passport_98_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,halo,25,0
+aze_passport_98_max.png,16,pcazekaryaginfirangiz,False,PCAZEKARYAGIN<<FIRANGIZ<<<<<<<<<<<<<<cccccKce,halo,21,8
+aze_passport_98_max.png,17,c211508663aze0602057f22050727dr0hx618,True,C211508663AZE0602057F2205072/7DROHX6<<<<<<<18,core,37,1
+aze_passport_98_max.png,18,07052022,True,07 doz,outside,8,6
+aze_passport_99_mid.png,1,aze,False,AZE,outside,3,0
+aze_passport_99_mid.png,2,c44182521,True,C44182521,core,9,0
+aze_passport_99_mid.png,3,kazimova,False,KAZIMOVA,outside,8,0
+aze_passport_99_mid.png,4,kazimova,False,KAZIMOVA,outside,8,0
+aze_passport_99_mid.png,6,fizza,False,FIZZA,outside,5,0
+aze_passport_99_mid.png,8,13122003,True,13.12.2003,outside,8,0
+aze_passport_99_mid.png,9,6a25x1z,True,6A25X1Z,halo,7,0
+aze_passport_99_mid.png,12,23112015,True,23.11.2015,outside,8,0
+aze_passport_99_mid.png,13,22112020,True,22.11.2020,outside,8,0
+aze_passport_99_mid.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_99_mid.png,16,pcazekazimovafizza,False,PCAZEKAZIMOVA<<FIZZA<<<<<<<cccKec cee ee eccece,halo,18,17
+aze_passport_99_mid.png,17,c441825215aze0312130f20112206a25x1z42,True,C441825215AZE0312130F20112206A25X1Z<<<<<<<42,outside,37,0
+aze_passport_99_mid.png,18,22112020,True,22 een,outside,8,6
+aze_passport_99_max.png,1,aze,False,AZE,outside,3,0
+aze_passport_99_max.png,2,c44182521,True,C44182521,halo,9,0
+aze_passport_99_max.png,3,kazimova,False,KAZIMOVA,outside,8,0
+aze_passport_99_max.png,4,kazimova,False,KAZIMOVA,outside,8,0
+aze_passport_99_max.png,6,fizza,False,FIZZA,outside,5,0
+aze_passport_99_max.png,8,13122003,True,13.12.2003,outside,8,0
+aze_passport_99_max.png,9,6a25x1z,True,6A25X1Z,outside,7,0
+aze_passport_99_max.png,12,23112015,True,23.11.2015,outside,8,0
+aze_passport_99_max.png,13,22112020,True,22.11.2020,outside,8,0
+aze_passport_99_max.png,15,ministryofinternalaffairs,False,MINISTRY OF INTERNAL AFFAIRS,outside,25,0
+aze_passport_99_max.png,16,pcazekazimovafizza,False,PCAZEKAZIMOVA<<FIZZA<<<<<<<<cccececeeeeeeccece,core,18,18
+aze_passport_99_max.png,17,c441825215aze0312130f20112206a25x1z42,True,C441825215AZE0312130F20112206A25X1Z2Z<<<<<<<42,core,37,2
+aze_passport_99_max.png,18,22112020,True,,outside,8,8
+esp_id_90_mid.png,0,16021969,True,16 02 1969,halo,8,0
+esp_id_90_mid.png,1,afv020258,True,AFVO20258,halo,9,1
+esp_id_90_mid.png,2,20022025,True,20 O02 2025,halo,8,1
+esp_id_90_mid.png,4,esp,False,ESP,outside,3,0
+esp_id_90_mid.png,5,iker,False,IKER,halo,4,0
+esp_id_90_mid.png,6,garrido,False,GARRIDO,halo,7,0
+esp_id_90_mid.png,7,figueroa,False,FIGUEROA,halo,8,0
+esp_id_90_mid.png,8,54685337j,True,54685337,outside,9,1
+esp_id_90_max.png,0,16021969,True,16 02 1969,core,8,0
+esp_id_90_max.png,1,afv020258,True,AFVO20258,core,9,1
+esp_id_90_max.png,2,20022025,True,20 O02 2025,halo,8,1
+esp_id_90_max.png,4,esp,False,ESP,outside,3,0
+esp_id_90_max.png,5,iker,False,IKER,outside,4,0
+esp_id_90_max.png,6,garrido,False,GARRIDO,outside,7,0
+esp_id_90_max.png,7,figueroa,False,FIGUEROA,halo,8,0
+esp_id_90_max.png,8,54685337j,True,5468533/J,outside,9,1
+esp_id_91_mid.png,0,05071954,True,OS 07 1954,outside,8,2
+esp_id_91_mid.png,1,aly883399,True,ALY883399,halo,9,0
+esp_id_91_mid.png,2,20032028,True,20 03 2028,halo,8,0
+esp_id_91_mid.png,4,esp,False,ESP,outside,3,0
+esp_id_91_mid.png,5,jan,False,JAN,outside,3,0
+esp_id_91_mid.png,6,rodriguez,False,RODRIGUEZ,outside,9,0
+esp_id_91_mid.png,7,fonseca,False,FONSECA,outside,7,0
+esp_id_91_mid.png,8,00136379v,True,00136379V,outside,9,0
+esp_id_91_max.png,0,05071954,True,05 07 1954,halo,8,0
+esp_id_91_max.png,1,aly883399,True,ALY883399,halo,9,0
+esp_id_91_max.png,2,20032028,True,20 03 2028,halo,8,0
+esp_id_91_max.png,4,esp,False,ESP,outside,3,0
+esp_id_91_max.png,5,jan,False,JAN,halo,3,0
+esp_id_91_max.png,6,rodriguez,False,RODRIGUEZ,core,9,0
+esp_id_91_max.png,7,fonseca,False,FONSECA,core,7,0
+esp_id_91_max.png,8,00136379v,True,00136379V,outside,9,0
+esp_id_92_mid.png,0,06061956,True,06 06 1956,outside,8,0
+esp_id_92_mid.png,1,aus300407,True,AUS300407,outside,9,0
+esp_id_92_mid.png,2,03042025,True,03 04 2025,outside,8,0
+esp_id_92_mid.png,4,esp,False,ESP,outside,3,0
+esp_id_92_mid.png,5,aitor,False,AiTOR.,outside,5,0
+esp_id_92_mid.png,6,reguilon,False,REGUILON,outside,8,0
+esp_id_92_mid.png,7,godoy,False,GODOY,outside,5,0
+esp_id_92_mid.png,8,11832988l,True,11832988L,outside,9,0
+esp_id_92_max.png,0,06061956,True,06 06 1956,outside,8,0
+esp_id_92_max.png,1,aus300407,True,AUS300407,outside,9,0
+esp_id_92_max.png,2,03042025,True,03 04 2025,outside,8,0
+esp_id_92_max.png,4,esp,False,ESP,core,3,0
+esp_id_92_max.png,5,aitor,False,AITOR,halo,5,0
+esp_id_92_max.png,6,reguilon,False,REGUILON,core,8,0
+esp_id_92_max.png,7,godoy,False,GODOY,halo,5,0
+esp_id_92_max.png,8,11832988l,True,11832988L,outside,9,0
+esp_id_93_mid.png,0,03051970,True,03 O05 1970,halo,8,1
+esp_id_93_mid.png,1,aop883370,True,AOP&83370,halo,9,1
+esp_id_93_mid.png,2,30072025,True,30 O07 2025,halo,8,1
+esp_id_93_mid.png,4,esp,False,ESP,outside,3,0
+esp_id_93_mid.png,5,guillem,False,GUILLEM,outside,7,0
+esp_id_93_mid.png,6,capdevila,False,CAPDEVILA,outside,9,0
+esp_id_93_mid.png,7,sancho,False,SANCHO,outside,6,0
+esp_id_93_mid.png,8,81268778t,True,81268778T,outside,9,0
+esp_id_93_max.png,0,03051970,True,03 05 1970,core,8,0
+esp_id_93_max.png,1,aop883370,True,AOP8&8&3370,outside,9,0
+esp_id_93_max.png,2,30072025,True,30 O07 2025,halo,8,1
+esp_id_93_max.png,4,esp,False,ESP,core,3,0
+esp_id_93_max.png,5,guillem,False,GUILLEM,halo,7,0
+esp_id_93_max.png,6,capdevila,False,CAPDEVILA,halo,9,0
+esp_id_93_max.png,7,sancho,False,SANCHO,halo,6,0
+esp_id_93_max.png,8,81268778t,True,81268778T,outside,9,0
+esp_id_94_mid.png,0,02101958,True,02 10 1958,halo,8,0
+esp_id_94_mid.png,1,azl118536,True,AZL118536,halo,9,0
+esp_id_94_mid.png,2,15112027,True,15 11 2027,halo,8,0
+esp_id_94_mid.png,4,esp,False,ESP,outside,3,0
+esp_id_94_mid.png,5,guillem,False,GUILLEM,outside,7,0
+esp_id_94_mid.png,6,castro,False,CASTRO,outside,6,0
+esp_id_94_mid.png,7,sancho,False,SANCHO,outside,6,0
+esp_id_94_mid.png,8,78905166v,True,789051 66V,outside,9,0
+esp_id_94_max.png,0,02101958,True,02 10 1958,core,8,0
+esp_id_94_max.png,1,azl118536,True,AZL118536,core,9,0
+esp_id_94_max.png,2,15112027,True,15 11 2027,core,8,0
+esp_id_94_max.png,4,esp,False,ESP,halo,3,0
+esp_id_94_max.png,5,guillem,False,GUILLEM,halo,7,0
+esp_id_94_max.png,6,castro,False,CASTRO,outside,6,0
+esp_id_94_max.png,7,sancho,False,SANCHO,outside,6,0
+esp_id_94_max.png,8,78905166v,True,78905166V,outside,9,0
+esp_id_95_mid.png,0,26081965,True,26 CF 4705,core,8,5
+esp_id_95_mid.png,1,adi677481,True,ADI677481,halo,9,0
+esp_id_95_mid.png,2,12012025,True,12 O1 2025,outside,8,1
+esp_id_95_mid.png,4,esp,False,Sy,core,3,2
+esp_id_95_mid.png,5,malak,False,,halo,5,5
+esp_id_95_mid.png,6,toscano,False,TOSC ANG,core,7,1
+esp_id_95_mid.png,7,regalado,False,REGALADO,core,8,0
+esp_id_95_mid.png,8,27167886l,True,27167886L.,outside,9,0
+esp_id_95_max.png,0,26081965,True,26 OF 1945,core,8,3
+esp_id_95_max.png,1,adi677481,True,ADI677481,halo,9,0
+esp_id_95_max.png,2,12012025,True,12 01 2025,outside,8,0
+esp_id_95_max.png,4,esp,False,ES,core,3,1
+esp_id_95_max.png,5,malak,False,MAL?!,core,5,2
+esp_id_95_max.png,6,toscano,False,TOSC ANG,core,7,1
+esp_id_95_max.png,7,regalado,False,REGALADO,core,8,0
+esp_id_95_max.png,8,27167886l,True,2°167886L,outside,9,1
+esp_id_96_mid.png,0,06031963,True,06 03 1963,halo,8,0
+esp_id_96_mid.png,1,ali721522,True,ALI721522,halo,9,0
+esp_id_96_mid.png,2,03092027,True,03 G9 2927,core,8,2
+esp_id_96_mid.png,4,esp,False,ESP.,outside,3,0
+esp_id_96_mid.png,5,lola,False,LOLA-,outside,4,0
+esp_id_96_mid.png,6,garcia,False,GARCIA,outside,6,0
+esp_id_96_mid.png,7,esquibel,False,ESQUIBEL,outside,8,0
+esp_id_96_mid.png,8,28437324r,True,284357324R,outside,9,1
+esp_id_96_max.png,0,06031963,True,06 03 1963,core,8,0
+esp_id_96_max.png,1,ali721522,True,ALI721522,core,9,0
+esp_id_96_max.png,2,03092027,True,03 G9 2027,core,8,1
+esp_id_96_max.png,4,esp,False,ESP,core,3,0
+esp_id_96_max.png,5,lola,False,LOLA,halo,4,0
+esp_id_96_max.png,6,garcia,False,GARCIA,halo,6,0
+esp_id_96_max.png,7,esquibel,False,ESQUIBEL,outside,8,0
+esp_id_96_max.png,8,28437324r,True,284573524R,core,9,2
+esp_id_97_mid.png,0,29061969,True,29 06 1969,core,8,0
+esp_id_97_mid.png,1,aqt972988,True,AQT972988,core,9,0
+esp_id_97_mid.png,2,04092025,True,04 09 2025,core,8,0
+esp_id_97_mid.png,4,esp,False,ESP,halo,3,0
+esp_id_97_mid.png,5,alma,False,ALMA,outside,4,0
+esp_id_97_mid.png,6,fernandez,False,FERNANDEZ,outside,9,0
+esp_id_97_mid.png,7,camarillo,False,CAMARILLO,outside,9,0
+esp_id_97_mid.png,8,44263212q,True,44263212Q,outside,9,0
+esp_id_97_max.png,0,29061969,True,29 06 1969,halo,8,0
+esp_id_97_max.png,1,aqt972988,True,AQT972983,core,9,1
+esp_id_97_max.png,2,04092025,True,04 09 2025,core,8,0
+esp_id_97_max.png,4,esp,False,ESP,outside,3,0
+esp_id_97_max.png,5,alma,False,ALMA,outside,4,0
+esp_id_97_max.png,6,fernandez,False,FERNANDEZ,outside,9,0
+esp_id_97_max.png,7,camarillo,False,CAMARILLO,outside,9,0
+esp_id_97_max.png,8,44263212q,True,44263212Q,core,9,0
+esp_id_98_mid.png,0,29051968,True,29 05 1968,core,8,0
+esp_id_98_mid.png,1,atq154842,True,ATQ154842,core,9,0
+esp_id_98_mid.png,2,05062028,True,05 06 2028,core,8,0
+esp_id_98_mid.png,4,esp,False,ESP,core,3,0
+esp_id_98_mid.png,5,salma,False,SALMA,halo,5,0
+esp_id_98_mid.png,6,jones,False,JONES,halo,5,0
+esp_id_98_mid.png,7,ruvalcaba,False,RUVALCABA,core,9,0
+esp_id_98_mid.png,8,66746180k,True,66746180K,core,9,0
+esp_id_98_max.png,0,29051968,True,29 05 1968,core,8,0
+esp_id_98_max.png,1,atq154842,True,ATQ154842,core,9,0
+esp_id_98_max.png,2,05062028,True,05 06 2028,core,8,0
+esp_id_98_max.png,4,esp,False,ESP,core,3,0
+esp_id_98_max.png,5,salma,False,SALMA,halo,5,0
+esp_id_98_max.png,6,jones,False,JONES,halo,5,0
+esp_id_98_max.png,7,ruvalcaba,False,RUVALCABA,halo,9,0
+esp_id_98_max.png,8,66746180k,True,66746180K,core,9,0
+esp_id_99_mid.png,0,12031950,True,12 03 1950,core,8,0
+esp_id_99_mid.png,1,ake649176,True,AKE649176,core,9,0
+esp_id_99_mid.png,2,21092028,True,21 09 2028,core,8,0
+esp_id_99_mid.png,4,esp,False,ESP,halo,3,0
+esp_id_99_mid.png,5,diana,False,DIANA,core,5,0
+esp_id_99_mid.png,6,jones,False,JONES,core,5,0
+esp_id_99_mid.png,7,iglesias,False,IGLESIAS,core,8,0
+esp_id_99_mid.png,8,66630298i,True,666302981,outside,9,1
+esp_id_99_max.png,0,12031950,True,12 03 1950,core,8,0
+esp_id_99_max.png,1,ake649176,True,AKE649176,core,9,0
+esp_id_99_max.png,2,21092028,True,21 09 2028,core,8,0
+esp_id_99_max.png,4,esp,False,ESP,core,3,0
+esp_id_99_max.png,5,diana,False,DIANA,core,5,0
+esp_id_99_max.png,6,jones,False,JONES,core,5,0
+esp_id_99_max.png,7,iglesias,False,IGLESIAS,core,8,0
+esp_id_99_max.png,8,66630298i,True,666302981,core,9,1
+est_id_90_mid.png,0,roolaid,False,ROOLAID,core,7,0
+est_id_90_mid.png,1,ivar,False,IVAR,halo,4,0
+est_id_90_mid.png,3,est,False,EST,core,3,0
+est_id_90_mid.png,4,19081960,True,19.08.1960,core,8,0
+est_id_90_mid.png,5,36008195571,True,36008195571,halo,11,0
+est_id_90_mid.png,6,aa1113666,True,AA1113666,core,9,0
+est_id_90_mid.png,7,aa1113666,True,AA1113666,outside,9,0
+est_id_90_mid.png,9,24062022,True,24.06.2022,halo,8,0
+est_id_90_max.png,0,roolaid,False,ROOLAID,core,7,0
+est_id_90_max.png,1,ivar,False,IVAR,core,4,0
+est_id_90_max.png,3,est,False,EST,core,3,0
+est_id_90_max.png,4,19081960,True,19.08.1960,core,8,0
+est_id_90_max.png,5,36008195571,True,36008195571,core,11,0
+est_id_90_max.png,6,aa1113666,True,AA1113666,core,9,0
+est_id_90_max.png,7,aa1113666,True,AA1113666,outside,9,0
+est_id_90_max.png,9,24062022,True,24.06.2022,core,8,0
+est_id_91_mid.png,0,rootare,False,ROOTARE,outside,7,0
+est_id_91_mid.png,1,mark,False,MARK,outside,4,0
+est_id_91_mid.png,3,est,False,EST,outside,3,0
+est_id_91_mid.png,4,14041957,True,14.04.1957,outside,8,0
+est_id_91_mid.png,5,35704149560,True,35704149560,outside,11,0
+est_id_91_mid.png,6,aa0843995,True,AA0843995,outside,9,0
+est_id_91_mid.png,7,aa0843995,True,AAD843995,outside,9,1
+est_id_91_mid.png,9,29042024,True,29.04.2024,outside,8,0
+est_id_91_max.png,0,rootare,False,ROOTARE,core,7,0
+est_id_91_max.png,1,mark,False,MARK,halo,4,0
+est_id_91_max.png,3,est,False,EST,core,3,0
+est_id_91_max.png,4,14041957,True,14.04.1957,core,8,0
+est_id_91_max.png,5,35704149560,True,35704149560,core,11,0
+est_id_91_max.png,6,aa0843995,True,AA0843995,core,9,0
+est_id_91_max.png,7,aa0843995,True,AAQ843995,outside,9,1
+est_id_91_max.png,9,29042024,True,29.04.2024,core,8,0
+est_id_92_mid.png,0,pold,False,FULLE,outside,4,4
+est_id_92_mid.png,1,marko,False,IWIAARLING,outside,5,8
+est_id_92_mid.png,3,est,False,co!,outside,3,3
+est_id_92_mid.png,4,14111961,True,4.01. b901,outside,8,4
+est_id_92_mid.png,5,36111148226,True,JOTIT1146220,outside,11,7
+est_id_92_mid.png,6,aa3653735,True,AA5655(55,outside,9,4
+est_id_92_mid.png,7,aa3653735,True,AA5655/59,halo,9,5
+est_id_92_mid.png,9,23072020,True,23.07.2020,outside,8,0
+est_id_92_max.png,0,pold,False,FULLY,core,4,4
+est_id_92_max.png,1,marko,False,NVIARING,halo,5,6
+est_id_92_max.png,3,est,False,Col,core,3,3
+est_id_92_max.png,4,14111961,True,14.11.1901,core,8,1
+est_id_92_max.png,5,36111148226,True,Joli l4622b,core,11,8
+est_id_92_max.png,6,aa3653735,True,AA5635/55,core,9,4
+est_id_92_max.png,7,aa3653735,True,AA5655735,outside,9,2
+est_id_92_max.png,9,23072020,True,23.07.2020,halo,8,0
+est_id_93_mid.png,0,sibul,False,SIBUL,halo,5,0
+est_id_93_mid.png,1,markus,False,MARKUS,halo,6,0
+est_id_93_mid.png,3,est,False,EST,outside,3,0
+est_id_93_mid.png,4,31081963,True,31.08.1963,outside,8,0
+est_id_93_mid.png,5,36308314929,True,36308314929,outside,11,0
+est_id_93_mid.png,6,aa2214921,True,AA2214921,core,9,0
+est_id_93_mid.png,7,aa2214921,True,AA2214921,outside,9,0
+est_id_93_mid.png,9,21012022,True,21.01.2022,core,8,0
+est_id_93_max.png,0,sibul,False,SIBUL,halo,5,0
+est_id_93_max.png,1,markus,False,MARKUS,halo,6,0
+est_id_93_max.png,3,est,False,EST,core,3,0
+est_id_93_max.png,4,31081963,True,31.08.1963,core,8,0
+est_id_93_max.png,5,36308314929,True,36308314929,core,11,0
+est_id_93_max.png,6,aa2214921,True,AA2214921,core,9,0
+est_id_93_max.png,7,aa2214921,True,AA2214921,outside,9,0
+est_id_93_max.png,9,21012022,True,21.01.2022,outside,8,0
+est_id_94_mid.png,0,keskkula,False,KESKKULA,outside,8,0
+est_id_94_mid.png,1,marten,False,MARTEN,outside,6,0
+est_id_94_mid.png,3,est,False,EST,outside,3,0
+est_id_94_mid.png,4,28031957,True,28.03.1957,outside,8,0
+est_id_94_mid.png,5,35703286326,True,35703286326,outside,11,0
+est_id_94_mid.png,6,aa9868224,True,AA9868224,outside,9,0
+est_id_94_mid.png,7,aa9868224,True,AA9868224,halo,9,0
+est_id_94_mid.png,9,03112023,True,03.17.2023,outside,8,1
+est_id_94_max.png,0,keskkula,False,KESKKULA,core,8,0
+est_id_94_max.png,1,marten,False,MARTEN,core,6,0
+est_id_94_max.png,3,est,False,EST,halo,3,0
+est_id_94_max.png,4,28031957,True,28.03.1957,halo,8,0
+est_id_94_max.png,5,35703286326,True,35703286326,halo,11,0
+est_id_94_max.png,6,aa9868224,True,AA9868224,core,9,0
+est_id_94_max.png,7,aa9868224,True,AA9B68224,outside,9,1
+est_id_94_max.png,9,03112023,True,03.17.2023,core,8,1
+est_id_95_mid.png,0,kabin,False,KABIN,outside,5,0
+est_id_95_mid.png,1,kristiina,False,KRISTINA,outside,9,1
+est_id_95_mid.png,3,est,False,EST,outside,3,0
+est_id_95_mid.png,4,01121967,True,01.12.1967,outside,8,0
+est_id_95_mid.png,5,46712017620,True,46712017620,outside,11,0
+est_id_95_mid.png,6,aa9531416,True,AA9531416,outside,9,0
+est_id_95_mid.png,7,aa9531416,True,AA9531416,core,9,0
+est_id_95_mid.png,9,08052024,True,08.05.2024,outside,8,0
+est_id_95_max.png,0,kabin,False,KABIN,core,5,0
+est_id_95_max.png,1,kristiina,False,KRISTIINA,core,9,0
+est_id_95_max.png,3,est,False,EST,core,3,0
+est_id_95_max.png,4,01121967,True,01.12.1967,core,8,0
+est_id_95_max.png,5,46712017620,True,46712017620,core,11,0
+est_id_95_max.png,6,aa9531416,True,AA9531416,core,9,0
+est_id_95_max.png,7,aa9531416,True,AAQS31416,outside,9,2
+est_id_95_max.png,9,08052024,True,08.05.2024,core,8,0
+est_id_96_mid.png,0,kalda,False,KALDA,halo,5,0
+est_id_96_mid.png,1,kristin,False,KRISTIN,outside,7,0
+est_id_96_mid.png,3,est,False,EST,outside,3,0
+est_id_96_mid.png,4,11061953,True,11.06.1953,core,8,0
+est_id_96_mid.png,5,45306117111,True,45306117111,core,11,0
+est_id_96_mid.png,6,aa4645747,True,AA4645747,outside,9,0
+est_id_96_mid.png,7,aa4645747,True,AA4645747,outside,9,0
+est_id_96_mid.png,9,15102024,True,15.10.2024,outside,8,0
+est_id_96_max.png,0,kalda,False,KALDA,core,5,0
+est_id_96_max.png,1,kristin,False,KRISTIN,core,7,0
+est_id_96_max.png,3,est,False,EST,core,3,0
+est_id_96_max.png,4,11061953,True,11.06.1953,core,8,0
+est_id_96_max.png,5,45306117111,True,45306117111,core,11,0
+est_id_96_max.png,6,aa4645747,True,AA4645747,core,9,0
+est_id_96_max.png,7,aa4645747,True,AA4645747,outside,9,0
+est_id_96_max.png,9,15102024,True,15.10.2024,core,8,0
+est_id_97_mid.png,0,kruus,False,KRUUS,outside,5,0
+est_id_97_mid.png,1,kristina,False,KRISTINA,outside,8,0
+est_id_97_mid.png,3,est,False,EST,outside,3,0
+est_id_97_mid.png,4,24031963,True,24.03.1963,outside,8,0
+est_id_97_mid.png,5,46303246699,True,46303246699,outside,11,0
+est_id_97_mid.png,6,aa4154805,True,AA4154805,outside,9,0
+est_id_97_mid.png,7,aa4154805,True,AA4154805,core,9,0
+est_id_97_mid.png,9,30102021,True,30.10.2021,outside,8,0
+est_id_97_max.png,0,kruus,False,KRUUS,core,5,0
+est_id_97_max.png,1,kristina,False,KRISTINA,core,8,0
+est_id_97_max.png,3,est,False,EST,core,3,0
+est_id_97_max.png,4,24031963,True,24.03.1963,core,8,0
+est_id_97_max.png,5,46303246699,True,46303246699,core,11,0
+est_id_97_max.png,6,aa4154805,True,AA4154805,core,9,0
+est_id_97_max.png,7,aa4154805,True,AA4154805,outside,9,0
+est_id_97_max.png,9,30102021,True,30.10.2021,core,8,0
+est_id_98_mid.png,0,kaljurand,False,KALJURAND,outside,9,0
+est_id_98_mid.png,1,ilona,False,ILONA,outside,5,0
+est_id_98_mid.png,3,est,False,EST,outside,3,0
+est_id_98_mid.png,4,29031964,True,29.03.1964,outside,8,0
+est_id_98_mid.png,5,46403298792,True,46403298792,outside,11,0
+est_id_98_mid.png,6,aa8857232,True,AA8857232,halo,9,0
+est_id_98_mid.png,7,aa8857232,True,AABEB57232,core,9,3
+est_id_98_mid.png,9,26122023,True,26.12.2023,halo,8,0
+est_id_98_max.png,0,kaljurand,False,KALJURAND,core,9,0
+est_id_98_max.png,1,ilona,False,ILONA,core,5,0
+est_id_98_max.png,3,est,False,EST,core,3,0
+est_id_98_max.png,4,29031964,True,29.03.1964,core,8,0
+est_id_98_max.png,5,46403298792,True,46403288792,core,11,1
+est_id_98_max.png,6,aa8857232,True,AA8857232,core,9,0
+est_id_98_max.png,7,aa8857232,True,AA8857232,outside,9,0
+est_id_98_max.png,9,26122023,True,26.12.2023,core,8,0
+est_id_99_mid.png,0,kuusk,False,KUUSK,outside,5,0
+est_id_99_mid.png,1,imbi,False,IMBi,outside,4,0
+est_id_99_mid.png,3,est,False,EST,outside,3,0
+est_id_99_mid.png,4,17041969,True,17.04.1969,outside,8,0
+est_id_99_mid.png,5,46904175255,True,46904175255,outside,11,0
+est_id_99_mid.png,6,aa8878019,True,AA8878019,outside,9,0
+est_id_99_mid.png,7,aa8878019,True,AA8878019,outside,9,0
+est_id_99_mid.png,9,27052022,True,27.05.2022,outside,8,0
+est_id_99_max.png,0,kuusk,False,KUUSK,core,5,0
+est_id_99_max.png,1,imbi,False,IMBI,core,4,0
+est_id_99_max.png,3,est,False,EST,core,3,0
+est_id_99_max.png,4,17041969,True,17.04.1969,core,8,0
+est_id_99_max.png,5,46904175255,True,46904175255,core,11,0
+est_id_99_max.png,6,aa8878019,True,AA8878019,core,9,0
+est_id_99_max.png,7,aa8878019,True,AA88&78019,outside,9,0
+est_id_99_max.png,9,27052022,True,27.05.2022,core,8,0
+fin_id_90_mid.png,0,narinen,False,NARINEN,outside,7,0
+fin_id_90_mid.png,1,kimmo,False,KIMMO,outside,5,0
+fin_id_90_mid.png,3,150488158,True,150488158,core,9,0
+fin_id_90_mid.png,4,fin,False,TiN,outside,3,1
+fin_id_90_mid.png,5,30101964,True,"30. 10, 1964",outside,8,0
+fin_id_90_mid.png,6,13092019,True,"13, 09. 2019",outside,8,0
+fin_id_90_mid.png,7,13092024,True,13. 09. 2024,outside,8,0
+fin_id_90_mid.png,8,395n,False,~395N,core,4,0
+fin_id_90_mid.png,9,301064,True,aj 654,core,6,5
+fin_id_90_max.png,0,narinen,False,NARINEN,core,7,0
+fin_id_90_max.png,1,kimmo,False,KIMMO,core,5,0
+fin_id_90_max.png,3,150488158,True,150488158,outside,9,0
+fin_id_90_max.png,4,fin,False,FIN,outside,3,0
+fin_id_90_max.png,5,30101964,True,30. 10. 1964,core,8,0
+fin_id_90_max.png,6,13092019,True,13. 09. 2019,core,8,0
+fin_id_90_max.png,7,13092024,True,13. 09. 2024,core,8,0
+fin_id_90_max.png,8,395n,False,-395N,core,4,0
+fin_id_90_max.png,9,301064,True,<) fe,core,6,6
+fin_id_91_mid.png,0,immonen,False,Aovth tO FHE,outside,7,9
+fin_id_91_mid.png,1,urmas,False,periirerts,outside,5,8
+fin_id_91_mid.png,3,178293298,True,178293294,outside,9,1
+fin_id_91_mid.png,4,fin,False,FIN,outside,3,0
+fin_id_91_mid.png,5,06111950,True,06. 11. 1950,core,8,0
+fin_id_91_mid.png,6,25102017,True,"25. 10, 2017",outside,8,0
+fin_id_91_mid.png,7,25102022,True,25. 10. 2022,outside,8,0
+fin_id_91_mid.png,8,3575,True,-3575,outside,4,0
+fin_id_91_mid.png,9,061150,True,,outside,6,6
+fin_id_91_max.png,0,immonen,False,IMM OLE Hy,core,7,3
+fin_id_91_max.png,1,urmas,False,Uni as,core,5,2
+fin_id_91_max.png,3,178293298,True,178293294,halo,9,1
+fin_id_91_max.png,4,fin,False,FIN,outside,3,0
+fin_id_91_max.png,5,06111950,True,06.11. 1950,outside,8,0
+fin_id_91_max.png,6,25102017,True,"25. 10, 2017",outside,8,0
+fin_id_91_max.png,7,25102022,True,25. 10. 2022,outside,8,0
+fin_id_91_max.png,8,3575,True,-3575,outside,4,0
+fin_id_91_max.png,9,061150,True,CeLrSu,outside,6,6
+fin_id_92_mid.png,0,isomaki,False,SOMAKI,outside,7,1
+fin_id_92_mid.png,1,heimo,False,HEIMO,outside,5,0
+fin_id_92_mid.png,3,577944234,True,577944234,core,9,0
+fin_id_92_mid.png,4,fin,False,FIN,core,3,0
+fin_id_92_mid.png,5,11111964,True,11.11. 1964,outside,8,0
+fin_id_92_mid.png,6,29042015,True,29 04 2015,outside,8,0
+fin_id_92_mid.png,7,29042020,True,29 04 2020,outside,8,0
+fin_id_92_mid.png,8,5430,True,-5430,halo,4,0
+fin_id_92_mid.png,9,111164,True,mil i gal,outside,6,7
+fin_id_92_max.png,0,isomaki,False,SOMAKI,outside,7,1
+fin_id_92_max.png,1,heimo,False,HEIMO,halo,5,0
+fin_id_92_max.png,3,577944234,True,577944234,core,9,0
+fin_id_92_max.png,4,fin,False,FIN,outside,3,0
+fin_id_92_max.png,5,11111964,True,11. 11. 1964,core,8,0
+fin_id_92_max.png,6,29042015,True,29 04 2015,core,8,0
+fin_id_92_max.png,7,29042020,True,29 04 2020,core,8,0
+fin_id_92_max.png,8,5430,True,-5430,core,4,0
+fin_id_92_max.png,9,111164,True,40 5 ae,core,6,6
+fin_id_93_mid.png,0,isokallio,False,ISOKALLIO,core,9,0
+fin_id_93_mid.png,1,arvi,False,ARVI,core,4,0
+fin_id_93_mid.png,3,481778547,True,481778547,outside,9,0
+fin_id_93_mid.png,4,fin,False,FIN,outside,3,0
+fin_id_93_mid.png,5,16111965,True,16. 11. 1965,core,8,0
+fin_id_93_mid.png,6,06102019,True,06. 10. 2019,outside,8,0
+fin_id_93_mid.png,7,06102024,True,06. 10. 2024,outside,8,0
+fin_id_93_mid.png,8,930y,False,-930Y,outside,4,0
+fin_id_93_mid.png,9,161165,True,iti te Se,outside,6,7
+fin_id_93_max.png,0,isokallio,False,ISOKALLIO.,core,9,0
+fin_id_93_max.png,1,arvi,False,ARVI,core,4,0
+fin_id_93_max.png,3,481778547,True,481778547,outside,9,0
+fin_id_93_max.png,4,fin,False,FIN,outside,3,0
+fin_id_93_max.png,5,16111965,True,16. 11. 1965,core,8,0
+fin_id_93_max.png,6,06102019,True,06. 10. 2019,core,8,0
+fin_id_93_max.png,7,06102024,True,06. 10. 2024,outside,8,0
+fin_id_93_max.png,8,930y,False,-930Y,outside,4,0
+fin_id_93_max.png,9,161165,True,,outside,6,6
+fin_id_94_mid.png,0,makinen,False,MAKINEN,core,7,0
+fin_id_94_mid.png,1,taisto,False,TAISTO,core,6,0
+fin_id_94_mid.png,3,245400826,True,245400826,outside,9,0
+fin_id_94_mid.png,4,fin,False,FIN,outside,3,0
+fin_id_94_mid.png,5,26011958,True,26. 01. 1958,outside,8,0
+fin_id_94_mid.png,6,22082018,True,22 08. 2018,outside,8,0
+fin_id_94_mid.png,7,22082023,True,"22.08, 2023",outside,8,0
+fin_id_94_mid.png,8,4247,True,-4247,outside,4,0
+fin_id_94_mid.png,9,260158,True,OGLE 58,outside,6,4
+fin_id_94_max.png,0,makinen,False,MAKINEN,core,7,0
+fin_id_94_max.png,1,taisto,False,TAISTO,core,6,0
+fin_id_94_max.png,3,245400826,True,245400826,halo,9,0
+fin_id_94_max.png,4,fin,False,FIN,outside,3,0
+fin_id_94_max.png,5,26011958,True,26. 01. 1958,core,8,0
+fin_id_94_max.png,6,22082018,True,22 08. 2018,core,8,0
+fin_id_94_max.png,7,22082023,True,22. 08. 2023,core,8,0
+fin_id_94_max.png,8,4247,True,-4247,core,4,0
+fin_id_94_max.png,9,260158,True,,core,6,6
+fin_id_95_mid.png,0,sirvio,False,SIRVIO,core,6,0
+fin_id_95_mid.png,1,anuilse,False,ANUILSE,core,7,0
+fin_id_95_mid.png,3,862113436,True,862113436,outside,9,0
+fin_id_95_mid.png,4,fin,False,FIN,outside,3,0
+fin_id_95_mid.png,5,09071969,True,09.07 196°,core,8,1
+fin_id_95_mid.png,6,29012017,True,"29, 01. 2017",core,8,0
+fin_id_95_mid.png,7,29012022,True,"29 01, 2022",core,8,0
+fin_id_95_mid.png,8,287h,False,-287H,core,4,0
+fin_id_95_mid.png,9,090769,True,09.359,core,6,3
+fin_id_95_max.png,0,sirvio,False,SIRVIO,core,6,0
+fin_id_95_max.png,1,anuilse,False,ANUILSE,core,7,0
+fin_id_95_max.png,3,862113436,True,862113436,outside,9,0
+fin_id_95_max.png,4,fin,False,FIN,outside,3,0
+fin_id_95_max.png,5,09071969,True,09.07 196°,core,8,1
+fin_id_95_max.png,6,29012017,True,"29, 01. 2017",core,8,0
+fin_id_95_max.png,7,29012022,True,"29 01, 2022",core,8,0
+fin_id_95_max.png,8,287h,False,-287H,core,4,0
+fin_id_95_max.png,9,090769,True,09.359,core,6,3
+fin_id_96_mid.png,0,oikarinen,False,OIKARINEN,outside,9,0
+fin_id_96_mid.png,1,siiri,False,SHR!,outside,5,3
+fin_id_96_mid.png,3,043499254,True,043499254,outside,9,0
+fin_id_96_mid.png,4,fin,False,FIN,outside,3,0
+fin_id_96_mid.png,5,26041964,True,26. 04. 1964,outside,8,0
+fin_id_96_mid.png,6,06052019,True,"06, 05, 2019",outside,8,0
+fin_id_96_mid.png,7,06052024,True,"06. 05, 2024",outside,8,0
+fin_id_96_mid.png,8,9472,True,-9472,outside,4,0
+fin_id_96_mid.png,9,260464,True,Pate |,outside,6,6
+fin_id_96_max.png,0,oikarinen,False,OIKARINEN,halo,9,0
+fin_id_96_max.png,1,siiri,False,SHRI,halo,5,2
+fin_id_96_max.png,3,043499254,True,043499254,core,9,0
+fin_id_96_max.png,4,fin,False,FIN,outside,3,0
+fin_id_96_max.png,5,26041964,True,26. 04. 1964,core,8,0
+fin_id_96_max.png,6,06052019,True,"06, 05. 2019",core,8,0
+fin_id_96_max.png,7,06052024,True,"06. 05, 2024",core,8,0
+fin_id_96_max.png,8,9472,True,-9472,core,4,0
+fin_id_96_max.png,9,260464,True,265A,core,6,4
+fin_id_97_mid.png,0,jalkanen,False,JALKANEN,outside,8,0
+fin_id_97_mid.png,1,aili,False,Alli,outside,4,1
+fin_id_97_mid.png,3,858165432,True,8527645437,halo,9,4
+fin_id_97_mid.png,4,fin,False,"FIA,",halo,3,1
+fin_id_97_mid.png,5,03031959,True,03 03. 1959,outside,8,0
+fin_id_97_mid.png,6,14092015,True,14 99 20145,outside,8,2
+fin_id_97_mid.png,7,14092020,True,14 19 2N90,outside,8,3
+fin_id_97_mid.png,8,475w,False,-A7 Ay,outside,4,3
+fin_id_97_mid.png,9,030359,True,¢ efits,outside,6,6
+fin_id_97_max.png,0,jalkanen,False,JALKANEN,outside,8,0
+fin_id_97_max.png,1,aili,False,All|,halo,4,2
+fin_id_97_max.png,3,858165432,True,R597 65439,outside,9,4
+fin_id_97_max.png,4,fin,False,"FIX,",outside,3,1
+fin_id_97_max.png,5,03031959,True,03.03.1959,core,8,0
+fin_id_97_max.png,6,14092015,True,14 99 214.,halo,8,3
+fin_id_97_max.png,7,14092020,True,14 n9 2n2n,outside,8,3
+fin_id_97_max.png,8,475w,False,-A7 SW,outside,4,2
+fin_id_97_max.png,9,030359,True,pata,outside,6,6
+fin_id_98_mid.png,0,ritala,False,RITALA,outside,6,0
+fin_id_98_mid.png,1,petra,False,PETRA,outside,5,0
+fin_id_98_mid.png,3,035436000,True,035436000,outside,9,0
+fin_id_98_mid.png,4,fin,False,FIN:,outside,3,0
+fin_id_98_mid.png,5,14021968,True,14. 02. 1968,outside,8,0
+fin_id_98_mid.png,6,03102019,True,03. 10. 2019,outside,8,0
+fin_id_98_mid.png,7,03102024,True,03. 10. 2024,outside,8,0
+fin_id_98_mid.png,8,042j,False,-042J5,halo,4,1
+fin_id_98_mid.png,9,140268,True,TAL 8,core,6,5
+fin_id_98_max.png,0,ritala,False,RITALA,outside,6,0
+fin_id_98_max.png,1,petra,False,PETRA.,outside,5,0
+fin_id_98_max.png,3,035436000,True,035436000,outside,9,0
+fin_id_98_max.png,4,fin,False,FIN:,outside,3,0
+fin_id_98_max.png,5,14021968,True,14. 02. 1968,core,8,0
+fin_id_98_max.png,6,03102019,True,03. 10. 2019,core,8,0
+fin_id_98_max.png,7,03102024,True,03. 10. 2024,core,8,0
+fin_id_98_max.png,8,042j,False,-042J,outside,4,0
+fin_id_98_max.png,9,140268,True,,outside,6,6
+fin_id_99_mid.png,0,petaja,False,PETAJA,outside,6,0
+fin_id_99_mid.png,1,inkeri,False,INKER!,outside,6,1
+fin_id_99_mid.png,3,943882470,True,QA3882470,outside,9,2
+fin_id_99_mid.png,4,fin,False,FIN:,halo,3,0
+fin_id_99_mid.png,5,08031963,True,08.03. 1963,halo,8,0
+fin_id_99_mid.png,6,07122017,True,"07,12, 2017",halo,8,0
+fin_id_99_mid.png,7,07122022,True,"07, 12. 2022",halo,8,0
+fin_id_99_mid.png,8,957p,False,-957P,halo,4,0
+fin_id_99_mid.png,9,080363,True,065259,outside,6,5
+fin_id_99_max.png,0,petaja,False,PETAJA,core,6,0
+fin_id_99_max.png,1,inkeri,False,INKER},core,6,1
+fin_id_99_max.png,3,943882470,True,943882470,core,9,0
+fin_id_99_max.png,4,fin,False,FIN:,outside,3,0
+fin_id_99_max.png,5,08031963,True,08. 03. 1963,outside,8,0
+fin_id_99_max.png,6,07122017,True,"07,12, 2017",core,8,0
+fin_id_99_max.png,7,07122022,True,"07, 12. 2022",core,8,0
+fin_id_99_max.png,8,957p,False,-957P,core,4,0
+fin_id_99_max.png,9,080363,True,065259,core,6,5
+grc_passport_90_mid.png,1,19jul03,True,19 Jul 03,outside,7,0
+grc_passport_90_mid.png,3,amarousio,False,AMAROUSIO,outside,9,0
+grc_passport_90_mid.png,4,grc,False,GRC.,outside,3,0
+grc_passport_90_mid.png,6,11jan20,True,11 Jan 20,outside,7,0
+grc_passport_90_mid.png,8,157,False,"1,57",outside,3,0
+grc_passport_90_mid.png,9,11jan18,True,11 Jan 18,outside,7,0
+grc_passport_90_mid.png,10,pgrcpolitisanaxagoras,False,P<GRCPOLITIS<<ANAXAGORAS <<<<<<<<<<<<<<<<cc<K<<,halo,21,3
+grc_passport_90_mid.png,11,ap66545627grc0307190m200111502,True,AP66545627GRC0307190M2001115<<<<<<<<<<<<<<Q2,halo,30,1
+grc_passport_90_mid.png,13,anaxagoras,False,ANAXAGORAS,halo,10,0
+grc_passport_90_mid.png,16,politis,False,POLITIS,outside,7,0
+grc_passport_90_mid.png,18,ap6654562,True,AP6654562,outside,9,0
+grc_passport_90_max.png,1,19jul03,True,19 Jul 03,core,7,0
+grc_passport_90_max.png,3,amarousio,False,AMAROUSIO,core,9,0
+grc_passport_90_max.png,4,grc,False,GRC.,outside,3,0
+grc_passport_90_max.png,6,11jan20,True,11 Jan 20,core,7,0
+grc_passport_90_max.png,8,157,False,"1,57",outside,3,0
+grc_passport_90_max.png,9,11jan18,True,11 Jan 18,core,7,0
+grc_passport_90_max.png,10,pgrcpolitisanaxagoras,False,P<GRCPOLITIS<<ANAXAGORAS<<<<<<<<<<<<<<<<<<<<,halo,21,0
+grc_passport_90_max.png,11,ap66545627grc0307190m200111502,True,AP66545627GRC0307190M2001115<<<<<<<<<<<<<<Q2,halo,30,1
+grc_passport_90_max.png,13,anaxagoras,False,ANAXAGORAS,outside,10,0
+grc_passport_90_max.png,16,politis,False,POLITIS,outside,7,0
+grc_passport_90_max.png,18,ap6654562,True,AP6654562,outside,9,0
+grc_passport_91_mid.png,1,01jul02,True,01 Jul 02,outside,7,0
+grc_passport_91_mid.png,3,patra,False,PATRA,outside,5,0
+grc_passport_91_mid.png,4,grc,False,GRC,outside,3,0
+grc_passport_91_mid.png,6,09jun13,True,09 Jun 13,outside,7,0
+grc_passport_91_mid.png,8,161,False,"1,61",outside,3,0
+grc_passport_91_mid.png,9,10jun08,True,10 Jun 08,outside,7,0
+grc_passport_91_mid.png,10,pgrcsamarasmenandros,False,P<GRCSAMARAS<<MENANDROS <<<<<<<<<<<<ccccecceecd,halo,20,11
+grc_passport_91_mid.png,11,ap29277736grc0207016m200101204,True,AP29277736GRCO207016M2001 01 2<<<<<<<<<<<<<<Q4,halo,30,2
+grc_passport_91_mid.png,13,menandros,False,MENANDROS,outside,9,0
+grc_passport_91_mid.png,16,samaras,False,SAMARAS,outside,7,0
+grc_passport_91_mid.png,18,ap2927773,True,AP2927773,outside,9,0
+grc_passport_91_max.png,1,01jul02,True,01 Jul 02,core,7,0
+grc_passport_91_max.png,3,patra,False,PATRA,core,5,0
+grc_passport_91_max.png,4,grc,False,GRC,outside,3,0
+grc_passport_91_max.png,6,09jun13,True,09 Jun 13,core,7,0
+grc_passport_91_max.png,8,161,False,"1,61",outside,3,0
+grc_passport_91_max.png,9,10jun08,True,10 Jun 08,core,7,0
+grc_passport_91_max.png,10,pgrcsamarasmenandros,False,P<GRCSAMARAS<<MENANDROS <<<<<<<<<<<<<<<<<<<<c,halo,20,1
+grc_passport_91_max.png,11,ap29277736grc0207016m200101204,True,AP29277736GRCO207016M200101 2<<<<<<<<<<<<<<94,outside,30,2
+grc_passport_91_max.png,13,menandros,False,MENANDROS,core,9,0
+grc_passport_91_max.png,16,samaras,False,SAMARAS,core,7,0
+grc_passport_91_max.png,18,ap2927773,True,AP29327773,outside,9,1
+grc_passport_92_mid.png,1,20jan05,True,20 Jan 05,outside,7,0
+grc_passport_92_mid.png,3,rodos,False,RODOS,outside,5,0
+grc_passport_92_mid.png,4,grc,False,GRC,core,3,0
+grc_passport_92_mid.png,6,02nov21,True,02 Nov 21,outside,7,0
+grc_passport_92_mid.png,8,162,False,"41,62",core,3,1
+grc_passport_92_mid.png,9,02nov19,True,02 Nov 19,outside,7,0
+grc_passport_92_mid.png,10,pgrcnikolakosminos,False,P<GRCNIKOLAKOS<<MINOS<<<<<<<<<<<<<<<<<<<cc<<<,halo,18,2
+grc_passport_92_mid.png,11,ak59791555grc0501208m211102700,True,AK59791555GRC0501208M211102/%<<<<<<<<<<<<<<Q0,halo,30,2
+grc_passport_92_mid.png,13,minos,False,MINOS.,halo,5,0
+grc_passport_92_mid.png,16,nikolakos,False,NIKOLAKOS,halo,9,0
+grc_passport_92_mid.png,18,ak5979155,True,AK5979155,halo,9,0
+grc_passport_92_max.png,1,20jan05,True,20 Jan 05,core,7,0
+grc_passport_92_max.png,3,rodos,False,RODOS,core,5,0
+grc_passport_92_max.png,4,grc,False,GRC,outside,3,0
+grc_passport_92_max.png,6,02nov21,True,02 Nov 21,core,7,0
+grc_passport_92_max.png,8,162,False,"1,62",outside,3,0
+grc_passport_92_max.png,9,02nov19,True,02 Nov 19,core,7,0
+grc_passport_92_max.png,10,pgrcnikolakosminos,False,P<GRCNIKOLAKOS<<MINOS<<<<<<<<<<<<<<<<<<<<ce<<,halo,18,2
+grc_passport_92_max.png,11,ak59791555grc0501208m211102700,True,AK59791555GRC0501208M211102/<<<<<<<<<<<<<<Q0,halo,30,2
+grc_passport_92_max.png,13,minos,False,MINOS.,halo,5,0
+grc_passport_92_max.png,16,nikolakos,False,NIKOLAKOS.,halo,9,0
+grc_passport_92_max.png,18,ak5979155,True,AK5979155,core,9,0
+grc_passport_93_mid.png,1,04mar03,True,04 Mar 03,halo,7,0
+grc_passport_93_mid.png,3,patra,False,PATRA,halo,5,0
+grc_passport_93_mid.png,4,grc,False,GRC,outside,3,0
+grc_passport_93_mid.png,6,22mar21,True,22 Mar 21,halo,7,0
+grc_passport_93_mid.png,8,174,False,"1,74",outside,3,0
+grc_passport_93_mid.png,9,22mar19,True,22 Mar 19,halo,7,0
+grc_passport_93_mid.png,10,pgrcpapagoslaurentios,False,P<GRCPAPAGOS<<LAURENT ILOS<<<<<<<<<<<<<<<<<<<<,halo,21,1
+grc_passport_93_mid.png,11,ap00365924grc0303044m210322602,True,AP0Q00365924GRC0303044M2103226<<<<<<<<<<<<<<92,halo,30,3
+grc_passport_93_mid.png,13,laurentios,False,LAURENTIOS,outside,10,0
+grc_passport_93_mid.png,16,papagos,False,PAPAGOS,outside,7,0
+grc_passport_93_mid.png,18,ap0036592,True,AP0030592,halo,9,1
+grc_passport_93_max.png,1,04mar03,True,04 Mar 03,core,7,0
+grc_passport_93_max.png,3,patra,False,PATRA,core,5,0
+grc_passport_93_max.png,4,grc,False,GRC,outside,3,0
+grc_passport_93_max.png,6,22mar21,True,22 Mar 21,core,7,0
+grc_passport_93_max.png,8,174,False,"4,74",outside,3,1
+grc_passport_93_max.png,9,22mar19,True,22 Mar 19,core,7,0
+grc_passport_93_max.png,10,pgrcpapagoslaurentios,False,P<GRCPAPAGOS<<LAURENTIOS<<<<<<<<<<<<<<<<<<<<,core,21,0
+grc_passport_93_max.png,11,ap00365924grc0303044m210322602,True,AP00365924GRC03503044M21035226<<<<<<<<<<<<<<92,core,30,3
+grc_passport_93_max.png,13,laurentios,False,LAURENTIOS,outside,10,0
+grc_passport_93_max.png,16,papagos,False,PAPAGOS,outside,7,0
+grc_passport_93_max.png,18,ap0036592,True,APUUSGS9Z,core,9,6
+grc_passport_94_mid.png,1,05nov05,True,05 Nov 05,outside,7,0
+grc_passport_94_mid.png,3,fier,False,FIER,halo,4,0
+grc_passport_94_mid.png,4,alb,False,ALB,outside,3,0
+grc_passport_94_mid.png,6,28feb20,True,28 Feb 20,halo,7,0
+grc_passport_94_mid.png,8,165,False,"1,65",halo,3,0
+grc_passport_94_mid.png,9,28feb18,True,28 Feb 18,halo,7,0
+grc_passport_94_mid.png,10,pgrcefthymiadiseutychios,False,P<GRCEFTHYMIADIS<<EUTYCHIOS<<<<<<<<<<<<<<<<<,halo,24,0
+grc_passport_94_mid.png,11,am56039098grc0511058m200228202,True,AMS6039098GRCO0511058M2002282<<<<<<<<<<<<<<92,outside,30,3
+grc_passport_94_mid.png,13,eutychios,False,EUTYCHIOS,outside,9,0
+grc_passport_94_mid.png,16,efthymiadis,False,EFTHYMIADIS,outside,11,0
+grc_passport_94_mid.png,18,am5603909,True,AM5603909,halo,9,0
+grc_passport_94_max.png,1,05nov05,True,05 Nov 05,outside,7,0
+grc_passport_94_max.png,3,fier,False,FIER,outside,4,0
+grc_passport_94_max.png,4,alb,False,ALB,outside,3,0
+grc_passport_94_max.png,6,28feb20,True,28 Feb 20,outside,7,0
+grc_passport_94_max.png,8,165,False,"1,65",halo,3,0
+grc_passport_94_max.png,9,28feb18,True,28 Feb 18,outside,7,0
+grc_passport_94_max.png,10,pgrcefthymiadiseutychios,False,P<GRCEFTHYMIADIS<<EUT YCHILOS<<<<<<<<<<<<<<<<<,core,24,1
+grc_passport_94_max.png,11,am56039098grc0511058m200228202,True,AM56039098GRC0511058M2002282<<<<<<<<<<<<<<Q?,core,30,2
+grc_passport_94_max.png,13,eutychios,False,EUTYCHIOS,outside,9,0
+grc_passport_94_max.png,16,efthymiadis,False,EFTHYMIADIS,outside,11,0
+grc_passport_94_max.png,18,am5603909,True,AM5603909,halo,9,0
+grc_passport_95_mid.png,1,30jul05,True,30 Jul 05,outside,7,0
+grc_passport_95_mid.png,3,athina,False,ATHINA,outside,6,0
+grc_passport_95_mid.png,4,grc,False,GRC,core,3,0
+grc_passport_95_mid.png,6,16feb21,True,16 Feb 21,core,7,0
+grc_passport_95_mid.png,8,177,False,1.77,outside,3,0
+grc_passport_95_mid.png,9,16feb19,True,16 Feb 19,halo,7,0
+grc_passport_95_mid.png,10,pgrcantonopouloudido,False,P<GRCANTONOPOULOU<<DIDO<<<<<<<<<<<ccce cece cececced,core,20,16
+grc_passport_95_mid.png,11,ak03662423grc0507303f210216008,True,AK036624235GRC050/7305F2102160<<<<<<<<<<<<<<98,core,30,3
+grc_passport_95_mid.png,13,dido,False,DIDO,outside,4,0
+grc_passport_95_mid.png,16,antonopoulou,False,ANTONOPOULOU,outside,12,0
+grc_passport_95_mid.png,18,ak0366242,True,AK0366242,outside,9,0
+grc_passport_95_max.png,1,30jul05,True,30 Jul 05,core,7,0
+grc_passport_95_max.png,3,athina,False,ATHINA,core,6,0
+grc_passport_95_max.png,4,grc,False,GRC,halo,3,0
+grc_passport_95_max.png,6,16feb21,True,16 Feb 21,core,7,0
+grc_passport_95_max.png,8,177,False,"1,77",outside,3,0
+grc_passport_95_max.png,9,16feb19,True,16 Feb 19,core,7,0
+grc_passport_95_max.png,10,pgrcantonopouloudido,False,P<GRCANTONOPOULOU<<DIDO<<<<<<<<<<<<<ccceecece,core,20,9
+grc_passport_95_max.png,11,ak03662423grc0507303f210216008,True,AK03662423GRC050/7505F2102160<<<<<<<<<<<<<<98,core,30,3
+grc_passport_95_max.png,13,dido,False,DIDO,outside,4,0
+grc_passport_95_max.png,16,antonopoulou,False,ANTONOPOULOU,outside,12,0
+grc_passport_95_max.png,18,ak0366242,True,AK0366242,outside,9,0
+grc_passport_96_mid.png,1,12feb02,True,12 Feb 02,core,7,0
+grc_passport_96_mid.png,3,thessaloniki,False,THESSALONIKI,core,12,0
+grc_passport_96_mid.png,4,grc,False,GRC,core,3,0
+grc_passport_96_mid.png,6,14dec20,True,14 Dec 20,core,7,0
+grc_passport_96_mid.png,8,161,False,"1,61",halo,3,0
+grc_passport_96_mid.png,9,14dec18,True,14 Dec 18,core,7,0
+grc_passport_96_mid.png,10,pgrcxanthopoulouourania,False,P<GRCXANTHOPOULOU<<OURANIA<<<<<<<<<<<<<<<<<<,core,23,0
+grc_passport_96_mid.png,11,ak29779291grc0202125f201214608,True,AK29779291GRC0202125F2012146<<<<<<<<<<<<<<08,core,30,0
+grc_passport_96_mid.png,13,ourania,False,OURANIA,outside,7,0
+grc_passport_96_mid.png,16,xanthopoulou,False,XANTHOPOULOU,outside,12,0
+grc_passport_96_mid.png,18,ak2977929,True,AK297/3929,halo,9,1
+grc_passport_96_max.png,1,12feb02,True,12 Feb 02,core,7,0
+grc_passport_96_max.png,3,thessaloniki,False,THESSALONIKI,core,12,0
+grc_passport_96_max.png,4,grc,False,GRC,outside,3,0
+grc_passport_96_max.png,6,14dec20,True,14 Dec 20,core,7,0
+grc_passport_96_max.png,8,161,False,"1,61",outside,3,0
+grc_passport_96_max.png,9,14dec18,True,14 Dec 18,core,7,0
+grc_passport_96_max.png,10,pgrcxanthopoulouourania,False,P<GRCXANTHOPOULOU<<OURANIA<<<<<<<<<<<<Kc<ccc<,core,23,5
+grc_passport_96_max.png,11,ak29779291grc0202125f201214608,True,AK29779291GRC0202125F2012146<<<<<<<<<<<<<<98,core,30,1
+grc_passport_96_max.png,13,ourania,False,OURANIA,outside,7,0
+grc_passport_96_max.png,16,xanthopoulou,False,XANTHOPOULOU,outside,12,0
+grc_passport_96_max.png,18,ak2977929,True,AK297/3929,core,9,1
+grc_passport_97_mid.png,1,17jun06,True,17 Jun 06,core,7,0
+grc_passport_97_mid.png,3,athina,False,ATHINA,core,6,0
+grc_passport_97_mid.png,4,grc,False,GRC,outside,3,0
+grc_passport_97_mid.png,6,19jul21,True,19 Jul 21,core,7,0
+grc_passport_97_mid.png,8,189,False,1.89,halo,3,0
+grc_passport_97_mid.png,9,19jul19,True,19 Jul 19,core,7,0
+grc_passport_97_mid.png,10,pgrcanastasioumiranda,False,P<GRCANASTASIOU<<MIRANDA<<<<<<<<<<<<<<eccc<cde,core,21,7
+grc_passport_97_mid.png,11,an97964112grc0606170f210719808,True,AN97964112GRC06061 70F2107198<<<<<<<<<<<<<<98,core,30,1
+grc_passport_97_mid.png,13,miranda,False,MIRAND-A,halo,7,0
+grc_passport_97_mid.png,16,anastasiou,False,ANASTASIOL,halo,10,1
+grc_passport_97_mid.png,18,an9796411,True,AN9796411,halo,9,0
+grc_passport_97_max.png,1,17jun06,True,17 Jun 06,core,7,0
+grc_passport_97_max.png,3,athina,False,ATHINA,core,6,0
+grc_passport_97_max.png,4,grc,False,GRC,outside,3,0
+grc_passport_97_max.png,6,19jul21,True,19 Jul 21,core,7,0
+grc_passport_97_max.png,8,189,False,"1,89",outside,3,0
+grc_passport_97_max.png,9,19jul19,True,19 Jul 19,core,7,0
+grc_passport_97_max.png,10,pgrcanastasioumiranda,False,P<GRCANASTASIOU<<MIRANDA<<<<<<<<<<<<<<<<<ccKe,core,21,4
+grc_passport_97_max.png,11,an97964112grc0606170f210719808,True,AN97964112GRC06061 70F2107198<<<<<<<<<<<<<<98,core,30,1
+grc_passport_97_max.png,13,miranda,False,MIRAND-,halo,7,1
+grc_passport_97_max.png,16,anastasiou,False,ANASTASIOU,halo,10,0
+grc_passport_97_max.png,18,an9796411,True,AN9796411,halo,9,0
+grc_passport_98_mid.png,1,11okt05,True,11 Okt 05,outside,7,0
+grc_passport_98_mid.png,3,athina,False,ATHINA,outside,6,0
+grc_passport_98_mid.png,4,grc,False,GRC,halo,3,0
+grc_passport_98_mid.png,6,15sep21,True,15 Sep 21,outside,7,0
+grc_passport_98_mid.png,8,162,False,"1,62",halo,3,0
+grc_passport_98_mid.png,9,15sep19,True,15 Sep 19,outside,7,0
+grc_passport_98_mid.png,10,pgrctheodoridoualice,False,P<GRCTHEODORIDOU<<ALICE<<<<<<<<<<<<ceceeceeeece,outside,20,12
+grc_passport_98_mid.png,11,ap75655522grc0510110f210915804,True,AP75655522G6RC0510110F2109158<<<<<<<<KeKeceeecff4,outside,30,12
+grc_passport_98_mid.png,13,alice,False,ALICE,outside,5,0
+grc_passport_98_mid.png,16,theodoridou,False,THEODORIDOU,outside,11,0
+grc_passport_98_mid.png,18,ap7565552,True,AP7565552,core,9,0
+grc_passport_98_max.png,1,11okt05,True,11 Okt 05,core,7,0
+grc_passport_98_max.png,3,athina,False,ATHINA,core,6,0
+grc_passport_98_max.png,4,grc,False,GRC,core,3,0
+grc_passport_98_max.png,6,15sep21,True,15 Sep 21,core,7,0
+grc_passport_98_max.png,8,162,False,1.62,halo,3,0
+grc_passport_98_max.png,9,15sep19,True,15 Sep 19,core,7,0
+grc_passport_98_max.png,10,pgrctheodoridoualice,False,P<GRCTHEODORIDOU<<ALICE<<<<<<<<<<<Keceeeceeeece,core,20,13
+grc_passport_98_max.png,11,ap75655522grc0510110f210915804,True,AP75655522GRC0510110F2109158<<<<<<<<<<ce<ecf4,core,30,5
+grc_passport_98_max.png,13,alice,False,ALICE,outside,5,0
+grc_passport_98_max.png,16,theodoridou,False,THEODORIDOU,outside,11,0
+grc_passport_98_max.png,18,ap7565552,True,AP7565552,core,9,0
+grc_passport_99_mid.png,1,07jul04,True,07 Jul 04,halo,7,0
+grc_passport_99_mid.png,3,aliartos,False,ALIARTOS,outside,8,0
+grc_passport_99_mid.png,4,grc,False,GRC,outside,3,0
+grc_passport_99_mid.png,6,26jul21,True,26 Jul 21,outside,7,0
+grc_passport_99_mid.png,8,198,False,"1,98",outside,3,0
+grc_passport_99_mid.png,9,26jul19,True,26 Jul 19,outside,7,0
+grc_passport_99_mid.png,10,pgrcgiannakopoulouelizabeth,False,P<GRCGIANNAKOPOULOU<<ELIZABETH<<<<<<<<<c<<c<<e,outside,27,3
+grc_passport_99_mid.png,11,ap58358028grc0407078f210726808,True,AP58358028GRCO4O/0/78F 2107 268<<<<<<<<<e<e<<<< 98,outside,30,6
+grc_passport_99_mid.png,13,elizabeth,False,ELIZABETH,core,9,0
+grc_passport_99_mid.png,16,giannakopoulou,False,GIANNAKOPOULOU,core,14,0
+grc_passport_99_mid.png,18,ap5835802,True,AP5835802,halo,9,0
+grc_passport_99_max.png,1,07jul04,True,07 Jul 04,core,7,0
+grc_passport_99_max.png,3,aliartos,False,ALIARTOS,halo,8,0
+grc_passport_99_max.png,4,grc,False,GRC,core,3,0
+grc_passport_99_max.png,6,26jul21,True,26 Jul 24,outside,7,1
+grc_passport_99_max.png,8,198,False,"1,98",outside,3,0
+grc_passport_99_max.png,9,26jul19,True,26 Jul 19,outside,7,0
+grc_passport_99_max.png,10,pgrcgiannakopoulouelizabeth,False,P<GRCGIANNAKOPOULOU<<ELIZABETH<<<<<<<<<<<<<<,outside,27,0
+grc_passport_99_max.png,11,ap58358028grc0407078f210726808,True,AP58358028GRCO4O0/O0/78F210% 268<<<<<<<e<e<e<ee <<< 98,outside,30,10
+grc_passport_99_max.png,13,elizabeth,False,ELIZABETH,core,9,0
+grc_passport_99_max.png,16,giannakopoulou,False,GIANNAKOPOULOU,core,14,0
+grc_passport_99_max.png,18,ap5835802,True,AP5835802,outside,9,0
+lva_passport_90_mid.png,0,pmlprigas,False,PMIP PTCA,outside,9,5
+lva_passport_90_mid.png,1,9nodala,False,9 NONal a,outside,7,1
+lva_passport_90_mid.png,2,24042004,True,"2, NL 2004",outside,8,3
+lva_passport_90_mid.png,3,riga,False,TCA,halo,4,3
+lva_passport_90_mid.png,4,lva,False,ns,halo,3,3
+lva_passport_90_mid.png,5,12022029,True,12 02 2029.,outside,8,0
+lva_passport_90_mid.png,7,191,False,191,halo,3,0
+lva_passport_90_mid.png,8,24040427655,True,>ENLNL-27A55,halo,11,7
+lva_passport_90_mid.png,9,12022019,True,49 9? 2190,outside,8,6
+lva_passport_90_mid.png,10,plvalicisolivje,False,PSLVALICIS<<OLIVIE<<<<<<eceeeeeeeeeeeeeeeccc<,halo,15,22
+lva_passport_90_mid.png,11,lv80799148lva0404240m29021202404042765536,True,LVOU(99148LVA0404240M2902120240404<2/655<<56,halo,41,5
+lva_passport_90_mid.png,12,olivje,False,TWEE,outside,6,5
+lva_passport_90_mid.png,13,latvijas,False,ATV TIA ¢,outside,8,4
+lva_passport_90_mid.png,14,lv8079914,True,YVR2079914,halo,9,3
+lva_passport_90_mid.png,15,licis,False,,outside,5,5
+lva_passport_90_max.png,0,pmlprigas,False,PMIP RTCAS.,outside,9,3
+lva_passport_90_max.png,1,9nodala,False,9 NNNal a.,outside,7,2
+lva_passport_90_max.png,2,24042004,True,24 N46 2004,halo,8,2
+lva_passport_90_max.png,3,riga,False,>i Ch,halo,4,3
+lva_passport_90_max.png,4,lva,False,WA,halo,3,2
+lva_passport_90_max.png,5,12022029,True,12 02 2029.,outside,8,0
+lva_passport_90_max.png,7,191,False,101,halo,3,1
+lva_passport_90_max.png,8,24040427655,True,40ENG-27455,core,11,5
+lva_passport_90_max.png,9,12022019,True,12 9? 2010,outside,8,3
+lva_passport_90_max.png,10,plvalicisolivje,False,PSLVALICIS<<OLIVJE<<<<<<e<e<eceeeee eee ceeeecc<K<,halo,15,21
+lva_passport_90_max.png,11,lv80799148lva0404240m29021202404042765536,True,LVOU/99148LVA0404240M2902120240404<2/655<<56,halo,41,5
+lva_passport_90_max.png,12,olivje,False,TV IE,outside,6,4
+lva_passport_90_max.png,13,latvijas,False,-ATVTIaS,halo,8,3
+lva_passport_90_max.png,14,lv8079914,True,VR2079914,core,9,3
+lva_passport_90_max.png,15,licis,False,-Tete,halo,5,5
+lva_passport_91_mid.png,0,pmlppiepajas,False,PMLP PIEPAJAS,outside,12,0
+lva_passport_91_mid.png,1,nodala,False,NODALA,outside,6,0
+lva_passport_91_mid.png,2,07032004,True,,outside,8,8
+lva_passport_91_mid.png,3,dobele,False,DOBELE,outside,6,0
+lva_passport_91_mid.png,4,lva,False,IVA,core,3,1
+lva_passport_91_mid.png,5,22042029,True,22.04.2029.,outside,8,0
+lva_passport_91_mid.png,7,171,False,171,outside,3,0
+lva_passport_91_mid.png,8,07030423553,True,070304-235555,outside,11,2
+lva_passport_91_mid.png,9,22042019,True,22.04.2019.,outside,8,0
+lva_passport_91_mid.png,10,plvalusisoskars,False,P<LVALUSIS<<OSKARS <<<<<<<<<<<e cece cece,outside,15,9
+lva_passport_91_mid.png,11,lv79257778lva0403070m29042270703042355388,True,LV(9257778LVA0403070M2904227070504<25995<<5&,outside,41,7
+lva_passport_91_mid.png,12,oskars,False,OSKARS,core,6,0
+lva_passport_91_mid.png,13,latvijas,False,LATVIJAS,outside,8,0
+lva_passport_91_mid.png,14,lv7925777,True,VIVE,outside,9,8
+lva_passport_91_mid.png,15,lusis,False,LUSTS,core,5,1
+lva_passport_91_max.png,0,pmlppiepajas,False,PMLP PIEPAJAS,core,12,0
+lva_passport_91_max.png,1,nodala,False,NODALA,halo,6,0
+lva_passport_91_max.png,2,07032004,True,07.03.2004.,core,8,0
+lva_passport_91_max.png,3,dobele,False,DOBELE,core,6,0
+lva_passport_91_max.png,4,lva,False,IVA,outside,3,1
+lva_passport_91_max.png,5,22042029,True,22.04.2029.,core,8,0
+lva_passport_91_max.png,7,171,False,171,core,3,0
+lva_passport_91_max.png,8,07030423553,True,070304-25555,core,11,2
+lva_passport_91_max.png,9,22042019,True,22.04.2019.,core,8,0
+lva_passport_91_max.png,10,plvalusisoskars,False,P<LVALUSIS<<OSKARS <<<<<<<<<<<<<<< << Sees,core,15,4
+lva_passport_91_max.png,11,lv79257778lva0403070m29042270703042355388,True,LV(92577/78LVA0403070M2904227070304<259395<<55,halo,41,7
+lva_passport_91_max.png,12,oskars,False,OSKARS,outside,6,0
+lva_passport_91_max.png,13,latvijas,False,LATVIJAS,halo,8,0
+lva_passport_91_max.png,14,lv7925777,True,NVIPCIITE,core,9,8
+lva_passport_91_max.png,15,lusis,False,LUSTS,outside,5,1
+lva_passport_92_mid.png,0,pmlpjelgavas,False,PMIP [EI GAVAS,outside,12,3
+lva_passport_92_mid.png,1,nodala,False,NoOnole,outside,6,4
+lva_passport_92_mid.png,2,31032002,True,,outside,8,8
+lva_passport_92_mid.png,3,riga,False,PTCA,outside,4,3
+lva_passport_92_mid.png,4,lva,False,irk,outside,3,3
+lva_passport_92_mid.png,5,02072027,True,02 07.2027,outside,8,0
+lva_passport_92_mid.png,7,167,False,447,outside,3,2
+lva_passport_92_mid.png,8,31030221440,True,21202-21440,outside,11,3
+lva_passport_92_mid.png,9,02072017,True,02 07 2017,outside,8,0
+lva_passport_92_mid.png,10,plvasalminsosvalds,False,P<LVASALMINS<<OSVALDS <<<<<<<<<<<<<c<ceccecccdc,core,18,11
+lva_passport_92_mid.png,11,lv02517733lva0203317m27070263103022144044,True,|V¥02517733LVA020331/7M2/70/7026310302<21440<<44,core,41,1
+lva_passport_92_mid.png,12,osvalds,False,AcVAI nc,outside,7,5
+lva_passport_92_mid.png,13,latvijas,False,| ATVT 1Ac,outside,8,4
+lva_passport_92_mid.png,14,salmins,False,CAI MING,outside,7,3
+lva_passport_92_max.png,0,pmlpjelgavas,False,PMIP IFT GAVAS,core,12,4
+lva_passport_92_max.png,1,nodala,False,NONQIL,core,6,4
+lva_passport_92_max.png,2,31032002,True,,core,8,8
+lva_passport_92_max.png,3,riga,False,RPTGA,core,4,2
+lva_passport_92_max.png,4,lva,False,LirR,outside,3,3
+lva_passport_92_max.png,5,02072027,True,02.07.2027,core,8,0
+lva_passport_92_max.png,7,167,False,AAT,core,3,3
+lva_passport_92_max.png,8,31030221440,True,2ANZI-I21440,core,11,6
+lva_passport_92_max.png,9,02072017,True,0? 07.2017,core,8,1
+lva_passport_92_max.png,10,plvasalminsosvalds,False,P<LVASALMINS<<OSVALDS <<<<<<<<<<<<<ccceeeiccd,core,18,10
+lva_passport_92_max.png,11,lv02517733lva0203317m27070263103022144044,True,|VQ02517733LVA020331/7M2/07026310302<21440<<44,core,41,3
+lva_passport_92_max.png,12,osvalds,False,ncVval nc,outside,7,5
+lva_passport_92_max.png,13,latvijas,False,1ATVWT IAC,core,8,5
+lva_passport_92_max.png,14,salmins,False,CAIMTNG,outside,7,4
+lva_passport_93_mid.png,0,pmlprigas,False,PMIP RTIGAS,outside,9,2
+lva_passport_93_mid.png,1,4nodala,False,4 NONAIA,outside,7,2
+lva_passport_93_mid.png,2,07072002,True,07 07 2NN?,outside,8,3
+lva_passport_93_mid.png,3,talsi,False,TALSI,outside,5,0
+lva_passport_93_mid.png,4,lva,False,har,halo,3,3
+lva_passport_93_mid.png,5,03052027,True,03.05.2027.,outside,8,0
+lva_passport_93_mid.png,7,163,False,A Az,halo,3,3
+lva_passport_93_mid.png,8,07070224314,True,70702-24314,halo,11,1
+lva_passport_93_mid.png,9,03052017,True,03.05.2017.,outside,8,0
+lva_passport_93_mid.png,10,plvasaulitisoto,False,P<LVASAULITIS<<0OTO0<<<<<<<<<<<<<<<ccdededcccc,halo,15,13
+lva_passport_93_mid.png,11,lv46640064lva0207072m27050330707022431408,True,(V46640064LVA0207072M270503550/0/02<24514<<U8,halo,41,7
+lva_passport_93_mid.png,12,oto,False,"NTN,",halo,3,2
+lva_passport_93_mid.png,13,latvijas,False,(ATVTIAS,halo,8,3
+lva_passport_93_mid.png,14,lv4664006,True,V4A64006,halo,9,2
+lva_passport_93_mid.png,15,saulitis,False,Ca lieearrie,halo,8,8
+lva_passport_93_max.png,0,pmlprigas,False,PMI P RTGAS,halo,9,2
+lva_passport_93_max.png,1,4nodala,False,4.NonaAl A,outside,7,2
+lva_passport_93_max.png,2,07072002,True,07 07 2002,halo,8,0
+lva_passport_93_max.png,3,talsi,False,TALSI,outside,5,0
+lva_passport_93_max.png,4,lva,False,hats,outside,3,4
+lva_passport_93_max.png,5,03052027,True,"03,05,2027,",halo,8,0
+lva_passport_93_max.png,7,163,False,4 fz,outside,3,3
+lva_passport_93_max.png,8,07070224314,True,N70702-24314,outside,11,1
+lva_passport_93_max.png,9,03052017,True,03.05.2017.,halo,8,0
+lva_passport_93_max.png,10,plvasaulitisoto,False,P<_LVASAULITIS<<0TO0<<<<<<<<<<<<<<<<<<eeedcccK<,halo,15,10
+lva_passport_93_max.png,11,lv46640064lva0207072m27050330707022431408,True,1V46640064LVA0207072M27050550/0/702<24514<<U8,outside,41,6
+lva_passport_93_max.png,12,oto,False,ATH.,outside,3,2
+lva_passport_93_max.png,13,latvijas,False,1 ATVTIAS,outside,8,3
+lva_passport_93_max.png,14,lv4664006,True,VAhb4006,outside,9,4
+lva_passport_93_max.png,15,saulitis,False,CAlieerre,outside,8,7
+lva_passport_94_mid.png,0,pmlptalsu,False,onl oe ener,outside,9,8
+lva_passport_94_mid.png,1,nodala,False,Met att se,halo,6,7
+lva_passport_94_mid.png,2,27042003,True,S Spiro,outside,8,8
+lva_passport_94_mid.png,3,riga,False,,halo,4,4
+lva_passport_94_mid.png,4,lva,False,we,halo,3,3
+lva_passport_94_mid.png,5,01062028,True,“010K 2028,outside,8,1
+lva_passport_94_mid.png,7,183,False,ae,halo,3,3
+lva_passport_94_mid.png,8,27040328710,True,Se won (i,halo,11,11
+lva_passport_94_mid.png,9,01062018,True,01 NK On12,outside,8,5
+lva_passport_94_mid.png,10,plvasilinsolegs,False,FSLVASILINS<<QLEGS<<<<<<<e<eeeeeeee<e<seeessssS,halo,15,22
+lva_passport_94_mid.png,11,lv34819870lva0304270m28060112704032871028,True,LV546198/0LVA0304270M28060112/04U5<cor IUSSco,halo,41,15
+lva_passport_94_mid.png,12,olegs,False,ete,outside,5,4
+lva_passport_94_mid.png,13,latvijas,False,,halo,8,8
+lva_passport_94_mid.png,14,lv3481987,True,21 AOR?,outside,9,8
+lva_passport_94_mid.png,15,silins,False,bseempalene 2,halo,6,9
+lva_passport_94_max.png,0,pmlptalsu,False,OMT ee tT,outside,9,7
+lva_passport_94_max.png,1,nodala,False,dette,outside,6,6
+lva_passport_94_max.png,2,27042003,True,A,outside,8,8
+lva_passport_94_max.png,3,riga,False,Pe btn,outside,4,5
+lva_passport_94_max.png,4,lva,False,a,outside,3,2
+lva_passport_94_max.png,5,01062028,True,010K 2028,core,8,1
+lva_passport_94_max.png,7,183,False,mipten,outside,3,6
+lva_passport_94_max.png,8,27040328710,True,ee aaa,outside,11,11
+lva_passport_94_max.png,9,01062018,True,01 NK 2N7R8,outside,8,5
+lva_passport_94_max.png,10,plvasilinsolegs,False,FSLVASILINS<<OLEGS<<<<<<eeeeeeeeee ses SeessssS %,core,15,23
+lva_passport_94_max.png,11,lv34819870lva0304270m28060112704032871028,True,LV545196/0LVA0304270M28060112/04U5<col 1USsco,core,41,15
+lva_passport_94_max.png,12,olegs,False,ppc,outside,5,5
+lva_passport_94_max.png,13,latvijas,False,ny a,outside,8,7
+lva_passport_94_max.png,14,lv3481987,True,,outside,9,9
+lva_passport_94_max.png,15,silins,False,btenapreas a,outside,6,10
+lva_passport_95_mid.png,0,pmlpmadonas,False,PMLP MADONAS,outside,11,0
+lva_passport_95_mid.png,1,nodala,False,NODALA,outside,6,0
+lva_passport_95_mid.png,2,10012003,True,10.01.2003.,outside,8,0
+lva_passport_95_mid.png,3,riga,False,RIGA,outside,4,0
+lva_passport_95_mid.png,4,lva,False,VA,halo,3,1
+lva_passport_95_mid.png,5,01072028,True,01.07.2028.,outside,8,0
+lva_passport_95_mid.png,7,170,False,170,outside,3,0
+lva_passport_95_mid.png,8,10010324674,True,100103-24674,outside,11,0
+lva_passport_95_mid.png,9,01072018,True,01.07.2018.,outside,8,0
+lva_passport_95_mid.png,10,plvaskujamirdza,False,P<LVASKUJA<<MIRDLA<<<<<<<<<ecd edd cde,outside,15,10
+lva_passport_95_mid.png,11,lv87523083lva0301109f28070181001032467442,True,LV8/5250865LVAU501109F 250/7016100105<246/4<<4e,outside,41,11
+lva_passport_95_mid.png,12,mirdza,False,MIRDZA,halo,6,0
+lva_passport_95_mid.png,13,latvijas,False,LATVIJAS,halo,8,0
+lva_passport_95_mid.png,14,lv8752308,True,-V8752308,outside,9,1
+lva_passport_95_mid.png,15,skuja,False,SKILIA,halo,5,3
+lva_passport_95_max.png,0,pmlpmadonas,False,PMLP MADONAS,outside,11,0
+lva_passport_95_max.png,1,nodala,False,NODALA,outside,6,0
+lva_passport_95_max.png,2,10012003,True,10.01.2003.,outside,8,0
+lva_passport_95_max.png,3,riga,False,RIGA,outside,4,0
+lva_passport_95_max.png,4,lva,False,VA,halo,3,1
+lva_passport_95_max.png,5,01072028,True,01.07.2028.,outside,8,0
+lva_passport_95_max.png,7,170,False,170,outside,3,0
+lva_passport_95_max.png,8,10010324674,True,100103-24674,outside,11,0
+lva_passport_95_max.png,9,01072018,True,01.07.2018.,outside,8,0
+lva_passport_95_max.png,10,plvaskujamirdza,False,P<LVASKUJA<<MIRDLA<<<<<<<<<ecd edd cde,outside,15,10
+lva_passport_95_max.png,11,lv87523083lva0301109f28070181001032467442,True,LV8/5250865LVAU501109F 250/7016100105<246/4<<4e,outside,41,11
+lva_passport_95_max.png,12,mirdza,False,MIRDZA,halo,6,0
+lva_passport_95_max.png,13,latvijas,False,LATVIJAS,halo,8,0
+lva_passport_95_max.png,14,lv8752308,True,-V8752308,outside,9,1
+lva_passport_95_max.png,15,skuja,False,SKILIA,halo,5,3
+lva_passport_96_mid.png,0,pmlprigas,False,PMLP RIGAS,halo,9,0
+lva_passport_96_mid.png,1,1nodala,False,1.NODAlI A.,core,7,1
+lva_passport_96_mid.png,2,13112003,True,13.11.2003.,halo,8,0
+lva_passport_96_mid.png,3,riga,False,2TGA,outside,4,2
+lva_passport_96_mid.png,4,lva,False,tA,halo,3,2
+lva_passport_96_mid.png,5,16092028,True,16.09.2028.,halo,8,0
+lva_passport_96_mid.png,7,185,False,125,halo,3,1
+lva_passport_96_mid.png,8,13110328381,True,12110%-28381,halo,11,2
+lva_passport_96_mid.png,9,16092018,True,16.09.2018.,halo,8,0
+lva_passport_96_mid.png,10,plvaskujinsmodra,False,rP<LVASKUJ INS <<MODRA<<<<<<<<<ddddddddeededcc<,core,16,16
+lva_passport_96_mid.png,11,lv05387746lva0311133f28091601311032838178,True,-VU356 0 (46LVAUS11155F250916015110U5<28581<</56,core,41,17
+lva_passport_96_mid.png,12,modra,False,MONPRA,halo,5,2
+lva_passport_96_mid.png,13,latvijas,False,| ATVTJAS,halo,8,2
+lva_passport_96_mid.png,14,lv0538774,True,“VAR ZR774,halo,9,5
+lva_passport_96_mid.png,15,skujins,False,CKILITNS,halo,7,4
+lva_passport_96_max.png,0,pmlprigas,False,PMIP RTGAS,core,9,2
+lva_passport_96_max.png,1,1nodala,False,1.NODAI A,core,7,1
+lva_passport_96_max.png,2,13112003,True,15.17. J2hs -,core,8,6
+lva_passport_96_max.png,3,riga,False,RTCA,halo,4,2
+lva_passport_96_max.png,4,lva,False,VT,core,3,2
+lva_passport_96_max.png,5,16092028,True,"16.09.2028,",core,8,0
+lva_passport_96_max.png,7,185,False,125,halo,3,1
+lva_passport_96_max.png,8,13110328381,True,131103-28381,outside,11,0
+lva_passport_96_max.png,9,16092018,True,16.09.2018.,core,8,0
+lva_passport_96_max.png,10,plvaskujinsmodra,False,PW<LVASKUJ LNS<<MODRA<<<<<<<<ddddddddeedceedccK<,core,16,20
+lva_passport_96_max.png,11,lv05387746lva0311133f28091601311032838178,True,-VUS56/(46LVAUST1155F2509160151105<263581<</5,core,41,19
+lva_passport_96_max.png,12,modra,False,MONRA,core,5,1
+lva_passport_96_max.png,13,latvijas,False,| ATVTJAS,core,8,2
+lva_passport_96_max.png,14,lv0538774,True,“VASZR774,halo,9,5
+lva_passport_96_max.png,15,skujins,False,CKILITNS,core,7,4
+lva_passport_97_mid.png,0,pmlprigas,False,PMLP RIGAS,outside,9,0
+lva_passport_97_mid.png,1,1nodala,False,1.NODALA,outside,7,0
+lva_passport_97_mid.png,2,26082003,True,26.08.2003.,outside,8,0
+lva_passport_97_mid.png,3,jurmala,False,JURMALA,outside,7,0
+lva_passport_97_mid.png,4,lva,False,LVA,core,3,0
+lva_passport_97_mid.png,5,12042028,True,12.04.2028.,outside,8,0
+lva_passport_97_mid.png,7,178,False,178,core,3,0
+lva_passport_97_mid.png,8,26080321501,True,260803-21501,outside,11,0
+lva_passport_97_mid.png,9,12042018,True,12.04.2018.,outside,8,0
+lva_passport_97_mid.png,10,plvastrazdinsmodrite,False,P<LVASTRAZDINS<<MODRITE<<<<<<<<<<<<<<e<<eK<<<<,outside,20,3
+lva_passport_97_mid.png,11,lv52841668lva0308267f28041212608032150140,True,LV52841668LVA0308267F 2804121 260805<21501<<40,outside,41,1
+lva_passport_97_mid.png,12,modrite,False,MODRITE,core,7,0
+lva_passport_97_mid.png,13,latvijas,False,LATVIJAS,core,8,0
+lva_passport_97_mid.png,14,lv5284166,True,_V5284166,core,9,1
+lva_passport_97_mid.png,15,strazdins,False,STRAZDINS,core,9,0
+lva_passport_97_max.png,0,pmlprigas,False,PMLP RIGAS,outside,9,0
+lva_passport_97_max.png,1,1nodala,False,1.NODALA,outside,7,0
+lva_passport_97_max.png,2,26082003,True,"26.08.2003,",outside,8,0
+lva_passport_97_max.png,3,jurmala,False,JURMALA,outside,7,0
+lva_passport_97_max.png,4,lva,False,LVA,outside,3,0
+lva_passport_97_max.png,5,12042028,True,12.04.2028.,outside,8,0
+lva_passport_97_max.png,7,178,False,178,outside,3,0
+lva_passport_97_max.png,8,26080321501,True,260803-21501,outside,11,0
+lva_passport_97_max.png,9,12042018,True,12.04.2018.,outside,8,0
+lva_passport_97_max.png,10,plvastrazdinsmodrite,False,P<LVASTRAZDINS<<MODRITE<<<<<<<<<<<<<<<cecKcecK,core,20,8
+lva_passport_97_max.png,11,lv52841668lva0308267f28041212608032150140,True,LV52841668LVA0308267F 2804121 260805<21501<<40,core,41,1
+lva_passport_97_max.png,12,modrite,False,MODRITE,outside,7,0
+lva_passport_97_max.png,13,latvijas,False,LATVIJAS,outside,8,0
+lva_passport_97_max.png,14,lv5284166,True,_V5284166,outside,9,1
+lva_passport_97_max.png,15,strazdins,False,STRAZDINS,outside,9,0
+lva_passport_98_mid.png,0,pmlprigas,False,PMI P RTICAS,halo,9,3
+lva_passport_98_mid.png,1,1nodala,False,1 NNANSI Oo,halo,7,7
+lva_passport_98_mid.png,2,24042002,True,24 NL 2NND?,halo,8,5
+lva_passport_98_mid.png,3,riga,False,DT CA,halo,4,3
+lva_passport_98_mid.png,4,lva,False,lwe,core,3,2
+lva_passport_98_mid.png,5,22052027,True,22 05 2077.,halo,8,1
+lva_passport_98_mid.png,7,198,False,102,core,3,2
+lva_passport_98_mid.png,8,24040225060,True,2LNLNP-25N4N,core,11,8
+lva_passport_98_mid.png,9,22052017,True,22 05 2017,halo,8,0
+lva_passport_98_mid.png,10,plvavanagsjana,False,P<| VAVANAGS<<JANA<<<<<<<<<<ee eee eee cece esc,halo,14,16
+lva_passport_98_mid.png,11,lv00305853lva0204244f27052282404022506054,True,1VNNZ05853! VAN204244F2705228240402<25060<<54,halo,41,6
+lva_passport_98_mid.png,12,jana,False,1ANG,halo,4,2
+lva_passport_98_mid.png,13,latvijas,False,laTVT as,halo,8,2
+lva_passport_98_mid.png,14,lv0030585,True,I WANzNERS,halo,9,9
+lva_passport_98_mid.png,15,vanags,False,VANAGS,halo,6,0
+lva_passport_98_max.png,0,pmlprigas,False,PMI P RPTIGAC,core,9,4
+lva_passport_98_max.png,1,1nodala,False,17 NNNal a,core,7,3
+lva_passport_98_max.png,2,24042002,True,2. NL 2/002,core,8,3
+lva_passport_98_max.png,3,riga,False,DTCA,core,4,3
+lva_passport_98_max.png,4,lva,False,we,halo,3,3
+lva_passport_98_max.png,5,22052027,True,22 05 _ 2077.,core,8,1
+lva_passport_98_max.png,7,198,False,102,halo,3,2
+lva_passport_98_max.png,8,24040225060,True,DLNLNP-25N4N,core,11,9
+lva_passport_98_max.png,9,22052017,True,29 05 21917,core,8,3
+lva_passport_98_max.png,10,plvavanagsjana,False,P<l VAVANAGS<<J ANA<<<<<<<<< <<< Se SS SS SSS <<,core,14,9
+lva_passport_98_max.png,11,lv00305853lva0204244f27052282404022506054,True,1V0N305853! VA0204244F2705228240402<25060<<54,core,41,3
+lva_passport_98_max.png,12,jana,False,iANG,core,4,2
+lva_passport_98_max.png,13,latvijas,False,1 ATVTIAS,core,8,3
+lva_passport_98_max.png,14,lv0030585,True,VWANzNERS,halo,9,9
+lva_passport_98_max.png,15,vanags,False,VANARS,core,6,1
+lva_passport_99_mid.png,0,pmlpmadonas,False,PMILP MADONAS,outside,11,1
+lva_passport_99_mid.png,1,nodala,False,NODALA,outside,6,0
+lva_passport_99_mid.png,2,03032002,True,03.03.2002.,outside,8,0
+lva_passport_99_mid.png,3,riga,False,RTGA,outside,4,1
+lva_passport_99_mid.png,4,lva,False,VA,outside,3,1
+lva_passport_99_mid.png,5,07112027,True,07.11.2027.,outside,8,0
+lva_passport_99_mid.png,7,191,False,191,outside,3,0
+lva_passport_99_mid.png,8,03030227204,True,430302-27204,outside,11,1
+lva_passport_99_mid.png,9,07112017,True,"07.11.2017,",outside,8,0
+lva_passport_99_mid.png,10,plvaviestursjelena,False,P<LVAVIESTURS<<JELENA<<<<<<<<<<<<<<<eeeKecccK<,outside,18,9
+lva_passport_99_mid.png,11,lv86395612lva0203030f27110700303022720430,True,LV86595612LVAUZ0US0S0F2/711070050502<27/204<<30,outside,41,8
+lva_passport_99_mid.png,12,jelena,False,IEC] ENA,outside,6,2
+lva_passport_99_mid.png,13,latvijas,False,A ATVT.IAS,outside,8,3
+lva_passport_99_mid.png,14,lv8639561,True,VRA6A39561,outside,9,4
+lva_passport_99_mid.png,15,viesturs,False,NTECTIIPS,outside,8,6
+lva_passport_99_max.png,0,pmlpmadonas,False,PMILP MADONAS,core,11,1
+lva_passport_99_max.png,1,nodala,False,NODALA,halo,6,0
+lva_passport_99_max.png,2,03032002,True,03.03.2002.,core,8,0
+lva_passport_99_max.png,3,riga,False,RTGA,core,4,1
+lva_passport_99_max.png,4,lva,False,vi,halo,3,2
+lva_passport_99_max.png,5,07112027,True,07.11.2027.,core,8,0
+lva_passport_99_max.png,7,191,False,191,core,3,0
+lva_passport_99_max.png,8,03030227204,True,930302-27204,core,11,1
+lva_passport_99_max.png,9,07112017,True,"07,.11,2017,",core,8,0
+lva_passport_99_max.png,10,plvaviestursjelena,False,P<LVAVIESTURS<<JELENA<<<<<<<<<<<<ccedcedcccce,core,18,12
+lva_passport_99_max.png,11,lv86395612lva0203030f27110700303022720430,True,LV86595612LVAUZUSUSU0F2/11070050502<2/204<<50,core,41,13
+lva_passport_99_max.png,12,jelena,False,ELENA,halo,6,1
+lva_passport_99_max.png,13,latvijas,False,1 ATVT.IAS,halo,8,3
+lva_passport_99_max.png,14,lv8639561,True,VRA39561,halo,9,3
+lva_passport_99_max.png,15,viesturs,False,NITECTIIPS,halo,8,6
+rus_internalpassport_90_mid.png,0,12102004,True,12.10.2004,core,8,0
+rus_internalpassport_90_max.png,0,12102004,True,12.10.2004,core,8,0
+rus_internalpassport_91_mid.png,0,16022004,True,16.02.2004,outside,8,0
+rus_internalpassport_91_max.png,0,16022004,True,16.02.2004,core,8,0
+rus_internalpassport_92_mid.png,0,30082005,True,3U.U6.2005,outside,8,3
+rus_internalpassport_92_max.png,0,30082005,True,IU.U5.2005,core,8,4
+rus_internalpassport_93_mid.png,0,21052005,True,921 052005,core,8,1
+rus_internalpassport_93_max.png,0,21052005,True,921 052005,core,8,1
+rus_internalpassport_94_mid.png,0,24022003,True,94 0? 2003,core,8,2
+rus_internalpassport_94_max.png,0,24022003,True,94 02 2003,core,8,1
+rus_internalpassport_95_mid.png,0,24062004,True,24.06.2004,core,8,0
+rus_internalpassport_95_max.png,0,24062004,True,24.06.2004,core,8,0
+rus_internalpassport_96_mid.png,0,13042002,True,42 04 2002,outside,8,2
+rus_internalpassport_96_max.png,0,13042002,True,12 04 2NN27,core,8,4
+rus_internalpassport_97_mid.png,0,20032005,True,20.03.2005,outside,8,0
+rus_internalpassport_97_max.png,0,20032005,True,20.03.2005,outside,8,0
+rus_internalpassport_98_mid.png,0,21012004,True,94 11 2N0A,halo,8,5
+rus_internalpassport_98_max.png,0,21012004,True,9471 2004,core,8,3
+rus_internalpassport_99_mid.png,0,21012005,True,21.01.2005,outside,8,0
+rus_internalpassport_99_max.png,0,21012005,True,21.01.2005,core,8,0
+srb_passport_90_mid.png,0,muprsrbijepuupozarevcu,False,MIIPR SRRLIF PIII) POZAREVGU,outside,22,10
+srb_passport_90_mid.png,1,19031950,True,4902 4060,outside,8,5
+srb_passport_90_mid.png,2,vrsacrepublikasrbija,False,DEAT BECTIALIKA SRRIJA,outside,20,10
+srb_passport_90_mid.png,3,srb,False,,outside,3,3
+srb_passport_90_mid.png,4,26062029,True,26.06.2029,halo,8,0
+srb_passport_90_mid.png,6,1903950944339,True,502950944339,outside,13,3
+srb_passport_90_mid.png,7,26062019,True,26 06 2019,halo,8,0
+srb_passport_90_mid.png,8,psrbandrickosta,False,PES RBANDRIC<<KOSTA<<<<<<<<<<<<<<<<<<seccc<<<,outside,15,6
+srb_passport_90_mid.png,9,9632673369srb5003198m2906265190395094433914,True,965202 53569SRB5003198M29062651905950944559<14,outside,43,8
+srb_passport_90_mid.png,10,kosta,False,KOSTA,outside,5,0
+srb_passport_90_mid.png,11,srpsko,False,epoern,outside,6,6
+srb_passport_90_mid.png,12,963267336,True,wy fs 7,outside,9,8
+srb_passport_90_mid.png,13,nemackasr,False,NEMOrK SO ep,outside,9,6
+srb_passport_90_mid.png,14,edvardagriga603,False,ENVARNA GRIGA RNA,outside,15,5
+srb_passport_90_mid.png,15,andric,False,PRT is) oA,outside,6,7
+srb_passport_90_mid.png,17,26062029,True,26 I S29,outside,8,4
+srb_passport_90_max.png,0,muprsrbijepuupozarevcu,False,MIIP R SRRIIF PII |! PQZAREVGCU,core,22,9
+srb_passport_90_max.png,1,19031950,True,490112 405N,core,8,6
+srb_passport_90_max.png,2,vrsacrepublikasrbija,False,yA PEDIIAILIKA SRRILIA,core,20,13
+srb_passport_90_max.png,3,srb,False,as,core,3,3
+srb_passport_90_max.png,4,26062029,True,26.06.2029,halo,8,0
+srb_passport_90_max.png,6,1903950944339,True,590N2950944339,outside,13,3
+srb_passport_90_max.png,7,26062019,True,26 06 2019,halo,8,0
+srb_passport_90_max.png,8,psrbandrickosta,False,P<SRBANDRIC<<KOSTA<<<<<<<<<<<<< <<< ccc,core,15,3
+srb_passport_90_max.png,9,9632673369srb5003198m2906265190395094433914,True,$6526/5569SRB5003198M29062651905950944559<14,halo,43,8
+srb_passport_90_max.png,10,kosta,False,KOSTA,core,5,0
+srb_passport_90_max.png,11,srpsko,False,epocrn,core,6,6
+srb_passport_90_max.png,12,963267336,True,NO29RT7 446,outside,9,8
+srb_passport_90_max.png,13,nemackasr,False,NEMORKA ep,core,9,4
+srb_passport_90_max.png,14,edvardagriga603,False,ENVARNA GRIGA RNA,core,15,5
+srb_passport_90_max.png,15,andric,False,ARTES | A,core,6,5
+srb_passport_90_max.png,17,26062029,True,6 A eS,outside,8,7
+srb_passport_91_mid.png,0,muprsrbijepuzagradbeograd,False,"MUP. R SRBIJE, PU ZA GRAD BEOGRAD",outside,25,0
+srb_passport_91_mid.png,1,16091970,True,16.09.1970:,outside,8,0
+srb_passport_91_mid.png,2,cacakrepublikasrbija,False,GACAK. REPUBLIKA SRBIJA,outside,20,1
+srb_passport_91_mid.png,3,srb,False,SRB,outside,3,0
+srb_passport_91_mid.png,4,15062025,True,15.06.2025,halo,8,0
+srb_passport_91_mid.png,6,1609970731101,True,4609970731101,outside,13,1
+srb_passport_91_mid.png,7,15062015,True,15.06.2015,halo,8,0
+srb_passport_91_mid.png,8,psrbjocicfilotije,False,P<SRBJOCIC<<FILOTIJE<<<<<<<<<<<<<<<<<<c<<c<K<,halo,17,3
+srb_passport_91_mid.png,9,1309308200srb7009161m2506159160997073110134,True,1309308200SRB7009161M25061591609970731101<34,outside,43,0
+srb_passport_91_mid.png,10,filotije,False,FILOTVE,outside,8,2
+srb_passport_91_mid.png,11,srpsko,False,SRPSKO,outside,6,0
+srb_passport_91_mid.png,12,130930820,True,130930520,outside,9,1
+srb_passport_91_mid.png,13,novibeogradrakovica,False,NOV! BEOGRAD. RAKOVICA,outside,19,1
+srb_passport_91_mid.png,14,nemaulicebb,False,NEMA ULICE BB:,outside,11,0
+srb_passport_91_mid.png,15,jocic,False,JOCIC,outside,5,0
+srb_passport_91_mid.png,17,15062025,True,15 G25,outside,8,4
+srb_passport_91_max.png,0,muprsrbijepuzagradbeograd,False,"MUP R SRBNJE, PU ZA GRAD BEOGRAD",core,25,1
+srb_passport_91_max.png,1,16091970,True,16.09.1970:,core,8,0
+srb_passport_91_max.png,2,cacakrepublikasrbija,False,CACAK. REPUBLIKA SRBIJA,core,20,0
+srb_passport_91_max.png,3,srb,False,SRB,core,3,0
+srb_passport_91_max.png,4,15062025,True,15.06.2025,core,8,0
+srb_passport_91_max.png,6,1609970731101,True,1609970731101,outside,13,0
+srb_passport_91_max.png,7,15062015,True,15.06.2015,core,8,0
+srb_passport_91_max.png,8,psrbjocicfilotije,False,P<SRBJOCIC<<FILOTIJE<<<<<<<<<<<<<<<<<<<ccc<cs,core,17,5
+srb_passport_91_max.png,9,1309308200srb7009161m2506159160997073110134,True,1309308200SRB/7009161M25061591609970731101<34,core,43,0
+srb_passport_91_max.png,10,filotije,False,FILOTNE,core,8,2
+srb_passport_91_max.png,11,srpsko,False,SRPSKO,core,6,0
+srb_passport_91_max.png,12,130930820,True,130930820,outside,9,0
+srb_passport_91_max.png,13,novibeogradrakovica,False,NOV! BEOGRAD. RAKOVICA,core,19,1
+srb_passport_91_max.png,14,nemaulicebb,False,NEMA ULICE BB,core,11,0
+srb_passport_91_max.png,15,jocic,False,JOCIC,core,5,0
+srb_passport_91_max.png,17,15062025,True,15 Coes,outside,8,6
+srb_passport_92_mid.png,0,muprsrbijepuzagradbeograd,False,AAI Ip 2 eppl I= Pll 74 GRAN RENGRAD,outside,25,18
+srb_passport_92_mid.png,1,26111959,True,er ir,outside,8,8
+srb_passport_92_mid.png,2,krusevacrepublikasrbija,False,Ol ISci Arm BCD IAl KS SRALIA,outside,23,17
+srb_passport_92_mid.png,3,srb,False,Pe,halo,3,3
+srb_passport_92_mid.png,4,14112028,True,14.11.2028,outside,8,0
+srb_passport_92_mid.png,6,2611959871977,True,944 QEORT1977,outside,13,9
+srb_passport_92_mid.png,7,14112018,True,14 14 2N18,outside,8,2
+srb_passport_92_mid.png,8,psrbtadicvlatko,False,P<SRBTADIC<<VLATKO<<<<<<<<<<<eeeeeeeecc<cecc<<,halo,15,14
+srb_passport_92_mid.png,9,7778630956srb5911262m2811143261195987197768,True,€6(8650956SRB5911262M28111432611959871977<68,halo,43,4
+srb_passport_92_mid.png,10,vlatko,False,eee,halo,6,6
+srb_passport_92_mid.png,11,srpsko,False,eis res tzeK,outside,6,7
+srb_passport_92_mid.png,12,777863095,True,meen ye,halo,9,9
+srb_passport_92_mid.png,13,cacakzemun,False,Anahan FERAL INI,outside,10,10
+srb_passport_92_mid.png,14,elijafincija132,False,eA RING IA 429,outside,15,9
+srb_passport_92_mid.png,15,tadic,False,pL rnle 3,outside,5,7
+srb_passport_92_mid.png,17,14112028,True,14.45 3928,core,8,4
+srb_passport_92_max.png,0,muprsrbijepuzagradbeograd,False,MIIP R SRRIIF PII 74 GRAN REQGRAND,core,25,13
+srb_passport_92_max.png,1,26111959,True,a aire,core,8,8
+srb_passport_92_max.png,2,krusevacrepublikasrbija,False,oLigc\/Am OEDIIRI IKA GRALIA,outside,23,17
+srb_passport_92_max.png,3,srb,False,—,outside,3,3
+srb_passport_92_max.png,4,14112028,True,14.11.2028,core,8,0
+srb_passport_92_max.png,6,2611959871977,True,9A44Q69R741977,outside,13,8
+srb_passport_92_max.png,7,14112018,True,1411 2N1R,core,8,2
+srb_passport_92_max.png,8,psrbtadicvlatko,False,P<SORBIADIC<<VLATKO<<<<<<<<<<<<< << e cee ee cecee,outside,15,13
+srb_passport_92_max.png,9,7778630956srb5911262m2811143261195987197768,True,f 6 (8650956SRB5911262M28111432611959871977<68,outside,43,4
+srb_passport_92_max.png,10,vlatko,False,me ATIC£,core,6,4
+srb_passport_92_max.png,11,srpsko,False,ane,core,6,6
+srb_passport_92_max.png,12,777863095,True,OR ANOE,outside,9,9
+srb_passport_92_max.png,13,cacakzemun,False,CACAK SEN IN,core,10,3
+srb_passport_92_max.png,14,elijafincija132,False,EI FINCH IA 129,core,15,7
+srb_passport_92_max.png,15,tadic,False,amas a,core,5,5
+srb_passport_92_max.png,17,14112028,True,14.) O25,outside,8,5
+srb_passport_93_mid.png,0,muprsrbijepuukrusevcu,False,MUP R SRBIJE. PU U KRUSEVCU,outside,21,0
+srb_passport_93_mid.png,1,24091951,True,24.09 1951,outside,8,0
+srb_passport_93_mid.png,2,gnjilanerepublikasrbija,False,CNUIILANE. REPUBLIKA SRBIJA,halo,23,3
+srb_passport_93_mid.png,3,srb,False,SRR,outside,3,1
+srb_passport_93_mid.png,4,16022023,True,16.02.2023,outside,8,0
+srb_passport_93_mid.png,6,2409951201424,True,2409951201424,halo,13,0
+srb_passport_93_mid.png,7,16022013,True,16.02.2013,outside,8,0
+srb_passport_93_mid.png,8,psrbborisovmiljan,False,P<SRBBORISOV<<MILJAN<<<<<<<<< <<< ccccccde,halo,17,8
+srb_passport_93_mid.png,9,5479786237srb5109241m2302166240995120142434,True,5479786237SRB5109241M23021662409951201424<354,halo,43,1
+srb_passport_93_mid.png,10,miljan,False,MILIAN,outside,6,1
+srb_passport_93_mid.png,11,srpsko,False,SPPSKO,outside,6,1
+srb_passport_93_mid.png,12,547978623,True,547978623,halo,9,0
+srb_passport_93_mid.png,13,aleksandrovacdrenca,False,"ALEKSANDROVAC, DRENGA",outside,19,1
+srb_passport_93_mid.png,14,elijafincija331,False,ELIJA FINCIJA 331,outside,15,0
+srb_passport_93_mid.png,15,borisov,False,RORISOV,outside,7,1
+srb_passport_93_mid.png,17,16022023,True,617 23,halo,8,5
+srb_passport_93_max.png,0,muprsrbijepuukrusevcu,False,MUP R SRBIVE. PU U KRUSEVCU,core,21,1
+srb_passport_93_max.png,1,24091951,True,9409 1951,core,8,1
+srb_passport_93_max.png,2,gnjilanerepublikasrbija,False,CNL ANE REPUBLIKA SRBIJA,outside,23,3
+srb_passport_93_max.png,3,srb,False,Sepp,outside,3,3
+srb_passport_93_max.png,4,16022023,True,16.02.2023,core,8,0
+srb_passport_93_max.png,6,2409951201424,True,2409951201424,outside,13,0
+srb_passport_93_max.png,7,16022013,True,16.02.2013,core,8,0
+srb_passport_93_max.png,8,psrbborisovmiljan,False,P<SRBBORISOV<<MILJAN<<<<<<<<<<<<<cccececcccce,core,17,12
+srb_passport_93_max.png,9,5479786237srb5109241m2302166240995120142434,True,5479786237SRB5109241M23021662409951201424<34,core,43,0
+srb_passport_93_max.png,10,miljan,False,MILJAN,core,6,0
+srb_passport_93_max.png,11,srpsko,False,SRPSKQ,core,6,1
+srb_passport_93_max.png,12,547978623,True,=A7TO7TAG23,outside,9,7
+srb_passport_93_max.png,13,aleksandrovacdrenca,False,ALEKSANDROVAC: DRENGA,core,19,1
+srb_passport_93_max.png,14,elijafincija331,False,ELIJA FINCIJA 337,core,15,1
+srb_passport_93_max.png,15,borisov,False,RORISOV,core,7,1
+srb_passport_93_max.png,17,16022023,True,bf 25,outside,8,7
+srb_passport_94_mid.png,0,muprsrbijekoordinacionauprava,False,MUP R SRBIJE- KOORDINACIONA UPRAVA,halo,29,0
+srb_passport_94_mid.png,1,28101969,True,28.10.1968,halo,8,1
+srb_passport_94_mid.png,2,gospichrvatska,False,GOSPIC. HRVATSKA,outside,14,0
+srb_passport_94_mid.png,3,srb,False,SRB,outside,3,0
+srb_passport_94_mid.png,4,06052028,True,06.05.2028.,core,8,0
+srb_passport_94_mid.png,6,2810969753662,True,2840969753662,outside,13,1
+srb_passport_94_mid.png,7,06052018,True,06.05.201&,core,8,1
+srb_passport_94_mid.png,8,psrbvujicmojsije,False,P<SRBVUJIC<<MOJSIJE<<<<<<<<<<<<<<<<<ccc<c<c<d,halo,16,6
+srb_passport_94_mid.png,9,3143073306srb6910284m2805069281096975366202,True,3$145073306SRB6910284M28050692810969753662<02,halo,43,1
+srb_passport_94_mid.png,10,mojsije,False,MOJSIJE,halo,7,0
+srb_passport_94_mid.png,11,srpsko,False,SRPSKO,halo,6,0
+srb_passport_94_mid.png,12,314307330,True,314307330,outside,9,0
+srb_passport_94_mid.png,13,kosovskakamenicakosovskakamenica,False,"KOSOVSKA KAMENICA, KOSOVSKA KAMENICA",outside,32,0
+srb_passport_94_mid.png,14,elsiignis356,False,ELSI IGNIS 356,halo,12,0
+srb_passport_94_mid.png,15,vujic,False,VUJIC,halo,5,0
+srb_passport_94_mid.png,17,06052028,True,"06L, 23",outside,8,5
+srb_passport_94_max.png,0,muprsrbijekoordinacionauprava,False,"MUP. R'SRBIJE, KOORDINACIONA UPRAVA",core,29,0
+srb_passport_94_max.png,1,28101969,True,28.10.1968,outside,8,1
+srb_passport_94_max.png,2,gospichrvatska,False,"‘GOSPIC, HRVATSKA",outside,14,0
+srb_passport_94_max.png,3,srb,False,SRB,outside,3,0
+srb_passport_94_max.png,4,06052028,True,06.05.2028,outside,8,0
+srb_passport_94_max.png,6,2810969753662,True,2810969753662,core,13,0
+srb_passport_94_max.png,7,06052018,True,06.05.2018,outside,8,0
+srb_passport_94_max.png,8,psrbvujicmojsije,False,P<SRBVUJIC<<MOJSILJE<<<<<<<<<<<<<<ccccececececce,core,16,15
+srb_passport_94_max.png,9,3143073306srb6910284m2805069281096975366202,True,$143073306SRB6910284M28050692810969753662<02,core,43,1
+srb_passport_94_max.png,10,mojsije,False,MOJSIJE,outside,7,0
+srb_passport_94_max.png,11,srpsko,False,SRPSKO,outside,6,0
+srb_passport_94_max.png,12,314307330,True,314307330,core,9,0
+srb_passport_94_max.png,13,kosovskakamenicakosovskakamenica,False,KOSOVSKA KAMENIGA. KOSOVSKA KAMENICA,core,32,1
+srb_passport_94_max.png,14,elsiignis356,False,ELSI IGNIS 355,outside,12,1
+srb_passport_94_max.png,15,vujic,False,VUJIC:,outside,5,0
+srb_passport_94_max.png,17,06052028,True,,outside,8,8
+srb_passport_95_mid.png,0,muprsrbijepuukrusevcu,False,"MUP R SRBIJE, PU U KRUSEVCU",outside,21,0
+srb_passport_95_mid.png,1,12061956,True,12.08.1956,outside,8,1
+srb_passport_95_mid.png,2,pozarevacrepublikasrbija,False,POZAREVAC REPUBLIKA SRBNA,outside,24,2
+srb_passport_95_mid.png,3,srb,False,SRE,outside,3,1
+srb_passport_95_mid.png,4,29092024,True,29.09.2024,outside,8,0
+srb_passport_95_mid.png,6,1206956744667,True,1206956744667,outside,13,0
+srb_passport_95_mid.png,7,29092014,True,29.09.2014,outside,8,0
+srb_passport_95_mid.png,8,psrbignjatovicmirka,False,P<SRBIGNJATOVIC<<MIRKA<<<<<<<<<<<<ecececdccc,halo,19,10
+srb_passport_95_mid.png,9,1598691469srb5606120f2409294120695674466750,True,1598691469SRB5606120F24092941206956/74466/7<50,halo,43,0
+srb_passport_95_mid.png,10,mirka,False,MIRKA,outside,5,0
+srb_passport_95_mid.png,11,srpsko,False,SRPSKC,outside,6,1
+srb_passport_95_mid.png,12,159869146,True,459869146,outside,9,1
+srb_passport_95_mid.png,13,novisadnovisad,False,"NOVI SAD, NOVI SAD",outside,14,0
+srb_passport_95_mid.png,14,elvirina002,False,ELVIRINA 002,outside,11,0
+srb_passport_95_mid.png,15,ignjatovic,False,IGNJATOVIC,outside,10,0
+srb_passport_95_mid.png,17,29092024,True,29 a2 A,outside,8,5
+srb_passport_95_max.png,0,muprsrbijepuukrusevcu,False,"MUP R SRBIJE, PU U KRUSEVCU",core,21,0
+srb_passport_95_max.png,1,12061956,True,12.06.1956,core,8,0
+srb_passport_95_max.png,2,pozarevacrepublikasrbija,False,POZAREVAC: REPUBLIKA SRBIJA,outside,24,0
+srb_passport_95_max.png,3,srb,False,SRE,outside,3,1
+srb_passport_95_max.png,4,29092024,True,29.09.2024,core,8,0
+srb_passport_95_max.png,6,1206956744667,True,4206956744667,outside,13,1
+srb_passport_95_max.png,7,29092014,True,29.09.2014,core,8,0
+srb_passport_95_max.png,8,psrbignjatovicmirka,False,P<SRBIGNJATOVIC<<MIRKA<<<<<<<<<<<<eecde ccd,core,19,8
+srb_passport_95_max.png,9,1598691469srb5606120f2409294120695674466750,True,1598691469SRB5606120F 24092941 206956744667<50,core,43,0
+srb_passport_95_max.png,10,mirka,False,MIRKA,core,5,0
+srb_passport_95_max.png,11,srpsko,False,SRPSKG,core,6,1
+srb_passport_95_max.png,12,159869146,True,159869146,outside,9,0
+srb_passport_95_max.png,13,novisadnovisad,False,"NOVI SAD, NOVI.SAD",core,14,0
+srb_passport_95_max.png,14,elvirina002,False,ELVIRINA 002,core,11,0
+srb_passport_95_max.png,15,ignjatovic,False,IGNJATOVIC,core,10,0
+srb_passport_95_max.png,17,29092024,True,29 ae? 4,outside,8,5
+srb_passport_96_mid.png,0,muprsrbijepuupozarevcu,False,"MUP R SRBWE, PU U POZAREVCU",halo,22,2
+srb_passport_96_mid.png,1,29111962,True,29.11.1962-,halo,8,0
+srb_passport_96_mid.png,2,bregenzaustrija,False,BREGENZ AUSTRIJA,outside,15,0
+srb_passport_96_mid.png,3,srb,False,SRB,outside,3,0
+srb_passport_96_mid.png,4,26072024,True,26.07.2024,core,8,0
+srb_passport_96_mid.png,6,2911962593174,True,2911962593174,outside,13,0
+srb_passport_96_mid.png,7,26072014,True,26.07.2014,core,8,0
+srb_passport_96_mid.png,8,psrbkrsmanovicdamjanka,False,P<SRBKRSMANOVIC<<DAMJANKA<<<<<<<<<<<ceee ccd,core,22,7
+srb_passport_96_mid.png,9,5077977794srb6211291f2407267291196259317494,True,206696 ((94SRB6211291F240/26/2911962593174<94,core,43,8
+srb_passport_96_mid.png,10,damjanka,False,DAMJANKA.,halo,8,0
+srb_passport_96_mid.png,11,srpsko,False,SRPSKO,core,6,0
+srb_passport_96_mid.png,12,507797779,True,507797779,outside,9,0
+srb_passport_96_mid.png,13,pozarevacpozarevac,False,"POZAREVAC, POZAREVACG",halo,18,1
+srb_passport_96_mid.png,14,emilijejaksic315,False,EMILIJE JAKSIC 315,halo,16,0
+srb_passport_96_mid.png,15,krsmanovic,False,KRSMANOVIG,halo,10,1
+srb_passport_96_mid.png,17,26072024,True,26. 24,outside,8,4
+srb_passport_96_max.png,0,muprsrbijepuupozarevcu,False,"MUP R SRBIVE, PU U POZAREVCU",core,22,1
+srb_passport_96_max.png,1,29111962,True,29.11.1962,core,8,0
+srb_passport_96_max.png,2,bregenzaustrija,False,BREGENZ AUSTRIJA,outside,15,0
+srb_passport_96_max.png,3,srb,False,SRB,outside,3,0
+srb_passport_96_max.png,4,26072024,True,26.07.2024,core,8,0
+srb_passport_96_max.png,6,2911962593174,True,2941962593174,outside,13,1
+srb_passport_96_max.png,7,26072014,True,26.07.2014,core,8,0
+srb_passport_96_max.png,8,psrbkrsmanovicdamjanka,False,P<SRBKRSMANOVIC<<DAMJANKA<<<<<<<<<Ke<eeeeecce,halo,22,10
+srb_passport_96_max.png,9,5077977794srb6211291f2407267291196259317494,True,2006697 (794SRB6211291F240/726/29119625931 (4<94,halo,43,7
+srb_passport_96_max.png,10,damjanka,False,DAMJANKA,core,8,0
+srb_passport_96_max.png,11,srpsko,False,SRPSKO,core,6,0
+srb_passport_96_max.png,12,507797779,True,507797779,outside,9,0
+srb_passport_96_max.png,13,pozarevacpozarevac,False,"POZAREVAC, POZAREVAC",core,18,0
+srb_passport_96_max.png,14,emilijejaksic315,False,EMILIJE JAKSIC 315,core,16,0
+srb_passport_96_max.png,15,krsmanovic,False,KRSMANOVIG,core,10,1
+srb_passport_96_max.png,17,26072024,True,26) 24,outside,8,4
+srb_passport_97_mid.png,0,muprsrbijekoordinacionauprava,False,MUP R SRBINE. KOORDINACIONA UPRAVA,core,29,1
+srb_passport_97_mid.png,1,04051969,True,04.05.1969,core,8,0
+srb_passport_97_mid.png,2,beogradrepublikasrbija,False,BEOGRAD REPUBLIKA SRBIVA,halo,22,1
+srb_passport_97_mid.png,3,srb,False,opp,halo,3,3
+srb_passport_97_mid.png,4,04032023,True,04.03.2023,core,8,0
+srb_passport_97_mid.png,6,0405969312247,True,405969312247,halo,13,1
+srb_passport_97_mid.png,7,04032013,True,04.03.2013,core,8,0
+srb_passport_97_mid.png,8,psrbvlahovicdubravka,False,P<SRBVLAHOVIC<<DUBRAVKA<<<<<<<<<<<<<<<<<<<<<,core,20,0
+srb_passport_97_mid.png,9,8303816380srb6905048f2303048040596931224762,True,3503816380SRB6905048F2303048040596931224/<62,core,43,3
+srb_passport_97_mid.png,10,dubravka,False,DUBRAVKA,core,8,0
+srb_passport_97_mid.png,11,srpsko,False,SRPSKQ,core,6,1
+srb_passport_97_mid.png,12,830381638,True,220301698,halo,9,4
+srb_passport_97_mid.png,13,strpcecukarica,False,STRPCE. CUKARIGCA,core,14,1
+srb_passport_97_mid.png,14,endijavorhola055,False,ENDIJA VORHOLA 055,core,16,0
+srb_passport_97_mid.png,15,vlahovic,False,VLAHOVIC,core,8,0
+srb_passport_97_mid.png,17,04032023,True,,outside,8,8
+srb_passport_97_max.png,0,muprsrbijekoordinacionauprava,False,MUP R SRBINE. KOORDINACIONA UPRAVA,core,29,1
+srb_passport_97_max.png,1,04051969,True,04.05.1969,core,8,0
+srb_passport_97_max.png,2,beogradrepublikasrbija,False,BEOGRAD REPUBLIKA SRBIVA,halo,22,1
+srb_passport_97_max.png,3,srb,False,opp,halo,3,3
+srb_passport_97_max.png,4,04032023,True,04.03.2023,core,8,0
+srb_passport_97_max.png,6,0405969312247,True,405969312247,halo,13,1
+srb_passport_97_max.png,7,04032013,True,04.03.2013,core,8,0
+srb_passport_97_max.png,8,psrbvlahovicdubravka,False,P<SRBVLAHOVIC<<DUBRAVKA<<<<<<<<<<<<<<<<<<<<<,core,20,0
+srb_passport_97_max.png,9,8303816380srb6905048f2303048040596931224762,True,3503816380SRB6905048F2303048040596931224/<62,core,43,3
+srb_passport_97_max.png,10,dubravka,False,DUBRAVKA,core,8,0
+srb_passport_97_max.png,11,srpsko,False,SRPSKQ,core,6,1
+srb_passport_97_max.png,12,830381638,True,220301698,halo,9,4
+srb_passport_97_max.png,13,strpcecukarica,False,STRPCE. CUKARIGCA,core,14,1
+srb_passport_97_max.png,14,endijavorhola055,False,ENDIJA VORHOLA 055,core,16,0
+srb_passport_97_max.png,15,vlahovic,False,VLAHOVIC,core,8,0
+srb_passport_97_max.png,17,04032023,True,,outside,8,8
+srb_passport_98_mid.png,0,muprsrbijepuunovomsadu,False,MUP R SRBIJE. PU U NOVOM SADU,outside,22,0
+srb_passport_98_mid.png,1,07101963,True,07 10 1982,outside,8,2
+srb_passport_98_mid.png,2,moskvaruskafederacija,False,MOSKVA. RUISKA FEDERACHNA,outside,21,3
+srb_passport_98_mid.png,3,srb,False,cpr,core,3,3
+srb_passport_98_mid.png,4,20082029,True,20.08.2022,outside,8,1
+srb_passport_98_mid.png,6,0710963360948,True,710963360948,halo,13,1
+srb_passport_98_mid.png,7,20082019,True,"20,08,2012",outside,8,1
+srb_passport_98_mid.png,8,psrbbojevicmalina,False,P<SRBBOJEVIC<<MALINA<<<<<<<<<<<<<<<<<cccdccK,outside,17,7
+srb_passport_98_mid.png,9,0934508559srb6310079f2908203071096336094882,True,0934508559SRB6310079F29082030710963360948<82,outside,43,0
+srb_passport_98_mid.png,10,malina,False,MAI INA,halo,6,1
+srb_passport_98_mid.png,11,srpsko,False,SRPSKO,halo,6,0
+srb_passport_98_mid.png,12,093450855,True,No2450855,core,9,3
+srb_passport_98_mid.png,13,zvezdaracukarica,False,FVEZDARA CUKARICA,outside,16,1
+srb_passport_98_mid.png,14,eugenasavojskog073,False,EUGENA SAVOJSKOG 073,outside,18,0
+srb_passport_98_mid.png,15,bojevic,False,ROJEVIC,core,7,1
+srb_passport_98_mid.png,17,20082029,True,201 3829,outside,8,4
+srb_passport_98_max.png,0,muprsrbijepuunovomsadu,False,MUP R SRBIJE. PU U NOVOM SADU,outside,22,0
+srb_passport_98_max.png,1,07101963,True,07 10 19RA2,outside,8,3
+srb_passport_98_max.png,2,moskvaruskafederacija,False,MOSKVA RLISKA FEDERACNA,outside,21,4
+srb_passport_98_max.png,3,srb,False,cpr,halo,3,3
+srb_passport_98_max.png,4,20082029,True,20.08 20293,halo,8,1
+srb_passport_98_max.png,6,0710963360948,True,0710963360948,outside,13,0
+srb_passport_98_max.png,7,20082019,True,20 08.2019,outside,8,0
+srb_passport_98_max.png,8,psrbbojevicmalina,False,P<SRBBOJEVIC<<MALINA<<<<<<<<<<<<<<<<<c<ccccK<,core,17,6
+srb_passport_98_max.png,9,0934508559srb6310079f2908203071096336094882,True,0934508559SRB6310079F29082030/710963360948<82,core,43,0
+srb_passport_98_max.png,10,malina,False,MAILINA,halo,6,1
+srb_passport_98_max.png,11,srpsko,False,SRPPSK,outside,6,2
+srb_passport_98_max.png,12,093450855,True,NOzAS0R55,halo,9,6
+srb_passport_98_max.png,13,zvezdaracukarica,False,JVEZDARA. GUKARICA,outside,16,2
+srb_passport_98_max.png,14,eugenasavojskog073,False,EUGENA SAVOJSKOG 073,outside,18,0
+srb_passport_98_max.png,15,bojevic,False,ROIEVIC,halo,7,2
+srb_passport_98_max.png,17,20082029,True,2017 929,core,8,4
+srb_passport_99_mid.png,0,muprsrbijepuupozarevcu,False,"MUP R SRBIJE, PU U POZAREVCU",outside,22,0
+srb_passport_99_mid.png,1,21111970,True,21.11.1970,halo,8,0
+srb_passport_99_mid.png,2,novisadrepublikasrbija,False,NOVI SAD. RERUBLIKA SRBIJA,outside,22,1
+srb_passport_99_mid.png,3,srb,False,SRB,core,3,0
+srb_passport_99_mid.png,4,02022021,True,UZ.02.2021,outside,8,2
+srb_passport_99_mid.png,6,2111970751303,True,444970751303,outside,13,4
+srb_passport_99_mid.png,7,02022011,True,02.02.2011,outside,8,0
+srb_passport_99_mid.png,8,psrbkaranovicmina,False,P<SRBKARANOVIC<<MINA<<<<<<<ceeeeceeeeeecccce,halo,17,17
+srb_passport_99_mid.png,9,5599362713srb7011214f2102023211197075130320,True,5599362/715SRB/011214F21020232111970751303<20,halo,43,2
+srb_passport_99_mid.png,10,mina,False,MINA.,halo,4,0
+srb_passport_99_mid.png,11,srpsko,False,SRPSKQ,core,6,1
+srb_passport_99_mid.png,12,559936271,True,55QQ36774,halo,9,4
+srb_passport_99_mid.png,13,titeltitel,False,"TITEL, TITEL",outside,10,0
+srb_passport_99_mid.png,14,eugenasavojskog319,False,EUGENA SAVOJSKOG 319,outside,18,0
+srb_passport_99_mid.png,15,karanovic,False,KARANOVIC,halo,9,0
+srb_passport_99_mid.png,17,02022021,True,92 8. 82 1,outside,8,5
+srb_passport_99_max.png,0,muprsrbijepuupozarevcu,False,"MUP R SRBIJE, PU U POZAREVCU",core,22,0
+srb_passport_99_max.png,1,21111970,True,21.11.1970,outside,8,0
+srb_passport_99_max.png,2,novisadrepublikasrbija,False,NOVI SAD. REPUBLIKA SRBIJA,core,22,0
+srb_passport_99_max.png,3,srb,False,SRR,outside,3,1
+srb_passport_99_max.png,4,02022021,True,U2Z.02.2021,core,8,2
+srb_passport_99_max.png,6,2111970751303,True,444970751303,core,13,4
+srb_passport_99_max.png,7,02022011,True,02.02.2011,core,8,0
+srb_passport_99_max.png,8,psrbkaranovicmina,False,P<SRBKARANOVIC<<MINA<<<<<<<ccece cee eee eeeccK<,core,17,17
+srb_passport_99_max.png,9,5599362713srb7011214f2102023211197075130320,True,§5599562715SRB/011214F21020232111970751303<20,core,43,3
+srb_passport_99_max.png,10,mina,False,MINA,outside,4,0
+srb_passport_99_max.png,11,srpsko,False,SRPSKO,outside,6,0
+srb_passport_99_max.png,12,559936271,True,=EQQR36974,halo,9,6
+srb_passport_99_max.png,13,titeltitel,False,"TITEL, TITEL",core,10,0
+srb_passport_99_max.png,14,eugenasavojskog319,False,EUGENA SAVOJSKOG 319:,core,18,0
+srb_passport_99_max.png,15,karanovic,False,KARANOVIC.,outside,9,0
+srb_passport_99_max.png,17,02022021,True,2.8 ..¥21,outside,8,5
+svk_id_90_mid.png,0,lars,False,Lars,outside,4,0
+svk_id_90_mid.png,1,cehtl,False,Ceht|,halo,5,1
+svk_id_90_mid.png,3,svk,False,SVK,halo,3,0
+svk_id_90_mid.png,4,6507105958,True,65071005053,outside,10,3
+svk_id_90_mid.png,5,kp242656,True,KP242656,halo,8,0
+svk_id_90_mid.png,6,bytca,False,Bytca,outside,5,0
+svk_id_90_mid.png,7,10071965,True,10.07. 786s,outside,8,3
+svk_id_90_mid.png,8,11072022,True,11.07. 2aie2,outside,8,3
+svk_id_90_mid.png,9,11072012,True,11.07. 20@2,outside,8,1
+svk_id_90_max.png,0,lars,False,Lars,outside,4,0
+svk_id_90_max.png,1,cehtl,False,Ceht|,outside,5,1
+svk_id_90_max.png,3,svk,False,SVK,outside,3,0
+svk_id_90_max.png,4,6507105958,True,650710/5 95a),core,10,1
+svk_id_90_max.png,5,kp242656,True,KP242656,outside,8,0
+svk_id_90_max.png,6,bytca,False,Bytca,outside,5,0
+svk_id_90_max.png,7,10071965,True,10.07.7965,core,8,1
+svk_id_90_max.png,8,11072022,True,11.07.2022,core,8,0
+svk_id_90_max.png,9,11072012,True,11.07.2082,core,8,1
+svk_id_91_mid.png,0,tjaz,False,Tjaz,core,4,0
+svk_id_91_mid.png,1,kabaj,False,Kabaj,halo,5,0
+svk_id_91_mid.png,3,svk,False,SVK,halo,3,0
+svk_id_91_mid.png,4,9804246601,True,980424/6604,outside,10,1
+svk_id_91_mid.png,5,sv025193,True,$V025193,halo,8,1
+svk_id_91_mid.png,6,bytca,False,Bytca,core,5,0
+svk_id_91_mid.png,7,24041998,True,24.04. 1988,outside,8,1
+svk_id_91_mid.png,8,23052026,True,23.05.2026,outside,8,0
+svk_id_91_mid.png,9,23052016,True,23.05.2096,outside,8,1
+svk_id_91_max.png,0,tjaz,False,Tiaz,outside,4,1
+svk_id_91_max.png,1,kabaj,False,Kabaj,outside,5,0
+svk_id_91_max.png,3,svk,False,SVK,outside,3,0
+svk_id_91_max.png,4,9804246601,True,980424/6604,core,10,1
+svk_id_91_max.png,5,sv025193,True,$V025193,outside,8,1
+svk_id_91_max.png,6,bytca,False,Bytca,outside,5,0
+svk_id_91_max.png,7,24041998,True,24.04.1998,core,8,0
+svk_id_91_max.png,8,23052026,True,23.05.2026,core,8,0
+svk_id_91_max.png,9,23052016,True,23.05.2076,core,8,1
+svk_id_92_mid.png,0,rinaldo,False,Rinaldo,outside,7,0
+svk_id_92_mid.png,1,misko,False,Misko,outside,5,0
+svk_id_92_mid.png,3,svk,False,SVK,outside,3,0
+svk_id_92_mid.png,4,7601185011,True,7601180 Oded,outside,10,5
+svk_id_92_mid.png,5,dm599256,True,DM599256,halo,8,0
+svk_id_92_mid.png,6,bytca,False,Bytca,outside,5,0
+svk_id_92_mid.png,7,18011976,True,138.01. fave,outside,8,5
+svk_id_92_mid.png,8,28052023,True,28.05.2023,outside,8,0
+svk_id_92_mid.png,9,28052013,True,23.05.2643,outside,8,3
+svk_id_92_max.png,0,rinaldo,False,Rinaldo,outside,7,0
+svk_id_92_max.png,1,misko,False,Misko,outside,5,0
+svk_id_92_max.png,3,svk,False,SVK,outside,3,0
+svk_id_92_max.png,4,7601185011,True,76011875 0ded,core,10,4
+svk_id_92_max.png,5,dm599256,True,DM599256,outside,8,0
+svk_id_92_max.png,6,bytca,False,Bytca,outside,5,0
+svk_id_92_max.png,7,18011976,True,18.01.7976,core,8,1
+svk_id_92_max.png,8,28052023,True,28.05.2023,core,8,0
+svk_id_92_max.png,9,28052013,True,28.05.2083,core,8,1
+svk_id_93_mid.png,0,nikolco,False,Nikoléo,outside,7,1
+svk_id_93_mid.png,1,aldzic,False,Aldzic,outside,6,0
+svk_id_93_mid.png,3,svk,False,SVK,outside,3,0
+svk_id_93_mid.png,4,7812033842,True,78120570 a ee,outside,10,6
+svk_id_93_mid.png,5,ta781340,True,TA/81340,outside,8,1
+svk_id_93_mid.png,6,holic,False,Holic,outside,5,0
+svk_id_93_mid.png,7,03121978,True,03.12. Tre,outside,8,4
+svk_id_93_mid.png,8,02092022,True,02.09. Agim,outside,8,4
+svk_id_93_mid.png,9,02092012,True,02.09.2082,outside,8,1
+svk_id_93_max.png,0,nikolco,False,Nikoléo,outside,7,1
+svk_id_93_max.png,1,aldzic,False,Aldzic,outside,6,0
+svk_id_93_max.png,3,svk,False,SVK.,outside,3,0
+svk_id_93_max.png,4,7812033842,True,781203) 3 6Aem,core,10,4
+svk_id_93_max.png,5,ta781340,True,TA/81340,outside,8,1
+svk_id_93_max.png,6,holic,False,Holic,outside,5,0
+svk_id_93_max.png,7,03121978,True,03.12.1978,core,8,0
+svk_id_93_max.png,8,02092022,True,02.09.2022,core,8,0
+svk_id_93_max.png,9,02092012,True,02.09.2072,core,8,1
+svk_id_94_mid.png,0,urh,False,Urh,halo,3,0
+svk_id_94_mid.png,1,kobav,False,Kobav,core,5,0
+svk_id_94_mid.png,3,svk,False,SVK,core,3,0
+svk_id_94_mid.png,4,9805106897,True,9805 LOFGBoe,outside,10,7
+svk_id_94_mid.png,5,qz441042,True,Q27441042,core,8,2
+svk_id_94_mid.png,6,holic,False,Holic,core,5,0
+svk_id_94_mid.png,7,10051998,True,10.05.1998,outside,8,0
+svk_id_94_mid.png,8,08052025,True,08.05.2025,outside,8,0
+svk_id_94_mid.png,9,08052015,True,08.05.2045,outside,8,1
+svk_id_94_max.png,0,urh,False,Urh,outside,3,0
+svk_id_94_max.png,1,kobav,False,Kobav,outside,5,0
+svk_id_94_max.png,3,svk,False,SVK,outside,3,0
+svk_id_94_max.png,4,9805106897,True,930510/689%,core,10,2
+svk_id_94_max.png,5,qz441042,True,02441042,outside,8,2
+svk_id_94_max.png,6,holic,False,Holic,outside,5,0
+svk_id_94_max.png,7,10051998,True,"10,05.1998",core,8,0
+svk_id_94_max.png,8,08052025,True,08.05.2025,core,8,0
+svk_id_94_max.png,9,08052015,True,08.05.2015,core,8,0
+svk_id_95_mid.png,0,carla,False,Carle,core,5,1
+svk_id_95_mid.png,1,laufer,False,Laufer,core,6,0
+svk_id_95_mid.png,3,svk,False,SVK,halo,3,0
+svk_id_95_mid.png,4,9104137248,True,910414377 248,core,10,2
+svk_id_95_mid.png,5,mm143844,True,MM143844.,core,8,0
+svk_id_95_mid.png,6,holic,False,Holié,outside,5,1
+svk_id_95_mid.png,7,13041991,True,13.04.5931,core,8,2
+svk_id_95_mid.png,8,26062023,True,26.06.2023,core,8,0
+svk_id_95_mid.png,9,26062013,True,26.06.2093,core,8,1
+svk_id_95_max.png,0,carla,False,Carle,core,5,1
+svk_id_95_max.png,1,laufer,False,Laufer,core,6,0
+svk_id_95_max.png,3,svk,False,SVK,halo,3,0
+svk_id_95_max.png,4,9104137248,True,91041377248,core,10,1
+svk_id_95_max.png,5,mm143844,True,MM143844,halo,8,0
+svk_id_95_max.png,6,holic,False,Holfé,outside,5,2
+svk_id_95_max.png,7,13041991,True,13.04.7995,core,8,2
+svk_id_95_max.png,8,26062023,True,26.06.2023,core,8,0
+svk_id_95_max.png,9,26062013,True,26.06.2083,core,8,1
+svk_id_96_mid.png,0,mare,False,Mare,outside,4,0
+svk_id_96_mid.png,1,toporisic,False,Topearisic,outside,9,2
+svk_id_96_mid.png,3,svk,False,SVK,outside,3,0
+svk_id_96_mid.png,4,7901205183,True,790120/5133,core,10,1
+svk_id_96_mid.png,5,yd992615,True,¥D992615,outside,8,1
+svk_id_96_mid.png,6,holic,False,Holic,outside,5,0
+svk_id_96_mid.png,7,20011979,True,20.01.1979,core,8,0
+svk_id_96_mid.png,8,08092026,True,08.09.2026,core,8,0
+svk_id_96_mid.png,9,08092016,True,08.09.2016,core,8,0
+svk_id_96_max.png,0,mare,False,Mare,outside,4,0
+svk_id_96_max.png,1,toporisic,False,Toporisic,outside,9,0
+svk_id_96_max.png,3,svk,False,SVK,outside,3,0
+svk_id_96_max.png,4,7901205183,True,790120/51383,core,10,1
+svk_id_96_max.png,5,yd992615,True,YD992615,outside,8,0
+svk_id_96_max.png,6,holic,False,Holic,outside,5,0
+svk_id_96_max.png,7,20011979,True,20.01.1979,core,8,0
+svk_id_96_max.png,8,08092026,True,08.09.2026,core,8,0
+svk_id_96_max.png,9,08092016,True,08.09.2016,core,8,0
+svk_id_97_mid.png,0,nejra,False,Neira,halo,5,1
+svk_id_97_mid.png,1,selenic,False,Selenic,core,7,0
+svk_id_97_mid.png,3,svk,False,SVK,outside,3,0
+svk_id_97_mid.png,4,8208163784,True,820816/3 784,core,10,0
+svk_id_97_mid.png,5,yi125718,True,Y¥1I125718,outside,8,1
+svk_id_97_mid.png,6,svidnik,False,Svidnik,outside,7,0
+svk_id_97_mid.png,7,16081982,True,16.08.1982,core,8,0
+svk_id_97_mid.png,8,22122023,True,22.12.2023,core,8,0
+svk_id_97_mid.png,9,22122013,True,22.12.2093,halo,8,1
+svk_id_97_max.png,0,nejra,False,Nejra,core,5,0
+svk_id_97_max.png,1,selenic,False,Selenic,core,7,0
+svk_id_97_max.png,3,svk,False,SVK,outside,3,0
+svk_id_97_max.png,4,8208163784,True,820816/3 784,core,10,0
+svk_id_97_max.png,5,yi125718,True,Y1125718,outside,8,1
+svk_id_97_max.png,6,svidnik,False,Svidnik,outside,7,0
+svk_id_97_max.png,7,16081982,True,16.08.1982,core,8,0
+svk_id_97_max.png,8,22122023,True,22.12.23,core,8,2
+svk_id_97_max.png,9,22122013,True,22.12.3083,core,8,2
+svk_id_98_mid.png,0,sibila,False,Sibila,outside,6,0
+svk_id_98_mid.png,1,raskaj,False,Rakskaj,outside,6,1
+svk_id_98_mid.png,3,svk,False,SVK,outside,3,0
+svk_id_98_mid.png,4,7510269110,True,751026/9140,core,10,1
+svk_id_98_mid.png,5,ww764670,True,WW 764670,halo,8,0
+svk_id_98_mid.png,6,svidnik,False,Svidnik,outside,7,0
+svk_id_98_mid.png,7,26101975,True,26.10.1975,core,8,0
+svk_id_98_mid.png,8,02062024,True,02.06.2024,core,8,0
+svk_id_98_mid.png,9,02062014,True,02.06.2074,halo,8,1
+svk_id_98_max.png,0,sibila,False,Sibila,outside,6,0
+svk_id_98_max.png,1,raskaj,False,Raskaj,outside,6,0
+svk_id_98_max.png,3,svk,False,SVK,outside,3,0
+svk_id_98_max.png,4,7510269110,True,751026/914.0,core,10,1
+svk_id_98_max.png,5,ww764670,True,WW 764670,outside,8,0
+svk_id_98_max.png,6,svidnik,False,Svidnik,outside,7,0
+svk_id_98_max.png,7,26101975,True,26.10.0995,core,8,2
+svk_id_98_max.png,8,02062024,True,02.06.2024,core,8,0
+svk_id_98_max.png,9,02062014,True,02.06.2074,core,8,1
+svk_id_99_mid.png,0,marijamarusa,False,Marlia Marusa,outside,12,2
+svk_id_99_mid.png,1,bovha,False,Bovha,outside,5,0
+svk_id_99_mid.png,3,svk,False,SVK,halo,3,0
+svk_id_99_mid.png,4,6006228734,True,50062278 4234,outside,10,4
+svk_id_99_mid.png,5,pp135768,True,PP135768,core,8,0
+svk_id_99_mid.png,6,svidnik,False,Svidnik,core,7,0
+svk_id_99_mid.png,7,22061960,True,22.06.1960,outside,8,0
+svk_id_99_mid.png,8,22112026,True,22.11.2026,outside,8,0
+svk_id_99_mid.png,9,22112016,True,22.11.2096,halo,8,1
+svk_id_99_max.png,0,marijamarusa,False,Marija Marusa,core,12,0
+svk_id_99_max.png,1,bovha,False,Bovha,core,5,0
+svk_id_99_max.png,3,svk,False,SVK,halo,3,0
+svk_id_99_max.png,4,6006228734,True,500622/8 434,core,10,2
+svk_id_99_max.png,5,pp135768,True,PP135768,outside,8,0
+svk_id_99_max.png,6,svidnik,False,Svidnik,outside,7,0
+svk_id_99_max.png,7,22061960,True,22.06.1960,core,8,0
+svk_id_99_max.png,8,22112026,True,22.11.2026,core,8,0
+svk_id_99_max.png,9,22112016,True,22.11.2096,outside,8,1

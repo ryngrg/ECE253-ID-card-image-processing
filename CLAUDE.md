@@ -70,6 +70,7 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   Never report the old `real-pilot` checkpoint: it saw F03 (test), F01 (val) and MIDV. Old experiments: `docs/blur_history/`.
   Tests: `python -m pytest -q tests/deblur` (needs `pytest<9`).
 - `benchmark_runtime.py`: s/image of each method (processing call only, MPS + CPU) -> `results/runtime_{name}.csv`.
+- `run_chain_experiments.sh` (steps `blur ours midv clips` + `_eval`) and `summarise_chain.py`: deblur-only and deblur + deglare experiments -> `results/chain/`.
 - `run_glare_experiments.sh`: reruns all glare experiments after `prepare_data.py` (step `midv` = the external set).
 
 ## Conventions / gotchas
@@ -84,6 +85,9 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   - DL fine-tuned is far better on SSIM (see README "Findings").
   - MIDV-2020 (n = 100) replicates this: Tesseract halo +0.125 (DL ft), PaddleOCR halo −0.086; ft ≈ zero-shot there.
   - MIDV clips (multi-frame fusion): core 0.5 -> 0.99 (PaddleOCR), 0.2 -> 0.86 (Tesseract); best frame per field gets almost all of it.
+  - Deblurring (Restormer ft) helps B_D (test n = 4: Tesseract +0.38) and B_G (n = 9: PaddleOCR +0.09, Tesseract +0.29); DL deglare after it adds
+    +0.045 for Tesseract only. Order: no difference on B_G test. Wiener does not transfer (hurts sharp images and MIDV).
+  - MIDV photos: Restormer alone is near neutral; Restormer -> DL gives Tesseract +0.086, PaddleOCR -0.059 (the DL step). Deblurring fused clips: no change.
 - zsh does not word-split `$VAR` in commands: write arguments out (or use arrays) in one-off shell runs.
 - Agreed plan rules (NEXT_STEPS "Decisions"; NEXT_STEPS is in priority order): no artificial/synthetic glare;
   the proposal's approach section is a guide, not a contract; new parameters are chosen on our train+val only;

@@ -26,8 +26,7 @@ def install(model, from_path=None, output_dir=None):
         verify(target)
         return target
     if from_path is None and not record.get('source'):
-        raise ValueError('The real-pilot checkpoint is distributed separately. '
-                         'Use --from PATH/TO/step_002000.pt; see DEBLUR.md.')
+        raise ValueError(f'The {model} checkpoint is distributed separately. Use --from PATH; see DEBLUR.md.')
     folder.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='.weights-', dir=folder) as temporary:
         staged = Path(temporary) / record['filename']
@@ -51,7 +50,7 @@ def install(model, from_path=None, output_dir=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--model', choices=['pretrained', 'real-pilot'], required=True)
+    parser.add_argument('--model', choices=['pretrained', 'ours', 'real-pilot'], required=True)
     parser.add_argument('--from', dest='from_path', type=Path, help='Copy local weights instead of downloading')
     parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args()

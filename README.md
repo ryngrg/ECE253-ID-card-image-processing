@@ -1,6 +1,6 @@
 # ECE253-ID-card-image-processing
 ECE253 ID card image processing: out-of-focus blur and **glare** (specular highlight) removal.
-This README covers the glare part.
+It covers the blur part (`DEBLUR.md`), the glare part and both together.
 
 ## Blur-recovery blocks
 
@@ -9,7 +9,7 @@ See [DEBLUR.md](DEBLUR.md) for the independent Wiener and Restormer blocks:
 and for tuning / training them on our splits (`src/tune_deblur.py`, `src/finetune_deblur.py`).
 Earlier blur experiments are archived in `docs/blur_history/`.
 They preserve rectified PNG filenames and dimensions and accept another block's
-output directory as input. The interface does not run a combined experiment.
+output directory as input. Results: "Deblurring" and "Joint deblur + deglare" below (`src/run_chain_experiments.sh`).
 
 ## Setup
 ```bash
@@ -320,6 +320,88 @@ OCR run. Download: `clips.tar` from the same mirror (10.3 GB; only the frames of
 * Runtime (M2, CPU): alignment ~1 s per frame; fusion 4.3 s per clip once the ~50 aligned frames are loaded (1.8 s).
 * Figure: `results/figures/midv_clips_fusion.jpg` (key frame | fused | best single frame | best frame per field | scan).
 
+### Deblurring: B_D (`src/deblur.py`, `src/tune_deblur.py`, `src/finetune_deblur.py`; `results/box_*_blur/`, `results/chain/blur_*`)
+All settings were chosen on train + val B_D (Wiener, adaptive Wiener) or trained on train and selected on val
+(Restormer: step 1000 of 2000), then frozen: `deblur_wiener_params.json` (radius 6 / K 0.03),
+`deblur_wiener_adaptive_params.json`, `checkpoints/deblur/restormer_ours.pt`. No B_G image was used.
+**Test B_D (n = 4 images, 54 boxes)**: character accuracy pooled over all boxes, and paired changes vs untreated
+(mean of per-image changes [95% bootstrap CI] images better/worse; they differ slightly from pooled differences):
+| method | PaddleOCR | Tesseract | PaddleOCR change | Tesseract change | SSIM change |
+|---|---|---|---|---|---|
+| untreated | 0.782 | 0.307 | – | – | – |
+| Wiener, old setting (r 3 / K 0.3) | 0.754 | 0.284 | −0.024 [−0.046, −0.005] 0/3 | −0.010 n.s. | −0.002 n.s. |
+| Wiener, retuned | 0.568 | 0.284 | −0.210 n.s. 1/2 | −0.084 n.s. | −0.042 n.s. |
+| Wiener, adaptive | 0.530 | 0.242 | −0.236 n.s. 1/2 | −0.070 n.s. | −0.012 n.s. |
+| Restormer, pretrained | 0.809 | 0.388 | +0.011 n.s. 2/2 | +0.071 [0.000, 0.126] 3/1 | +0.025 [0.017, 0.034] 4/0 |
+| Restormer, fine-tuned | **0.838** | **0.745** | +0.026 [−0.103, 0.150] n.s. 2/1 | **+0.376 [0.233, 0.510] 4/0** | **+0.074 [0.040, 0.100] 4/0** |
+| *reference (ceiling)* | 0.989 | 0.846 | | | |
+
+* n = 4 test images. On the 20 train + val images the fine-tuned Restormer gains +0.153 (PaddleOCR) and +0.502
+  (Tesseract), but it was trained on 16 of them; the two val designs F07 and F13 also occur in train, the four
+  test designs do not.
+* Wiener looked useful on train + val (Tesseract +0.177 retuned, +0.108 adaptive, both tuned on these images) and did
+  not transfer: B03 drops from 0.97 to 0.21 (PaddleOCR). The adaptive radius does not transfer either.
+
+### Joint deblur + deglare: B_G (`src/run_chain_experiments.sh`, `src/summarise_chain.py`; `results/box_*_chain/`, `results/chain/`)
+Chains are named in processing order; all parts are the frozen single methods (DL glare was trained on sharp S_G only).
+**Test B_G (n = 9), all boxes:**
+| method | PaddleOCR | Tesseract | PaddleOCR change vs untreated | Tesseract change | SSIM change |
+|---|---|---|---|---|---|
+| untreated | 0.550 | 0.189 | – | – | – |
+| classical | 0.546 | 0.212 | −0.003 n.s. | +0.033 [0.004, 0.067] 6/1 | −0.003 [−0.006, −0.001] |
+| DL ft | 0.550 | 0.222 | +0.003 n.s. | +0.051 [0.001, 0.130] 8/1 | +0.004 n.s. |
+| Wiener / adaptive Wiener | 0.426 / 0.470 | 0.197 / 0.158 | −0.121 / −0.078 n.s. | −0.061 / −0.013 n.s. | −0.038* / −0.004 n.s. |
+| Wiener → classical / classical → Wiener | 0.422 / 0.434 | 0.201 / 0.204 | −0.124 / −0.117 n.s. | −0.025 / −0.022 n.s. | −0.044* / −0.043* |
+| Restormer pretrained | 0.572 | 0.258 | +0.020 n.s. | +0.064 [0.034, 0.095] 8/1 | +0.024* |
+| Restormer ft | 0.669 | 0.532 | +0.087 [0.006, 0.175] 5/2 | +0.294 [0.169, 0.426] 8/1 | +0.070* |
+| Restormer ft → classical | 0.677 | 0.536 | +0.094 [0.009, 0.187] 5/2 | +0.316 [0.206, 0.422] 9/0 | +0.067* |
+| **Restormer ft → DL ft** | **0.679** | **0.559** | +0.090 [0.006, 0.179] 4/2 | **+0.339 [0.223, 0.454] 9/0** | **+0.074*** |
+| DL ft → Restormer ft | 0.676 | 0.545 | +0.094 [0.009, 0.186] 5/3 | +0.332 [0.228, 0.433] 9/0 | +0.071* |
+| *reference (ceiling)* | 0.989 | 0.852 | | | |
+
+(* = CI excludes 0.)
+* **Deblurring does most of the work.** Adding DL deglare after Restormer changes PaddleOCR by +0.003 n.s. and
+  Tesseract by +0.045 [0.008, 0.088]. Neither glare method alone changes PaddleOCR on B_G.
+* **Order:** no significant difference on test between the two learned orders (PaddleOCR −0.004, Tesseract +0.007 for
+  deblur first). Clipped (core) text stays lost in every run.
+* About 70% of PaddleOCR's gap to the reference remains (0.679 vs 0.989), and about 45% of Tesseract's.
+* **Do no harm, S_G (n = 8 sharp images):** Restormer ft PaddleOCR −0.000, Tesseract +0.036 [0.010, 0.064]; the learned
+  chains cost PaddleOCR −0.012 to −0.017 (as DL deglare alone, −0.015). The fixed Wiener filter destroys sharp text
+  (−0.47 / −0.44); the adaptive one costs −0.007 / −0.018 n.s.
+
+**MIDV-2020 photos (n = 100, external, nothing tuned on them), all boxes, paired change vs untreated** (`results/box_*_midv_chain/`):
+| method | PaddleOCR | change | Tesseract | change |
+|---|---|---|---|---|
+| untreated | 0.887 | – | 0.534 | – |
+| classical | 0.880 | −0.008 [−0.016, −0.002] | 0.532 | +0.000 n.s. |
+| DL ft | 0.842 | −0.052 [−0.067, −0.040] | 0.603 | +0.074 [0.055, 0.094] |
+| Wiener | 0.386 | −0.465 [−0.496, −0.432] | 0.043 | −0.476 [−0.523, −0.429] |
+| adaptive Wiener | 0.856 | −0.046 [−0.068, −0.027] | 0.502 | −0.058 [−0.092, −0.030] |
+| adaptive Wiener → classical / classical → adaptive Wiener | 0.849 / 0.847 | −0.054 / −0.057 | 0.500 / 0.496 | −0.059 / −0.062 |
+| Restormer ft | 0.884 | −0.005 [−0.008, −0.001] | 0.545 | +0.011 [0.001, 0.023] |
+| **Restormer ft → DL ft** | 0.838 | −0.059 [−0.077, −0.043] | **0.614** | **+0.086 [0.066, 0.107] 81/10** |
+| DL ft → Restormer ft | 0.842 | −0.056 [−0.071, −0.042] | 0.595 | +0.067 [0.047, 0.087] |
+| *reference = scan* | 0.994 | | 0.896 | |
+
+* These photos were selected for glare, not blur, so the deblur step has little to restore: Restormer is close to neutral.
+  Nearly all of the chain's gain (Tesseract) and loss (PaddleOCR) is the DL deglare step.
+* Deblur first beats deglare first for Tesseract (+0.019 [0.007, 0.032]; PaddleOCR n.s.) and beats DL alone by only
+  +0.012 [0.000, 0.024].
+* Wiener hurts both engines (its setting was chosen on blurred images; these are mostly not blurred). Adding classical deglare
+  does not recover it.
+
+**MIDV-2020 clips: deblurring the fused image** (`results/box_*_midv_clips_chain/`; 100 clips, keymax / keymid, all boxes; change vs fused):
+| method | PaddleOCR | change | Tesseract | change |
+|---|---|---|---|---|
+| fused | 0.976 / 0.974 | – | 0.838 / 0.824 | – |
+| fused → Wiener | 0.500 / 0.483 | −0.409 / −0.426 | 0.088 / 0.082 | −0.729 / −0.723 |
+| fused → adaptive Wiener | 0.954 / 0.951 | −0.035 / −0.029 | 0.703 / 0.694 | −0.167 / −0.159 |
+| fused → Restormer ft | 0.976 / 0.973 | +0.001 / −0.002 n.s. | 0.832 / 0.818 | +0.000 / −0.002 n.s. |
+
+* Fusion already reaches the ceiling within 0.02 (PaddleOCR) and 0.06–0.07 (Tesseract): deblurring after it does not help.
+  The single-image chains were not run on clips (the key frames pass the blur filter, and single-image deglare cannot
+  restore clipped text), nor was deblurring single frames before fusion (4% of the frames are dropped for blur).
+
 ### Runtime (`src/benchmark_runtime.py`, `results/runtime_test.csv`)
 Processing call only (image already in memory), median over our 17 test images (1012×638), M2 MacBook,
 torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since single calls vary < 1%):
@@ -330,6 +412,9 @@ torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since sing
 | DL fine-tuned | MPS | 2.37 |
 | DL zero-shot | CPU | 9.49 |
 | DL fine-tuned | CPU | 9.62 |
+| Wiener | CPU | 0.049 |
+| adaptive Wiener (with its 9 Tesseract calls) | CPU | 2.72 |
+| Restormer ft | MPS | 19.6 |
 
 * The classical method is ~25× faster than DL on the GPU and ~110× faster on the CPU.
 * It costs ~0.01 s on images with no clipped seed, because it returns the image unchanged
@@ -337,6 +422,7 @@ torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since sing
 * DL time grows with the pixel count: 4.8 s (zero-shot) and 5.9 s (fine-tuned) per MIDV passport (1478×1040) on MPS
   (`results/runtime_midv.csv`, 20 photos, 1 repeat).
 * Fine-tuned is slightly slower than zero-shot on MPS because of the added detection head.
+* Deblur rows: `results/runtime_deblur_test.csv`, same protocol. Restormer (512 px tiles) is the slow step: Restormer → DL takes ~22 s per image on MPS. Not timed on CPU.
 
 ### Findings
 **With several frames, text under clipped glare comes back** (100 MIDV-2020 clips, nothing tuned on them): fusing

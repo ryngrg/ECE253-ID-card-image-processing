@@ -13,5 +13,12 @@
     "sha256": "1f9da934b848c418137c023be02ac3dd5b5815ed7716ed4b9d30dc01988eac63",
     "source": null,
     "description": "Existing 2000-step real-data pilot. Trained on handmade F03, which is in the glare repository test split. For inference integration, not a jointly held-out benchmark."
+  },
+  "ours": {
+    "filename": "restormer_ours.pt",
+    "bytes": 104664243,
+    "sha256": "a6488d0fbcfadcbb583a0eff1e157b7cb5ccac6733223038f25422b66c263e4d",
+    "source": null,
+    "description": "src/finetune_deblur.py on our 16 train B_D images, step 1000 of 2000, selected on val by src/tune_deblur.py. The model used for all results."
   }
 }

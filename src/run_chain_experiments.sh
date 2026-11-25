@@ -113,17 +113,17 @@ if has midv_eval; then
     out/midv/classical:classical,out/midv/dl_ft:dl midv --fold-accents --pad 2
 fi
 
-# ---------------------------------------------------------------- MIDV-2020 clips: key frames and fused images
+# ---------------------------------------------------------------- MIDV-2020 clips: deblurring of the fused images
+# The single-image chains are not run here: the key frames passed the blur filter, and single-image deglare cannot
+# restore their clipped text.  Only deblurring of the fused image is tested.
 if has clips; then
-  chain_midv out/midv_clips out/pairs_midv_clips.csv keymid,keymax data/midv_clips/rectified
-  for m in wiener restormer; do
+  for m in wiener wiener_ad restormer; do
     deblur $m out/midv_clips/fused out/midv_clips/chain/fused_$m --pairs out/pairs_midv_clips.csv
   done
 fi
 if has clips_eval; then
   box midv_clips_chain out/pairs_midv_clips.csv results/box_layout_midv_clips.csv out/midv_clips/chain \
-    $CH,fused_wiener,fused_restormer \
-    out/midv_clips/classical:classical,out/midv_clips/dl_ft:dl,out/midv_clips/fused:fused keymid,keymax --fold-accents --pad 2
+    fused_wiener,fused_wiener_ad,fused_restormer out/midv_clips/fused:fused keymid,keymax --fold-accents --pad 2
 fi
 
 # tables of every finished part -> results/chain/*.csv

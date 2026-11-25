@@ -44,10 +44,8 @@ python src/deblur.py --method wiener_adaptive \
 
 Restormer takes ~20 s per rectified card on an M2 (MPS).
 
-`--params deblur_wiener_params.json` is the default for Wiener. It carries the
-existing real-data pilot setting, radius 3 / K 0.3, without denoising or
-sharpening. Radius is measured in input pixels. These settings have not been
-retuned for resized or rectified cards. `--radius 0` bypasses Wiener.
+`--params deblur_wiener_params.json` is the default for Wiener: radius 6 / K 0.03, chosen on our train + val B_D
+(`tune_deblur.py`), in pixels of the rectified cards. `--radius 0` bypasses Wiener.
 
 Restormer defaults to the **official pretrained** weights. `--weights PATH`
 selects a compatible fine-tuned checkpoint explicitly. It loads once per run.
@@ -115,6 +113,12 @@ input. Set `color_order='bgr'` explicitly for OpenCV; channels are not guessed.
 At each block boundary, outputs are clipped/rounded to uint8 just as in a PNG
 directory chain. Instantiate each block once and reuse it across images.
 
+## Our model
+
+`checkpoints/deblur/restormer_ours.pt` (git-ignored): step 1000 of `finetune_deblur.py`, selected on val, SHA-256
+`a6488d0fbcfadcbb583a0eff1e157b7cb5ccac6733223038f25422b66c263e4d`.
+All results in README use it; install a copy with `python src/install_deblur_weights.py --model ours --from PATH`.
+
 ## Pilot model (do not use for results)
 
 The earlier fine-tuned model (`real-pilot`, `step_002000.pt`, SHA-256
@@ -127,8 +131,7 @@ python src/install_deblur_weights.py --model real-pilot --from /path/to/step_002
 ```
 
 Wiener and Restormer inference was extracted unchanged from the blur repo (`src/deblur_blocks/provenance.json`);
-training, tuning and the adaptive Wiener are adapted ports (`docs/blur_history/README.md`). `deblur_wiener_params.json`
-still holds the pilot's radius 3 / K 0.3 until `tune_deblur.py wiener --write` is run.
+training, tuning and the adaptive Wiener are adapted ports (`docs/blur_history/README.md`).
 
 ## Checks
 
