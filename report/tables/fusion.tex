@@ -1,0 +1,17 @@
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{keymid, PaddleOCR} & \multicolumn{3}{c}{keymid, Tesseract} & \multicolumn{3}{c}{keymax, PaddleOCR} & \multicolumn{3}{c}{keymax, Tesseract} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+method & core & halo & all & core & halo & all & core & halo & all & core & halo & all \\
+\midrule
+key frame, untreated & .524 & .822 & .840 & .222 & .455 & .589 & .479 & .847 & .677 & .183 & .482 & .410 \\
+classical & .461 & .809 & .824 & .244 & .479 & .601 & .406 & .829 & .635 & .210 & .471 & .425 \\
+DL, fine-tuned & .482 & .777 & .813 & .281 & .553 & .638 & .424 & .812 & .642 & .266 & .584 & .478 \\
+best single frame & .943 & .920 & .947 & .796 & .734 & .794 & .960 & .907 & .946 & .806 & .719 & .793 \\
+best frame per field & .981 & .946 & .969 & .851 & \textbf{.775} & .822 & .977 & .942 & .968 & .831 & .771 & .822 \\
+temporal median & .963 & .930 & .962 & .737 & .731 & .789 & .970 & .941 & .963 & .782 & .740 & .790 \\
+fused & \textbf{.988} & \textbf{.951} & \textbf{.974} & \textbf{.871} & .769 & \textbf{.824} & \textbf{.989} & \textbf{.947} & \textbf{.976} & \textbf{.856} & \textbf{.789} & \textbf{.838} \\
+\midrule
+reference (scan) & .997 & .992 & .994 & .887 & .880 & .897 & .996 & .994 & .994 & .902 & .897 & .897 \\
+\bottomrule
+\end{tabular}

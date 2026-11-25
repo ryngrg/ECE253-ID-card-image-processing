@@ -1,0 +1,16 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{SSIM} & \multicolumn{1}{c}{card OCR} & \multicolumn{2}{c}{box acc.} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-5}\cmidrule(lr){6-7}
+method & card & glare & outside & word F1 & core & halo \\
+\midrule
+untreated & .696 & .511 & .715 & .753 & .444 & \textbf{.869} \\
+classical, distance-decay veil & .686 & .518 & .705 & .746 & \textbf{.489} & .866 \\
+classical, statistics veil (ours) & .694 & .527 & .712 & .737 & .378 & .854 \\
+\quad veil only & .693 & .512 & .712 & .737 & .400 & .854 \\
+\quad core fill only & .697 & .524 & .715 & .757 & .400 & \textbf{.869} \\
+\quad Telea core fill & .693 & .524 & .712 & .735 & .444 & .857 \\
+DocSHRNet, zero-shot & \textbf{.748} & .545 & \textbf{.766} & .756 & .400 & .714 \\
+DocSHRNet, fine-tuned (ours) & .730 & \textbf{.624} & .734 & \textbf{.769} & .467 & .817 \\
+\bottomrule
+\end{tabular}

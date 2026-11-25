@@ -1,0 +1,16 @@
+\begin{tabular}{lrlrll}
+\toprule
+ & \multicolumn{2}{c}{PaddleOCR} & \multicolumn{2}{c}{Tesseract} & \multicolumn{1}{c}{SSIM} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-6}
+method & acc. & change [95\% CI] & acc. & change [95\% CI] & change [95\% CI] \\
+\midrule
+untreated & \textbf{.902} & -- & .630 & -- & -- \\
+DL deglare & .886 & \textbf{$-$.015 [$-$.032, $-$.001]} & .715 & \textbf{+.072 [.039, .116]} & \textbf{+.033 [.009, .060]} \\
+Wiener, adaptive & .893 & \textbf{$-$.007 [$-$.014, $-$.002]} & .607 & $-$.018 [$-$.049, .006] & $-$.014 [$-$.046, .018] \\
+Restormer (ft) & .901 & +.000 [$-$.003, .002] & .677 & \textbf{+.036 [.010, .064]} & \textbf{+.017 [.006, .028]} \\
+Restormer $\rightarrow$ DL & .889 & \textbf{$-$.012 [$-$.025, .000]} & \textbf{.736} & \textbf{+.092 [.048, .150]} & \textbf{+.048 [.017, .083]} \\
+DL $\rightarrow$ Restormer & .883 & \textbf{$-$.017 [$-$.032, $-$.004]} & .714 & \textbf{+.074 [.027, .133]} & \textbf{+.049 [.015, .087]} \\
+\midrule
+reference & .989 & -- & .846 & -- & -- \\
+\bottomrule
+\end{tabular}

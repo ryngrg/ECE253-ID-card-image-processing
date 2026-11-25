@@ -1,0 +1,12 @@
+\begin{tabular}{llll}
+\toprule
+data & comparison & PaddleOCR & Tesseract \\
+\midrule
+B\_G test & DL after Restormer & +.003 [$-$.015, .018] & \textbf{+.045 [.008, .088]} \\
+B\_G test & Restormer before DL & \textbf{+.088 [.004, .176]} & \textbf{+.288 [.173, .412]} \\
+B\_G test & deblur first vs deglare first & $-$.004 [$-$.026, .015] & +.007 [$-$.021, .034] \\
+MIDV photos & DL after Restormer & \textbf{$-$.054 [$-$.072, $-$.039]} & \textbf{+.074 [.056, .095]} \\
+MIDV photos & Restormer before DL & $-$.006 [$-$.014, .000] & \textbf{+.012 [.000, .024]} \\
+MIDV photos & deblur first vs deglare first & $-$.003 [$-$.011, .005] & \textbf{+.019 [.007, .032]} \\
+\bottomrule
+\end{tabular}

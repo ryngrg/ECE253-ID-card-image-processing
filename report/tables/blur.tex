@@ -1,0 +1,15 @@
+\begin{tabular}{lrlrll}
+\toprule
+ & \multicolumn{2}{c}{PaddleOCR} & \multicolumn{2}{c}{Tesseract} & \multicolumn{1}{c}{SSIM} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-6}
+method & acc. & change [95\% CI] & acc. & change [95\% CI] & change [95\% CI] \\
+\midrule
+untreated & .782 & -- & .307 & -- & -- \\
+Wiener, fixed & .568 & $-$.210 [$-$.566, .019] & .284 & $-$.084 [$-$.272, .103] & $-$.042 [$-$.115, .014] \\
+Wiener, adaptive & .530 & $-$.236 [$-$.571, .019] & .242 & $-$.070 [$-$.229, .050] & $-$.012 [$-$.054, .017] \\
+Restormer, pretrained & .809 & +.011 [$-$.030, .069] & .388 & \textbf{+.071 [.000, .126]} & \textbf{+.025 [.017, .034]} \\
+Restormer, fine-tuned & \textbf{.838} & +.026 [$-$.103, .150] & \textbf{.745} & \textbf{+.376 [.233, .510]} & \textbf{+.074 [.040, .100]} \\
+\midrule
+reference & .989 & -- & .846 & -- & -- \\
+\bottomrule
+\end{tabular}

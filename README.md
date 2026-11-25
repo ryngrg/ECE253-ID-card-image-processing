@@ -2,20 +2,37 @@
 ECE253 ID card image processing: out-of-focus blur and **glare** (specular highlight) removal.
 It covers the blur part (`DEBLUR.md`), the glare part and both together.
 
+## Repository layout
+Code, parameters, weights and results use the same groups: **glare**, **blur**, **joint** (both artifacts), and **common** (shared).
+```
+src/common/   rectification, pairs / split, MIDV photos, metrics (evaluate, box_ocr), paired comparison
+src/glare/    classical_glare, finetune_dl (DocSHRNet), multi-frame fusion, glare diagnostics, run_glare_experiments.sh
+src/blur/     deblur (CLI), deblur_blocks/ (Wiener, adaptive Wiener, Restormer), tuning, fine-tuning, weights installer
+src/joint/    run_chain_experiments.sh (deblur only and chains), summarise_chain, benchmark_runtime
+src/report/   make_tables, make_figures (report/tables, report/figures), make_demo_figures (whole-card panels, results/figures)
+report/       figures and tables of the paper and slides (generated)
+params/       glare/ and blur/: the frozen parameters
+checkpoints/  glare/ and blur/: the frozen weights (git-ignored)
+results/      glare/, blur/, joint/, plus layouts/ (fixed text boxes), runtime/, figures/
+tests/blur/   tests of the deblur blocks
+docs/         course/ (proposal, handout, update slides), blur_history/ (earlier blur experiments)
+data/, out/   images and method outputs (git-ignored, except the pairs tables)
+```
+
 ## Blur-recovery blocks
 
 See [DEBLUR.md](DEBLUR.md) for the independent Wiener and Restormer blocks:
-`python src/deblur.py --method wiener|wiener_adaptive|restormer --in-dir DIR --out-dir DIR`,
-and for tuning / training them on our splits (`src/tune_deblur.py`, `src/finetune_deblur.py`).
+`python src/blur/deblur.py --method wiener|wiener_adaptive|restormer --in-dir DIR --out-dir DIR`,
+and for tuning / training them on our splits (`src/blur/tune_deblur.py`, `src/blur/finetune_deblur.py`).
 Earlier blur experiments are archived in `docs/blur_history/`.
 They preserve rectified PNG filenames and dimensions and accept another block's
-output directory as input. Results: "Deblurring" and "Joint deblur + deglare" below (`src/run_chain_experiments.sh`).
+output directory as input. Results: "Deblurring" and "Joint deblur + deglare" below (`src/joint/run_chain_experiments.sh`).
 
 ## Setup
 ```bash
 python3.10 -m venv card_scanning_env && source card_scanning_env/bin/activate
 pip install -r requirements.txt          # + torch torchvision for the deep-learning method
-# pretrained DocSHRNet (code + weights, ~400 MB), used by src/finetune_dl.py
+# pretrained DocSHRNet (code + weights, ~400 MB), used by src/glare/finetune_dl.py
 git clone --depth 1 https://github.com/shallweiwei/DocSHRNet third_party/DocSHRNet
 mkdir -p third_party/weights && curl -L -o third_party/weights/docshrnet.pth \
   "https://drive.usercontent.google.com/download?id=1St86y5F_ltZXWGjIhjBfUkB81VsgRBvc&export=download&confirm=t"
@@ -25,24 +42,24 @@ Runs on an M2 MacBook (PyTorch MPS). All scripts are run from the project root.
 ## Pipeline
 | step | script | output |
 |---|---|---|
-| rectify + align to the card's S_D reference | `src/rectify_ids.py` | `data/rectified/`, `alignment_log.csv` |
-| pair glare images with references, card-level split | `src/prepare_data.py` | `out/pairs.csv`, `split.csv` |
-| classical glare removal | `src/classical_glare.py` | `out/classical*/` |
-| deep-learning glare removal (fine-tune + infer) | `src/finetune_dl.py` | `checkpoints/`, `out/dl_*/` |
-| SSIM + OCR evaluation | `src/evaluate.py` | `results/{name}_per_image.csv`, `_summary.csv`, `all_methods.csv` |
-| **main OCR metric:** fixed-box recognition per glare zone (PaddleOCR / Tesseract) | `src/box_ocr.py` | `results/box_layout.csv`, `results/box_{paddle,tesseract}/` |
-| paired comparison with bootstrap CIs | `src/compare_runs.py` | `results/compare_*.csv` |
-| external test set: MIDV-2020 highlight photos (rectify, align to scan, field boxes, glare masks) | `src/prepare_midv.py` | `data/midv/`, `out/pairs_midv.csv`, `results/box_layout_midv.csv` |
-| runtime per image of each method | `src/benchmark_runtime.py` | `results/runtime_{test,midv}.csv` |
-| OCR loss by glare zone (core / halo / outside) | `src/analyze_ocr_loss.py` | `results/ocr_loss_*.csv` |
-| everything above after prepare_data | `bash src/run_glare_experiments.sh` | |
+| rectify + align to the card's S_D reference | `src/common/rectify_ids.py` | `data/rectified/`, `alignment_log.csv` |
+| pair glare images with references, card-level split | `src/common/prepare_data.py` | `out/pairs.csv`, `split.csv` |
+| classical glare removal | `src/glare/classical_glare.py` | `out/classical*/` |
+| deep-learning glare removal (fine-tune + infer) | `src/glare/finetune_dl.py` | `checkpoints/`, `out/dl_*/` |
+| SSIM + OCR evaluation | `src/common/evaluate.py` | `results/glare/whole_card/{name}_per_image.csv`, `_summary.csv`, `all_methods.csv` |
+| **main OCR metric:** fixed-box recognition per glare zone (PaddleOCR / Tesseract) | `src/common/box_ocr.py` | `results/layouts/box_layout.csv`, `results/glare/box_{paddle,tesseract}/` |
+| paired comparison with bootstrap CIs | `src/common/compare_runs.py` | `results/glare/whole_card/compare_*.csv` |
+| external test set: MIDV-2020 highlight photos (rectify, align to scan, field boxes, glare masks) | `src/common/prepare_midv.py` | `data/midv/`, `out/pairs_midv.csv`, `results/layouts/box_layout_midv.csv` |
+| runtime per image of each method | `src/joint/benchmark_runtime.py` | `results/runtime/runtime_{test,midv}.csv` |
+| OCR loss by glare zone (core / halo / outside) | `src/glare/analyze_ocr_loss.py` | `results/glare/whole_card/ocr_loss_*.csv` |
+| everything above after prepare_data | `bash src/glare/run_glare_experiments.sh` | |
 
 Split (by card, never by image): 14 train / 4 val / 4 test cards, giving 31 / 8 / 8 S_G and 30 / 8 / 9 B_G
 usable glare images. Training and tuning use train (+ val). **Test is used only for the final numbers.**
 OCR = PaddleOCR (PP-OCRv6), cached in `results/ocr_cache/`.
 
 ## Methods
-### 1. Classical: two-zone highlight removal (`src/classical_glare.py`, `classical_params.json`)
+### 1. Classical: two-zone highlight removal (`src/glare/classical_glare.py`, `params/glare/classical_params.json`)
 The proposal's two-zone design, with a new veil estimator.
 * **Model check.** A local linear fit of glare pixels against the reference gives
   gain + offset/255 ≈ 0.96 (median, 738 textured glare blocks). So the halo is a white veil
@@ -75,7 +92,7 @@ The proposal's two-zone design, with a new veil estimator.
     * On test it changed nothing for PaddleOCR, and for Tesseract halo it was −0.10 vs classical (n.s.).
       The gain did not transfer.
 
-### 2. Deep learning: detection + removal network (`src/finetune_dl.py`)
+### 2. Deep learning: detection + removal network (`src/glare/finetune_dl.py`)
 The proposal's JSHDR network (Fu et al., CVPR 2021) is no longer available: its GitHub repository and weights are
 gone. We use **DocSHRNet** (Xu et al., PRCV 2025), a NAFNet-style U-Net (34.6 M parameters) pretrained on
 DocHighlight, a dataset of real *document* specular highlights. We turn it into a multi-task
@@ -91,7 +108,7 @@ detection-and-removal network:
 
 ## Results (test split; 4 unseen cards)
 
-### Main OCR metric: fixed-box recognition per glare zone (`src/box_ocr.py`)
+### Main OCR metric: fixed-box recognition per glare zone (`src/common/box_ocr.py`)
 Whole-card OCR mixes in text-detector churn (boxes split / merge differently on near-identical images) and
 dilutes the glare (~10% of the card). So:
 * **Fixed boxes.** The line boxes PaddleOCR detects on each card's clean S_D reference are used for every image
@@ -121,7 +138,7 @@ dilutes the glare (~10% of the card). So:
 | *reference (ceiling)* | 0.978 | 0.994 | 0.987 | 0.988 | 0.867 | 0.837 | 0.848 | 0.770 |
 
 **Paired differences vs untreated, test S_G halo** (95% bootstrap CI over images, images better/worse;
-`results/box_*/compare_untreated_vs_*.csv`):
+`results/glare/box_*/compare_untreated_vs_*.csv`):
 | method | PaddleOCR halo | Tesseract halo | Tesseract digits in glare |
 |---|---|---|---|
 | classical | −0.016 [−0.035, −0.003] 0/3 | +0.100 n.s. 5/2 | +0.083 n.s. |
@@ -155,13 +172,13 @@ CER and word F1 of the OCR text versus the OCR text of the reference; F1 versus 
 f1_gt: untreated 0.390, classical 0.392, DL zero-shot 0.374, DL fine-tuned 0.364.
 Blur dominates; the DL model was trained only on sharp images.
 
-**Tesseract, whole card** (`--psm 11`; runs `*_tess`, `results/compare_untreated_tess_vs_*.csv`).
+**Tesseract, whole card** (`--psm 11`; runs `*_tess`, `results/glare/whole_card/compare_untreated_tess_vs_*.csv`).
 Tesseract reads whole ID cards poorly: S_G f1_gt is 0.40 untreated vs 0.75 with PaddleOCR (layout, not glare).
 The line crops above avoid this floor.
 * S_G f1_gt: untreated 0.399, classical 0.407, DL zero-shot 0.404, DL fine-tuned 0.429.
 * The only significant paired change is DL fine-tuned recall_gt, +0.052 [0.009, 0.098] (5/1).
 
-**Paired differences on test S_G** (`results/compare_*.csv`, 95% bootstrap CI, images better/worse):
+**Paired differences on test S_G** (`results/glare/whole_card/compare_*.csv`, 95% bootstrap CI, images better/worse):
 | comparison | ssim_glare | ssim_outside | CER (+ = better) | f1_gt |
 |---|---|---|---|---|
 | classical vs untreated | +0.016 [0.003, 0.030] 7/1 | −0.003 [−0.005, −0.001] 0/7 | −0.005 [−0.010, −0.001] 0/3 | −0.017 n.s. |
@@ -169,7 +186,7 @@ The line crops above avoid this floor.
 | DL fine-tuned vs zero-shot | +0.080 [0.007, 0.157] | −0.032 (gate keeps the input) | **+0.026 [0.005, 0.048] 6/1** | +0.014 n.s. |
 | DL fine-tuned vs classical | **+0.097 [0.041, 0.159] 8/0** | +0.022 [0.007, 0.038] 8/0 | +0.020 n.s. | +0.033 n.s. |
 
-**OCR word loss by zone** (all 47 S_G images, `results/ocr_loss_*.csv`):
+**OCR word loss by zone** (all 47 S_G images, `results/glare/whole_card/ocr_loss_*.csv`):
 | | core (38 words) | halo (490) | halo, digits only (138) | outside (1392) |
 |---|---|---|---|---|
 | untreated | 0.82 | 0.44 | 0.50 | 0.11 |
@@ -177,14 +194,14 @@ The line crops above avoid this floor.
 | DL zero-shot | 0.79 | 0.45 | 0.47 | 0.11 |
 | DL fine-tuned | 0.84 | 0.42 | 0.44 | 0.11 |
 
-**Glare detection IoU** with the reference-derived glare region (`results/detection_iou.csv`), test S_G:
+**Glare detection IoU** with the reference-derived glare region (`results/glare/detection_iou.csv`), test S_G:
 DL detection head 0.30 (0.59 on train: it overfits with 31 images); classical seeds+veil region 0.27
 (it acts only near clipped seeds). The two masks agree with each other at IoU 0.44.
 
 Figures: `results/figures/test_S_G_comparison.jpg` (whole cards) and `results/figures/test_S_G_zoom.png`
 (strongest glare). Classical debug panels (input | veil map + cores | output) are in `out/classical/debug/`.
 
-### External test set: MIDV-2020 (`src/prepare_midv.py`; `results/box_{paddle,tesseract}_midv/`)
+### External test set: MIDV-2020 (`src/common/prepare_midv.py`; `results/glare/box_{paddle,tesseract}_midv/`)
 [MIDV-2020](https://arxiv.org/abs/2107.00396) (CC BY-SA 2.5) has 1000 mock identity documents of 10 types
 (5 ID cards, 5 passports), each with a digital template (field rectangles + text), a flatbed scan and a phone
 photo. Photos 60–69 of every type are labelled "highlight present": **100 real glare photos of 100 different
@@ -201,7 +218,7 @@ commands in the script's docstring).
   997 of 1341 fields are kept: Latin letters/digits only after folding accents (drops Greek, Cyrillic, Ə),
   ≥ 3 characters, horizontal, not overlapping another field. Crops get a 2 px pad (the field rectangles are
   tight and fields are well separated); `--fold-accents` strips diacritics from the readings too.
-* **Same frozen methods**: `classical_params.json`, DocSHRNet zero-shot, `checkpoints/docshr_mt_best.pt`.
+* **Same frozen methods**: `params/glare/classical_params.json`, DocSHRNet zero-shot, `checkpoints/glare/docshr_mt_best.pt`.
   Scored against the annotated field text only.
 
 **MIDV-2020 highlight photos (n = 100; 49 core / 434 halo / 514 outside / 232 digit-in-glare boxes), character accuracy:**
@@ -224,11 +241,11 @@ boxes of the zone, so n = images with ≥ 1 box in it: 91 halo, 16 core):
 * Noise floor: `ref_jitter` vs `reference` differs by ≤ 0.002 per zone for PaddleOCR and ≤ 0.03 for Tesseract.
 * DL fine-tuned vs zero-shot: not significantly different in the halo (PaddleOCR +0.020, Tesseract +0.012, both
   n.s.); fine-tuned is better in the PaddleOCR core (+0.027 [0.002, 0.053]).
-* The signs are the same for all 10 document types and both phones (`results/midv_by_doctype.csv`): DL raises
+* The signs are the same for all 10 document types and both phones (`results/glare/midv_by_doctype.csv`): DL raises
   Tesseract glare-zone accuracy for 9–10 of 10 types and lowers PaddleOCR's for all 10.
 * Figure: `results/figures/midv_examples.jpg` (untreated / classical / DL zero-shot / DL fine-tuned / scan).
 
-### Multi-frame fusion: MIDV-2020 clips (`src/prepare_midv_clips.py`, `src/fuse_frames.py`; `results/box_{paddle,tesseract}_midv_clips/`)
+### Multi-frame fusion: MIDV-2020 clips (`src/glare/prepare_midv_clips.py`, `src/glare/fuse_frames.py`; `results/glare/box_{paddle,tesseract}_midv_clips/`)
 Glare moves with the camera; the document does not. MIDV-2020 clips 90–99 of every type are "highlight present"
 videos: **100 clips of 100 documents** (not the photo documents), every 6th frame annotated with the document quad
 (4K frames, document ~1,530 px wide). Nothing is learned or tuned on them; all constants were fixed before the first
@@ -320,10 +337,10 @@ OCR run. Download: `clips.tar` from the same mirror (10.3 GB; only the frames of
 * Runtime (M2, CPU): alignment ~1 s per frame; fusion 4.3 s per clip once the ~50 aligned frames are loaded (1.8 s).
 * Figure: `results/figures/midv_clips_fusion.jpg` (key frame | fused | best single frame | best frame per field | scan).
 
-### Deblurring: B_D (`src/deblur.py`, `src/tune_deblur.py`, `src/finetune_deblur.py`; `results/box_*_blur/`, `results/chain/blur_*`)
+### Deblurring: B_D (`src/blur/deblur.py`, `src/blur/tune_deblur.py`, `src/blur/finetune_deblur.py`; `results/blur/box_*_blur/`, `results/blur/blur_*`)
 All settings were chosen on train + val B_D (Wiener, adaptive Wiener) or trained on train and selected on val
-(Restormer: step 1000 of 2000), then frozen: `deblur_wiener_params.json` (radius 6 / K 0.03),
-`deblur_wiener_adaptive_params.json`, `checkpoints/deblur/restormer_ours.pt`. No B_G image was used.
+(Restormer: step 1000 of 2000), then frozen: `params/blur/wiener_params.json` (radius 6 / K 0.03),
+`params/blur/wiener_adaptive_params.json`, `checkpoints/blur/restormer_ours.pt`. No B_G image was used.
 **Test B_D (n = 4 images, 54 boxes)**: character accuracy pooled over all boxes, and paired changes vs untreated
 (mean of per-image changes [95% bootstrap CI] images better/worse; they differ slightly from pooled differences):
 | method | PaddleOCR | Tesseract | PaddleOCR change | Tesseract change | SSIM change |
@@ -339,10 +356,12 @@ All settings were chosen on train + val B_D (Wiener, adaptive Wiener) or trained
 * n = 4 test images. On the 20 train + val images the fine-tuned Restormer gains +0.153 (PaddleOCR) and +0.502
   (Tesseract), but it was trained on 16 of them; the two val designs F07 and F13 also occur in train, the four
   test designs do not.
+* The fine-tuned Restormer can also invent strokes: on F04 (test) the date 03/07/2022, read correctly by PaddleOCR untreated, becomes
+  03/07/2922 (Tesseract 2822), and the vertical numbers of B03 become unreadable (`report/figures/blur_crops.pdf`).
 * Wiener looked useful on train + val (Tesseract +0.177 retuned, +0.108 adaptive, both tuned on these images) and did
   not transfer: B03 drops from 0.97 to 0.21 (PaddleOCR). The adaptive radius does not transfer either.
 
-### Joint deblur + deglare: B_G (`src/run_chain_experiments.sh`, `src/summarise_chain.py`; `results/box_*_chain/`, `results/chain/`)
+### Joint deblur + deglare: B_G (`src/joint/run_chain_experiments.sh`, `src/joint/summarise_chain.py`; `results/joint/box_*_chain/`, `results/joint/`)
 Chains are named in processing order; all parts are the frozen single methods (DL glare was trained on sharp S_G only).
 **Test B_G (n = 9), all boxes:**
 | method | PaddleOCR | Tesseract | PaddleOCR change vs untreated | Tesseract change | SSIM change |
@@ -369,7 +388,7 @@ Chains are named in processing order; all parts are the frozen single methods (D
   chains cost PaddleOCR −0.012 to −0.017 (as DL deglare alone, −0.015). The fixed Wiener filter destroys sharp text
   (−0.47 / −0.44); the adaptive one costs −0.007 / −0.018 n.s.
 
-**MIDV-2020 photos (n = 100, external, nothing tuned on them), all boxes, paired change vs untreated** (`results/box_*_midv_chain/`):
+**MIDV-2020 photos (n = 100, external, nothing tuned on them), all boxes, paired change vs untreated** (`results/joint/box_*_midv_chain/`):
 | method | PaddleOCR | change | Tesseract | change |
 |---|---|---|---|---|
 | untreated | 0.887 | – | 0.534 | – |
@@ -390,7 +409,7 @@ Chains are named in processing order; all parts are the frozen single methods (D
 * Wiener hurts both engines (its setting was chosen on blurred images; these are mostly not blurred). Adding classical deglare
   does not recover it.
 
-**MIDV-2020 clips: deblurring the fused image** (`results/box_*_midv_clips_chain/`; 100 clips, keymax / keymid, all boxes; change vs fused):
+**MIDV-2020 clips: deblurring the fused image** (`results/joint/box_*_midv_clips_chain/`; 100 clips, keymax / keymid, all boxes; change vs fused):
 | method | PaddleOCR | change | Tesseract | change |
 |---|---|---|---|---|
 | fused | 0.976 / 0.974 | – | 0.838 / 0.824 | – |
@@ -402,7 +421,7 @@ Chains are named in processing order; all parts are the frozen single methods (D
   The single-image chains were not run on clips (the key frames pass the blur filter, and single-image deglare cannot
   restore clipped text), nor was deblurring single frames before fusion (4% of the frames are dropped for blur).
 
-### Runtime (`src/benchmark_runtime.py`, `results/runtime_test.csv`)
+### Runtime (`src/joint/benchmark_runtime.py`, `results/runtime/runtime_test.csv`)
 Processing call only (image already in memory), median over our 17 test images (1012×638), M2 MacBook,
 torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since single calls vary < 1%):
 | method | device | s / image |
@@ -420,9 +439,9 @@ torch 2.14 (4 CPU threads). Each image was timed 3× (DL on CPU: 1×, since sing
 * It costs ~0.01 s on images with no clipped seed, because it returns the image unchanged
   (MIDV: 15 of 20 sampled photos).
 * DL time grows with the pixel count: 4.8 s (zero-shot) and 5.9 s (fine-tuned) per MIDV passport (1478×1040) on MPS
-  (`results/runtime_midv.csv`, 20 photos, 1 repeat).
+  (`results/runtime/runtime_midv.csv`, 20 photos, 1 repeat).
 * Fine-tuned is slightly slower than zero-shot on MPS because of the added detection head.
-* Deblur rows: `results/runtime_deblur_test.csv`, same protocol. Restormer (512 px tiles) is the slow step: Restormer → DL takes ~22 s per image on MPS. Not timed on CPU.
+* Deblur rows: `results/runtime/runtime_deblur_test.csv`, same protocol. Restormer (512 px tiles) is the slow step: Restormer → DL takes ~22 s per image on MPS. Not timed on CPU.
 
 ### Findings
 **With several frames, text under clipped glare comes back** (100 MIDV-2020 clips, nothing tuned on them): fusing

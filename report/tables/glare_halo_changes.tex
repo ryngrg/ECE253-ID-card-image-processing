@@ -1,0 +1,11 @@
+\begin{tabular}{lllllll}
+\toprule
+ & \multicolumn{3}{c}{PaddleOCR} & \multicolumn{3}{c}{Tesseract} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+method & our test & MIDV photos & MIDV clips & our test & MIDV photos & MIDV clips \\
+\midrule
+classical & \textbf{$-$.016 [$-$.035, $-$.003]} & \textbf{$-$.001 [$-$.003, .000]} & \textbf{$-$.026 [$-$.049, $-$.009]} & +.100 [$-$.019, .226] & +.002 [$-$.014, .023] & \textbf{+.042 [.010, .074]} \\
+DL, zero-shot & \textbf{$-$.139 [$-$.216, $-$.063]} & \textbf{$-$.105 [$-$.131, $-$.081]} & \textbf{$-$.082 [$-$.116, $-$.050]} & \textbf{+.163 [.046, .310]} & \textbf{+.113 [.081, .149]} & \textbf{+.119 [.077, .164]} \\
+DL, fine-tuned & \textbf{$-$.043 [$-$.083, $-$.011]} & \textbf{$-$.086 [$-$.105, $-$.068]} & \textbf{$-$.062 [$-$.092, $-$.035]} & \textbf{+.216 [.106, .363]} & \textbf{+.125 [.094, .159]} & \textbf{+.137 [.092, .185]} \\
+\bottomrule
+\end{tabular}

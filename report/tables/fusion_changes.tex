@@ -1,0 +1,11 @@
+\begin{tabular}{lllllll}
+\toprule
+ & \multicolumn{3}{c}{PaddleOCR} & \multicolumn{3}{c}{Tesseract} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+comparison & keymax core & keymax all & keymid all & keymax core & keymax all & keymid all \\
+\midrule
+fused vs untreated & \textbf{+.504 [.459, .550]} & \textbf{+.324 [.285, .363]} & \textbf{+.150 [.119, .182]} & \textbf{+.720 [.670, .768]} & \textbf{+.488 [.440, .535]} & \textbf{+.269 [.221, .320]} \\
+fused vs best single frame & \textbf{+.030 [.014, .050]} & \textbf{+.026 [.014, .041]} & \textbf{+.024 [.014, .035]} & \textbf{+.058 [.029, .090]} & \textbf{+.041 [.023, .058]} & \textbf{+.024 [.006, .042]} \\
+fused vs best frame per field & \textbf{+.010 [.005, .016]} & \textbf{+.006 [.003, .010]} & \textbf{+.004 [.001, .007]} & \textbf{+.030 [.010, .050]} & \textbf{+.013 [.001, .023]} & +.004 [$-$.006, .015] \\
+\bottomrule
+\end{tabular}

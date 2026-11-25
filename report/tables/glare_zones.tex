@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{PaddleOCR, our test} & \multicolumn{3}{c}{PaddleOCR, MIDV photos} & \multicolumn{3}{c}{Tesseract, our test} & \multicolumn{3}{c}{Tesseract, MIDV photos} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+method & core & halo & outside & core & halo & outside & core & halo & outside & core & halo & outside \\
+\midrule
+untreated & .444 & \textbf{.869} & \textbf{.940} & \textbf{.636} & \textbf{.830} & \textbf{.962} & .133 & .417 & .744 & .218 & .334 & .747 \\
+classical & .378 & .854 & .939 & .484 & .829 & \textbf{.962} & .178 & .480 & .747 & .159 & .333 & .748 \\
+DL, zero-shot & .400 & .714 & .939 & .467 & .735 & .957 & .222 & .574 & .763 & .237 & .435 & \textbf{.785} \\
+DL, fine-tuned & \textbf{.467} & .817 & .937 & .511 & .754 & .952 & \textbf{.244} & \textbf{.620} & \textbf{.779} & \textbf{.281} & \textbf{.447} & .776 \\
+\midrule
+reference & .978 & .994 & .987 & 1.000 & .995 & .993 & .867 & .837 & .848 & .922 & .900 & .890 \\
+\bottomrule
+\end{tabular}

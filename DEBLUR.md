@@ -11,40 +11,40 @@ original directory or the output directory of another restoration block.
 python -m pip install -r requirements-deblur.txt
 # Only needed for Restormer:
 python -m pip install -r requirements-deblur-restormer.txt
-python src/install_deblur_weights.py --model pretrained
+python src/blur/install_deblur_weights.py --model pretrained
 ```
 
 The installer downloads the authors' official defocus checkpoint and verifies
 its recorded size and SHA-256. The architecture and MIT license are vendored
-under `src/deblur_blocks/vendor/`; original source provenance is recorded there.
+under `src/blur/deblur_blocks/vendor/`; original source provenance is recorded there.
 Wiener needs only NumPy, SciPy and Pillow; it does not import PyTorch or OCR.
 Use Python 3.10 or newer.
 
 ## Run a block
 
 ```bash
-python src/deblur.py --method wiener \
+python src/blur/deblur.py --method wiener \
   --in-dir data/rectified --out-dir out/wiener
 
-python src/deblur.py --method restormer \
+python src/blur/deblur.py --method restormer \
   --in-dir data/rectified --out-dir out/restormer_pretrained
 
 # Override fixed Wiener settings or supply another radius/K JSON:
-python src/deblur.py --method wiener --radius 2 --k 0.1 \
+python src/blur/deblur.py --method wiener --radius 2 --k 0.1 \
   --in-dir data/rectified --out-dir out/wiener_r2
 
 # Process an existing block's output, preserving its filenames:
-python src/deblur.py --method restormer \
+python src/blur/deblur.py --method restormer \
   --in-dir out/classical --out-dir out/classical_then_restormer
 
 # Adaptive Wiener: radius and noise level estimated per image (needs Tesseract, ~3 s/image):
-python src/deblur.py --method wiener_adaptive \
+python src/blur/deblur.py --method wiener_adaptive \
   --in-dir data/rectified --out-dir out/wiener_adaptive
 ```
 
 Restormer takes ~20 s per rectified card on an M2 (MPS).
 
-`--params deblur_wiener_params.json` is the default for Wiener: radius 6 / K 0.03, chosen on our train + val B_D
+`--params params/blur/wiener_params.json` is the default for Wiener: radius 6 / K 0.03, chosen on our train + val B_D
 (`tune_deblur.py`), in pixels of the rectified cards. `--radius 0` bypasses Wiener.
 
 Restormer defaults to the **official pretrained** weights. `--weights PATH`
@@ -60,12 +60,12 @@ improves restoration.
 ## Tune and train on our splits
 
 ```bash
-python src/prepare_data.py                       # writes out/pairs_blur.csv (B_D -> S_D; 16 / 4 / 4)
-python src/tune_deblur.py wiener --write          # radius x K grid on train + val, ~1 h
-python src/tune_deblur.py wiener_adaptive --write # train + val
-python src/finetune_deblur.py                     # 2000 steps on train -> checkpoints/deblur/restormer_ours/
-python src/tune_deblur.py restormer --write       # picks a step on val -> checkpoints/deblur/restormer_ours.pt
-python src/deblur.py --method restormer --weights checkpoints/deblur/restormer_ours.pt \
+python src/common/prepare_data.py                       # writes out/pairs_blur.csv (B_D -> S_D; 16 / 4 / 4)
+python src/blur/tune_deblur.py wiener --write          # radius x K grid on train + val, ~1 h
+python src/blur/tune_deblur.py wiener_adaptive --write # train + val
+python src/blur/finetune_deblur.py                     # 2000 steps on train -> checkpoints/blur/restormer_ours/
+python src/blur/tune_deblur.py restormer --write       # picks a step on val -> checkpoints/blur/restormer_ours.pt
+python src/blur/deblur.py --method restormer --weights checkpoints/blur/restormer_ours.pt \
   --in-dir data/rectified --out-dir out/restormer_ours
 ```
 
@@ -96,10 +96,10 @@ wanted later. Those scripts are not called by a blur block.
 
 ## Python / OpenCV interface
 
-When importing from a script under `src/`:
+With `src/` on `sys.path` (as in every script under `src/`):
 
 ```python
-from deblur_blocks import DeblurBlock
+from blur.deblur_blocks import DeblurBlock
 
 wiener = DeblurBlock('wiener', radius=3, k=0.3, color_order='bgr')
 restormer = DeblurBlock('restormer', color_order='bgr')
@@ -115,9 +115,9 @@ directory chain. Instantiate each block once and reuse it across images.
 
 ## Our model
 
-`checkpoints/deblur/restormer_ours.pt` (git-ignored): step 1000 of `finetune_deblur.py`, selected on val, SHA-256
+`checkpoints/blur/restormer_ours.pt` (git-ignored): step 1000 of `finetune_deblur.py`, selected on val, SHA-256
 `a6488d0fbcfadcbb583a0eff1e157b7cb5ccac6733223038f25422b66c263e4d`.
-All results in README use it; install a copy with `python src/install_deblur_weights.py --model ours --from PATH`.
+All results in README use it; install a copy with `python src/blur/install_deblur_weights.py --model ours --from PATH`.
 
 ## Pilot model (do not use for results)
 
@@ -127,17 +127,17 @@ MIDV frames, one of which is from an external test clip. `docs/blur_history/READ
 still be installed for inspection:
 
 ```bash
-python src/install_deblur_weights.py --model real-pilot --from /path/to/step_002000.pt
+python src/blur/install_deblur_weights.py --model real-pilot --from /path/to/step_002000.pt
 ```
 
-Wiener and Restormer inference was extracted unchanged from the blur repo (`src/deblur_blocks/provenance.json`);
+Wiener and Restormer inference was extracted unchanged from the blur repo (`src/blur/deblur_blocks/provenance.json`);
 training, tuning and the adaptive Wiener are adapted ports (`docs/blur_history/README.md`).
 
 ## Checks
 
 ```bash
 python -m pip install "pytest<9"   # 9.2.0 crashes on startup in our Python 3.10 venv
-python -m pytest -q tests/deblur
+python -m pytest -q tests/blur
 ```
 
 These checks require no datasets or downloaded model. They verify the image
