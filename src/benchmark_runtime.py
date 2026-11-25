@@ -7,6 +7,9 @@ what the batch scripts call per image, without disk I/O:
   classical      classical_glare.remove_glare(img, classical_params.json)        CPU (OpenCV / NumPy)
   dl_zeroshot    finetune_dl.predict(...) with the pretrained DocSHRNet, no gate  MPS and CPU
   dl_ft          finetune_dl.predict(...) with checkpoints/docshr_mt_best.pt       MPS and CPU
+  wiener / wiener_adaptive  deblur_blocks.DeblurBlock with the deblur_*_params.json settings     CPU
+                 (the adaptive one includes its 9 Tesseract calls)
+  restormer      DeblurBlock with checkpoints/deblur/restormer_ours.pt (pretrained weights if missing), tiled  MPS and CPU
   predict() includes the host -> device copy, padding to a multiple of 16, the forward pass and the copy
   back (its .cpu() call synchronises MPS, so the time is the real wall time).
 Protocol: `--warmup` images first (not scored: the first MPS calls compile kernels), then every image
@@ -108,9 +111,23 @@ def main():
             jobs.append((kind, dev, lambda im, m=model, d=d:
                          fdl.predict(m, cv2.cvtColor(im, cv2.COLOR_BGR2RGB), d, 16)))
 
+    from deblur_blocks import DeblurBlock
+    if "wiener" in methods:
+        c = json.loads(Path("deblur_wiener_params.json").read_text())
+        jobs.append(("wiener", "cpu", DeblurBlock("wiener", radius=c["radius"], k=c["k"], color_order="bgr")))
+    if "wiener_adaptive" in methods:
+        f = Path("deblur_wiener_adaptive_params.json")
+        c = {k: v for k, v in json.loads(f.read_text()).items() if k != "description"} if f.exists() else {}
+        jobs.append(("wiener_adaptive", "cpu", DeblurBlock("wiener_adaptive", adaptive=c, color_order="bgr")))
+    if "restormer" in methods:
+        w = Path("checkpoints/deblur/restormer_ours.pt")
+        for dev in a.devices.split(","):
+            jobs.append(("restormer", dev, DeblurBlock("restormer", weights=w if w.exists() else None, device=dev,
+                                                       color_order="bgr")))
+
     rows = []
     for method, dev, fn in jobs:
-        reps = a.cpu_dl_repeats if (dev == "cpu" and method != "classical") else a.repeats
+        reps = a.cpu_dl_repeats if (dev == "cpu" and method in ("dl_zeroshot", "dl_ft", "restormer")) else a.repeats
         for im in imgs[:a.warmup]:
             fn(im)
         t_all = time.perf_counter()

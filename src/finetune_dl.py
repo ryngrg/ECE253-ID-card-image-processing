@@ -389,7 +389,10 @@ def infer(a, device):
         (out_dir / "masks").mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     for k, r in enumerate(pairs.itertuples(), 1):
-        y, m = predict(model, read_rgb(r.path), device, a.pad_multiple)
+        src = Path(a.in_dir) / Path(r.path).name if a.in_dir else Path(r.path)
+        if not src.exists():
+            raise SystemExit(f"missing {src}")
+        y, m = predict(model, read_rgb(src), device, a.pad_multiple)
         cv2.imwrite(str(out_dir / Path(r.path).name), cv2.cvtColor(y, cv2.COLOR_RGB2BGR))
         if save_masks:
             cv2.imwrite(str(out_dir / "masks" / Path(r.path).name), (m * 255 + 0.5).astype(np.uint8))
@@ -427,6 +430,8 @@ def main():
     ap.add_argument("--infer", action="store_true")
     ap.add_argument("--checkpoint", default=None)
     ap.add_argument("--zero-shot", action="store_true", help="--infer with the pretrained weights only")
+    ap.add_argument("--in-dir", default=None, help="--infer: read the images from this folder (same filenames), "
+                                                   "e.g. the output of deblur.py")
     ap.add_argument("--out-dir", default="out/dl")
     ap.add_argument("--splits", default="train,val,test")
     ap.add_argument("--conditions", default="S_G,B_G")

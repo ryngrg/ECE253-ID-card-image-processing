@@ -76,3 +76,17 @@ def test_patches_stay_inside_and_pair_input_with_target():
         a, b = training_patch(s, 64, rng, 0.75)
         assert a.shape == (64, 64, 3)
         np.testing.assert_allclose(b, a + 1)
+
+
+def test_directory_run_can_be_limited_to_named_files(tmp_path):
+    from PIL import Image
+    from deblur import process
+    from deblur_blocks import DeblurBlock
+    (tmp_path / 'in').mkdir()
+    for n in 'abc':
+        Image.fromarray(np.full((20, 24, 3), 100, np.uint8)).save(tmp_path / 'in' / f'{n}.png')
+    block = DeblurBlock('wiener', radius=1)
+    process(tmp_path / 'in', tmp_path / 'out', block, {'a.png', 'c.png'})
+    assert sorted(p.name for p in (tmp_path / 'out').glob('*.png')) == ['a.png', 'c.png']
+    with pytest.raises(ValueError, match='Missing'):
+        process(tmp_path / 'in', tmp_path / 'out2', block, {'z.png'})

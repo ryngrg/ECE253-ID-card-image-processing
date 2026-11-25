@@ -197,7 +197,7 @@ def write_params(a, method, best):
         dump("deblur_wiener_params.json", dict(radius=int(best.radius), k=float(best.k), description=note))
     elif method == "wiener_adaptive":
         dump("deblur_wiener_adaptive_params.json",
-             {k: best[k].item() for k in adaptive_wiener.DEFAULTS} | {"description": note})
+             {k: int(best[k]) if k == "max_radius" else float(best[k]) for k in adaptive_wiener.DEFAULTS} | {"description": note})
     elif best.candidate == "pretrained":
         print("the pretrained weights win: nothing to copy")
     else:

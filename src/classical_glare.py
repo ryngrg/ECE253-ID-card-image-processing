@@ -338,14 +338,17 @@ def debug_panel(img, out, core, a):
     return np.hstack([img, vis, out])
 
 
-def run_batch(pairs: pd.DataFrame, p: dict, out_dir: Path, debug: bool):
+def run_batch(pairs: pd.DataFrame, p: dict, out_dir: Path, debug: bool, in_dir: Path | None = None):
     out_dir.mkdir(parents=True, exist_ok=True)
     dbg = out_dir / "debug"
     if debug:
         dbg.mkdir(exist_ok=True)
     n_core, t0 = 0, time.time()
     for r in pairs.itertuples():
-        img = cv2.imread(r.path)
+        src = in_dir / Path(r.path).name if in_dir else Path(r.path)
+        img = cv2.imread(str(src))
+        if img is None:
+            raise SystemExit(f"cannot read {src}")
         out, core, a = remove_glare(img, p, return_maps=True)
         cv2.imwrite(str(out_dir / Path(r.path).name), out)
         n_core += core.any()
@@ -413,6 +416,8 @@ def tune(pairs_path: Path, out_json: Path, mode: str, splits, max_harm: float = 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pairs", default="out/pairs.csv", type=Path)
+    ap.add_argument("--in-dir", type=Path, default=None,
+                    help="read the images from this folder (same filenames), e.g. the output of deblur.py")
     ap.add_argument("--out-dir", default="out/classical", type=Path)
     ap.add_argument("--params", type=Path, default=None, help="JSON with parameters (from --tune)")
     ap.add_argument("--veil-mode", choices=["stat", "decay"], default=None)
@@ -452,7 +457,7 @@ def main():
         p["dn_h"] = a.dn_h
     print("Parameters:", {k: p[k] for k in sorted(p)})
     run_batch(load_pairs(a.pairs, splits=a.splits.split(","), conditions=a.conditions.split(",")),
-              p, a.out_dir, a.debug)
+              p, a.out_dir, a.debug, a.in_dir)
 
 
 if __name__ == "__main__":

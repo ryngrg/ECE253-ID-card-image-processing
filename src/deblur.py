@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Apply one blur-recovery block to a PNG directory, preserving names and dimensions."""
 import argparse
+import csv
 import json
 from pathlib import Path
 import tempfile
@@ -14,14 +15,22 @@ from deblur_blocks import DeblurBlock, digest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def process(in_dir, out_dir, block):
-    """Write a complete run to a fresh directory; failed runs leave no partial output."""
+def process(in_dir, out_dir, block, names=None):
+    """Write a complete run to a fresh directory; failed runs leave no partial output.
+
+    names: optional set of filenames; only these are processed, and all of them must exist.
+    """
     in_dir, out_dir = Path(in_dir).resolve(), Path(out_dir).resolve()
     if not in_dir.is_dir():
         raise ValueError(f'Input directory does not exist: {in_dir}')
     if out_dir.exists() or out_dir == in_dir or in_dir in out_dir.parents:
         raise ValueError('Output must be a new directory outside the input directory.')
     files = sorted(p for p in in_dir.iterdir() if p.is_file() and p.suffix.lower() == '.png')
+    if names is not None:
+        missing = set(names) - {p.name for p in files}
+        if missing:
+            raise ValueError(f'Missing in {in_dir}: {sorted(missing)[:3]} ({len(missing)} files)')
+        files = [p for p in files if p.name in names]
     other_images = [p.name for p in in_dir.iterdir() if p.is_file()
                     and p.suffix.lower() in {'.jpg', '.jpeg', '.tif', '.tiff', '.bmp', '.webp'}]
     if other_images:
@@ -81,8 +90,19 @@ def main():
     parser.add_argument('--device', default='auto', choices=['auto', 'cpu', 'mps', 'cuda'])
     parser.add_argument('--tile-size', type=int, default=512)
     parser.add_argument('--overlap', type=int, default=64)
+    parser.add_argument('--pairs', type=Path, help='Pairs CSV: process only its usable rows (by filename)')
+    parser.add_argument('--conditions', help='With --pairs: comma-separated conditions, e.g. B_G,S_G')
     args = parser.parse_args()
     try:
+        names = None
+        if args.pairs is not None:
+            with args.pairs.open(newline='') as stream:
+                rows = [r for r in csv.DictReader(stream) if r['usable'] == 'True']
+            if args.conditions:
+                rows = [r for r in rows if r['condition'] in args.conditions.split(',')]
+            names = {Path(r['path']).name for r in rows}
+        elif args.conditions:
+            raise ValueError('--conditions needs --pairs.')
         settings = {}
         if args.method != 'restormer':
             if args.weights is not None or args.device != 'auto' or args.tile_size != 512 or args.overlap != 64:
@@ -107,7 +127,7 @@ def main():
             settings = dict(weights=args.weights, device=args.device,
                             tile_size=args.tile_size, overlap=args.overlap)
         block = DeblurBlock(args.method, **settings)
-        run = process(args.in_dir, args.out_dir, block)
+        run = process(args.in_dir, args.out_dir, block, names)
         print(f'Saved {len(run["images"])} images and run.json to {args.out_dir}')
     except (ValueError, OSError, KeyError, ImportError) as error:
         parser.exit(2, f'Error: {error}\n')

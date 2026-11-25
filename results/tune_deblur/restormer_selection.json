@@ -1,0 +1,30 @@
+{
+  "method": "restormer",
+  "improves_both": true,
+  "engines": "paddle,tesseract",
+  "images": [
+    "B05_B_D_0_rectified.png",
+    "F01_B_D_0_rectified.png",
+    "F07_B_D_0_rectified.png",
+    "F13_B_D_0_rectified.png"
+  ],
+  "split_sha256": "6ca5af8e3f6e715935713d39c4efec419db9e7a7c7adb0d1dc08aa7a59693481",
+  "selected": {
+    "candidate": "step_001000",
+    "weights": "checkpoints/deblur/restormer_ours/step_001000.pt",
+    "n": 4,
+    "ssim": 0.6713274172,
+    "char_acc_paddle": 0.9793046358,
+    "char_acc_tesseract": 0.9139072848,
+    "char_acc": 0.9466059603
+  },
+  "untreated": {
+    "candidate": "untreated",
+    "weights": "",
+    "n": 4,
+    "ssim": 0.5321621019,
+    "char_acc_paddle": 0.8013245033,
+    "char_acc_tesseract": 0.5033112583,
+    "char_acc": 0.6523178808
+  }
+}
