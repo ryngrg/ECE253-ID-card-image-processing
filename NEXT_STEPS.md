@@ -29,7 +29,8 @@ We write everything here; the teammate only presents the blur part, so they need
 * The old blur pilot numbers (`docs/blur_history/`, update deck) are never reported: its model saw test, val and MIDV data.
 * The proposal's approach section is a guide, not a contract.
 * With / without our modification, blur: fixed Wiener -> adaptive Wiener (the proposal's version); Restormer pretrained -> fine-tuned.
-* Card data in the repo (private on GitHub) stays as it is for now.
+* Real cards stay private (11/26, section 3d): no photo, ground truth or text of the 14 real cards is in the repository,
+  its history or the submission zip; only the 8 specimen cards are shown or shared. Scores of all 22 cards stay.
 
 ---
 
@@ -173,5 +174,7 @@ Never delete `data/raw/`, `ground_truth/`, `split.csv`, the frozen parameters or
 - [x] Non-final checkpoints deleted 11/26 (local, ~530 MB): `checkpoints/glare/docshr_mt_last.pt` and
       `checkpoints/blur/restormer_ours/step_*.pt` (step 1000 was byte-identical to the kept `restormer_ours.pt`;
       redoing `tune_deblur.py restormer` now needs `finetune_deblur.py` first).
-- [ ] Decide the zip contents. `git archive -o submission.zip HEAD` gives exactly the tracked files (no images, outputs or
-      weights); anything git-ignored that should go in (e.g. specimen images) must be added on purpose.
+- [x] Zip contents decided (11/26): `python src/report/make_submission_zip.py` -> `../ECE253-ID-card-image-processing.zip`
+      (~7.3 GB): the working tree with our data, outputs and fine-tuned weights, without the real cards, `private/`,
+      public downloads (MIDV-2020, DocSHRNet, pretrained Restormer, ICASSP kit), git metadata and caches.
+      Rebuild it after the last commit before submitting.

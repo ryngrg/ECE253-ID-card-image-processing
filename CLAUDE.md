@@ -89,6 +89,7 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
   Paper: `report/paper.tex` (ICASSP template, 5 pages incl. references; `cd report && latexmk -pdf paper.tex`).
   `report/` has the style files; the full ICASSP author kit is local only (`docs/course/icassp2027_template/`, git-ignored).
   Figures show specimen cards only (F01-F05, B01-B03): `make_figures.ours()` asserts it.
+  `make_submission_zip.py`: the submission archive (working tree without real cards, `private/` and public downloads).
 - `run_glare_experiments.sh`: reruns all glare experiments after `prepare_data.py` (step `midv` = the external set).
 
 ## Conventions / gotchas
