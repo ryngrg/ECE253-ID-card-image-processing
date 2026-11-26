@@ -155,6 +155,15 @@ Never delete `data/raw/`, `ground_truth/`, `split.csv`, the frozen parameters or
 * `ssim_diagnose.py` (SSIM vs OCR), `detection_iou.py`, `benchmark_runtime.py`, temporal median and best-frame baselines.
 * `make_demo_figures.py` + `results/figures/demo_*.jpg` (not in the paper / slides; whole-card views for readers).
 
+### 3d. Real cards redacted (11/26)
+* Only the 8 specimen cards' text is tracked: real cards' `ground_truth/` files are git-ignored (kept on disk), and
+  `box_layout.csv` / `*_boxes.csv` keep every row and number with the real cards' text blank. Full versions: `private/`
+  (git-ignored, local). `src/common/privacy.py` (`save_csv` / `read_csv`) keeps it that way for every new run;
+  `tests/common/test_privacy.py` checks it. Verified: box OCR from the cache reproduces the committed scores, tables
+  and figures are unchanged.
+* Git history rewritten so that no commit has real-card text or the image of a real person's card
+  (`test_S_G_comparison.jpg`). Full old history: `../ECE253-full-history-backup.bundle` (local only).
+
 ### 3c. Left
 - [x] Local only (git-ignored), deleted 11/26: `out/cdn_*`, `out/classical_dn`, `out/chain/{dlzs_restormer_pre,restormer_pre_dlzs,wiener_dl,dl_wiener}`
       (outputs of removed runs, ~1 GB), `logs/` (stale), `.DS_Store` files (except under `data/`).

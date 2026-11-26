@@ -33,11 +33,11 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # src/
 from common.evaluate import glare_region
+from common.privacy import SPECIMEN_CARDS as SPECIMEN
 from glare.classical_glare import DEFAULTS, detect_core
 
 OUT, SLIDES = Path("report/figures"), Path("presentation/figures")
 COL, FULL = 3.39, 7.0           # inches
-SPECIMEN = {"F01", "F02", "F03", "F04", "F05", "B01", "B02", "B03"}
 INK, MUTED, GRID = "#191919", "#666666", "#dddddd"
 ENGINE = {"paddle": ("PaddleOCR", "#257de0"), "tesseract": ("Tesseract", "#f47230")}
 CORE, HALO = (40, 110, 235), (255, 140, 0)  # RGB, zone outlines

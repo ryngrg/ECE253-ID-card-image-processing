@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Runtime per image of each glare method, measured the same way for all of them.
+Runtime per image of each glare and deblurring method, measured the same way for all of them.
 
 What is timed: only the processing call of each method on an image already in memory, i.e. exactly
 what the batch scripts call per image, without disk I/O:
@@ -21,6 +21,7 @@ Usage
   python src/joint/benchmark_runtime.py                                   # our test S_G + B_G (17 images, 1012x638)
   python src/joint/benchmark_runtime.py --pairs out/pairs_midv.csv --splits midv --conditions S_G \\
       --max-images 20 --name midv                                    # MIDV (cards 1012 px, passports 1478 px)
+  python src/joint/benchmark_runtime.py --methods wiener,wiener_adaptive,restormer --name deblur_test   # deblurring
 Writes results/runtime/runtime_{name}.csv (summary) and results/runtime/runtime_{name}_per_image.csv.
 """
 import argparse

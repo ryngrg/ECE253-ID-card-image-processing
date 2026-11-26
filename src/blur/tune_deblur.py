@@ -41,6 +41,7 @@ import pandas as pd
 from skimage.metrics import structural_similarity
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # src/
+from common import privacy
 from common.box_ocr import crop, make_recogniser, norm
 from blur.deblur_blocks import DeblurBlock, adaptive_wiener, digest
 from blur.deblur_blocks.wiener import restore
@@ -85,7 +86,7 @@ class Scorer:
 
 
 def load_samples(a, splits):
-    layout = pd.read_csv(a.layout, keep_default_na=False)
+    layout = privacy.read_csv(a.layout, keep_default_na=False)  # targets of the real cards: private/ copy
     layout = layout[layout.labelled.astype(str) == "True"]
     samples = []
     for split in splits:

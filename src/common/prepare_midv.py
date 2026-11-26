@@ -7,14 +7,7 @@ Each document has a digital template (with field rectangles + field text), a fla
 phone photo.  Photos 60-69 of every type were taken with a highlight present -> 100 glare photos
 of 100 different documents, none of which was used for tuning or training.
 
-Download (public mirror, no form needed):
-  mkdir -p data/external/midv2020 && cd data/external/midv2020
-  for f in photo.tar templates.tar scan_upright.tar; do curl -O ftp://smartengines.com/midv-2020/dataset/$f; done
-  (checksums: ftp://smartengines.com/midv-2020/md5.txt; only the highlight images + annotations are needed:)
-  for t in alb_id aze_passport esp_id est_id fin_id grc_passport lva_passport rus_internalpassport srb_passport svk_id;
-    do for n in 60 61 62 63 64 65 66 67 68 69; do echo images/$t/$n.jpg; done; done > highlight_list.txt
-  mkdir -p photo scan_upright templates && tar -xf templates.tar -C templates
-  for s in photo scan_upright; do tar -xf $s.tar -C $s -T highlight_list.txt; tar -xf $s.tar -C $s annotations; done
+Download: README "Setup" (data/external/midv2020/{photo,scan_upright,templates}/).
 
 What this script does, per document
   1. photo and scan are warped from their annotated doc_quad to the canonical frame at our resolution

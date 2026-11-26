@@ -58,7 +58,7 @@ Usage
   python src/glare/classical_glare.py --params params/glare/classical_params.json --core-fill telea --out-dir out/classical_telea
   python src/glare/classical_glare.py --veil-mode decay --params params/glare/classical_params_decay.json --out-dir out/classical_decay
   add --debug to save [input | core+veil map | output] panels in OUT_DIR/debug/
-  then: python src/common/evaluate.py --engine paddleocr --treated-dir out/classical --name classical
+  then: python src/common/evaluate.py --treated-dir out/classical --name classical   (and box_ocr.py, the main metric)
 
 Limits: glare that never clips is left alone; text inside a clipped core is not recovered
 (inpainting only makes the hole unobtrusive); a light-coloured graphic next to a seed can look

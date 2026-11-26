@@ -25,6 +25,8 @@ Scores (characters = lowercase letters/digits only, spaces and punctuation ignor
   whose target has >= 4 digits (dates, ID numbers)
 
 Runs (results/{glare,blur,joint}/box_{engine}[_tag]/{run}_per_image.csv, {run}_boxes.csv, summary.csv)
+  The layout and the {run}_boxes.csv readings contain card text: they are written with common.privacy.save_csv,
+  which blanks the text of our real cards in the tracked file and keeps the full table in private/ (local).
   untreated, reference (ceiling: the clean S_D crop), ref_jitter (noise floor proxy: the reference
   with each box shifted by up to 2 px, Gaussian noise sigma 2 and JPEG q 90; the change between
   reference and ref_jitter is the smallest effect the recogniser can resolve; a second real clean
@@ -62,6 +64,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # src/
 from glare.classical_glare import DEFAULTS, detect_core
 from common.evaluate import edit_distance, glare_region, ocr_file
+from common import privacy
 
 PAD = 0            # px of context around each box (lines are tightly packed: a pad pulls in
                    # strokes of the neighbouring lines and wrecks the reading of long lines)
@@ -269,12 +272,12 @@ def main():
     pairs = pairs[pairs.usable & pairs.split.isin(a.splits.split(","))].reset_index(drop=True)
 
     if a.layout:
-        lay = pd.read_csv(a.layout, keep_default_na=False)
+        lay = privacy.read_csv(a.layout, keep_default_na=False)
         lay["labelled"] = lay.labelled.astype(str) == "True"
         lay["digits"] = lay.digits.astype(str) == "True"
     else:
         lay = build_layout(pairs, a.gt_dir, a.cache_dir / "paddleocr_default")
-        lay.to_csv("results/layouts/box_layout.csv", index=False)
+        privacy.save_csv(lay, "results/layouts/box_layout.csv")  # real cards' text only in private/
     lay = lay[lay.labelled]
 
     # zones per (image, box), from the untreated image
@@ -326,7 +329,7 @@ def main():
         res = pd.DataFrame(rows)
         res.to_csv(out_dir / f"{name}_per_image.csv", index=False)
         allb = pd.concat(box_rows)
-        allb.to_csv(out_dir / f"{name}_boxes.csv", index=False)
+        privacy.save_csv(allb, out_dir / f"{name}_boxes.csv")
         meta = pairs.set_index(pairs.path.map(lambda s: Path(s).name))[["split", "condition"]]
         allb = allb.join(meta, on="image")
         for (split, cond), g in allb.groupby(["split", "condition"]):

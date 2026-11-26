@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demonstration figures for the report / slides (results/figures/demo_*.jpg).
+Whole-card demonstration figures (results/figures/demo_*.jpg; not in the paper or slides, which use make_figures.py).
 
   demo_ours.jpg        one of our glare photos: reference | untreated | core + halo overlay |
                        classical | DL zero-shot | DL fine-tuned

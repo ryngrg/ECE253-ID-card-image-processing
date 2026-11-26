@@ -13,6 +13,10 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
 - Rectified, reference-aligned copies are in `data/rectified/*_rectified.png` (1012x638).
   `data/rectified/alignment_log.csv` holds the per-image status.
 - `ground_truth/{card}.txt`: hand-typed card text (used for f1_gt / recall_gt).
+- **Privacy:** 14 cards are real IDs (B04-B08, F06-F14); only the specimens B01-B03, F01-F05 may appear in anything shared
+  (figures, slides, tracked text). The real cards' ground truth is git-ignored, and tables with card text are written only
+  with `common.privacy.save_csv` (blank text for real cards in the tracked file, full copy in git-ignored `private/`) and
+  read with `privacy.read_csv`. Never commit OCR text dumps (`results/**/ocr_text/` is ignored). Scores stay for all 22 cards.
 - `split.csv`: card-level 14/4/4 train/val/test split. Never regenerate without `--resplit`.
   **Test is for final numbers only**: tune and select on train/val.
 - `out/pairs.csv`: one row per glare image (S_G / B_G) with ref_path and split. Always filter `usable == True` (94 of 95).
@@ -26,16 +30,17 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   (+ the tesseract program); keep the PaddleOCR pins, the readings depend on its models.
 - Run every script from the repo root: `python src/<group>/<script>.py`. Every script puts `src/` on `sys.path`; imports name the group
   (`from common.evaluate import ...`, `from glare.classical_glare import ...`). New shared code goes in `common/`.
-- Groups `common` / `glare` / `blur` / `joint` are used in `src/`, `results/`; `glare` / `blur` also in `params/`, `checkpoints/`, `tests/`.
+- Groups `common` / `glare` / `blur` / `joint` are used in `src/`, `results/`; `glare` / `blur` also in `params/`, `checkpoints/`; `tests/` has `blur/` and `common/`.
   Do not move `out/`, `data/` or `results/ocr_cache/`: the OCR cache is keyed by absolute image path + mtime.
-- `third_party/DocSHRNet` (code) and `third_party/weights/docshrnet.pth` are git-ignored; README has the download steps.
+- `third_party/DocSHRNet` (code) and `third_party/weights/docshrnet.pth` are git-ignored; README "Setup" has every download
+  (software, pretrained networks, MIDV-2020 photos and clips).
   Also git-ignored: `data/`, `out/` (except `out/*.csv`), weights in `checkpoints/`, `logs/`, `results/ocr_cache/`.
 - PaddleOCR (the engine we report) takes ~6.5 s/image on CPU, so a full evaluation of 94 images takes ~10 min.
   Results are cached in `results/ocr_cache/<engine>_<lang>/`, keyed by path + mtime: rewriting an output re-OCRs it.
   Run long jobs in the background.
 
 ## Scripts (`src/`)
-Groups: `common/` rectify_ids, prepare_data, prepare_midv, evaluate, box_ocr, compare_runs; `glare/` classical_glare, finetune_dl,
+Groups: `common/` rectify_ids, prepare_data, prepare_midv, evaluate, box_ocr, compare_runs, privacy; `glare/` classical_glare, finetune_dl,
 prepare_midv_clips, fuse_frames, detection_iou, ssim_diagnose, run_glare_experiments.sh; `blur/` deblur,
 deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` run_chain_experiments.sh, summarise_chain, benchmark_runtime.
 - `rectify_ids.py`: card detection, warp to 1012x638, ECC homography alignment to the S_D reference.
@@ -76,7 +81,7 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
 - Deblurring (`src/blur/README.md`): `deblur.py --method wiener|wiener_adaptive|restormer` (directory -> new directory, ~20 s/image for Restormer on MPS),
   `finetune_deblur.py` (Restormer on train B_D), `tune_deblur.py wiener|wiener_adaptive|restormer --write` (selection on train / val).
   The teammate's earlier blur pilot saw F03 (test), F01 (val) and MIDV: never report it (summary in `docs/blur_history/README.md`).
-  Tests: `python -m pytest -q tests/blur` (needs `pytest<9`).
+  Tests: `python -m pytest -q tests` (blur blocks + `tests/common/test_privacy.py`; needs `pytest<9`).
 - `benchmark_runtime.py`: s/image of each method (processing call only, MPS + CPU) -> `results/runtime/runtime_{name}.csv`.
 - `run_chain_experiments.sh` (steps `blur ours midv clips` + `_eval`) and `summarise_chain.py`: deblur-only (-> `results/blur/`) and deblur + deglare (-> `results/joint/`) experiments.
 - `src/report/`: `make_tables.py` (every table + `paired_changes.csv` -> `report/tables/`, never type numbers by hand), then `make_figures.py`

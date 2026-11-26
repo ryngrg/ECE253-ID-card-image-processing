@@ -37,6 +37,7 @@ import torch.nn.functional as F
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # src/
 from blur.deblur_blocks import digest
+from common import privacy
 from blur.deblur_blocks.restormer import (DEFAULT_WEIGHTS, TASK, load_model, read_rgb, save_json, select_device,
                                      to_tensor, unit_rgb)
 
@@ -157,7 +158,7 @@ def main():
     np.random.seed(a.seed)
     torch.manual_seed(a.seed)
     rng = np.random.default_rng(a.seed)
-    layout = pd.read_csv(a.layout, keep_default_na=False)
+    layout = privacy.read_csv(a.layout, keep_default_na=False)
     layout["labelled"] = layout.labelled.astype(str) == "True"
     tone = not a.no_match_tone
     train = load_samples(load_pairs(a.pairs, "train"), layout, tone)

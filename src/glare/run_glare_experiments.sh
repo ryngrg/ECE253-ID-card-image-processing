@@ -64,7 +64,7 @@ if has tesseract; then
 fi
 
 if has midv; then
-  # external test set: MIDV-2020 "highlight present" photos (download steps in src/common/prepare_midv.py).
+  # external test set: MIDV-2020 "highlight present" photos (download: README "Setup").
   # Nothing is tuned or trained on it: frozen params/glare/classical_params.json and the frozen DL checkpoint.
   if [ -d data/external/midv2020/photo ]; then
     $PY src/common/prepare_midv.py
@@ -82,12 +82,12 @@ if has midv; then
       done
     done
   else
-    echo "[midv] data/external/midv2020/photo missing: see src/common/prepare_midv.py for the download"
+    echo "[midv] data/external/midv2020/photo missing: download steps in README 'Setup'"
   fi
 fi
 
 if has clips; then
-  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (clips.tar; download in src/glare/prepare_midv_clips.py).
+  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (clips.tar; download: README "Setup").
   # Two key-frame rules = two "splits": keymid (middle frame) and keymax (most clipped core in the fields).
   if [ -d data/external/midv2020/clips/images ]; then
     $PY src/glare/prepare_midv_clips.py --jobs 4
@@ -110,6 +110,6 @@ if has clips; then
       done
     done
   else
-    echo "[clips] data/external/midv2020/clips/images missing: see src/glare/prepare_midv_clips.py for the download"
+    echo "[clips] data/external/midv2020/clips/images missing: download steps in README 'Setup'"
   fi
 fi

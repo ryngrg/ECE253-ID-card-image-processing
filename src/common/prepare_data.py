@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Prepare the glare-removal dataset.  Run AFTER rectify_ids.py (which now also aligns
+Prepare the glare-removal dataset.  Run AFTER rectify_ids.py (which also aligns
 every image to its card's S_D reference and writes alignment_log.csv).
 
 Expects rectified images named  {card_id}_{B|S}_{G|D}_{num}_rectified.png
@@ -19,7 +19,7 @@ What it does
      random sample.
 
 Outputs
-  split.csv             card_id, split                 (share with your teammate)
+  split.csv             card_id, split                 (one split for the glare and the blur experiments)
   out/pairs.csv         one row per glare image; use  usable == True  downstream
   out/pairs_blur.csv    one row per B_D image (same columns)
   out/overlays/*.png

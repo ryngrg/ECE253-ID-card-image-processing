@@ -3,12 +3,7 @@
 MIDV-2020 "highlight present" video clips (90-99 of every type): aligned frame stacks for
 multi-frame fusion (fusion itself is in fuse_frames.py).
 
-Download (same public mirror as the photos, prepare_midv.py; clips.tar is 10.3 GB, only clips 90-99 are extracted):
-  cd data/external/midv2020 && curl -O ftp://smartengines.com/midv-2020/dataset/clips.tar
-  tar -tf clips.tar | grep -E '^images/[^/]+/9[0-9]/.+\.jpg$' > clips_list.txt      # 6258 frames
-  mkdir -p clips && tar -xf clips.tar -C clips -T clips_list.txt && tar -xf clips.tar -C clips annotations
-
-Data: data/external/midv2020/clips/images/<type>/<nn>/*.jpg
+Download: README "Setup".  Data: data/external/midv2020/clips/images/<type>/<nn>/*.jpg
 (every 6th frame of a 4K clip, annotated with the document quad in clips/annotations/<type>/<nn>.json),
 plus the scan and the template of the same document (as for the photos, prepare_midv.py).
 100 clips of 100 documents, none of which is a photo document; nothing is tuned on them.

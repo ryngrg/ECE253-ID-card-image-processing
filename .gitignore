@@ -9,6 +9,20 @@ data/*
 data/rectified/*
 !data/rectified/alignment_log.csv
 
+# real ID cards stay local (src/common/privacy.py): only the 8 specimen cards' ground truth is shared, the
+# full-text tables live in private/, and OCR text dumps are never shared
+ground_truth/*
+!ground_truth/B01.txt
+!ground_truth/B02.txt
+!ground_truth/B03.txt
+!ground_truth/F01.txt
+!ground_truth/F02.txt
+!ground_truth/F03.txt
+!ground_truth/F04.txt
+!ground_truth/F05.txt
+private/
+results/**/ocr_text/
+
 # method outputs: only the small tables are shared (image pairs and splits, frame homographies)
 out/*
 !out/*.csv

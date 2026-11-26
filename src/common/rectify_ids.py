@@ -26,7 +26,7 @@ Pipeline per image
    though real cards have rounded corners, and it is sub-pixel accurate and
    tolerant of blur.  Corners are scaled back to full resolution.
 6. cv2.getPerspectiveTransform to a canonical 1012x638 card (homography H).
-7. Reference-based alignment (NEW).  Files named {card}_{B|S}_{G|D}_{num}.png are
+7. Reference-based alignment.  Files named {card}_{B|S}_{G|D}_{num}.png are
    grouped by card; the S_D image is the card's reference and is rectified from
    its corners as above (this defines the canonical frame).  Every other image of
    that card is then registered to the rectified reference with ECC

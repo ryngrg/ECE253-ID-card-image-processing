@@ -25,10 +25,10 @@ target = the card's S_D reference).
   * iteration 0 is validated too: the pretrained weights before any fine-tuning
 
 Usage
-  python src/glare/finetune_dl.py --name docshr_mt --iters 3000                 # fine-tune (MPS if available)
+  python src/glare/finetune_dl.py --name docshr_mt --iters 1500 --val-every 150  # fine-tune, as for the frozen model (~1.5 h, MPS)
   python src/glare/finetune_dl.py --infer --checkpoint checkpoints/glare/docshr_mt_best.pt --out-dir out/dl_ft
   python src/glare/finetune_dl.py --infer --zero-shot --out-dir out/dl_zeroshot  # pretrained, no fine-tuning
-  python src/common/evaluate.py --engine paddleocr --treated-dir out/dl_ft --name dl_ft
+  python src/common/evaluate.py --treated-dir out/dl_ft --name dl_ft
   --infer also saves the predicted glare masks in OUT_DIR/masks/ (detection analysis).
   Other networks: --model module:Class --model-repo DIR --pretrained W.pth (image-level gate head),
   --model tiny for a quick smoke test of the pipeline.
