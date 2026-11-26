@@ -20,8 +20,6 @@
   "white_cap": true,
   "cap_slack": 0.05,
   "bg_floor": true,
-  "descratch": 0,
-  "clahe": 0.0,
   "core_fill": "flat",
   "alpha0": 0.5,
   "tau": 60.0,

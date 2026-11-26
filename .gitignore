@@ -28,6 +28,9 @@ checkpoints/**
 # third-party code + pretrained weights (see README for download)
 third_party/
 
+# the ICASSP 2027 author kit (report/ has the style files it needs; the kit is public)
+docs/course/icassp2027_template/
+
 # archives (the submission zip, downloaded datasets)
 *.zip
 *.tar

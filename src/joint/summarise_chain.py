@@ -25,13 +25,13 @@ from common.compare_runs import boot_ci
 # part -> (group folder in results/, SSIM folder in it)
 PARTS = {"blur": ("blur", "ssim_blur"), "chain": ("joint", "ssim_chain"), "midv_chain": ("joint", None),
          "midv_clips_chain": ("joint", None)}
-SINGLE = ["wiener_old", "wiener_ad", "wiener", "restormer_pre", "restormer", "classical", "dlzs", "dl", "fused"]
+SINGLE = ["wiener_old", "wiener_ad", "wiener", "restormer_pre", "restormer", "classical", "dl", "fused"]
 METRICS = [f"char_acc_{z}" for z in ("all", "core", "halo", "glare", "outside", "digits_all")] + ["ssim", "ssim_glare", "ssim_outside"]
 KEYS = ["image", "card_id", "condition", "split"]
 
 
 def parse_chain(name):
-    """'restormer_pre_dlzs' -> ('restormer_pre', 'dlzs'); None for a single method."""
+    """'restormer_pre_classical' -> ('restormer_pre', 'classical'); None for a single method."""
     if name in SINGLE:
         return None
     for a in SINGLE:

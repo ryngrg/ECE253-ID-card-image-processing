@@ -1,8 +1,9 @@
 # Blur experiments done before the merge (archive, read-only)
 
-Reports copied unchanged from the blur repo, `https://github.com/Mlazazarus/ECE253` @ `2893d66`, so that this repo is enough
-to write the report. Paths inside them refer to that repo. Their metric is field CER (Tesseract, hand-placed
-fields, native-resolution photos); ours is fixed-box character accuracy on rectified images. **Do not mix the numbers.**
+Summary of the experiments run in the blur repo, `https://github.com/Mlazazarus/ECE253` @ `2893d66`, before it was merged
+here. The reports named below (last column) are in that repo, under that commit. Their metric is field CER (Tesseract,
+hand-placed fields, native-resolution photos); ours is fixed-box character accuracy on rectified images.
+**Do not mix the numbers; none of them is reported.**
 
 ## Why none of these models / parameters are used for our final numbers
 Real-data pilot (`real_mixed_pilot_report.txt`; Restormer `step_002000.pt` and Wiener radius 3 / K 0.3):
@@ -22,7 +23,7 @@ All 115 handmade photos of that repo are byte-identical to files in our `data/ra
 most of F12).
 
 ## What was tried
-| Experiment | Result | Report |
+| Experiment | Result | Report (blur repo) |
 |---|---|---|
 | Restormer fine-tuned on real pairs (pilot) | best result: CER on B_D 74% -> 30%, B_G 87% -> 58% (4 / 6 photos; B03, F04, F10) | `real_mixed_pilot_*` |
 | Restormer fine-tuned on synthetic blur (200 and 2000 steps) | large gain on synthetic blur, worse than untreated on our blurry photos (81% vs 76%) | `restormer_synthetic_pilot_report.md`, `template_retraining_report.md` |

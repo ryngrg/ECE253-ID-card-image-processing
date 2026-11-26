@@ -15,7 +15,7 @@ the card, so its effect is diluted by the other 90%.  Here
     (approximate substring matching; boxes with no close match, or < 3 characters, are dropped);
   * in every glare image each box is put in one zone, from the UNTREATED image (same for all
     methods):  core = overlaps the clipped core,  halo = overlaps the rest of the glare region,
-    outside = elsewhere  (>= 10% of the box area, as in analyze_ocr_loss.py).
+    outside = elsewhere  (>= 10% of the box area).
 
 Scores (characters = lowercase letters/digits only, spaces and punctuation ignored)
   char_acc_{zone}   1 - (sum of edit distances / sum of target lengths) over the boxes of the zone
@@ -39,7 +39,7 @@ precomputed glare masks (column glare_mask_path of the pairs file), accents fold
 Usage
   python src/common/box_ocr.py                                    # PaddleOCR recogniser, default runs
   python src/common/box_ocr.py --engine tesseract                 # Tesseract --psm 7 on each line crop
-  python src/common/box_ocr.py --runs classical,dl_ft --extra out/classical_dn:classical_dn
+  python src/common/box_ocr.py --only --runs classical --extra out/chain/restormer:restormer
   then  python src/common/compare_runs.py --results-dir results/glare/box_paddle --base untreated --new dl_ft --splits test
 
 Engines

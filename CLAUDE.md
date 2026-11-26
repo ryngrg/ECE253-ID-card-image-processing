@@ -22,7 +22,8 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
   `out/pairs_midv.csv` (split = midv, condition = S_G) and `results/layouts/box_layout_midv.csv`. Reference = the scan.
 
 ## Environment
-- venv: `card_scanning_env/bin/python` (Python 3.10, torch with MPS on an M2 Mac, no CUDA).
+- venv: `card_scanning_env/bin/python` (Python 3.10, torch with MPS on an M2 Mac, no CUDA). Dependencies: one `requirements.txt`
+  (+ the tesseract program); keep the PaddleOCR pins, the readings depend on its models.
 - Run every script from the repo root: `python src/<group>/<script>.py`. Every script puts `src/` on `sys.path`; imports name the group
   (`from common.evaluate import ...`, `from glare.classical_glare import ...`). New shared code goes in `common/`.
 - Groups `common` / `glare` / `blur` / `joint` are used in `src/`, `results/`; `glare` / `blur` also in `params/`, `checkpoints/`, `tests/`.
@@ -35,7 +36,7 @@ current methods and results are in `README.md`; planned work is in `NEXT_STEPS.m
 
 ## Scripts (`src/`)
 Groups: `common/` rectify_ids, prepare_data, prepare_midv, evaluate, box_ocr, compare_runs; `glare/` classical_glare, finetune_dl,
-prepare_midv_clips, fuse_frames, analyze_ocr_loss, ssim_diagnose, run_glare_experiments.sh; `blur/` deblur,
+prepare_midv_clips, fuse_frames, detection_iou, ssim_diagnose, run_glare_experiments.sh; `blur/` deblur,
 deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` run_chain_experiments.sh, summarise_chain, benchmark_runtime.
 - `rectify_ids.py`: card detection, warp to 1012x638, ECC homography alignment to the S_D reference.
 - `prepare_data.py`: builds `out/pairs.csv` and `split.csv`, plus overlays in `out/overlays/`.
@@ -45,14 +46,14 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
   - Flat core fill (`core_fill=flat`; `telea` is the ablation).
   - `--tune` runs an SSIM grid with the do-no-harm rule.
   - Params: `params/glare/classical_params.json` (final) and `params/glare/classical_params_decay.json` (old distance-decay model, ablation).
-  - Flags: `--no-veil`, `--no-inpaint`, `--core-fill`, `--denoise` (ablation only, no test gain), `--debug`.
+  - Flags: `--no-veil`, `--no-inpaint`, `--core-fill`, `--debug`. (Denoise, CLAHE and descratch were tried, dropped and removed.)
 - `finetune_dl.py`: DocSHRNet backbone with a new detection head; output = m·removed + (1-m)·input.
   - Trains on train S_G; picks the best checkpoint on val S_G.
   - `--infer --checkpoint checkpoints/glare/docshr_mt_best.pt` or `--infer --zero-shot`.
 - `evaluate.py`: per-image metrics:
   - SSIM: whole image / glare region / outside the glare.
   - OCR: CER and word_f1 vs the reference's OCR, plus f1_gt / recall_gt vs the ground truth.
-  - Usage: `--engine paddleocr --treated-dir out/X --name X`; `--combine` builds `results/glare/whole_card/all_methods.csv`.
+  - Usage: `--treated-dir out/X --name X` (PaddleOCR is the default engine); `--combine` builds `results/glare/whole_card/all_methods.csv`.
   - Treated images must keep the rectified filenames.
 - `box_ocr.py`: **main OCR metric**. Fixed reference line boxes, recognition only, char accuracy per zone vs the GT.
   - `--engine paddle|tesseract`; writes `{--results-dir}/box_{engine}[_tag]/` (default `results/glare`; `results/blur`, `results/joint` for those runs); `--only --extra dir:name` adds runs.
@@ -60,7 +61,8 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
   - `reference` = ceiling, `ref_jitter` = noise-floor proxy.
 - `compare_runs.py`: paired per-image differences with 95% bootstrap CIs (`results/glare/whole_card/compare_*.csv`).
   - With `--results-dir results/glare/box_paddle` it compares box metrics; `--metrics` picks a subset.
-- `analyze_ocr_loss.py`: share of reference words lost in the core / halo / outside zones.
+- `detection_iou.py`: IoU of each method's glare region with the reference-derived one -> `results/glare/detection_iou.csv`
+  (the report cites the DL head: 0.59 on train, 0.30 on test).
 - `ssim_diagnose.py`: why SSIM stays low outside the glare (fine detail, not misalignment).
 - `prepare_midv.py`: MIDV-2020 external set: quad warp + guarded ECC to the scan, template field boxes,
   tone-matched scan for glare masks. Methods run with `--pairs out/pairs_midv.csv --splits midv --conditions S_G --out-dir out/midv/<m>`;
@@ -71,15 +73,16 @@ deblur_blocks/, tune_deblur, finetune_deblur, install_deblur_weights; `joint/` r
   - Key frames = splits `keymid` / `keymax` of `out/pairs_midv_clips.csv` (images `{type}_{nn}_{mid|max}.png`); layout `results/layouts/box_layout_midv_clips.csv`.
 - `fuse_frames.py`: fusion (replace only the key frame's glare pixels) + `median` ablation + `best_frame` / `best_field` baselines
   -> `out/midv_clips/<method>/`, diagnostics `results/glare/midv_clips_fusion.csv`. Box OCR with `--tag midv_clips` (see `run_glare_experiments.sh` step `clips`).
-- Deblurring (DEBLUR.md): `deblur.py --method wiener|wiener_adaptive|restormer` (directory -> new directory, ~20 s/image for Restormer on MPS),
+- Deblurring (`src/blur/README.md`): `deblur.py --method wiener|wiener_adaptive|restormer` (directory -> new directory, ~20 s/image for Restormer on MPS),
   `finetune_deblur.py` (Restormer on train B_D), `tune_deblur.py wiener|wiener_adaptive|restormer --write` (selection on train / val).
-  Never report the old `real-pilot` checkpoint: it saw F03 (test), F01 (val) and MIDV. Old experiments: `docs/blur_history/`.
+  The teammate's earlier blur pilot saw F03 (test), F01 (val) and MIDV: never report it (summary in `docs/blur_history/README.md`).
   Tests: `python -m pytest -q tests/blur` (needs `pytest<9`).
 - `benchmark_runtime.py`: s/image of each method (processing call only, MPS + CPU) -> `results/runtime/runtime_{name}.csv`.
 - `run_chain_experiments.sh` (steps `blur ours midv clips` + `_eval`) and `summarise_chain.py`: deblur-only (-> `results/blur/`) and deblur + deglare (-> `results/joint/`) experiments.
 - `src/report/`: `make_tables.py` (every table + `paired_changes.csv` -> `report/tables/`, never type numbers by hand), then `make_figures.py`
   (-> `report/figures/` pdf + png; `--only NAME`); `make_demo_figures.py` (whole-card panels -> `results/figures/`).
   Paper: `report/paper.tex` (ICASSP template, 5 pages incl. references; `cd report && latexmk -pdf paper.tex`).
+  `report/` has the style files; the full ICASSP author kit is local only (`docs/course/icassp2027_template/`, git-ignored).
   Figures show specimen cards only (F01-F05, B01-B03): `make_figures.ours()` asserts it.
 - `run_glare_experiments.sh`: reruns all glare experiments after `prepare_data.py` (step `midv` = the external set).
 

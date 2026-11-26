@@ -26,19 +26,16 @@ Usage
                                                         # text, create ground-truth templates
   python src/common/evaluate.py                                    # baseline: untreated glare images
   python src/common/evaluate.py --treated-dir out/classical --name classical
-  python src/common/evaluate.py --treated-dir out/dl --name deep_learning --splits val,test
+  python src/common/evaluate.py --treated-dir out/dl_ft --name dl_ft --splits val,test
   python src/common/evaluate.py --combine                          # one table from all runs
-  add --engine paddleocr | easyocr | tesseract (default), --lang, --save-ocr
+  add --engine paddleocr (default, the engine we report) | tesseract, --lang, --save-ocr
   add --no-ocr for a fast SSIM-only run (no OCR columns)
   OCR results are cached in results/ocr_cache/, so repeated runs only OCR new/changed images
 
 Processed images must have the SAME FILENAMES as the rectified inputs
 (e.g. B01_S_G_0_rectified.png) and the same size.
 
-Requirements: opencv-python, numpy, pandas, scikit-image, and one OCR engine:
-  tesseract : pip install pytesseract  (+ the tesseract program;  --lang eng, eng+fra)
-  paddleocr : pip install paddleocr paddlepaddle   (--lang en, fr, latin ...)
-  easyocr   : pip install easyocr                  (--lang en, en+fr)
+Requirements: requirements.txt (PaddleOCR 3.x; for --engine tesseract also the tesseract program).
 """
 import argparse
 import hashlib
@@ -88,31 +85,16 @@ def make_ocr(engine: str, lang: str | None):
     if engine == "paddleocr":
         from paddleocr import PaddleOCR
         lang = lang or "en"
-        if hasattr(PaddleOCR, "predict"):  # PaddleOCR >= 3.0
-            model = PaddleOCR(lang=lang, use_doc_orientation_classify=False,
-                              use_doc_unwarping=False, use_textline_orientation=False)
-
-            def ocr(img):
-                lines = []
-                for res in model.predict(img):
-                    d = res if isinstance(res, dict) else res.json["res"]
-                    polys = d.get("rec_polys", d.get("dt_polys"))
-                    lines += [(t, _bbox(p)) for t, p in zip(d["rec_texts"], polys)]
-                return _words_from_lines(lines)
-        else:  # PaddleOCR 2.x
-            model = PaddleOCR(lang=lang, use_angle_cls=False, show_log=False)
-
-            def ocr(img):
-                result = model.ocr(img, cls=False)
-                return _words_from_lines([(t, _bbox(box)) for box, (t, _c) in (result[0] or [])])
-        return ocr
-
-    if engine == "easyocr":
-        import easyocr
-        reader = easyocr.Reader((lang or "en").split("+"))
+        model = PaddleOCR(lang=lang, use_doc_orientation_classify=False,  # PaddleOCR 3.x
+                          use_doc_unwarping=False, use_textline_orientation=False)
 
         def ocr(img):
-            return _words_from_lines([(text, _bbox(box)) for box, text, _c in reader.readtext(img)])
+            lines = []
+            for res in model.predict(img):
+                d = res if isinstance(res, dict) else res.json["res"]
+                polys = d.get("rec_polys", d.get("dt_polys"))
+                lines += [(t, _bbox(p)) for t, p in zip(d["rec_texts"], polys)]
+            return _words_from_lines(lines)
         return ocr
 
     raise SystemExit(f"unknown engine {engine}")
@@ -284,7 +266,7 @@ def main():
                     help="folder with processed images; omit to evaluate the untreated images")
     ap.add_argument("--name", default=None, help="label for this run (default: untreated / folder name)")
     ap.add_argument("--splits", default="train,val,test")
-    ap.add_argument("--engine", default="tesseract", choices=["tesseract", "paddleocr", "easyocr"])
+    ap.add_argument("--engine", default="paddleocr", choices=["paddleocr", "tesseract"])
     ap.add_argument("--lang", default=None)
     ap.add_argument("--gt-dir", default="ground_truth", type=Path)
     ap.add_argument("--out-dir", default="results/glare/whole_card", type=Path)

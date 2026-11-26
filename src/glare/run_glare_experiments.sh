@@ -7,12 +7,13 @@
 set -euo pipefail
 ENGINE=${ENGINE:-paddleocr}
 STEPS=${STEPS:-"classical dl eval compare box tesseract midv clips"}
+# Whole-card OCR (eval, compare) uses PaddleOCR; the main metric, fixed-box OCR (box, tesseract), uses both engines.
 PY=${PY:-python}
 
 has() { [[ " $STEPS " == *" $1 "* ]]; }
 
 if has classical; then
-  # params/glare/classical_params.json: final parameters (chosen by OCR on train+val, see README);
+  # params/glare/classical_params.json: final parameters (chosen on train+val, see README);
   # params/glare/classical_params_decay.json: the earlier distance-decay model with its earlier tuned values.
   # (python src/glare/classical_glare.py --tune ... re-runs the SSIM grid search if wanted)
   $PY src/glare/classical_glare.py --params params/glare/classical_params.json --out-dir out/classical --debug
@@ -20,7 +21,6 @@ if has classical; then
   $PY src/glare/classical_glare.py --params params/glare/classical_params.json --no-inpaint --out-dir out/classical_veil
   $PY src/glare/classical_glare.py --params params/glare/classical_params.json --core-fill telea --out-dir out/classical_telea
   $PY src/glare/classical_glare.py --params params/glare/classical_params_decay.json --out-dir out/classical_decay
-  $PY src/glare/classical_glare.py --params params/glare/classical_params.json --denoise guided --dn-h 8 --out-dir out/classical_dn
 fi
 
 if has dl; then
@@ -42,30 +42,22 @@ if has compare; then
     [ -f "results/glare/whole_card/${m}_per_image.csv" ] && $PY src/common/compare_runs.py --base untreated --new "$m" --splits test
   done
   $PY src/common/compare_runs.py --base classical --new dl_ft --splits test
-  $PY src/glare/analyze_ocr_loss.py --engine "$ENGINE"
-  for m in classical dl_ft; do
-    $PY src/glare/analyze_ocr_loss.py --engine "$ENGINE" --treated-dir "out/$m" --name "$m"
-  done
+  $PY src/glare/detection_iou.py   # where each method acts (needs out/classical and out/dl_ft/masks)
 fi
 
 if has box; then
   # main OCR metric: fixed reference boxes, recognition only, scored per zone against the ground truth
-  $PY src/common/box_ocr.py --engine paddle --runs classical,classical_veil,classical_inpaint,classical_telea,classical_decay,classical_dn,dl_zeroshot,dl_ft
-  for m in classical classical_dn dl_zeroshot dl_ft reference ref_jitter; do
+  $PY src/common/box_ocr.py --engine paddle --runs classical,classical_veil,classical_inpaint,classical_telea,classical_decay,dl_zeroshot,dl_ft
+  for m in classical dl_zeroshot dl_ft reference ref_jitter; do
     $PY src/common/compare_runs.py --results-dir results/glare/box_paddle --base untreated --new "$m" \
       --metrics char_acc_halo,char_acc_core,char_acc_outside,char_acc_glare,char_acc_digits_glare,exact_glare
   done
 fi
 
 if has tesseract; then
-  # second OCR engine: whole card (--psm 11) and fixed line crops (--psm 7)
-  $PY src/common/evaluate.py --engine tesseract --name untreated_tess
-  for m in classical dl_zeroshot dl_ft; do
-    $PY src/common/evaluate.py --engine tesseract --treated-dir "out/$m" --name "${m}_tess"
-    $PY src/common/compare_runs.py --base untreated_tess --new "${m}_tess" --splits test --metrics cer,word_f1,f1_gt,recall_gt
-  done
-  $PY src/common/box_ocr.py --engine tesseract --runs classical,classical_telea,classical_decay,classical_dn,dl_zeroshot,dl_ft
-  for m in classical classical_dn dl_zeroshot dl_ft reference ref_jitter; do
+  # second OCR engine on the fixed line crops (--psm 7)
+  $PY src/common/box_ocr.py --engine tesseract --runs classical,classical_telea,classical_decay,dl_zeroshot,dl_ft
+  for m in classical dl_zeroshot dl_ft reference ref_jitter; do
     $PY src/common/compare_runs.py --results-dir results/glare/box_tesseract --base untreated --new "$m" \
       --metrics char_acc_halo,char_acc_core,char_acc_outside,char_acc_glare,char_acc_digits_glare,exact_glare
   done
@@ -95,7 +87,7 @@ if has midv; then
 fi
 
 if has clips; then
-  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (clips.tar; download in README "Multi-frame fusion").
+  # multi-frame fusion on the MIDV-2020 highlight clips 90-99 (clips.tar; download in src/glare/prepare_midv_clips.py).
   # Two key-frame rules = two "splits": keymid (middle frame) and keymax (most clipped core in the fields).
   if [ -d data/external/midv2020/clips/images ]; then
     $PY src/glare/prepare_midv_clips.py --jobs 4
@@ -118,6 +110,6 @@ if has clips; then
       done
     done
   else
-    echo "[clips] data/external/midv2020/clips/images missing: see README \"Multi-frame fusion\""
+    echo "[clips] data/external/midv2020/clips/images missing: see src/glare/prepare_midv_clips.py for the download"
   fi
 fi

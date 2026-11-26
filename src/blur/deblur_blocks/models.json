@@ -7,13 +7,6 @@
     "architecture_commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f",
     "filename": "single_image_defocus_deblurring.pth"
   },
-  "real-pilot": {
-    "filename": "restormer_real_pilot_step_002000.pt",
-    "bytes": 104663539,
-    "sha256": "1f9da934b848c418137c023be02ac3dd5b5815ed7716ed4b9d30dc01988eac63",
-    "source": null,
-    "description": "Existing 2000-step real-data pilot. Trained on handmade F03, which is in the glare repository test split. For inference integration, not a jointly held-out benchmark."
-  },
   "ours": {
     "filename": "restormer_ours.pt",
     "bytes": 104664243,
