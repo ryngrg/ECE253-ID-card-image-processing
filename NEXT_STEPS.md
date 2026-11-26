@@ -161,9 +161,11 @@ Never delete `data/raw/`, `ground_truth/`, `split.csv`, the frozen parameters or
   (git-ignored, local). `src/common/privacy.py` (`save_csv` / `read_csv`) keeps it that way for every new run;
   `tests/common/test_privacy.py` checks it. Verified: box OCR from the cache reproduces the committed scores, tables
   and figures are unchanged.
-* The GitHub repo was deleted and recreated with one commit (the old history had real-card text and the image of a
-  real person's card). Local backups only: `../ECE253-full-history-backup.bundle` (old history, unredacted) and
-  `../ECE253-redacted-history.bundle` (the 17 commits, redacted). The teammate must re-clone.
+* The old history had real-card text and the image of a real person's card, so every commit was rewritten (real-card
+  ground truth and that image removed, real-card text blanked; same files at the end) and the GitHub repo was deleted
+  and recreated with the rewritten history (this removed the old PR ref too). Local backups only:
+  `../ECE253-full-history-backup.bundle` (old history, unredacted) and `../ECE253-redacted-history.bundle` (the
+  rewritten commits). The teammate must re-clone.
 
 ### 3c. Left
 - [x] Local only (git-ignored), deleted 11/26: `out/cdn_*`, `out/classical_dn`, `out/chain/{dlzs_restormer_pre,restormer_pre_dlzs,wiener_dl,dl_wiener}`
