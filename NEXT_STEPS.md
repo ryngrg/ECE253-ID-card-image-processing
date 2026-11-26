@@ -14,7 +14,7 @@ We write everything here; the teammate only presents the blur part, so they need
 |---|---|
 | 11/27 | shared figures and tables (done 11/25) |
 | 12/1 | full report draft (first draft 11/25) |
-| 12/2 | slides and blur speaker notes to the teammate |
+| 12/2 | slides and blur speaker notes to the teammate (first draft of both 11/25) |
 | 12/3 | report revised; first rehearsal |
 | 12/4 | cleanup; second rehearsal |
 | 12/5 | submit report, zip and slides (**each member uploads the slide file**) before 7 pm; present |
@@ -100,7 +100,11 @@ Seven slides; everything else goes to backup slides.
 | Combined | 1:30 | both orders on B_G. Best: Restormer ft → DL ft for Tesseract; for PaddleOCR Restormer alone does as well |
 | Conclusion | 1:00 | findings, limitations, advice: capture a short burst |
 
-- [ ] Build a new deck in `presentation/` (no editable source of the update deck; reuse its content from the PDF and our figures).
+**First draft done (11/25):** https://claude.ai/artifact/8oJ6Df6vgTKXC5wrxfsDAT (private; share it from its Share menu). 7 slides + 5 backup slides,
+speaker notes on every slide (about 980 words: 7.0 min at 140 words/min, 7.9 min at 125). Pictures: `presentation/figures/`
+(`make_figures.py --only slides`; `slide_dataset.png` is a copy of `report/figures/dataset.png`).
+- [ ] Review the slides; share the deck with the teammate.
+- [ ] Export PPTX / PDF from the page into `presentation/` once final.
 - [ ] Reuse: core / halo slide, dataset tables, glare OCR table (its numbers still match the README), appendix figures.
 - [ ] Fix what is outdated in `docs/course/project_update_presentation.pdf`:
       - slides 3, 12 and appendix E use the old blur pilot (invalid, see Decisions): redo with the README B_D numbers and `restormer_ours`;
@@ -111,7 +115,7 @@ Seven slides; everything else goes to backup slides.
         detection IoU, 0.59 on train vs 0.30 on test;
       - slides 5-7 and 13 (methods in full text, parameters, next steps): shorten, move to backup, or drop;
       - spelling: Wiener, Restormer.
-- [ ] Write speaker notes for the blur slide and send them to the teammate by 12/2.
+- [ ] Send the blur slide and its notes (written) to the teammate by 12/2.
 - [ ] Rehearse together with a timer (7:45-8:15); prepare questions (n is small, why does PaddleOCR get worse, why does Wiener fail).
 - [ ] Both members upload the file on 12/5 (the handout's own deadline is midnight 12/07); be ready when called (order unknown).
 

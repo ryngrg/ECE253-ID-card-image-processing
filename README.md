@@ -457,7 +457,7 @@ all fields, n.s. for Tesseract on keymid). For an app: capture a short burst, no
    mostly textured laminate / hologram reflection, unlike our 31 training images.
 1. **Whether glare removal helps OCR depends on the OCR engine** (fixed-box metric, consistent on
    train, val and test).
-   * **Tesseract** (binarises the line) loses most of the halo text to the veil: halo character accuracy is 0.42,
+   * **Tesseract** loses most of the halo text to the veil: halo character accuracy is 0.42,
      vs 0.84 on the clean reference. DL fine-tuned recovers about half the gap (+0.22 on test, 7/0 images;
      digits in glare +0.22). Zero-shot recovers less (+0.16). Classical gains +0.10, not significant.
    * **PaddleOCR**'s neural recogniser already reads 87% of halo characters untreated (99% on the reference).
@@ -468,7 +468,7 @@ all fields, n.s. for Tesseract on keymid). For an app: capture a short burst, no
      With fixed boxes the PaddleOCR noise floor is ≤ 0.006, so these effects are real.
    * The strongest glare is not a smooth veil. It is a textured reflection of the laminate (scratches,
      hologram) in which the strokes are physically gone (see the zoom figure).
-   * Practical reading: a preprocessing step for a classical / binarising OCR engine should use DL fine-tuned.
+   * Practical reading: a preprocessing step for an engine like Tesseract should use DL fine-tuned.
      A modern neural recogniser should get the untreated image, plus a "recapture" flag for clipped fields.
 2. **SSIM and OCR disagree.**
    * The DL model is far better by SSIM, inside and outside the glare. Zero-shot raises ssim_outside the most

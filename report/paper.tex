@@ -148,7 +148,7 @@ The fine-tuned Restormer is the only method that clearly helps (Table~\ref{tab:b
 \label{fig:fusion}
 \end{figure*}
 
-\textbf{The effect depends on the reader} (Table~\ref{tab:glare}, Fig.~\ref{fig:halo}). Tesseract, which binarizes the line, reads 0.417 of the halo characters on our cards and 0.837 on the reference; the fine-tuned network recovers half of this gap (+0.216). PaddleOCR already reads 0.869 of the untreated halo, and every method lowers that: the processed strokes (Fig.~\ref{fig:glare}) confuse it more than the veil. Both signs of the networks repeat on 100 MIDV photos (fine-tuned: +0.125 and $-$0.086) and on the clips' key frames; the classical method is neutral on MIDV photos. Clipped text is not recovered by any single-image method.
+\textbf{The effect depends on the reader} (Table~\ref{tab:glare}, Fig.~\ref{fig:halo}). Tesseract reads 0.417 of the halo characters on our cards and 0.837 on the reference; the fine-tuned network recovers half of this gap (+0.216). PaddleOCR already reads 0.869 of the untreated halo, and every method lowers that: the processed strokes (Fig.~\ref{fig:glare}) confuse it more than the veil. Both signs of the networks repeat on 100 MIDV photos (fine-tuned: +0.125 and $-$0.086) and on the clips' key frames; the classical method is neutral on MIDV photos. Clipped text is not recovered by any single-image method.
 
 \textbf{SSIM and OCR disagree.} On our test cards the fine-tuned network raises SSIM inside the glare from 0.511 to 0.624. The zero-shot network has the best whole-card SSIM (0.748, untreated 0.696), partly because it smooths the whole card, but it is the worst method for PaddleOCR in the halo.
 
@@ -170,7 +170,7 @@ On our BG test images (Table~\ref{tab:joint}) the fine-tuned Restormer does most
 
 \section{Discussion and conclusion}
 \label{sec:conclusion}
-Restoration should be chosen together with the reader. For a binarizing engine, deblur with a fine-tuned network and then remove glare. A modern recognizer reads the halo without help and gains only from deblurring truly blurred images. Clipped text needs another frame: an app should capture a short burst and read each field from its best frame, and ask for a retake instead of inventing strokes. Generated digits are a real risk for ID data.
+Restoration should be chosen together with the reader. For an engine like Tesseract, deblur with a fine-tuned network and then remove glare. A modern recognizer reads the halo without help and gains only from deblurring truly blurred images. Clipped text needs another frame: an app should capture a short burst and read each field from its best frame, and ask for a retake instead of inventing strokes. Generated digits are a real risk for ID data.
 
 \textbf{Deviations from the proposal.} DocSHRNet replaces the unavailable network; the statistics veil replaces hysteresis with low-pass correction; the routing stage was dropped; fixed-box OCR replaces PSNR and LPIPS; Restormer was fine-tuned on real pairs only; MIDV photos replace our own hand-held set; and 14 of our 22 card sides are real, not mock.
 

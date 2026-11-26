@@ -10,6 +10,7 @@ Figures of the report and slides -> report/figures/{name}.pdf and .png (300 dpi)
   fusion           MIDV-2020 clip: key frame, another frame, best frame per field, fused, scan
   halo_changes     paired change of halo accuracy per method, engine and data set (dots, 95% CI)
   joint_changes    the same for all boxes of B_G test and MIDV photos (deblur, deglare, both orders)
+  slides           pictures of the deck -> presentation/figures
   pipeline, glare_methods   block diagrams (TikZ in report/figures/*.tex, compiled with latexmk)
 
 Readings come from results/*/box_*/*_boxes.csv; a check mark = every letter and digit correct.
@@ -34,7 +35,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # src/
 from common.evaluate import glare_region
 from glare.classical_glare import DEFAULTS, detect_core
 
-OUT = Path("report/figures")
+OUT, SLIDES = Path("report/figures"), Path("presentation/figures")
 COL, FULL = 3.39, 7.0           # inches
 SPECIMEN = {"F01", "F02", "F03", "F04", "F05", "B01", "B02", "B03"}
 INK, MUTED, GRID = "#191919", "#666666", "#dddddd"
@@ -46,11 +47,13 @@ plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "
 
 
 def save(fig, name):
-    OUT.mkdir(parents=True, exist_ok=True)
-    for ext in ("pdf", "png"):
-        fig.savefig(OUT / f"{name}.{ext}")
+    """Paper figures: pdf + png in report/figures; slide pictures ('slide_*'): png in presentation/figures."""
+    out, exts = (SLIDES, ("png",)) if name.startswith("slide_") else (OUT, ("pdf", "png"))
+    out.mkdir(parents=True, exist_ok=True)
+    for ext in exts:
+        fig.savefig(out / f"{name}.{ext}")
     plt.close(fig)
-    print(f"wrote {OUT}/{name}.pdf, .png")
+    print(f"wrote {out}/{name} ({', '.join(exts)})")
 
 
 def load(path):
@@ -89,14 +92,14 @@ def put_reading(ax, rd, size=6.8):
                 color=INK if ok else MUTED, fontfamily=["Arial", "DejaVu Sans"], linespacing=1.15, clip_on=False)
 
 
-def panel_grid(name, rows, cols, width, text_lines=2, head=0.19, gap=0.05, text_pt=6.8):
+def panel_grid(name, rows, cols, width, text_lines=2, head=0.19, gap=0.05, text_pt=6.8, title_pt=8, face="white"):
     """rows: list of (list of RGB crops, list of readings or None); all crops of a row share one aspect ratio."""
     n = len(cols)
     w = (width - gap * (n - 1)) / n
     hs = [w * r[0][-1].shape[0] / r[0][-1].shape[1] for r in rows]
     th = text_lines * text_pt * 1.15 / 72 + 0.055
     H = head + sum(hs) + th * len(rows)
-    fig = plt.figure(figsize=(width, H))
+    fig = plt.figure(figsize=(width, H), facecolor=face)
     y = H - head
     for (imgs, texts), h in zip(rows, hs):
         for j, img in enumerate(imgs):
@@ -104,7 +107,7 @@ def panel_grid(name, rows, cols, width, text_lines=2, head=0.19, gap=0.05, text_
             ax.imshow(img, interpolation="lanczos", aspect="auto")
             ax.set_axis_off()
             if y == H - head:
-                ax.set_title(cols[j], fontsize=8, pad=2.5, color=INK)
+                ax.set_title(cols[j], fontsize=title_pt, pad=2.5, color=INK)
             if texts:
                 put_reading(ax, texts[j], text_pt)
         y -= h + th
@@ -244,6 +247,39 @@ def fusion(clip="fin_id_95_mid"):
                FULL, text_lines=0)
 
 
+def slides():
+    """Pictures of the deck (larger text, fewer columns, deck background)."""
+    kw = dict(text_pt=10, title_pt=11, head=0.26, gap=0.08, face="#F7F6F2")
+    lay = pd.read_csv("results/layouts/box_layout.csv").set_index(["card_id", "box"])
+    runs = [("untreated", None, "blurred"), ("wiener_ad", "out/blur/wiener_ad", "Wiener, adaptive"),
+            ("restormer", "out/blur/restormer", "Restormer, fine-tuned"), ("reference", "REF", "reference")]
+    rows = []
+    for name, box in (("F04_B_D_0", 8), ("F04_B_D_0", 12)):
+        b = lay.loc[(name[:3], box), ["x0", "y0", "x1", "y1"]].to_numpy(float)
+        w = max(b[2] - b[0], 6.2 * (b[3] - b[1]))
+        c = min(max((b[0] + b[2]) / 2, w / 2), 1012 - w / 2)
+        rows.append(([crop(ours(name[:3] + "_S_D_0") if d == "REF" else ours(name, d or "data/rectified"),
+                           [c - w / 2, b[1] - 3, c + w / 2, b[3] + 3]) for _, d, _ in runs],
+                     [reading("blur/box_{}_blur", run, f"{name}_rectified.png", box) for run, _, _ in runs]))
+    panel_grid("slide_blur", rows, [r[2] for r in runs], 9, **kw)
+    runs = [("untreated", "ZONES", "untreated (core, halo)"), ("classical", "out/classical", "classical"),
+            ("dl_ft", "out/dl_ft", "DocSHRNet, fine-tuned"), ("reference", "REF", "reference")]
+    panel_grid("slide_glare", region_rows([("F04_S_G_1", 10, (180, 110, 660, 380))], runs, "glare/box_{}"), [r[2] for r in runs], 9, **kw)
+    runs = [("untreated", None, "untreated"), ("restormer", "out/chain/restormer", "Restormer"),
+            ("restormer_dl", "out/chain/restormer_dl", "Restormer → DocSHRNet"), ("reference", "REF", "reference")]
+    panel_grid("slide_chain", region_rows([("F03_B_G_0", 10, (290, 210, 770, 480))], runs, "joint/box_{}_chain"), [r[2] for r in runs], 9, **kw)
+    f = "out/midv_clips/{}/fin_id_95_mid.png"
+    r = pd.read_csv("out/pairs_midv_clips.csv").set_index("path")
+    r = r[r.index.str.endswith("/fin_id_95_mid.png")].iloc[0]
+    key = load(r.name)
+    for n, im in (("slide_key", key), ("slide_fused", load(f.format("fused"))),
+                  ("slide_zones", crop(zones(ours("F03_S_G_1"), our_glare("F03_S_G_1")), (290, 250, 790, 600))),
+                  ("slide_blurred", crop(ours("F03_B_D_0"), (290, 150, 790, 500)))):
+        SLIDES.mkdir(parents=True, exist_ok=True)
+        cv2.imwrite(str(SLIDES / f"{n}.png"), cv2.cvtColor(im, cv2.COLOR_RGB2BGR))
+        print(f"wrote {SLIDES}/{n}.png")
+
+
 def forest(name, panels, methods, pc, width, xlabel):
     """panels: [(title, {engine: folder}, split, cond, metric)]; one row per method, one dot per engine."""
     n = len(panels)
@@ -306,7 +342,7 @@ def tikz(name):
 
 
 FIGS = dict(dataset=dataset, blur_crops=blur_crops, glare_crops=glare_crops, chain_crops=chain_crops, fusion=fusion, halo_changes=halo_changes,
-            joint_changes=joint_changes, pipeline=lambda: tikz("pipeline"), glare_methods=lambda: tikz("glare_methods"))
+            joint_changes=joint_changes, slides=slides, pipeline=lambda: tikz("pipeline"), glare_methods=lambda: tikz("glare_methods"))
 
 
 def main():
